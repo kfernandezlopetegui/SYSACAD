@@ -1,0 +1,453 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\Users\\Karen\\Desktop\\Proyecto\\NEW_SYSACAD\\SYSACAD\\New_SYSACAD\\New_SYSACAD.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\Karen\\Desktop\\Proyecto\\NEW_SYSACAD\\SYSACAD\\ActualizarCambios\\Actualizar.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Karen\\Desktop\\Proyecto\\NEW_SYSACAD\\SYSACAD\\ActualizarCambios\\Actualizar.csproj",
+        "projectName": "Actualizar",
+        "projectPath": "C:\\Users\\Karen\\Desktop\\Proyecto\\NEW_SYSACAD\\SYSACAD\\ActualizarCambios\\Actualizar.csproj",
+        "packagesPath": "C:\\Users\\Karen\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Karen\\Desktop\\Proyecto\\NEW_SYSACAD\\SYSACAD\\ActualizarCambios\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Karen\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "C:\\Users\\Karen\\Desktop\\Proyecto\\NEW_SYSACAD\\SYSACAD\\Entidades\\Entidades.csproj": {
+                "projectPath": "C:\\Users\\Karen\\Desktop\\Proyecto\\NEW_SYSACAD\\SYSACAD\\Entidades\\Entidades.csproj"
+              },
+              "C:\\Users\\Karen\\Desktop\\Proyecto\\NEW_SYSACAD\\SYSACAD\\LecturaEscritura\\LecturaEscritura.csproj": {
+                "projectPath": "C:\\Users\\Karen\\Desktop\\Proyecto\\NEW_SYSACAD\\SYSACAD\\LecturaEscritura\\LecturaEscritura.csproj"
+              },
+              "C:\\Users\\Karen\\Desktop\\Proyecto\\NEW_SYSACAD\\SYSACAD\\Validaciones\\Validaciones.csproj": {
+                "projectPath": "C:\\Users\\Karen\\Desktop\\Proyecto\\NEW_SYSACAD\\SYSACAD\\Validaciones\\Validaciones.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\Karen\\Desktop\\Proyecto\\NEW_SYSACAD\\SYSACAD\\Entidades\\Entidades.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Karen\\Desktop\\Proyecto\\NEW_SYSACAD\\SYSACAD\\Entidades\\Entidades.csproj",
+        "projectName": "Entidades",
+        "projectPath": "C:\\Users\\Karen\\Desktop\\Proyecto\\NEW_SYSACAD\\SYSACAD\\Entidades\\Entidades.csproj",
+        "packagesPath": "C:\\Users\\Karen\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Karen\\Desktop\\Proyecto\\NEW_SYSACAD\\SYSACAD\\Entidades\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Karen\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "C:\\Users\\Karen\\Desktop\\Proyecto\\NEW_SYSACAD\\SYSACAD\\Pagos\\Pagos.csproj": {
+                "projectPath": "C:\\Users\\Karen\\Desktop\\Proyecto\\NEW_SYSACAD\\SYSACAD\\Pagos\\Pagos.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "BCrypt.Net-Next": {
+              "target": "Package",
+              "version": "[4.0.3, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\Karen\\Desktop\\Proyecto\\NEW_SYSACAD\\SYSACAD\\LecturaEscritura\\LecturaEscritura.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Karen\\Desktop\\Proyecto\\NEW_SYSACAD\\SYSACAD\\LecturaEscritura\\LecturaEscritura.csproj",
+        "projectName": "LecturaEscritura",
+        "projectPath": "C:\\Users\\Karen\\Desktop\\Proyecto\\NEW_SYSACAD\\SYSACAD\\LecturaEscritura\\LecturaEscritura.csproj",
+        "packagesPath": "C:\\Users\\Karen\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Karen\\Desktop\\Proyecto\\NEW_SYSACAD\\SYSACAD\\LecturaEscritura\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Karen\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "C:\\Users\\Karen\\Desktop\\Proyecto\\NEW_SYSACAD\\SYSACAD\\Entidades\\Entidades.csproj": {
+                "projectPath": "C:\\Users\\Karen\\Desktop\\Proyecto\\NEW_SYSACAD\\SYSACAD\\Entidades\\Entidades.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\Karen\\Desktop\\Proyecto\\NEW_SYSACAD\\SYSACAD\\Login\\Login.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Karen\\Desktop\\Proyecto\\NEW_SYSACAD\\SYSACAD\\Login\\Login.csproj",
+        "projectName": "Login",
+        "projectPath": "C:\\Users\\Karen\\Desktop\\Proyecto\\NEW_SYSACAD\\SYSACAD\\Login\\Login.csproj",
+        "packagesPath": "C:\\Users\\Karen\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Karen\\Desktop\\Proyecto\\NEW_SYSACAD\\SYSACAD\\Login\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Karen\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "C:\\Users\\Karen\\Desktop\\Proyecto\\NEW_SYSACAD\\SYSACAD\\Entidades\\Entidades.csproj": {
+                "projectPath": "C:\\Users\\Karen\\Desktop\\Proyecto\\NEW_SYSACAD\\SYSACAD\\Entidades\\Entidades.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\Karen\\Desktop\\Proyecto\\NEW_SYSACAD\\SYSACAD\\New_SYSACAD\\New_SYSACAD.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Karen\\Desktop\\Proyecto\\NEW_SYSACAD\\SYSACAD\\New_SYSACAD\\New_SYSACAD.csproj",
+        "projectName": "New_SYSACAD",
+        "projectPath": "C:\\Users\\Karen\\Desktop\\Proyecto\\NEW_SYSACAD\\SYSACAD\\New_SYSACAD\\New_SYSACAD.csproj",
+        "packagesPath": "C:\\Users\\Karen\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Karen\\Desktop\\Proyecto\\NEW_SYSACAD\\SYSACAD\\New_SYSACAD\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Karen\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0-windows"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0-windows7.0": {
+            "targetAlias": "net6.0-windows",
+            "projectReferences": {
+              "C:\\Users\\Karen\\Desktop\\Proyecto\\NEW_SYSACAD\\SYSACAD\\ActualizarCambios\\Actualizar.csproj": {
+                "projectPath": "C:\\Users\\Karen\\Desktop\\Proyecto\\NEW_SYSACAD\\SYSACAD\\ActualizarCambios\\Actualizar.csproj"
+              },
+              "C:\\Users\\Karen\\Desktop\\Proyecto\\NEW_SYSACAD\\SYSACAD\\Entidades\\Entidades.csproj": {
+                "projectPath": "C:\\Users\\Karen\\Desktop\\Proyecto\\NEW_SYSACAD\\SYSACAD\\Entidades\\Entidades.csproj"
+              },
+              "C:\\Users\\Karen\\Desktop\\Proyecto\\NEW_SYSACAD\\SYSACAD\\Login\\Login.csproj": {
+                "projectPath": "C:\\Users\\Karen\\Desktop\\Proyecto\\NEW_SYSACAD\\SYSACAD\\Login\\Login.csproj"
+              },
+              "C:\\Users\\Karen\\Desktop\\Proyecto\\NEW_SYSACAD\\SYSACAD\\Pagos\\Pagos.csproj": {
+                "projectPath": "C:\\Users\\Karen\\Desktop\\Proyecto\\NEW_SYSACAD\\SYSACAD\\Pagos\\Pagos.csproj"
+              },
+              "C:\\Users\\Karen\\Desktop\\Proyecto\\NEW_SYSACAD\\SYSACAD\\Validaciones\\Validaciones.csproj": {
+                "projectPath": "C:\\Users\\Karen\\Desktop\\Proyecto\\NEW_SYSACAD\\SYSACAD\\Validaciones\\Validaciones.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0-windows7.0": {
+          "targetAlias": "net6.0-windows",
+          "dependencies": {
+            "BCrypt.Net-Next": {
+              "target": "Package",
+              "version": "[4.0.3, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            },
+            "Microsoft.WindowsDesktop.App.WindowsForms": {
+              "privateAssets": "none"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\Karen\\Desktop\\Proyecto\\NEW_SYSACAD\\SYSACAD\\Pagos\\Pagos.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Karen\\Desktop\\Proyecto\\NEW_SYSACAD\\SYSACAD\\Pagos\\Pagos.csproj",
+        "projectName": "Pagos",
+        "projectPath": "C:\\Users\\Karen\\Desktop\\Proyecto\\NEW_SYSACAD\\SYSACAD\\Pagos\\Pagos.csproj",
+        "packagesPath": "C:\\Users\\Karen\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Karen\\Desktop\\Proyecto\\NEW_SYSACAD\\SYSACAD\\Pagos\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Karen\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\Karen\\Desktop\\Proyecto\\NEW_SYSACAD\\SYSACAD\\Validaciones\\Validaciones.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Karen\\Desktop\\Proyecto\\NEW_SYSACAD\\SYSACAD\\Validaciones\\Validaciones.csproj",
+        "projectName": "Validaciones",
+        "projectPath": "C:\\Users\\Karen\\Desktop\\Proyecto\\NEW_SYSACAD\\SYSACAD\\Validaciones\\Validaciones.csproj",
+        "packagesPath": "C:\\Users\\Karen\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Karen\\Desktop\\Proyecto\\NEW_SYSACAD\\SYSACAD\\Validaciones\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Karen\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "C:\\Users\\Karen\\Desktop\\Proyecto\\NEW_SYSACAD\\SYSACAD\\Entidades\\Entidades.csproj": {
+                "projectPath": "C:\\Users\\Karen\\Desktop\\Proyecto\\NEW_SYSACAD\\SYSACAD\\Entidades\\Entidades.csproj"
+              },
+              "C:\\Users\\Karen\\Desktop\\Proyecto\\NEW_SYSACAD\\SYSACAD\\LecturaEscritura\\LecturaEscritura.csproj": {
+                "projectPath": "C:\\Users\\Karen\\Desktop\\Proyecto\\NEW_SYSACAD\\SYSACAD\\LecturaEscritura\\LecturaEscritura.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

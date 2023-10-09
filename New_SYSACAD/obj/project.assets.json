@@ -1,0 +1,255 @@
+{
+  "version": 3,
+  "targets": {
+    "net6.0-windows7.0": {
+      "BCrypt.Net-Next/4.0.3": {
+        "type": "package",
+        "compile": {
+          "lib/net6.0/BCrypt.Net-Next.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/BCrypt.Net-Next.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Actualizar/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "Entidades": "1.0.0",
+          "LecturaEscritura": "1.0.0",
+          "Validaciones": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Actualizar.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Actualizar.dll": {}
+        }
+      },
+      "Entidades/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "BCrypt.Net-Next": "4.0.3",
+          "Pagos": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Entidades.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Entidades.dll": {}
+        }
+      },
+      "LecturaEscritura/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "Entidades": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/LecturaEscritura.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/LecturaEscritura.dll": {}
+        }
+      },
+      "Login/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "Entidades": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Login.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Login.dll": {}
+        }
+      },
+      "Pagos/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "compile": {
+          "bin/placeholder/Pagos.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Pagos.dll": {}
+        }
+      },
+      "Validaciones/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "Entidades": "1.0.0",
+          "LecturaEscritura": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Validaciones.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Validaciones.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "BCrypt.Net-Next/4.0.3": {
+      "sha512": "W+U9WvmZQgi5cX6FS5GDtDoPzUCV4LkBLkywq/kRZhuDwcbavOzcDAr3LXJFqHUi952Yj3LEYoWW0jbEUQChsA==",
+      "type": "package",
+      "path": "bcrypt.net-next/4.0.3",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "bcrypt.net-next.4.0.3.nupkg.sha512",
+        "bcrypt.net-next.nuspec",
+        "ico.png",
+        "lib/net20/BCrypt.Net-Next.dll",
+        "lib/net20/BCrypt.Net-Next.xml",
+        "lib/net35/BCrypt.Net-Next.dll",
+        "lib/net35/BCrypt.Net-Next.xml",
+        "lib/net462/BCrypt.Net-Next.dll",
+        "lib/net462/BCrypt.Net-Next.xml",
+        "lib/net472/BCrypt.Net-Next.dll",
+        "lib/net472/BCrypt.Net-Next.xml",
+        "lib/net48/BCrypt.Net-Next.dll",
+        "lib/net48/BCrypt.Net-Next.xml",
+        "lib/net5.0/BCrypt.Net-Next.dll",
+        "lib/net5.0/BCrypt.Net-Next.xml",
+        "lib/net6.0/BCrypt.Net-Next.dll",
+        "lib/net6.0/BCrypt.Net-Next.xml",
+        "lib/netstandard2.0/BCrypt.Net-Next.dll",
+        "lib/netstandard2.0/BCrypt.Net-Next.xml",
+        "lib/netstandard2.1/BCrypt.Net-Next.dll",
+        "lib/netstandard2.1/BCrypt.Net-Next.xml",
+        "readme.md"
+      ]
+    },
+    "Actualizar/1.0.0": {
+      "type": "project",
+      "path": "../ActualizarCambios/Actualizar.csproj",
+      "msbuildProject": "../ActualizarCambios/Actualizar.csproj"
+    },
+    "Entidades/1.0.0": {
+      "type": "project",
+      "path": "../Entidades/Entidades.csproj",
+      "msbuildProject": "../Entidades/Entidades.csproj"
+    },
+    "LecturaEscritura/1.0.0": {
+      "type": "project",
+      "path": "../LecturaEscritura/LecturaEscritura.csproj",
+      "msbuildProject": "../LecturaEscritura/LecturaEscritura.csproj"
+    },
+    "Login/1.0.0": {
+      "type": "project",
+      "path": "../Login/Login.csproj",
+      "msbuildProject": "../Login/Login.csproj"
+    },
+    "Pagos/1.0.0": {
+      "type": "project",
+      "path": "../Pagos/Pagos.csproj",
+      "msbuildProject": "../Pagos/Pagos.csproj"
+    },
+    "Validaciones/1.0.0": {
+      "type": "project",
+      "path": "../Validaciones/Validaciones.csproj",
+      "msbuildProject": "../Validaciones/Validaciones.csproj"
+    }
+  },
+  "projectFileDependencyGroups": {
+    "net6.0-windows7.0": [
+      "Actualizar >= 1.0.0",
+      "BCrypt.Net-Next >= 4.0.3",
+      "Entidades >= 1.0.0",
+      "Login >= 1.0.0",
+      "Pagos >= 1.0.0",
+      "Validaciones >= 1.0.0"
+    ]
+  },
+  "packageFolders": {
+    "C:\\Users\\Karen\\.nuget\\packages\\": {}
+  },
+  "project": {
+    "version": "1.0.0",
+    "restore": {
+      "projectUniqueName": "C:\\Users\\Karen\\Desktop\\Proyecto\\NEW_SYSACAD\\SYSACAD\\New_SYSACAD\\New_SYSACAD.csproj",
+      "projectName": "New_SYSACAD",
+      "projectPath": "C:\\Users\\Karen\\Desktop\\Proyecto\\NEW_SYSACAD\\SYSACAD\\New_SYSACAD\\New_SYSACAD.csproj",
+      "packagesPath": "C:\\Users\\Karen\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Karen\\Desktop\\Proyecto\\NEW_SYSACAD\\SYSACAD\\New_SYSACAD\\obj\\",
+      "projectStyle": "PackageReference",
+      "configFilePaths": [
+        "C:\\Users\\Karen\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+      ],
+      "originalTargetFrameworks": [
+        "net6.0-windows"
+      ],
+      "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "https://api.nuget.org/v3/index.json": {}
+      },
+      "frameworks": {
+        "net6.0-windows7.0": {
+          "targetAlias": "net6.0-windows",
+          "projectReferences": {
+            "C:\\Users\\Karen\\Desktop\\Proyecto\\NEW_SYSACAD\\SYSACAD\\ActualizarCambios\\Actualizar.csproj": {
+              "projectPath": "C:\\Users\\Karen\\Desktop\\Proyecto\\NEW_SYSACAD\\SYSACAD\\ActualizarCambios\\Actualizar.csproj"
+            },
+            "C:\\Users\\Karen\\Desktop\\Proyecto\\NEW_SYSACAD\\SYSACAD\\Entidades\\Entidades.csproj": {
+              "projectPath": "C:\\Users\\Karen\\Desktop\\Proyecto\\NEW_SYSACAD\\SYSACAD\\Entidades\\Entidades.csproj"
+            },
+            "C:\\Users\\Karen\\Desktop\\Proyecto\\NEW_SYSACAD\\SYSACAD\\Login\\Login.csproj": {
+              "projectPath": "C:\\Users\\Karen\\Desktop\\Proyecto\\NEW_SYSACAD\\SYSACAD\\Login\\Login.csproj"
+            },
+            "C:\\Users\\Karen\\Desktop\\Proyecto\\NEW_SYSACAD\\SYSACAD\\Pagos\\Pagos.csproj": {
+              "projectPath": "C:\\Users\\Karen\\Desktop\\Proyecto\\NEW_SYSACAD\\SYSACAD\\Pagos\\Pagos.csproj"
+            },
+            "C:\\Users\\Karen\\Desktop\\Proyecto\\NEW_SYSACAD\\SYSACAD\\Validaciones\\Validaciones.csproj": {
+              "projectPath": "C:\\Users\\Karen\\Desktop\\Proyecto\\NEW_SYSACAD\\SYSACAD\\Validaciones\\Validaciones.csproj"
+            }
+          }
+        }
+      },
+      "warningProperties": {
+        "warnAsError": [
+          "NU1605"
+        ]
+      }
+    },
+    "frameworks": {
+      "net6.0-windows7.0": {
+        "targetAlias": "net6.0-windows",
+        "dependencies": {
+          "BCrypt.Net-Next": {
+            "target": "Package",
+            "version": "[4.0.3, )"
+          }
+        },
+        "imports": [
+          "net461",
+          "net462",
+          "net47",
+          "net471",
+          "net472",
+          "net48",
+          "net481"
+        ],
+        "assetTargetFallback": true,
+        "warn": true,
+        "frameworkReferences": {
+          "Microsoft.NETCore.App": {
+            "privateAssets": "all"
+          },
+          "Microsoft.WindowsDesktop.App.WindowsForms": {
+            "privateAssets": "none"
+          }
+        },
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
+      }
+    }
+  }
+}

@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\kflop\\OneDrive\\Imágenes\\parcial_labo_progra\\Validaciones\\Validaciones.csproj": {}
+    "C:\\Users\\Karen\\Desktop\\Proyecto\\NEW_SYSACAD\\SYSACAD\\Validaciones\\Validaciones.csproj": {}
   },
   "projects": {
-    "C:\\Users\\kflop\\OneDrive\\Imágenes\\parcial_labo_progra\\Entidades\\Entidades.csproj": {
+    "C:\\Users\\Karen\\Desktop\\Proyecto\\NEW_SYSACAD\\SYSACAD\\Entidades\\Entidades.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\kflop\\OneDrive\\Imágenes\\parcial_labo_progra\\Entidades\\Entidades.csproj",
+        "projectUniqueName": "C:\\Users\\Karen\\Desktop\\Proyecto\\NEW_SYSACAD\\SYSACAD\\Entidades\\Entidades.csproj",
         "projectName": "Entidades",
-        "projectPath": "C:\\Users\\kflop\\OneDrive\\Imágenes\\parcial_labo_progra\\Entidades\\Entidades.csproj",
-        "packagesPath": "C:\\Users\\kflop\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\kflop\\OneDrive\\Imágenes\\parcial_labo_progra\\Entidades\\obj\\",
+        "projectPath": "C:\\Users\\Karen\\Desktop\\Proyecto\\NEW_SYSACAD\\SYSACAD\\Entidades\\Entidades.csproj",
+        "packagesPath": "C:\\Users\\Karen\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Karen\\Desktop\\Proyecto\\NEW_SYSACAD\\SYSACAD\\Entidades\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\kflop\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Karen\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -28,8 +28,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\kflop\\OneDrive\\Imágenes\\parcial_labo_progra\\Pagos\\Pagos.csproj": {
-                "projectPath": "C:\\Users\\kflop\\OneDrive\\Imágenes\\parcial_labo_progra\\Pagos\\Pagos.csproj"
+              "C:\\Users\\Karen\\Desktop\\Proyecto\\NEW_SYSACAD\\SYSACAD\\Pagos\\Pagos.csproj": {
+                "projectPath": "C:\\Users\\Karen\\Desktop\\Proyecto\\NEW_SYSACAD\\SYSACAD\\Pagos\\Pagos.csproj"
               }
             }
           }
@@ -65,21 +65,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.400\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\kflop\\OneDrive\\Imágenes\\parcial_labo_progra\\LecturaEscritura\\LecturaEscritura.csproj": {
+    "C:\\Users\\Karen\\Desktop\\Proyecto\\NEW_SYSACAD\\SYSACAD\\LecturaEscritura\\LecturaEscritura.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\kflop\\OneDrive\\Imágenes\\parcial_labo_progra\\LecturaEscritura\\LecturaEscritura.csproj",
+        "projectUniqueName": "C:\\Users\\Karen\\Desktop\\Proyecto\\NEW_SYSACAD\\SYSACAD\\LecturaEscritura\\LecturaEscritura.csproj",
         "projectName": "LecturaEscritura",
-        "projectPath": "C:\\Users\\kflop\\OneDrive\\Imágenes\\parcial_labo_progra\\LecturaEscritura\\LecturaEscritura.csproj",
-        "packagesPath": "C:\\Users\\kflop\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\kflop\\OneDrive\\Imágenes\\parcial_labo_progra\\LecturaEscritura\\obj\\",
+        "projectPath": "C:\\Users\\Karen\\Desktop\\Proyecto\\NEW_SYSACAD\\SYSACAD\\LecturaEscritura\\LecturaEscritura.csproj",
+        "packagesPath": "C:\\Users\\Karen\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Karen\\Desktop\\Proyecto\\NEW_SYSACAD\\SYSACAD\\LecturaEscritura\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\kflop\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Karen\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -93,8 +93,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\kflop\\OneDrive\\Imágenes\\parcial_labo_progra\\Entidades\\Entidades.csproj": {
-                "projectPath": "C:\\Users\\kflop\\OneDrive\\Imágenes\\parcial_labo_progra\\Entidades\\Entidades.csproj"
+              "C:\\Users\\Karen\\Desktop\\Proyecto\\NEW_SYSACAD\\SYSACAD\\Entidades\\Entidades.csproj": {
+                "projectPath": "C:\\Users\\Karen\\Desktop\\Proyecto\\NEW_SYSACAD\\SYSACAD\\Entidades\\Entidades.csproj"
               }
             }
           }
@@ -124,21 +124,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.400\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\kflop\\OneDrive\\Imágenes\\parcial_labo_progra\\Pagos\\Pagos.csproj": {
+    "C:\\Users\\Karen\\Desktop\\Proyecto\\NEW_SYSACAD\\SYSACAD\\Pagos\\Pagos.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\kflop\\OneDrive\\Imágenes\\parcial_labo_progra\\Pagos\\Pagos.csproj",
+        "projectUniqueName": "C:\\Users\\Karen\\Desktop\\Proyecto\\NEW_SYSACAD\\SYSACAD\\Pagos\\Pagos.csproj",
         "projectName": "Pagos",
-        "projectPath": "C:\\Users\\kflop\\OneDrive\\Imágenes\\parcial_labo_progra\\Pagos\\Pagos.csproj",
-        "packagesPath": "C:\\Users\\kflop\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\kflop\\OneDrive\\Imágenes\\parcial_labo_progra\\Pagos\\obj\\",
+        "projectPath": "C:\\Users\\Karen\\Desktop\\Proyecto\\NEW_SYSACAD\\SYSACAD\\Pagos\\Pagos.csproj",
+        "packagesPath": "C:\\Users\\Karen\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Karen\\Desktop\\Proyecto\\NEW_SYSACAD\\SYSACAD\\Pagos\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\kflop\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Karen\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -179,21 +179,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.400\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\kflop\\OneDrive\\Imágenes\\parcial_labo_progra\\Validaciones\\Validaciones.csproj": {
+    "C:\\Users\\Karen\\Desktop\\Proyecto\\NEW_SYSACAD\\SYSACAD\\Validaciones\\Validaciones.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\kflop\\OneDrive\\Imágenes\\parcial_labo_progra\\Validaciones\\Validaciones.csproj",
+        "projectUniqueName": "C:\\Users\\Karen\\Desktop\\Proyecto\\NEW_SYSACAD\\SYSACAD\\Validaciones\\Validaciones.csproj",
         "projectName": "Validaciones",
-        "projectPath": "C:\\Users\\kflop\\OneDrive\\Imágenes\\parcial_labo_progra\\Validaciones\\Validaciones.csproj",
-        "packagesPath": "C:\\Users\\kflop\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\kflop\\OneDrive\\Imágenes\\parcial_labo_progra\\Validaciones\\obj\\",
+        "projectPath": "C:\\Users\\Karen\\Desktop\\Proyecto\\NEW_SYSACAD\\SYSACAD\\Validaciones\\Validaciones.csproj",
+        "packagesPath": "C:\\Users\\Karen\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Karen\\Desktop\\Proyecto\\NEW_SYSACAD\\SYSACAD\\Validaciones\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\kflop\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Karen\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -207,11 +207,11 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\kflop\\OneDrive\\Imágenes\\parcial_labo_progra\\Entidades\\Entidades.csproj": {
-                "projectPath": "C:\\Users\\kflop\\OneDrive\\Imágenes\\parcial_labo_progra\\Entidades\\Entidades.csproj"
+              "C:\\Users\\Karen\\Desktop\\Proyecto\\NEW_SYSACAD\\SYSACAD\\Entidades\\Entidades.csproj": {
+                "projectPath": "C:\\Users\\Karen\\Desktop\\Proyecto\\NEW_SYSACAD\\SYSACAD\\Entidades\\Entidades.csproj"
               },
-              "C:\\Users\\kflop\\OneDrive\\Imágenes\\parcial_labo_progra\\LecturaEscritura\\LecturaEscritura.csproj": {
-                "projectPath": "C:\\Users\\kflop\\OneDrive\\Imágenes\\parcial_labo_progra\\LecturaEscritura\\LecturaEscritura.csproj"
+              "C:\\Users\\Karen\\Desktop\\Proyecto\\NEW_SYSACAD\\SYSACAD\\LecturaEscritura\\LecturaEscritura.csproj": {
+                "projectPath": "C:\\Users\\Karen\\Desktop\\Proyecto\\NEW_SYSACAD\\SYSACAD\\LecturaEscritura\\LecturaEscritura.csproj"
               }
             }
           }
@@ -241,7 +241,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.400\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
         }
       }
     }

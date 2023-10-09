@@ -1,10 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "nPHHfTEipcI18x7uz619e3BJeQ5837eE3KbY9GBOpd4fhGvRdUdWe4ritsVqF/D+n4ZjpCpUisoVVIeQZiGKmw==",
+  "dgSpecHash": "O0Ta4R6h6mSvq7PQlLTEgYVOlYeMSQNds8ZRhy7yS1TM4jFFkxxMxEK5k7g8372Ua3XldF+kdze6WYERh+Jxqw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\kflop\\OneDrive\\Imágenes\\parcial_labo_progra\\Validaciones\\Validaciones.csproj",
+  "projectFilePath": "C:\\Users\\Karen\\Desktop\\Proyecto\\NEW_SYSACAD\\SYSACAD\\Validaciones\\Validaciones.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\kflop\\.nuget\\packages\\bcrypt.net-next\\4.0.3\\bcrypt.net-next.4.0.3.nupkg.sha512"
+    "C:\\Users\\Karen\\.nuget\\packages\\bcrypt.net-next\\4.0.3\\bcrypt.net-next.4.0.3.nupkg.sha512"
   ],
   "logs": []
 }

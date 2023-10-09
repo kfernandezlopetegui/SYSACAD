@@ -8,19 +8,19 @@
     "net6.0": []
   },
   "packageFolders": {
-    "C:\\Users\\kflop\\.nuget\\packages\\": {}
+    "C:\\Users\\Karen\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\kflop\\OneDrive\\Imágenes\\parcial_labo_progra\\Pagos\\Pagos.csproj",
+      "projectUniqueName": "C:\\Users\\Karen\\Desktop\\Proyecto\\NEW_SYSACAD\\SYSACAD\\Pagos\\Pagos.csproj",
       "projectName": "Pagos",
-      "projectPath": "C:\\Users\\kflop\\OneDrive\\Imágenes\\parcial_labo_progra\\Pagos\\Pagos.csproj",
-      "packagesPath": "C:\\Users\\kflop\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\kflop\\OneDrive\\Imágenes\\parcial_labo_progra\\Pagos\\obj\\",
+      "projectPath": "C:\\Users\\Karen\\Desktop\\Proyecto\\NEW_SYSACAD\\SYSACAD\\Pagos\\Pagos.csproj",
+      "packagesPath": "C:\\Users\\Karen\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Karen\\Desktop\\Proyecto\\NEW_SYSACAD\\SYSACAD\\Pagos\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\kflop\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Karen\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -61,7 +61,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.400\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
       }
     }
   }
