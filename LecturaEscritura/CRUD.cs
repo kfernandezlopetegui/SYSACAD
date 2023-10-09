@@ -54,7 +54,7 @@ namespace LecturaEscritura
             Environment.SpecialFolder escritorio = Environment.SpecialFolder.DesktopDirectory;
 
             var desktop = Environment.GetFolderPath(escritorio);
-            var path = Path.Combine(desktop, "documentos", file);
+            var path = Path.Combine(desktop,  file);
 
             return path;
         }

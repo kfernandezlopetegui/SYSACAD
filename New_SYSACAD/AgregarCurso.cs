@@ -30,8 +30,8 @@ namespace New_SYSACAD
         private string textoPorDefectoDescripcion = "Ingrese la descripcion del curso";
         private string textoPorDefectoCupo = "Ingrese cupo maximo";
         ToolTip toolTip = new ToolTip();
-        
-       
+
+
         public AgregarCurso()
         {
             InitializeComponent();
@@ -65,7 +65,7 @@ namespace New_SYSACAD
 
         private void textDescripcion_TextChanged(object sender, EventArgs e)
         {
-            toolTip.SetToolTip(textDescripcion, "Ingresar el dia de cursada, horario y aula en caso de que corresponda.");
+            toolTip.SetToolTip(textDescripcion, "Ingresar el dia de cursada, horario y aula en caso de que corresponda. DIA HH:mm-HH:mm");
             textDescripcion.ForeColor = Color.Black;
         }
 
@@ -184,7 +184,7 @@ namespace New_SYSACAD
 
         private void buttonVolver_Click(object sender, EventArgs e)
         {
-            
+
             ListaDeCursos listaCursos = new ListaDeCursos();
             Menu.MostrarMenu(listaCursos, this, 1);
         }

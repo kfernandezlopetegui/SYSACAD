@@ -37,7 +37,6 @@
             buttonAgregar = new Button();
             buttonVolver = new Button();
             pictureBox1 = new PictureBox();
-            label1 = new Label();
             groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
@@ -81,6 +80,7 @@
             textDescripcion.Location = new Point(110, 265);
             textDescripcion.Multiline = true;
             textDescripcion.Name = "textDescripcion";
+            textDescripcion.PlaceholderText = "Dia cursada HH:mm-HH:mm Aula: ";
             textDescripcion.Size = new Size(286, 48);
             textDescripcion.TabIndex = 4;
             textDescripcion.Text = "Ingrese la descripcion del curso";
@@ -151,23 +151,12 @@
             pictureBox1.TabIndex = 1;
             pictureBox1.TabStop = false;
             // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Location = new Point(172, 166);
-            label1.Name = "label1";
-            label1.Size = new Size(706, 25);
-            label1.TabIndex = 6;
-            label1.Text = "En la descripcion debera colocar Dia de cursada, horario y aula en caso de corresponder";
-            label1.TextAlign = ContentAlignment.TopRight;
-            // 
             // AgregarCurso
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             ClientSize = new Size(1067, 803);
-            Controls.Add(label1);
             Controls.Add(pictureBox1);
             Controls.Add(groupBox1);
             Name = "AgregarCurso";
@@ -177,7 +166,6 @@
             groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
@@ -190,6 +178,5 @@
         private TextBox textCodigo;
         private TextBox textNombre;
         private PictureBox pictureBox1;
-        private Label label1;
     }
 }

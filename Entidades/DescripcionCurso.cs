@@ -38,7 +38,7 @@ namespace Entidades
 
         public static string ObtenerAula(string descripcion)
         {
-            string patronAula = @"Aula: (\d+)";
+            string patronAula = @"Aula: (\d+)|aula: (\d+)";
             MatchCollection matchesAula = Regex.Matches(descripcion, patronAula);
 
             if (matchesAula.Count > 0)

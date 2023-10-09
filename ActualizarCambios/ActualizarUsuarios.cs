@@ -14,7 +14,7 @@ namespace Actualizar
 
         public static List<Alumno> ListaAlumnosActuales()
         {
-            List<Alumno> usuariosRegistrados = CRUD.ReadStreamJSON<Alumno>("alumnosRegistrados");
+            List<Alumno> usuariosRegistrados = CRUD.ReadStreamJSON<Alumno>("alumnosRegistrados.json");
             return usuariosRegistrados;
         }
         public static void AgregarAlumno(string file, Alumno nuevoUsuario)
@@ -37,9 +37,12 @@ namespace Actualizar
              */
             List<Alumno> alumnosRegistrados = ListaAlumnosActuales();
             Alumno ?alumnoEncontrado = alumnosRegistrados.FirstOrDefault(u => u.Dni == dniAlumno);
+           
             if (alumnoEncontrado != null)
             {
-                alumnoEncontrado.ConceptoPagos.Add(new ConceptoPagos(conceptoPagos.MontoPendiente,conceptoPagos.Concepto));
+                
+                
+                alumnoEncontrado.ConceptoPagos.Add(conceptoPagos);
                 CRUD.WriteStreamJSON("alumnosRegistrados.json", alumnosRegistrados);
             }
             

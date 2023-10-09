@@ -21,6 +21,8 @@ namespace New_SYSACAD
 
         private string nombreArchivoCursos = "cursosRegistrados.json";
         private string nombreArchivoInscripciones = "inscripcionesRegistradas.json";
+        
+        
         public ConfirmarInscripcion(HashSet<Curso> listaCursos)
         {
             InitializeComponent();
@@ -29,6 +31,7 @@ namespace New_SYSACAD
             ConfigurarListView();
             MostrarCursosEnListView();
 
+            
         }
 
         private void ConfigurarListView()
@@ -75,7 +78,7 @@ namespace New_SYSACAD
                     ActualizarCurso.ActualizarCupo("cursosRegistrados.json", curso.Codigo);
 
                     // Mostrar mensaje de éxito
-                    MessageBox.Show($"Te has inscripto correctamente a {curso.Nombre}{SesionAlumno.AlumnoActual.Dni}.",
+                    MessageBox.Show($"Te has inscripto correctamente a {curso.Nombre}.",
                                               "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                 }
