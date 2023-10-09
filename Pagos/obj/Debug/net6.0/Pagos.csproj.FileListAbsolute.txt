@@ -31,3 +31,14 @@ C:\Users\Karen\Desktop\Proyecto\NEW_SYSACAD\SYSACAD\Pagos\obj\Debug\net6.0\Pagos
 C:\Users\Karen\Desktop\Proyecto\NEW_SYSACAD\SYSACAD\Pagos\obj\Debug\net6.0\refint\Pagos.dll
 C:\Users\Karen\Desktop\Proyecto\NEW_SYSACAD\SYSACAD\Pagos\obj\Debug\net6.0\Pagos.pdb
 C:\Users\Karen\Desktop\Proyecto\NEW_SYSACAD\SYSACAD\Pagos\obj\Debug\net6.0\ref\Pagos.dll
+C:\Users\kflop\OneDrive\Escritorio\Prueba\Nueva carpeta\Pagos\bin\Debug\net6.0\Pagos.deps.json
+C:\Users\kflop\OneDrive\Escritorio\Prueba\Nueva carpeta\Pagos\bin\Debug\net6.0\Pagos.dll
+C:\Users\kflop\OneDrive\Escritorio\Prueba\Nueva carpeta\Pagos\bin\Debug\net6.0\Pagos.pdb
+C:\Users\kflop\OneDrive\Escritorio\Prueba\Nueva carpeta\Pagos\obj\Debug\net6.0\Pagos.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\kflop\OneDrive\Escritorio\Prueba\Nueva carpeta\Pagos\obj\Debug\net6.0\Pagos.AssemblyInfoInputs.cache
+C:\Users\kflop\OneDrive\Escritorio\Prueba\Nueva carpeta\Pagos\obj\Debug\net6.0\Pagos.AssemblyInfo.cs
+C:\Users\kflop\OneDrive\Escritorio\Prueba\Nueva carpeta\Pagos\obj\Debug\net6.0\Pagos.csproj.CoreCompileInputs.cache
+C:\Users\kflop\OneDrive\Escritorio\Prueba\Nueva carpeta\Pagos\obj\Debug\net6.0\Pagos.dll
+C:\Users\kflop\OneDrive\Escritorio\Prueba\Nueva carpeta\Pagos\obj\Debug\net6.0\refint\Pagos.dll
+C:\Users\kflop\OneDrive\Escritorio\Prueba\Nueva carpeta\Pagos\obj\Debug\net6.0\Pagos.pdb
+C:\Users\kflop\OneDrive\Escritorio\Prueba\Nueva carpeta\Pagos\obj\Debug\net6.0\ref\Pagos.dll

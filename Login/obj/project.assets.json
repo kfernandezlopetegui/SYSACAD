@@ -90,19 +90,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Karen\\.nuget\\packages\\": {}
+    "C:\\Users\\kflop\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Karen\\Desktop\\Proyecto\\NEW_SYSACAD\\SYSACAD\\Login\\Login.csproj",
+      "projectUniqueName": "C:\\Users\\kflop\\OneDrive\\Escritorio\\Prueba\\Nueva carpeta\\Login\\Login.csproj",
       "projectName": "Login",
-      "projectPath": "C:\\Users\\Karen\\Desktop\\Proyecto\\NEW_SYSACAD\\SYSACAD\\Login\\Login.csproj",
-      "packagesPath": "C:\\Users\\Karen\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Karen\\Desktop\\Proyecto\\NEW_SYSACAD\\SYSACAD\\Login\\obj\\",
+      "projectPath": "C:\\Users\\kflop\\OneDrive\\Escritorio\\Prueba\\Nueva carpeta\\Login\\Login.csproj",
+      "packagesPath": "C:\\Users\\kflop\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\kflop\\OneDrive\\Escritorio\\Prueba\\Nueva carpeta\\Login\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Karen\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\kflop\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -116,8 +116,8 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "C:\\Users\\Karen\\Desktop\\Proyecto\\NEW_SYSACAD\\SYSACAD\\Entidades\\Entidades.csproj": {
-              "projectPath": "C:\\Users\\Karen\\Desktop\\Proyecto\\NEW_SYSACAD\\SYSACAD\\Entidades\\Entidades.csproj"
+            "C:\\Users\\kflop\\OneDrive\\Escritorio\\Prueba\\Nueva carpeta\\Entidades\\Entidades.csproj": {
+              "projectPath": "C:\\Users\\kflop\\OneDrive\\Escritorio\\Prueba\\Nueva carpeta\\Entidades\\Entidades.csproj"
             }
           }
         }
@@ -147,7 +147,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.400\\RuntimeIdentifierGraph.json"
       }
     }
   }
