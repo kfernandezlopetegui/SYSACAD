@@ -74,8 +74,10 @@ namespace New_SYSACAD
 
         private void buttonRealizarPagos_Click(object sender, EventArgs e)
         {
-            MetodosDePago metodosDePago = new MetodosDePago(montoPago, pagos);
-            Menu.MostrarMenu(metodosDePago, this, 1);
+            //MetodosDePago metodosDePago = new MetodosDePago(montoPago, pagos);
+            //Menu.MostrarMenu(metodosDePago, this, 1);
+            FormPagosPendientes pagosPendientes = new FormPagosPendientes();
+            Menu.MostrarMenu(pagosPendientes, this, 1);
         }
     }
 }

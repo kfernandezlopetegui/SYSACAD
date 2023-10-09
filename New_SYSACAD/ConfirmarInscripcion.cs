@@ -1,6 +1,7 @@
 ﻿using Actualizar;
 using Entidades;
 using Login;
+using Pagos;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -66,14 +67,15 @@ namespace New_SYSACAD
 
                 if (disponibilidad)
                 {
-
+                    ConceptoPagos conceptoPagos = new ConceptoPagos(10000,curso.Nombre);
                     Inscripcion inscripcion = new Inscripcion(SesionAlumno.AlumnoActual.Dni, curso.Codigo);
                     ActualizarInscripciones.AgregarInscripcion(nombreArchivoInscripciones, inscripcion);
+                    ActualizarUsuarios.AgregarPagosPendientes(conceptoPagos, SesionAlumno.AlumnoActual.Dni);
 
                     ActualizarCurso.ActualizarCupo("cursosRegistrados.json", curso.Codigo);
 
                     // Mostrar mensaje de éxito
-                    MessageBox.Show($"Te has inscripto correctamente a {curso.Nombre}.",
+                    MessageBox.Show($"Te has inscripto correctamente a {curso.Nombre}{SesionAlumno.AlumnoActual.Dni}.",
                                               "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                 }

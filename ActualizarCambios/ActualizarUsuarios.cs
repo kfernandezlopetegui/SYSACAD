@@ -1,6 +1,6 @@
 ﻿using Entidades;
 using LecturaEscritura;
-
+using Pagos;
 
 namespace Actualizar
 {
@@ -14,7 +14,7 @@ namespace Actualizar
 
         public static List<Alumno> ListaAlumnosActuales()
         {
-            List<Alumno> usuariosRegistrados = CRUD.ReadStreamJSON<Alumno>("usuarios.json");
+            List<Alumno> usuariosRegistrados = CRUD.ReadStreamJSON<Alumno>("alumnosRegistrados");
             return usuariosRegistrados;
         }
         public static void AgregarAlumno(string file, Alumno nuevoUsuario)
@@ -29,7 +29,25 @@ namespace Actualizar
             CRUD.WriteStreamJSON(file, listaUsuarios);
         }
 
-    
+        public static void AgregarPagosPendientes(ConceptoPagos conceptoPagos, int dniAlumno)
+        {
+            /* Agrega los pagos pendientes al alumno
+             * recibe el concepto de pago a agregar, el dni del alumno que se esta editando
+             *  
+             */
+            List<Alumno> alumnosRegistrados = ListaAlumnosActuales();
+            Alumno ?alumnoEncontrado = alumnosRegistrados.FirstOrDefault(u => u.Dni == dniAlumno);
+            if (alumnoEncontrado != null)
+            {
+                alumnoEncontrado.ConceptoPagos.Add(new ConceptoPagos(conceptoPagos.MontoPendiente,conceptoPagos.Concepto));
+                CRUD.WriteStreamJSON("alumnosRegistrados.json", alumnosRegistrados);
+            }
+            
+            
+
+            
+        }
+
 
     }
 }
