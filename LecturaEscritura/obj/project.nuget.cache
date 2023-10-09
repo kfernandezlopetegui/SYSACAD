@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "YhEb8qUPqnELcuj8TY9OfDanPlM2I87I5dxkQ9LLAHJXJn/GvFj4sIP3G/96orcFhViy/JSnRiNx4+T4N/oAqg==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\kflop\\OneDrive\\Imágenes\\parcial_labo_progra\\LecturaEscritura\\LecturaEscritura.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\kflop\\.nuget\\packages\\bcrypt.net-next\\4.0.3\\bcrypt.net-next.4.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}

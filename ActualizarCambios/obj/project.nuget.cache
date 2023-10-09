@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "AdT4gqb2KWkzwUkzJTYGs+4733gEN5ZXolh2UKYgxcziYPklqYQ8Y73vFo//2CrjBtBqCKeByFwH3kRb/+hUDw==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\kflop\\OneDrive\\Imágenes\\parcial_labo_progra\\ActualizarCambios\\Actualizar.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\kflop\\.nuget\\packages\\bcrypt.net-next\\4.0.3\\bcrypt.net-next.4.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}

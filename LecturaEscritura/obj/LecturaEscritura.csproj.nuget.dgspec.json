@@ -1,0 +1,187 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\Users\\kflop\\OneDrive\\Imágenes\\parcial_labo_progra\\LecturaEscritura\\LecturaEscritura.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\kflop\\OneDrive\\Imágenes\\parcial_labo_progra\\Entidades\\Entidades.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\kflop\\OneDrive\\Imágenes\\parcial_labo_progra\\Entidades\\Entidades.csproj",
+        "projectName": "Entidades",
+        "projectPath": "C:\\Users\\kflop\\OneDrive\\Imágenes\\parcial_labo_progra\\Entidades\\Entidades.csproj",
+        "packagesPath": "C:\\Users\\kflop\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\kflop\\OneDrive\\Imágenes\\parcial_labo_progra\\Entidades\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\kflop\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "C:\\Users\\kflop\\OneDrive\\Imágenes\\parcial_labo_progra\\Pagos\\Pagos.csproj": {
+                "projectPath": "C:\\Users\\kflop\\OneDrive\\Imágenes\\parcial_labo_progra\\Pagos\\Pagos.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "BCrypt.Net-Next": {
+              "target": "Package",
+              "version": "[4.0.3, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.400\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\kflop\\OneDrive\\Imágenes\\parcial_labo_progra\\LecturaEscritura\\LecturaEscritura.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\kflop\\OneDrive\\Imágenes\\parcial_labo_progra\\LecturaEscritura\\LecturaEscritura.csproj",
+        "projectName": "LecturaEscritura",
+        "projectPath": "C:\\Users\\kflop\\OneDrive\\Imágenes\\parcial_labo_progra\\LecturaEscritura\\LecturaEscritura.csproj",
+        "packagesPath": "C:\\Users\\kflop\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\kflop\\OneDrive\\Imágenes\\parcial_labo_progra\\LecturaEscritura\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\kflop\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "C:\\Users\\kflop\\OneDrive\\Imágenes\\parcial_labo_progra\\Entidades\\Entidades.csproj": {
+                "projectPath": "C:\\Users\\kflop\\OneDrive\\Imágenes\\parcial_labo_progra\\Entidades\\Entidades.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.400\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\kflop\\OneDrive\\Imágenes\\parcial_labo_progra\\Pagos\\Pagos.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\kflop\\OneDrive\\Imágenes\\parcial_labo_progra\\Pagos\\Pagos.csproj",
+        "projectName": "Pagos",
+        "projectPath": "C:\\Users\\kflop\\OneDrive\\Imágenes\\parcial_labo_progra\\Pagos\\Pagos.csproj",
+        "packagesPath": "C:\\Users\\kflop\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\kflop\\OneDrive\\Imágenes\\parcial_labo_progra\\Pagos\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\kflop\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.400\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}
