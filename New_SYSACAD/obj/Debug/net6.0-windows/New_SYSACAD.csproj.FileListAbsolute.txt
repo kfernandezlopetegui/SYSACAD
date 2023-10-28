@@ -187,3 +187,4 @@ C:\Users\kflop\OneDrive\Escritorio\Prueba\Nueva carpeta\New_SYSACAD\obj\Debug\ne
 C:\Users\kflop\OneDrive\Escritorio\Prueba\Nueva carpeta\New_SYSACAD\obj\Debug\net6.0-windows\New_SYSACAD.genruntimeconfig.cache
 C:\Users\kflop\OneDrive\Escritorio\Prueba\Nueva carpeta\New_SYSACAD\obj\Debug\net6.0-windows\ref\New_SYSACAD.dll
 C:\Users\kflop\OneDrive\Escritorio\Prueba\Nueva carpeta\New_SYSACAD\obj\Debug\net6.0-windows\New_SYSACAD.FormPagosPendientes.resources
+C:\Users\kflop\OneDrive\Escritorio\Prueba\Nueva carpeta\New_SYSACAD\obj\Debug\net6.0-windows\New_SYSACAD.InformesDisponibles.resources

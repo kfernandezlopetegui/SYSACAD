@@ -28,8 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormPagosPendientes));
             dataGridView1 = new DataGridView();
             labelIndicaciones = new Label();
@@ -43,25 +46,50 @@
             // 
             // dataGridView1
             // 
-            dataGridViewCellStyle3.BackColor = Color.AntiqueWhite;
-            dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.TopCenter;
+            dataGridViewCellStyle1.BackColor = Color.AntiqueWhite;
+            dataGridViewCellStyle1.Font = new Font("Verdana", 8F, FontStyle.Italic, GraphicsUnit.Point);
+            dataGridViewCellStyle1.ForeColor = Color.DimGray;
+            dataGridViewCellStyle1.SelectionBackColor = Color.Chocolate;
+            dataGridViewCellStyle1.SelectionForeColor = Color.Bisque;
+            dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dataGridView1.BackgroundColor = Color.AntiqueWhite;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.TopCenter;
+            dataGridViewCellStyle2.BackColor = Color.AntiqueWhite;
+            dataGridViewCellStyle2.Font = new Font("Verdana", 8F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
+            dataGridViewCellStyle2.ForeColor = SystemColors.MenuHighlight;
+            dataGridViewCellStyle2.SelectionBackColor = Color.Tomato;
+            dataGridViewCellStyle2.SelectionForeColor = Color.Bisque;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
+            dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = Color.AntiqueWhite;
-            dataGridViewCellStyle4.Font = new Font("Segoe UI", 9F, FontStyle.Italic, GraphicsUnit.Point);
-            dataGridViewCellStyle4.ForeColor = SystemColors.ControlText;
-            dataGridViewCellStyle4.SelectionBackColor = Color.Tomato;
-            dataGridViewCellStyle4.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = DataGridViewTriState.False;
-            dataGridView1.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.TopCenter;
+            dataGridViewCellStyle3.BackColor = Color.AntiqueWhite;
+            dataGridViewCellStyle3.Font = new Font("Verdana", 8F, FontStyle.Italic, GraphicsUnit.Point);
+            dataGridViewCellStyle3.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle3.SelectionBackColor = Color.Tomato;
+            dataGridViewCellStyle3.SelectionForeColor = Color.Bisque;
+            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.False;
+            dataGridView1.DefaultCellStyle = dataGridViewCellStyle3;
             dataGridView1.GridColor = Color.AntiqueWhite;
-            dataGridView1.Location = new Point(204, 194);
+            dataGridView1.Location = new Point(159, 193);
             dataGridView1.Name = "dataGridView1";
+            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.TopCenter;
+            dataGridViewCellStyle4.BackColor = Color.Bisque;
+            dataGridViewCellStyle4.Font = new Font("Verdana", 9F, FontStyle.Italic, GraphicsUnit.Point);
+            dataGridViewCellStyle4.ForeColor = SystemColors.MenuHighlight;
+            dataGridViewCellStyle4.SelectionBackColor = Color.Tomato;
+            dataGridViewCellStyle4.SelectionForeColor = Color.Bisque;
+            dataGridViewCellStyle4.WrapMode = DataGridViewTriState.True;
+            dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             dataGridView1.RowHeadersVisible = false;
             dataGridView1.RowHeadersWidth = 62;
+            dataGridViewCellStyle5.BackColor = Color.Bisque;
+            dataGridViewCellStyle5.SelectionForeColor = Color.Black;
+            dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle5;
             dataGridView1.RowTemplate.Height = 33;
-            dataGridView1.Size = new Size(634, 359);
+            dataGridView1.Size = new Size(688, 359);
             dataGridView1.TabIndex = 0;
             dataGridView1.CellEndEdit += dataGridView1_CellEndEdit;
             // 
@@ -91,7 +119,7 @@
             // 
             buttonVolver.BackColor = Color.SeaShell;
             buttonVolver.Font = new Font("Verdana", 9F, FontStyle.Italic, GraphicsUnit.Point);
-            buttonVolver.Location = new Point(204, 597);
+            buttonVolver.Location = new Point(159, 608);
             buttonVolver.Name = "buttonVolver";
             buttonVolver.Size = new Size(112, 34);
             buttonVolver.TabIndex = 12;
@@ -103,7 +131,7 @@
             // 
             buttonInscripcion.BackColor = Color.SeaShell;
             buttonInscripcion.Font = new Font("Verdana", 9F, FontStyle.Italic, GraphicsUnit.Point);
-            buttonInscripcion.Location = new Point(726, 597);
+            buttonInscripcion.Location = new Point(719, 608);
             buttonInscripcion.Name = "buttonInscripcion";
             buttonInscripcion.Size = new Size(112, 34);
             buttonInscripcion.TabIndex = 13;
