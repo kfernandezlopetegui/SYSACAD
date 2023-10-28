@@ -36,6 +36,7 @@
             button2 = new Button();
             label2 = new Label();
             button1 = new Button();
+            buttonReportes = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             groupBox1.SuspendLayout();
             SuspendLayout();
@@ -67,6 +68,7 @@
             // groupBox1
             // 
             groupBox1.BackColor = Color.Transparent;
+            groupBox1.Controls.Add(buttonReportes);
             groupBox1.Controls.Add(button3);
             groupBox1.Controls.Add(button2);
             groupBox1.Controls.Add(label2);
@@ -92,8 +94,8 @@
             // button2
             // 
             button2.BackColor = Color.LightBlue;
-            button2.Font = new Font("Verdana", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            button2.Location = new Point(66, 178);
+            button2.Font = new Font("Verdana", 9F, FontStyle.Italic, GraphicsUnit.Point);
+            button2.Location = new Point(66, 170);
             button2.Name = "button2";
             button2.Size = new Size(204, 34);
             button2.TabIndex = 2;
@@ -115,7 +117,7 @@
             // button1
             // 
             button1.BackColor = Color.LightBlue;
-            button1.Font = new Font("Verdana", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            button1.Font = new Font("Verdana", 9F, FontStyle.Italic, GraphicsUnit.Point);
             button1.Location = new Point(66, 86);
             button1.Name = "button1";
             button1.Size = new Size(204, 34);
@@ -123,6 +125,17 @@
             button1.Text = "Registrar estudiante";
             button1.UseVisualStyleBackColor = false;
             button1.Click += button1_Click;
+            // 
+            // buttonReportes
+            // 
+            buttonReportes.BackColor = Color.LightBlue;
+            buttonReportes.Font = new Font("Verdana", 9F, FontStyle.Italic, GraphicsUnit.Point);
+            buttonReportes.Location = new Point(66, 244);
+            buttonReportes.Name = "buttonReportes";
+            buttonReportes.Size = new Size(204, 34);
+            buttonReportes.TabIndex = 4;
+            buttonReportes.Text = "Generar Reportes";
+            buttonReportes.UseVisualStyleBackColor = false;
             // 
             // MenuAdministrador
             // 
@@ -156,5 +169,6 @@
         private Label label2;
         private Button button3;
         private Button button2;
+        private Button buttonReportes;
     }
 }

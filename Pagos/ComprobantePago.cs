@@ -67,7 +67,10 @@ namespace Pagos
             // Escribir el contenido en un archivo
             File.WriteAllText(rutaArchivo, contenido);
         }
-
+        /// <summary>
+        /// Genera un número de comprobante único basado en la fecha y hora actuales junto con un número aleatorio.
+        /// </summary>
+        /// <returns>Número de comprobante único.</returns>
         public static string GenerarNumeroComprobante()
         {
             

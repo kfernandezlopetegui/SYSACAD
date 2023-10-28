@@ -36,6 +36,7 @@
             pictureBox1 = new PictureBox();
             buttonVolver = new Button();
             buttonInscripcion = new Button();
+            label1 = new Label();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
@@ -62,13 +63,14 @@
             dataGridView1.RowTemplate.Height = 33;
             dataGridView1.Size = new Size(634, 359);
             dataGridView1.TabIndex = 0;
+            dataGridView1.CellEndEdit += dataGridView1_CellEndEdit;
             // 
             // labelIndicaciones
             // 
             labelIndicaciones.AutoSize = true;
             labelIndicaciones.BackColor = Color.AntiqueWhite;
             labelIndicaciones.Font = new Font("Verdana", 11F, FontStyle.Italic, GraphicsUnit.Point);
-            labelIndicaciones.Location = new Point(424, 133);
+            labelIndicaciones.Location = new Point(414, 75);
             labelIndicaciones.Name = "labelIndicaciones";
             labelIndicaciones.Size = new Size(205, 26);
             labelIndicaciones.TabIndex = 10;
@@ -109,18 +111,31 @@
             buttonInscripcion.UseVisualStyleBackColor = false;
             buttonInscripcion.Click += buttonInscripcion_Click;
             // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.BackColor = Color.AntiqueWhite;
+            label1.Font = new Font("Verdana", 8F, FontStyle.Italic, GraphicsUnit.Point);
+            label1.Location = new Point(204, 155);
+            label1.Name = "label1";
+            label1.Size = new Size(388, 18);
+            label1.TabIndex = 14;
+            label1.Text = "Ingrese el importe a pagar en cada concepto:";
+            // 
             // FormPagosPendientes
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             ClientSize = new Size(1067, 803);
+            Controls.Add(label1);
             Controls.Add(buttonInscripcion);
             Controls.Add(buttonVolver);
             Controls.Add(pictureBox1);
             Controls.Add(labelIndicaciones);
             Controls.Add(dataGridView1);
             Name = "FormPagosPendientes";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "FormPagosPendientes";
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
@@ -135,5 +150,6 @@
         private PictureBox pictureBox1;
         private Button buttonVolver;
         private Button buttonInscripcion;
+        private Label label1;
     }
 }

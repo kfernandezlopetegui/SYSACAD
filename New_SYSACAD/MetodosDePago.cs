@@ -1,4 +1,6 @@
-﻿using Pagos;
+﻿using Actualizar;
+using Login;
+using Pagos;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,6 +15,9 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace New_SYSACAD
 {
+    /// <summary>
+    /// Clase parcial que representa el formulario de métodos de pago para realizar transacciones.
+    /// </summary>
     public partial class MetodosDePago : Form
     {
         private string? numeroDeTarjeta;
@@ -24,14 +29,16 @@ namespace New_SYSACAD
         private string? nombreTitularBanco;
         private decimal montoDePago;
         private List<string> conceptoPagos;
+        private List<ConceptoPagos> conceptoPagosSeleccionados;
         private DateTime fechaPago = DateTime.Now;
         public MetodosDePago(decimal montoDePago, List<ConceptoPagos> conceptoPagos)
         {
             InitializeComponent();
             this.montoDePago = montoDePago;
             this.conceptoPagos = ConceptoPagos.ConvertirConceptosAStrings(conceptoPagos);
+            conceptoPagosSeleccionados = conceptoPagos;
         }
-
+        
         private void textBoxNumeroTarjeta_Validated(object sender, EventArgs e)
         {
             ControlForm.ValidarCampoNoVacio(textBoxNumeroTarjeta, "El numero de tarjeta");
@@ -111,6 +118,11 @@ namespace New_SYSACAD
             }
         }
 
+        /// <summary>
+        /// Valida y procesa el pago cuando se hace clic en el botón de Pagar.
+        /// </summary>
+        /// <param name="sender">Objeto que desencadenó el evento.</param>
+        /// <param name="e">Argumentos del evento.</param>
         private void buttonPagar_Click(object sender, EventArgs e)
         {
 
@@ -125,6 +137,7 @@ namespace New_SYSACAD
                     MessageBox.Show("Operación completada con éxito.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     ComprobantePago comprobantePago = new ComprobantePago(ComprobantePago.GenerarNumeroComprobante(), fechaPago, montoDePago, conceptoPagos, "Pago por tarjeta", ObtenerDescripcionTransaccionTarjeta());
                     FormComprobantePago formComprobantePago = new FormComprobantePago(comprobantePago);
+                    ActualizarPagosPendientes.RestarImportesPagosPendientes(SesionAlumno.AlumnoActual.Dni, conceptoPagosSeleccionados);
                     Menu.MostrarMenu(formComprobantePago, this, 1);
                 }
 
@@ -136,6 +149,7 @@ namespace New_SYSACAD
                     MessageBox.Show("Operación completada con éxito.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     ComprobantePago comprobantePago = new ComprobantePago(ComprobantePago.GenerarNumeroComprobante(), fechaPago, montoDePago, conceptoPagos, "Pago por datos bancarios", ObtenerDescripcionTransaccionCuenta());
                     FormComprobantePago formComprobantePago = new FormComprobantePago(comprobantePago);
+                    ActualizarPagosPendientes.RestarImportesPagosPendientes(SesionAlumno.AlumnoActual.Dni, conceptoPagosSeleccionados);
                     Menu.MostrarMenu(formComprobantePago, this, 1);
                 }
             }
@@ -146,17 +160,27 @@ namespace New_SYSACAD
 
 
         }
-
+        /// <summary>
+        /// Obtiene la descripción detallada de la transacción cuando se utiliza la opción de cuenta bancaria.
+        /// </summary>
+        /// <returns>Descripción detallada de la transacción.</returns>
         public string ObtenerDescripcionTransaccionCuenta()
         {
             return $"Número de Cuenta: {numeroDeCuenta}\nTitular: {nombreTitularBanco}\nBanco: {nombreDeBanco}";
         }
-
+        /// <summary>
+        /// Obtiene la descripción detallada de la transacción cuando se utiliza la opción de cuenta bancaria.
+        /// </summary>
+        /// <returns>Descripción detallada de la transacción.</returns>
         public string ObtenerDescripcionTransaccionTarjeta()
         {
             return $"Número de Tarjeta: {numeroDeTarjeta}\nTitular: {nombreTitularTarjeta}";
         }
-
+        /// <summary>
+        /// Maneja el evento de clic en el botón Cancelar para regresar al menú principal del estudiante.
+        /// </summary>
+        /// <param name="sender">Objeto que desencadenó el evento.</param>
+        /// <param name="e">Argumentos del evento.</param>
         private void buttonCancelar_Click(object sender, EventArgs e)
         {
             MenuEstudiante menuEstudiante = new MenuEstudiante();

@@ -52,7 +52,7 @@
             groupBox1.Controls.Add(buttonVolver);
             groupBox1.Font = new Font("Verdana", 9F, FontStyle.Italic, GraphicsUnit.Point);
             groupBox1.ForeColor = Color.RosyBrown;
-            groupBox1.Location = new Point(264, 210);
+            groupBox1.Location = new Point(272, 119);
             groupBox1.Name = "groupBox1";
             groupBox1.Size = new Size(545, 581);
             groupBox1.TabIndex = 0;

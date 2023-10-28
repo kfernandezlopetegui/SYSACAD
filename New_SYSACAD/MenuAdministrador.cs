@@ -19,7 +19,8 @@ namespace New_SYSACAD
 
         private void button3_Click(object sender, EventArgs e)
         {
-            this.Close();
+            Form1 login = new Form1();
+            Menu.MostrarMenu(login, this);
         }
 
         private void button1_Click(object sender, EventArgs e)
