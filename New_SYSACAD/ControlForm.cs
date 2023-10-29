@@ -1,4 +1,6 @@
-﻿using System;
+﻿using PdfSharp.Drawing;
+using PdfSharp.Pdf;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -52,6 +54,24 @@ namespace New_SYSACAD
             }
 
             return true;
+        }
+
+        public static void GenerarPDFConImagen(string nombreArchivoPDF, string rutaImagen)
+        {
+            // Crear un documento PDF
+            PdfDocument pdf = new PdfDocument();
+            PdfPage page = pdf.AddPage();
+            XGraphics gfx = XGraphics.FromPdfPage(page);
+
+            // Cargar la imagen desde el archivo
+            XImage image = XImage.FromFile(rutaImagen);
+
+            // Dibujar la imagen en el documento PDF
+            gfx.DrawImage(image, 0, 0);
+
+            // Guardar el documento PDF en el archivo especificado
+            pdf.Save(nombreArchivoPDF);
+            Console.WriteLine("Informe generado y guardado como PDF.");
         }
     }
 }

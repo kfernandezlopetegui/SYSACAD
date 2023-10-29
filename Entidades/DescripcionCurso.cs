@@ -22,7 +22,7 @@ namespace Entidades
 
         public static string ObtenerDias(string descripcion)
         {
-            string patronDia = @"(Lunes|Martes|Miércoles|Jueves|Viernes)";
+            string patronDia = @"(Lunes|Martes|Miércoles|Jueves|Viernes|Sábado)";
             MatchCollection matches = Regex.Matches(descripcion, patronDia);
             string diasSeparadosPorEnter = string.Join(Environment.NewLine, matches.Cast<Match>().Select(match => match.Value));
             return diasSeparadosPorEnter;

@@ -51,6 +51,28 @@ namespace Actualizar
             
         }
 
+        public static void AgregarCursosAprobados(int codigoCurso, int dniAlumno)
+        {
+            /* Agrega los pagos pendientes al alumno
+             * recibe el concepto de pago a agregar, el dni del alumno que se esta editando
+             *  
+             */
+            List<Alumno> alumnosRegistrados = ListaAlumnosActuales();
+            Alumno? alumnoEncontrado = alumnosRegistrados.FirstOrDefault(u => u.Dni == dniAlumno);
+
+            if (alumnoEncontrado != null)
+            {
+
+
+                alumnoEncontrado.CursosAprobados.Add(codigoCurso);
+                CRUD.WriteStreamJSON("alumnosRegistrados.json", alumnosRegistrados);
+            }
+
+
+        }
+
+        
+
 
     }
 }

@@ -28,7 +28,7 @@ namespace New_SYSACAD
 
 
 
-            DialogResult resultado = MessageBox.Show("¿Estás seguro de que quieres eliminar este usuario?", "Confirmar eliminación", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question);
+            DialogResult resultado = MessageBox.Show("¿Estás seguro de que quieres eliminar este curso?", "Confirmar eliminación", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question);
             if (resultado == DialogResult.Yes)
             {
 

@@ -13,15 +13,17 @@ namespace Entidades
         private string descripcion;
         private int cupoMaximo;
         private int cupoActual;
+        private string carrera;
 
         public Curso() { }
 
-        public Curso(string nombre, string codigo, string descripcion, int cupoMaximo)
+        public Curso(string nombre, string codigo, string descripcion, int cupoMaximo, string carrera)
         {
             this.nombre = nombre;
             this.codigo = codigo;
             this.descripcion = descripcion;
             this.cupoMaximo = cupoMaximo;
+            this.carrera = carrera;
             
             
         }
@@ -40,6 +42,7 @@ namespace Entidades
 
         public int CupoActual { get {  return cupoActual; } set { cupoActual= value; } }
 
+        public string Carrera { get {  return carrera; } set {  carrera = value; } }
         public void SumarInscripto()
         {
             cupoActual ++;

@@ -66,3 +66,4 @@ C:\Users\kflop\OneDrive\Escritorio\Prueba\Nueva carpeta\LecturaEscritura\obj\Deb
 C:\Users\kflop\OneDrive\Escritorio\Prueba\Nueva carpeta\LecturaEscritura\obj\Debug\net6.0\refint\LecturaEscritura.dll
 C:\Users\kflop\OneDrive\Escritorio\Prueba\Nueva carpeta\LecturaEscritura\obj\Debug\net6.0\LecturaEscritura.pdb
 C:\Users\kflop\OneDrive\Escritorio\Prueba\Nueva carpeta\LecturaEscritura\obj\Debug\net6.0\ref\LecturaEscritura.dll
+C:\Users\kflop\OneDrive\Escritorio\Prueba\Nueva carpeta\LecturaEscritura\obj\Debug\net6.0\LecturaEscritura.csproj.ResolveComReference.cache

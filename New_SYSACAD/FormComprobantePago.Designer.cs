@@ -43,6 +43,7 @@
             textConceptos = new TextBox();
             buttonVolver = new Button();
             pictureBox1 = new PictureBox();
+            buttonDescargarPDF = new Button();
             groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
@@ -191,12 +192,23 @@
             pictureBox1.TabIndex = 4;
             pictureBox1.TabStop = false;
             // 
+            // buttonDescargarPDF
+            // 
+            buttonDescargarPDF.Location = new Point(642, 36);
+            buttonDescargarPDF.Name = "buttonDescargarPDF";
+            buttonDescargarPDF.Size = new Size(140, 41);
+            buttonDescargarPDF.TabIndex = 5;
+            buttonDescargarPDF.Text = "Descargar PDF";
+            buttonDescargarPDF.UseVisualStyleBackColor = true;
+            buttonDescargarPDF.Click += buttonDescargarPDF_Click;
+            // 
             // FormComprobantePago
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             ClientSize = new Size(1067, 803);
+            Controls.Add(buttonDescargarPDF);
             Controls.Add(pictureBox1);
             Controls.Add(buttonVolver);
             Controls.Add(groupBox1);
@@ -225,5 +237,6 @@
         private Label labelMetodoPago;
         private Button buttonVolver;
         private PictureBox pictureBox1;
+        private Button buttonDescargarPDF;
     }
 }

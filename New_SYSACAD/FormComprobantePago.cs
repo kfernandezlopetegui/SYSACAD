@@ -4,6 +4,8 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Imaging;
+using System.Drawing.Printing;
 using System.Linq;
 using System.Text;
 using System.Threading;
@@ -30,6 +32,12 @@ namespace New_SYSACAD
         {
             MenuEstudiante menuEstudiante = new MenuEstudiante();
             Menu.MostrarMenu(menuEstudiante, this, 1);
+        }
+
+        private void buttonDescargarPDF_Click(object sender, EventArgs e)
+        {
+
+
         }
     }
 }

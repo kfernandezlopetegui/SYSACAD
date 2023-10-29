@@ -24,65 +24,54 @@ namespace New_SYSACAD
         private bool controlTocoFocoCodigo = false;
         private bool controlTocoFocoDescripcion = false;
         private bool controlTocoFocoCupo = false;
+        private bool controlTocoFocoCarrera = false;
 
-        private string textoPorDefectoNombre = "Ingrese el nombre del Curso";
-        private string textoPorDefectoCodigo = "Ingrese el codigo del curso";
-        private string textoPorDefectoDescripcion = "Ingrese la descripcion del curso";
-        private string textoPorDefectoCupo = "Ingrese cupo maximo";
         ToolTip toolTip = new ToolTip();
+        List<string> opcionesDias = new List<string> { "Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado" };
+        List<string> opcionesTurno = new List<string> { "08:30-12:30", "08:30-10:30", "10:30-12:30", "14:00-18:00",
+            "14:00-16:00", "16:00-18:00", "18:30-22:30", "18:30-20:30", "20:30-22:30" };
+        List<string> opcionesCarrera = new List<string> { "TUP", "TUSI" };
+
 
 
         public AgregarCurso()
         {
             InitializeComponent();
             buttonVolver.CausesValidation = false;
-
-        }
-
-        private void textNombre_TextChanged(object sender, EventArgs e)
-        {
-
-            textNombre.ForeColor = Color.Black;
+            checkedListBoxDiasCursada.DataSource = opcionesDias;
+            checkedListBoxHorario.DataSource = opcionesTurno;
+            comboBoxCarrera.DataSource = opcionesCarrera;
         }
 
         private void textNombre_Enter(object sender, EventArgs e)
         {
-            textNombre.Text = string.Empty;
+
             controlTocoFocoNombre = true;
         }
 
-        private void textCodigo_TextChanged(object sender, EventArgs e)
-        {
-            textCodigo.ForeColor = Color.Black;
 
-        }
 
         private void textCodigo_Enter(object sender, EventArgs e)
         {
-            textCodigo.Text = string.Empty;
+
             controlTocoFocoCodigo = true;
         }
 
         private void textDescripcion_TextChanged(object sender, EventArgs e)
         {
-            toolTip.SetToolTip(textDescripcion, "Ingresar el dia de cursada, horario y aula en caso de que corresponda. DIA HH:mm-HH:mm");
-            textDescripcion.ForeColor = Color.Black;
+            toolTip.SetToolTip(textDescripcion, "Ingresar el numero del aula");
+
         }
 
         private void textDescripcion_Enter(object sender, EventArgs e)
         {
-            textDescripcion.Text = string.Empty;
-            controlTocoFocoDescripcion = true;
-        }
 
-        private void textCupo_TextChanged(object sender, EventArgs e)
-        {
-            textCupo.ForeColor = Color.Black;
+            controlTocoFocoDescripcion = true;
         }
 
         private void textCupo_Enter(object sender, EventArgs e)
         {
-            textCupo.Text = string.Empty;
+
             controlTocoFocoCupo = true;
         }
 
@@ -91,7 +80,7 @@ namespace New_SYSACAD
             string textoCampo = "Codigo de curso";
 
             ControlForm.ValidarCampoNoVacio(textCodigo, textoCampo);
-            ControlForm.ValidarCampoNoPorDefecto(textCodigo, textoCampo, textoPorDefectoCodigo);
+
 
             if (ValidarCurso.VerificarSiExisteCurso(textCodigo.Text) != null)
             {
@@ -106,7 +95,7 @@ namespace New_SYSACAD
             string textoCampo = "Cantidad Cupo";
 
             ControlForm.ValidarCampoNoVacio(textCupo, textoCampo);
-            ControlForm.ValidarCampoNoPorDefecto(textCupo, textoCampo, textoPorDefectoCupo);
+
 
             if (ValidarTipo.ValidarEsDigito(textCupo.Text))
             {
@@ -121,7 +110,7 @@ namespace New_SYSACAD
             string textoCampo = "Nombre Curso";
 
             ControlForm.ValidarCampoNoVacio(textNombre, textoCampo);
-            ControlForm.ValidarCampoNoPorDefecto(textNombre, textoCampo, textoPorDefectoNombre);
+
         }
 
         private void textDescripcion_Validated(object sender, EventArgs e)
@@ -129,44 +118,28 @@ namespace New_SYSACAD
             string textoCampo = "Descripcion de curso";
 
             ControlForm.ValidarCampoNoVacio(textDescripcion, textoCampo);
-            ControlForm.ValidarCampoNoPorDefecto(textDescripcion, textoCampo, textoPorDefectoDescripcion);
+
         }
 
-        private void RestablecerColorTexto()
-        {
-            textCupo.ForeColor = SystemColors.GrayText;
-            textNombre.ForeColor = SystemColors.GrayText;
-            textDescripcion.ForeColor = SystemColors.GrayText;
-            textCodigo.ForeColor = SystemColors.GrayText;
-        }
-        private void LimpiarCampos()
-        {
-            textNombre.Text = textoPorDefectoNombre;
-            textCodigo.Text = textoPorDefectoCodigo;
-            textDescripcion.Text = textoPorDefectoDescripcion;
-            textCupo.Text = textoPorDefectoCupo;
-        }
+
         private void RestablecerFormulario()
         {
 
-            controlTocoFocoNombre = false;
-            controlTocoFocoCodigo = false;
-            controlTocoFocoDescripcion = false;
-            controlTocoFocoCupo = false;
-            LimpiarCampos();
-            RestablecerColorTexto();
+            AgregarCurso nuevoAgregarCurso = new AgregarCurso();
+            Menu.MostrarMenu(nuevoAgregarCurso, this, 1);
 
         }
         private void buttonAgregar_Click(object sender, EventArgs e)
         {
-            if (controlTocoFocoCodigo && controlTocoFocoCupo && controlTocoFocoDescripcion && controlTocoFocoNombre)
+            if (controlTocoFocoCodigo && controlTocoFocoCupo && controlTocoFocoDescripcion && controlTocoFocoNombre && controlTocoFocoCarrera)
             {
                 string nombre = textNombre.Text;
                 string codigo = textCodigo.Text;
-                string descripcion = textDescripcion.Text;
+                string descripcion = ObtenerDescripcion();
                 int cupo = int.Parse(textCupo.Text);
+                string carrera = comboBoxCarrera.SelectedItem.ToString(); ;
 
-                Curso nuevoCurso = new Curso(nombre, codigo, descripcion, cupo);
+                Curso nuevoCurso = new Curso(nombre, codigo, descripcion, cupo, carrera);
                 ActualizarCurso.AgregarCurso("cursosRegistrados.json", nuevoCurso);
                 DialogResult resultado = MessageBox.Show("¡Registro exitoso! El curso se ha registrado correctamente.",
                                              "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -187,6 +160,44 @@ namespace New_SYSACAD
 
             ListaDeCursos listaCursos = new ListaDeCursos();
             Menu.MostrarMenu(listaCursos, this, 1);
+        }
+
+        private string ObtenerDescripcion()
+        {
+
+            string diasSeleccionados = "";
+            string horariosSeleccionados = "";
+            string aulaSeleccionada = "Aula: " + textDescripcion.Text;
+
+            for (int i = 0; i < checkedListBoxDiasCursada.CheckedItems.Count; i++)
+            {
+                diasSeleccionados += checkedListBoxDiasCursada.CheckedItems[i].ToString();
+                if (i < checkedListBoxDiasCursada.CheckedItems.Count - 1)
+                {
+                    diasSeleccionados += " y ";
+                }
+            }
+
+
+            for (int i = 0; i < checkedListBoxHorario.CheckedItems.Count; i++)
+            {
+                horariosSeleccionados += checkedListBoxHorario.CheckedItems[i].ToString();
+                if (i < checkedListBoxHorario.CheckedItems.Count - 1)
+                {
+                    horariosSeleccionados += ",";
+                }
+            }
+
+
+            string descripcionObtenida = diasSeleccionados + " " + horariosSeleccionados + " " + aulaSeleccionada;
+
+
+            return descripcionObtenida;
+        }
+
+        private void comboBoxCarrera_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            controlTocoFocoCarrera = true;
         }
     }
 }

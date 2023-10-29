@@ -32,14 +32,14 @@
             pictureBox1 = new PictureBox();
             label1 = new Label();
             groupBox1 = new GroupBox();
+            button6 = new Button();
+            button5 = new Button();
+            button4 = new Button();
             buttonReportes = new Button();
             button3 = new Button();
             button2 = new Button();
             label2 = new Label();
             button1 = new Button();
-            button4 = new Button();
-            button5 = new Button();
-            button6 = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             groupBox1.SuspendLayout();
             SuspendLayout();
@@ -62,7 +62,7 @@
             label1.BackColor = Color.Transparent;
             label1.Font = new Font("Verdana", 8F, FontStyle.Italic, GraphicsUnit.Point);
             label1.ForeColor = SystemColors.ControlDarkDark;
-            label1.Location = new Point(12, 46);
+            label1.Location = new Point(401, 75);
             label1.Name = "label1";
             label1.Size = new Size(227, 18);
             label1.TabIndex = 2;
@@ -79,19 +79,52 @@
             groupBox1.Controls.Add(button2);
             groupBox1.Controls.Add(label2);
             groupBox1.Controls.Add(button1);
-            groupBox1.Location = new Point(335, 163);
+            groupBox1.Location = new Point(292, 106);
             groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(404, 606);
+            groupBox1.Size = new Size(489, 654);
             groupBox1.TabIndex = 3;
             groupBox1.TabStop = false;
+            // 
+            // button6
+            // 
+            button6.BackColor = Color.Snow;
+            button6.Font = new Font("Verdana", 9F, FontStyle.Italic, GraphicsUnit.Point);
+            button6.Location = new Point(109, 473);
+            button6.Name = "button6";
+            button6.Size = new Size(259, 53);
+            button6.TabIndex = 7;
+            button6.Text = "Gestionar Perfiles de Profesores";
+            button6.UseVisualStyleBackColor = false;
+            // 
+            // button5
+            // 
+            button5.BackColor = Color.Snow;
+            button5.Font = new Font("Verdana", 9F, FontStyle.Italic, GraphicsUnit.Point);
+            button5.Location = new Point(109, 391);
+            button5.Name = "button5";
+            button5.Size = new Size(259, 52);
+            button5.TabIndex = 6;
+            button5.Text = "Manejar Listas de Espera";
+            button5.UseVisualStyleBackColor = false;
+            // 
+            // button4
+            // 
+            button4.BackColor = Color.Snow;
+            button4.Font = new Font("Verdana", 9F, FontStyle.Italic, GraphicsUnit.Point);
+            button4.Location = new Point(109, 306);
+            button4.Name = "button4";
+            button4.Size = new Size(259, 54);
+            button4.TabIndex = 5;
+            button4.Text = "Gestionar Requisitos Académicos";
+            button4.UseVisualStyleBackColor = false;
             // 
             // buttonReportes
             // 
             buttonReportes.BackColor = Color.Snow;
             buttonReportes.Font = new Font("Verdana", 9F, FontStyle.Italic, GraphicsUnit.Point);
-            buttonReportes.Location = new Point(98, 226);
+            buttonReportes.Location = new Point(109, 222);
             buttonReportes.Name = "buttonReportes";
-            buttonReportes.Size = new Size(204, 53);
+            buttonReportes.Size = new Size(259, 53);
             buttonReportes.TabIndex = 4;
             buttonReportes.Text = "Generar Reportes";
             buttonReportes.UseVisualStyleBackColor = false;
@@ -101,7 +134,7 @@
             // 
             button3.BackColor = Color.DarkCyan;
             button3.Font = new Font("Verdana", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            button3.Location = new Point(98, 551);
+            button3.Location = new Point(148, 565);
             button3.Name = "button3";
             button3.Size = new Size(204, 34);
             button3.TabIndex = 3;
@@ -113,9 +146,9 @@
             // 
             button2.BackColor = Color.Snow;
             button2.Font = new Font("Verdana", 9F, FontStyle.Italic, GraphicsUnit.Point);
-            button2.Location = new Point(98, 151);
+            button2.Location = new Point(109, 150);
             button2.Name = "button2";
-            button2.Size = new Size(204, 51);
+            button2.Size = new Size(259, 51);
             button2.TabIndex = 2;
             button2.Text = "Gestionar cursos";
             button2.UseVisualStyleBackColor = false;
@@ -126,7 +159,7 @@
             label2.AutoSize = true;
             label2.BackColor = Color.Transparent;
             label2.Font = new Font("Verdana", 9F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
-            label2.Location = new Point(171, 27);
+            label2.Location = new Point(213, 27);
             label2.Name = "label2";
             label2.Size = new Size(69, 22);
             label2.TabIndex = 1;
@@ -136,46 +169,13 @@
             // 
             button1.BackColor = Color.Snow;
             button1.Font = new Font("Verdana", 9F, FontStyle.Italic, GraphicsUnit.Point);
-            button1.Location = new Point(98, 72);
+            button1.Location = new Point(109, 77);
             button1.Name = "button1";
-            button1.Size = new Size(204, 52);
+            button1.Size = new Size(259, 52);
             button1.TabIndex = 0;
             button1.Text = "Registrar Estudiante";
             button1.UseVisualStyleBackColor = false;
             button1.Click += button1_Click;
-            // 
-            // button4
-            // 
-            button4.BackColor = Color.Snow;
-            button4.Font = new Font("Verdana", 9F, FontStyle.Italic, GraphicsUnit.Point);
-            button4.Location = new Point(98, 306);
-            button4.Name = "button4";
-            button4.Size = new Size(204, 54);
-            button4.TabIndex = 5;
-            button4.Text = "Gestionar Requisitos Académicos";
-            button4.UseVisualStyleBackColor = false;
-            // 
-            // button5
-            // 
-            button5.BackColor = Color.Snow;
-            button5.Font = new Font("Verdana", 9F, FontStyle.Italic, GraphicsUnit.Point);
-            button5.Location = new Point(98, 389);
-            button5.Name = "button5";
-            button5.Size = new Size(204, 52);
-            button5.TabIndex = 6;
-            button5.Text = "Manejar Listas de Espera";
-            button5.UseVisualStyleBackColor = false;
-            // 
-            // button6
-            // 
-            button6.BackColor = Color.Snow;
-            button6.Font = new Font("Verdana", 9F, FontStyle.Italic, GraphicsUnit.Point);
-            button6.Location = new Point(98, 472);
-            button6.Name = "button6";
-            button6.Size = new Size(204, 53);
-            button6.TabIndex = 7;
-            button6.Text = "Gestionar Perfiles de Profesores";
-            button6.UseVisualStyleBackColor = false;
             // 
             // MenuAdministrador
             // 

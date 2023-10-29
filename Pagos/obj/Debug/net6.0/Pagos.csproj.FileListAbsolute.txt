@@ -42,3 +42,4 @@ C:\Users\kflop\OneDrive\Escritorio\Prueba\Nueva carpeta\Pagos\obj\Debug\net6.0\P
 C:\Users\kflop\OneDrive\Escritorio\Prueba\Nueva carpeta\Pagos\obj\Debug\net6.0\refint\Pagos.dll
 C:\Users\kflop\OneDrive\Escritorio\Prueba\Nueva carpeta\Pagos\obj\Debug\net6.0\Pagos.pdb
 C:\Users\kflop\OneDrive\Escritorio\Prueba\Nueva carpeta\Pagos\obj\Debug\net6.0\ref\Pagos.dll
+C:\Users\kflop\OneDrive\Escritorio\Prueba\Nueva carpeta\Pagos\obj\Debug\net6.0\Pagos.csproj.AssemblyReference.cache
