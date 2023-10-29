@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "4gNeHggvhMgpbPvbtRs6dmKu442nqu5ZnA0Bl2EuVjWUFcX3i7PFDDCdOc5x6LIGvT+pFboUPtx10v8pG4OcPA==",
+  "dgSpecHash": "RwNhZe/RpTN7btKfg1c5XUaG9P7zpmNYQVcHYz4stTNogohxb8GbAMvZKJgiGBfgl26EM+sZ9KNMY16DDoqNvg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\kflop\\OneDrive\\Escritorio\\Prueba\\Nueva carpeta\\Login\\Login.csproj",
+  "projectFilePath": "C:\\Users\\kflop\\Source\\Repos\\SYSACAD\\Login\\Login.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\kflop\\.nuget\\packages\\bcrypt.net-next\\4.0.3\\bcrypt.net-next.4.0.3.nupkg.sha512",
     "C:\\Users\\kflop\\.nuget\\packages\\pdfsharp\\1.50.5147\\pdfsharp.1.50.5147.nupkg.sha512"

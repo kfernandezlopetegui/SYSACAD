@@ -25,12 +25,14 @@ namespace New_SYSACAD
         private bool controlTocoFocoDescripcion = false;
         private bool controlTocoFocoCupo = false;
         private bool controlTocoFocoCarrera = false;
+        private bool controlTocoFocoHorario = false;
+        private bool controlTocoFocoCursada = false;
 
         ToolTip toolTip = new ToolTip();
         List<string> opcionesDias = new List<string> { "Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado" };
         List<string> opcionesTurno = new List<string> { "08:30-12:30", "08:30-10:30", "10:30-12:30", "14:00-18:00",
             "14:00-16:00", "16:00-18:00", "18:30-22:30", "18:30-20:30", "20:30-22:30" };
-        List<string> opcionesCarrera = new List<string> { "TUP", "TUSI" };
+        List<string> opcionesCarrera = new List<string> { "Sin seleccionar", "TUP", "TUSI" };
 
 
 
@@ -131,7 +133,7 @@ namespace New_SYSACAD
         }
         private void buttonAgregar_Click(object sender, EventArgs e)
         {
-            if (controlTocoFocoCodigo && controlTocoFocoCupo && controlTocoFocoDescripcion && controlTocoFocoNombre && controlTocoFocoCarrera)
+            if (controlTocoFocoCodigo && controlTocoFocoCupo && controlTocoFocoDescripcion && controlTocoFocoNombre && controlTocoFocoCarrera && controlTocoFocoCursada && controlTocoFocoHorario)
             {
                 string nombre = textNombre.Text;
                 string codigo = textCodigo.Text;
@@ -195,9 +197,32 @@ namespace New_SYSACAD
             return descripcionObtenida;
         }
 
-        private void comboBoxCarrera_SelectedIndexChanged(object sender, EventArgs e)
+
+
+        private void comboBoxCarrera_Enter(object sender, EventArgs e)
         {
             controlTocoFocoCarrera = true;
+
+
+        }
+
+        private void checkedListBoxHorario_Enter(object sender, EventArgs e)
+        {
+            controlTocoFocoHorario = true;
+        }
+
+        private void checkedListBoxDiasCursada_Enter(object sender, EventArgs e)
+        {
+            controlTocoFocoCursada = true;
+
+        }
+
+        private void comboBoxCarrera_Validated(object sender, EventArgs e)
+        {
+            if (comboBoxCarrera.SelectedItem.ToString() == "Sin seleccionar")
+            {
+                MessageBox.Show("El campo carrera no puede estar vacío", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }

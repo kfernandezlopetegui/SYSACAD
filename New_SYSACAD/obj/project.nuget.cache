@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "llRtR0GD7HxS3P/5YJ1p0W45njuzFOndikZpX/HNvn5X0Y7Ul8GCR+UldfYM/FlntcYIaeiE84uFy7VD5e4aBg==",
+  "dgSpecHash": "TI9/1t0TIz1cD7dVoVN4X2UBuaPIOkpAfstWdstbNw54DmRBurxtaFArl4A/NW6Xsdhl7nlG8SWG034/XvmeVw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\kflop\\OneDrive\\Escritorio\\Prueba\\Nueva carpeta\\New_SYSACAD\\New_SYSACAD.csproj",
+  "projectFilePath": "C:\\Users\\kflop\\Source\\Repos\\SYSACAD\\New_SYSACAD\\New_SYSACAD.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\kflop\\.nuget\\packages\\bcrypt.net-next\\4.0.3\\bcrypt.net-next.4.0.3.nupkg.sha512",
     "C:\\Users\\kflop\\.nuget\\packages\\bouncycastle\\1.8.9\\bouncycastle.1.8.9.nupkg.sha512",

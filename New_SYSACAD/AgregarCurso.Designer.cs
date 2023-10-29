@@ -72,9 +72,9 @@
             groupBox1.Controls.Add(buttonVolver);
             groupBox1.Font = new Font("Verdana", 9F, FontStyle.Italic, GraphicsUnit.Point);
             groupBox1.ForeColor = Color.RosyBrown;
-            groupBox1.Location = new Point(283, 54);
+            groupBox1.Location = new Point(107, 145);
             groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(537, 744);
+            groupBox1.Size = new Size(815, 564);
             groupBox1.TabIndex = 0;
             groupBox1.TabStop = false;
             groupBox1.Text = "Agregar Curso";
@@ -82,7 +82,7 @@
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(85, 413);
+            label4.Location = new Point(10, 262);
             label4.Name = "label4";
             label4.Size = new Size(207, 22);
             label4.TabIndex = 21;
@@ -92,18 +92,19 @@
             // 
             comboBoxCarrera.BackColor = Color.Snow;
             comboBoxCarrera.FormattingEnabled = true;
-            comboBoxCarrera.Location = new Point(85, 435);
+            comboBoxCarrera.Location = new Point(6, 288);
             comboBoxCarrera.Name = "comboBoxCarrera";
-            comboBoxCarrera.Size = new Size(366, 30);
+            comboBoxCarrera.Size = new Size(370, 30);
             comboBoxCarrera.TabIndex = 2;
             comboBoxCarrera.Tag = "";
-            comboBoxCarrera.SelectedIndexChanged += comboBoxCarrera_SelectedIndexChanged;
+            comboBoxCarrera.Enter += comboBoxCarrera_Enter;
+            comboBoxCarrera.Validated += comboBoxCarrera_Validated;
             // 
             // textBox2
             // 
             textBox2.BackColor = Color.Snow;
             textBox2.ForeColor = SystemColors.Desktop;
-            textBox2.Location = new Point(81, 638);
+            textBox2.Location = new Point(403, 177);
             textBox2.Name = "textBox2";
             textBox2.PlaceholderText = "Ingrese promedio minimo";
             textBox2.Size = new Size(374, 29);
@@ -114,7 +115,7 @@
             // 
             textBoxCreditosObtenidos.BackColor = Color.Snow;
             textBoxCreditosObtenidos.ForeColor = SystemColors.Desktop;
-            textBoxCreditosObtenidos.Location = new Point(77, 592);
+            textBoxCreditosObtenidos.Location = new Point(6, 177);
             textBoxCreditosObtenidos.Name = "textBoxCreditosObtenidos";
             textBoxCreditosObtenidos.PlaceholderText = "Ingrese Créditos minimos";
             textBoxCreditosObtenidos.Size = new Size(374, 29);
@@ -124,17 +125,17 @@
             // label3
             // 
             label3.ForeColor = Color.RosyBrown;
-            label3.Location = new Point(85, 471);
+            label3.Location = new Point(6, 330);
             label3.Name = "label3";
-            label3.Size = new Size(370, 47);
+            label3.Size = new Size(370, 26);
             label3.TabIndex = 18;
-            label3.Text = "Cursos que se deben haber completado antes de inscribirse:";
+            label3.Text = "Cursos correlativos";
             // 
             // checkedListBoxPreCursos
             // 
             checkedListBoxPreCursos.BackColor = Color.Snow;
             checkedListBoxPreCursos.FormattingEnabled = true;
-            checkedListBoxPreCursos.Location = new Point(81, 521);
+            checkedListBoxPreCursos.Location = new Point(10, 359);
             checkedListBoxPreCursos.Name = "checkedListBoxPreCursos";
             checkedListBoxPreCursos.Size = new Size(370, 56);
             checkedListBoxPreCursos.TabIndex = 17;
@@ -142,7 +143,7 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(81, 219);
+            label2.Location = new Point(424, 237);
             label2.Name = "label2";
             label2.Size = new Size(224, 22);
             label2.TabIndex = 16;
@@ -151,7 +152,7 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(81, 135);
+            label1.Location = new Point(424, 330);
             label1.Name = "label1";
             label1.Size = new Size(290, 22);
             label1.TabIndex = 15;
@@ -161,27 +162,27 @@
             // 
             checkedListBoxHorario.BackColor = Color.Snow;
             checkedListBoxHorario.FormattingEnabled = true;
-            checkedListBoxHorario.Location = new Point(81, 244);
+            checkedListBoxHorario.Location = new Point(424, 262);
             checkedListBoxHorario.Name = "checkedListBoxHorario";
-            checkedListBoxHorario.SelectionMode = SelectionMode.None;
             checkedListBoxHorario.Size = new Size(370, 56);
             checkedListBoxHorario.TabIndex = 14;
+            checkedListBoxHorario.Enter += checkedListBoxHorario_Enter;
             // 
             // checkedListBoxDiasCursada
             // 
             checkedListBoxDiasCursada.BackColor = Color.Snow;
             checkedListBoxDiasCursada.FormattingEnabled = true;
-            checkedListBoxDiasCursada.Location = new Point(81, 160);
+            checkedListBoxDiasCursada.Location = new Point(424, 359);
             checkedListBoxDiasCursada.Name = "checkedListBoxDiasCursada";
-            checkedListBoxDiasCursada.SelectionMode = SelectionMode.None;
             checkedListBoxDiasCursada.Size = new Size(370, 56);
             checkedListBoxDiasCursada.TabIndex = 13;
+            checkedListBoxDiasCursada.Enter += checkedListBoxDiasCursada_Enter;
             // 
             // textDescripcion
             // 
             textDescripcion.BackColor = Color.Snow;
             textDescripcion.ForeColor = SystemColors.Desktop;
-            textDescripcion.Location = new Point(81, 324);
+            textDescripcion.Location = new Point(6, 114);
             textDescripcion.Multiline = true;
             textDescripcion.Name = "textDescripcion";
             textDescripcion.PlaceholderText = "Ingrese el Aula";
@@ -196,7 +197,7 @@
             // 
             textCupo.BackColor = Color.Snow;
             textCupo.ForeColor = SystemColors.Desktop;
-            textCupo.Location = new Point(81, 381);
+            textCupo.Location = new Point(403, 115);
             textCupo.Name = "textCupo";
             textCupo.PlaceholderText = "Ingrese cupo maximo";
             textCupo.Size = new Size(374, 29);
@@ -209,7 +210,7 @@
             // 
             textCodigo.BackColor = Color.Snow;
             textCodigo.ForeColor = SystemColors.Desktop;
-            textCodigo.Location = new Point(77, 103);
+            textCodigo.Location = new Point(403, 44);
             textCodigo.Name = "textCodigo";
             textCodigo.PlaceholderText = "Ingrese el codigo del curso";
             textCodigo.Size = new Size(370, 29);
@@ -222,7 +223,7 @@
             // 
             textNombre.BackColor = Color.Snow;
             textNombre.ForeColor = SystemColors.Desktop;
-            textNombre.Location = new Point(81, 44);
+            textNombre.Location = new Point(6, 44);
             textNombre.Name = "textNombre";
             textNombre.PlaceholderText = "Ingrese el nombre del Curso";
             textNombre.Size = new Size(370, 29);
@@ -235,7 +236,7 @@
             // 
             buttonAgregar.BackColor = Color.SeaShell;
             buttonAgregar.ForeColor = Color.IndianRed;
-            buttonAgregar.Location = new Point(339, 703);
+            buttonAgregar.Location = new Point(615, 493);
             buttonAgregar.Name = "buttonAgregar";
             buttonAgregar.Size = new Size(112, 34);
             buttonAgregar.TabIndex = 1;
@@ -247,7 +248,7 @@
             // 
             buttonVolver.BackColor = Color.SeaShell;
             buttonVolver.ForeColor = Color.IndianRed;
-            buttonVolver.Location = new Point(81, 703);
+            buttonVolver.Location = new Point(47, 493);
             buttonVolver.Name = "buttonVolver";
             buttonVolver.Size = new Size(112, 34);
             buttonVolver.TabIndex = 0;
@@ -257,12 +258,12 @@
             // 
             // pictureBox1
             // 
-            pictureBox1.BackgroundImage = (Image)resources.GetObject("pictureBox1.BackgroundImage");
+            pictureBox1.BackColor = Color.Transparent;
             pictureBox1.BackgroundImageLayout = ImageLayout.Stretch;
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(885, 12);
+            pictureBox1.Location = new Point(893, 12);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(158, 91);
+            pictureBox1.Size = new Size(150, 94);
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox1.TabIndex = 1;
             pictureBox1.TabStop = false;

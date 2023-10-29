@@ -45,12 +45,12 @@
             // 
             // pictureBox1
             // 
-            pictureBox1.BackgroundImage = (Image)resources.GetObject("pictureBox1.BackgroundImage");
+            pictureBox1.BackColor = Color.Transparent;
             pictureBox1.BackgroundImageLayout = ImageLayout.Stretch;
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(370, 53);
+            pictureBox1.Location = new Point(358, 12);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(317, 128);
+            pictureBox1.Size = new Size(329, 144);
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox1.TabIndex = 0;
             pictureBox1.TabStop = false;
@@ -61,7 +61,7 @@
             label1.BackColor = Color.SeaShell;
             label1.Font = new Font("Verdana", 8F, FontStyle.Italic, GraphicsUnit.Point);
             label1.ForeColor = SystemColors.ControlDarkDark;
-            label1.Location = new Point(433, 219);
+            label1.Location = new Point(424, 172);
             label1.Name = "label1";
             label1.Size = new Size(204, 18);
             label1.TabIndex = 1;
@@ -114,7 +114,7 @@
             groupBox1.Controls.Add(label2);
             groupBox1.Controls.Add(textBox2);
             groupBox1.Controls.Add(textBox1);
-            groupBox1.Location = new Point(370, 281);
+            groupBox1.Location = new Point(370, 267);
             groupBox1.Name = "groupBox1";
             groupBox1.Size = new Size(317, 331);
             groupBox1.TabIndex = 5;
@@ -147,7 +147,7 @@
             // 
             buttonHarcodearAlumno.BackColor = Color.AntiqueWhite;
             buttonHarcodearAlumno.Font = new Font("Verdana", 8F, FontStyle.Italic, GraphicsUnit.Point);
-            buttonHarcodearAlumno.Location = new Point(896, 421);
+            buttonHarcodearAlumno.Location = new Point(896, 407);
             buttonHarcodearAlumno.Name = "buttonHarcodearAlumno";
             buttonHarcodearAlumno.Size = new Size(125, 59);
             buttonHarcodearAlumno.TabIndex = 6;
@@ -159,7 +159,7 @@
             // 
             buttonHarcodearAdmin.BackColor = Color.AntiqueWhite;
             buttonHarcodearAdmin.Font = new Font("Verdana", 8F, FontStyle.Italic, GraphicsUnit.Point);
-            buttonHarcodearAdmin.Location = new Point(896, 302);
+            buttonHarcodearAdmin.Location = new Point(896, 288);
             buttonHarcodearAdmin.Name = "buttonHarcodearAdmin";
             buttonHarcodearAdmin.Size = new Size(125, 59);
             buttonHarcodearAdmin.TabIndex = 7;

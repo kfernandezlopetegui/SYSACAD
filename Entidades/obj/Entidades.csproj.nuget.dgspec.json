@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\kflop\\OneDrive\\Escritorio\\Prueba\\Nueva carpeta\\Entidades\\Entidades.csproj": {}
+    "C:\\Users\\kflop\\Source\\Repos\\SYSACAD\\Entidades\\Entidades.csproj": {}
   },
   "projects": {
-    "C:\\Users\\kflop\\OneDrive\\Escritorio\\Prueba\\Nueva carpeta\\Entidades\\Entidades.csproj": {
+    "C:\\Users\\kflop\\Source\\Repos\\SYSACAD\\Entidades\\Entidades.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\kflop\\OneDrive\\Escritorio\\Prueba\\Nueva carpeta\\Entidades\\Entidades.csproj",
+        "projectUniqueName": "C:\\Users\\kflop\\Source\\Repos\\SYSACAD\\Entidades\\Entidades.csproj",
         "projectName": "Entidades",
-        "projectPath": "C:\\Users\\kflop\\OneDrive\\Escritorio\\Prueba\\Nueva carpeta\\Entidades\\Entidades.csproj",
+        "projectPath": "C:\\Users\\kflop\\Source\\Repos\\SYSACAD\\Entidades\\Entidades.csproj",
         "packagesPath": "C:\\Users\\kflop\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\kflop\\OneDrive\\Escritorio\\Prueba\\Nueva carpeta\\Entidades\\obj\\",
+        "outputPath": "C:\\Users\\kflop\\Source\\Repos\\SYSACAD\\Entidades\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\kflop\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -28,8 +28,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\kflop\\OneDrive\\Escritorio\\Prueba\\Nueva carpeta\\Pagos\\Pagos.csproj": {
-                "projectPath": "C:\\Users\\kflop\\OneDrive\\Escritorio\\Prueba\\Nueva carpeta\\Pagos\\Pagos.csproj"
+              "C:\\Users\\kflop\\Source\\Repos\\SYSACAD\\Pagos\\Pagos.csproj": {
+                "projectPath": "C:\\Users\\kflop\\Source\\Repos\\SYSACAD\\Pagos\\Pagos.csproj"
               }
             }
           }
@@ -69,14 +69,14 @@
         }
       }
     },
-    "C:\\Users\\kflop\\OneDrive\\Escritorio\\Prueba\\Nueva carpeta\\Pagos\\Pagos.csproj": {
+    "C:\\Users\\kflop\\Source\\Repos\\SYSACAD\\Pagos\\Pagos.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\kflop\\OneDrive\\Escritorio\\Prueba\\Nueva carpeta\\Pagos\\Pagos.csproj",
+        "projectUniqueName": "C:\\Users\\kflop\\Source\\Repos\\SYSACAD\\Pagos\\Pagos.csproj",
         "projectName": "Pagos",
-        "projectPath": "C:\\Users\\kflop\\OneDrive\\Escritorio\\Prueba\\Nueva carpeta\\Pagos\\Pagos.csproj",
+        "projectPath": "C:\\Users\\kflop\\Source\\Repos\\SYSACAD\\Pagos\\Pagos.csproj",
         "packagesPath": "C:\\Users\\kflop\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\kflop\\OneDrive\\Escritorio\\Prueba\\Nueva carpeta\\Pagos\\obj\\",
+        "outputPath": "C:\\Users\\kflop\\Source\\Repos\\SYSACAD\\Pagos\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\kflop\\AppData\\Roaming\\NuGet\\NuGet.Config",
