@@ -51,7 +51,7 @@ namespace Actualizar
             
         }
 
-        public static void AgregarCursosAprobados(int codigoCurso, int dniAlumno)
+        public static void AgregarCursosAprobados(string codigoCurso, int dniAlumno)
         {
             /* Agrega los pagos pendientes al alumno
              * recibe el concepto de pago a agregar, el dni del alumno que se esta editando

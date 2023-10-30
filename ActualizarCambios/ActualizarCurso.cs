@@ -102,5 +102,23 @@ namespace Actualizar
             return cursosDelAlumno.ToList();
         }
 
+        public static string ObtenerNombreCursoPorCodigo(List<string> listaCodigosCurso, string file)
+        {
+            List<Curso> listaCursos = ListaCursosActuales(file);
+            List<string> nombresCursosEncontrados = new List<string>();
+
+            foreach (var codigoCurso in listaCodigosCurso)
+            {
+                var cursoEncontrado = listaCursos.FirstOrDefault(curso => curso.Codigo == codigoCurso);
+                if (cursoEncontrado != null)
+                {
+                    nombresCursosEncontrados.Add(cursoEncontrado.Nombre);
+                }
+            }
+
+            string nombresSeparadosPorComas = string.Join(", ", nombresCursosEncontrados);
+            return nombresSeparadosPorComas;
+        }
+
     }
 }

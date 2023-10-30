@@ -22,7 +22,7 @@ namespace Entidades
 
         private List<ConceptoPagos> conceptosDePagos;
 
-        public List<int> CursosAprobados { get; set; }
+        public List<string> CursosAprobados { get; set; }
         public int Creditos { get; set; }
         public double Promedio { get; set; }
 
@@ -36,7 +36,7 @@ namespace Entidades
             this.telefono = telefono;
 
             this.conceptosDePagos = new List<ConceptoPagos>();
-            this.CursosAprobados = new List<int>();
+            this.CursosAprobados = new List<string>();
             this.Promedio = 4;
             this.Creditos = 400;
 

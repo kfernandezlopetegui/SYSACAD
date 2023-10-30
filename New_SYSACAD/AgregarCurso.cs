@@ -139,9 +139,9 @@ namespace New_SYSACAD
                 string codigo = textCodigo.Text;
                 string descripcion = ObtenerDescripcion();
                 int cupo = int.Parse(textCupo.Text);
-                string carrera = comboBoxCarrera.SelectedItem.ToString(); ;
-
-                Curso nuevoCurso = new Curso(nombre, codigo, descripcion, cupo, carrera);
+                string carrera = comboBoxCarrera.SelectedItem.ToString();
+                RequisitosAcademicos requisitosAcademicos = new RequisitosAcademicos();
+                Curso nuevoCurso = new Curso(nombre, codigo, descripcion, cupo, carrera,requisitosAcademicos.Id);
                 ActualizarCurso.AgregarCurso("cursosRegistrados.json", nuevoCurso);
                 DialogResult resultado = MessageBox.Show("¡Registro exitoso! El curso se ha registrado correctamente.",
                                              "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);

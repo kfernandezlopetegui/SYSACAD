@@ -8,45 +8,66 @@ namespace Entidades
 {
     public class RequisitosAcademicos
     {
-        // Propiedades de los requisitos académicos
-        public List<int> IdCursosAprobados { get; set; }
+        public RequisitosAcademicos() { }
+
+        
+        public List<string> IdCursosAprobados { get; set; }
         public int CantidadMinimaCreditos { get; set; }
         public double PromedioMinimo { get; set; }
+        public int Id {  get; set; }
 
-        // Constructor
-        public RequisitosAcademicos(List<int> idCursosAprobados, int cantidadMinimaCreditos, double promedioMinimo)
+       
+        public RequisitosAcademicos(List<string> idCursosAprobados, int cantidadMinimaCreditos, double promedioMinimo)
         {
             IdCursosAprobados = idCursosAprobados;
             CantidadMinimaCreditos = cantidadMinimaCreditos;
             PromedioMinimo = promedioMinimo;
+            Id = GenerarIdUnico();
         }
 
-        // Método para verificar si un estudiante cumple con los requisitos
+       
         public bool CumpleRequisitos(Alumno estudiante)
         {
-            // Verificar si el estudiante tiene los cursos aprobados previamente
-            foreach (int idCurso in IdCursosAprobados)
+          
+            foreach (string idCurso in IdCursosAprobados)
             {
                 if (!estudiante.CursosAprobados.Contains(idCurso))
                 {
                     return false;
                 }
             }
-
-            // Verificar la cantidad mínima de créditos
+           
             if (estudiante.Creditos < CantidadMinimaCreditos)
             {
                 return false;
             }
 
-            // Verificar el promedio mínimo
+           
             if (estudiante.Promedio < PromedioMinimo)
             {
                 return false;
             }
 
-            // Si pasa todas las verificaciones, el estudiante cumple con los requisitos
+            
             return true;
+        }
+
+        public int GenerarIdUnico()
+        {
+           
+            DateTime now = DateTime.Now;
+
+           
+            int idUnico = int.Parse($"{now:yyyyMMddHHmmssfff}{GenerarNumerosAleatorios(3)}");
+
+            return idUnico;
+        }
+
+        public int GenerarNumerosAleatorios(int digitos)
+        {
+            Random random = new Random();
+            int numeroAleatorio = random.Next((int)Math.Pow(10, digitos - 1), (int)Math.Pow(10, digitos));
+            return numeroAleatorio;
         }
     }
 }

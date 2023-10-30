@@ -249,3 +249,4 @@ C:\Users\kflop\Source\Repos\SYSACAD\New_SYSACAD\obj\Debug\net6.0-windows\refint\
 C:\Users\kflop\Source\Repos\SYSACAD\New_SYSACAD\obj\Debug\net6.0-windows\New_SYSACAD.pdb
 C:\Users\kflop\Source\Repos\SYSACAD\New_SYSACAD\obj\Debug\net6.0-windows\New_SYSACAD.genruntimeconfig.cache
 C:\Users\kflop\Source\Repos\SYSACAD\New_SYSACAD\obj\Debug\net6.0-windows\ref\New_SYSACAD.dll
+C:\Users\kflop\Source\Repos\SYSACAD\New_SYSACAD\obj\Debug\net6.0-windows\New_SYSACAD.GestionarRequisitosAcademicos.resources
