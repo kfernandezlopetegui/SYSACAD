@@ -47,7 +47,13 @@ namespace New_SYSACAD
         private void buttonReportes_Click(object sender, EventArgs e)
         {
             InformesDisponibles informesDisponibles = new InformesDisponibles();
-            Menu.MostrarMenu(informesDisponibles, this, 1);
+            Menu.MostrarMenu(informesDisponibles, this);
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            GestionarRequisitosAcademicos gestionarRequisitos = new GestionarRequisitosAcademicos();
+            Menu.MostrarMenu(gestionarRequisitos, this);
         }
     }
 }

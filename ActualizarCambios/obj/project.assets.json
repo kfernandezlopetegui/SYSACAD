@@ -182,11 +182,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\kflop\\Source\\Repos\\SYSACAD\\ActualizarCambios\\Actualizar.csproj",
+      "projectUniqueName": "C:\\Users\\kflop\\OneDrive\\Escritorio\\Sysacad\\ActualizarCambios\\Actualizar.csproj",
       "projectName": "Actualizar",
-      "projectPath": "C:\\Users\\kflop\\Source\\Repos\\SYSACAD\\ActualizarCambios\\Actualizar.csproj",
+      "projectPath": "C:\\Users\\kflop\\OneDrive\\Escritorio\\Sysacad\\ActualizarCambios\\Actualizar.csproj",
       "packagesPath": "C:\\Users\\kflop\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\kflop\\Source\\Repos\\SYSACAD\\ActualizarCambios\\obj\\",
+      "outputPath": "C:\\Users\\kflop\\OneDrive\\Escritorio\\Sysacad\\ActualizarCambios\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\kflop\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -203,14 +203,14 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "C:\\Users\\kflop\\Source\\Repos\\SYSACAD\\Entidades\\Entidades.csproj": {
-              "projectPath": "C:\\Users\\kflop\\Source\\Repos\\SYSACAD\\Entidades\\Entidades.csproj"
+            "C:\\Users\\kflop\\OneDrive\\Escritorio\\Sysacad\\Entidades\\Entidades.csproj": {
+              "projectPath": "C:\\Users\\kflop\\OneDrive\\Escritorio\\Sysacad\\Entidades\\Entidades.csproj"
             },
-            "C:\\Users\\kflop\\Source\\Repos\\SYSACAD\\LecturaEscritura\\LecturaEscritura.csproj": {
-              "projectPath": "C:\\Users\\kflop\\Source\\Repos\\SYSACAD\\LecturaEscritura\\LecturaEscritura.csproj"
+            "C:\\Users\\kflop\\OneDrive\\Escritorio\\Sysacad\\LecturaEscritura\\LecturaEscritura.csproj": {
+              "projectPath": "C:\\Users\\kflop\\OneDrive\\Escritorio\\Sysacad\\LecturaEscritura\\LecturaEscritura.csproj"
             },
-            "C:\\Users\\kflop\\Source\\Repos\\SYSACAD\\Validaciones\\Validaciones.csproj": {
-              "projectPath": "C:\\Users\\kflop\\Source\\Repos\\SYSACAD\\Validaciones\\Validaciones.csproj"
+            "C:\\Users\\kflop\\OneDrive\\Escritorio\\Sysacad\\Validaciones\\Validaciones.csproj": {
+              "projectPath": "C:\\Users\\kflop\\OneDrive\\Escritorio\\Sysacad\\Validaciones\\Validaciones.csproj"
             }
           }
         }

@@ -32,7 +32,7 @@
             groupBox1 = new GroupBox();
             label4 = new Label();
             comboBoxCarrera = new ComboBox();
-            textBox2 = new TextBox();
+            textBoxPromedio = new TextBox();
             textBoxCreditosObtenidos = new TextBox();
             label3 = new Label();
             checkedListBoxPreCursos = new CheckedListBox();
@@ -56,7 +56,7 @@
             groupBox1.BackColor = Color.Transparent;
             groupBox1.Controls.Add(label4);
             groupBox1.Controls.Add(comboBoxCarrera);
-            groupBox1.Controls.Add(textBox2);
+            groupBox1.Controls.Add(textBoxPromedio);
             groupBox1.Controls.Add(textBoxCreditosObtenidos);
             groupBox1.Controls.Add(label3);
             groupBox1.Controls.Add(checkedListBoxPreCursos);
@@ -100,16 +100,16 @@
             comboBoxCarrera.Enter += comboBoxCarrera_Enter;
             comboBoxCarrera.Validated += comboBoxCarrera_Validated;
             // 
-            // textBox2
+            // textBoxPromedio
             // 
-            textBox2.BackColor = Color.Snow;
-            textBox2.ForeColor = SystemColors.Desktop;
-            textBox2.Location = new Point(403, 177);
-            textBox2.Name = "textBox2";
-            textBox2.PlaceholderText = "Ingrese promedio minimo";
-            textBox2.Size = new Size(374, 29);
-            textBox2.TabIndex = 20;
-            textBox2.TextAlign = HorizontalAlignment.Center;
+            textBoxPromedio.BackColor = Color.Snow;
+            textBoxPromedio.ForeColor = SystemColors.Desktop;
+            textBoxPromedio.Location = new Point(403, 177);
+            textBoxPromedio.Name = "textBoxPromedio";
+            textBoxPromedio.PlaceholderText = "Ingrese promedio minimo";
+            textBoxPromedio.Size = new Size(374, 29);
+            textBoxPromedio.TabIndex = 20;
+            textBoxPromedio.TextAlign = HorizontalAlignment.Center;
             // 
             // textBoxCreditosObtenidos
             // 
@@ -301,7 +301,7 @@
         private Label label2;
         private Label label1;
         private Label label3;
-        private TextBox textBox2;
+        private TextBox textBoxPromedio;
         private TextBox textBoxCreditosObtenidos;
         private ComboBox comboBoxCarrera;
         private Label label4;

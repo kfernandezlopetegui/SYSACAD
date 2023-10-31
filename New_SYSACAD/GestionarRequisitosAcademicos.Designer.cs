@@ -57,7 +57,7 @@
             dataGridViewCursos.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewCursos.EnableHeadersVisualStyles = false;
             dataGridViewCursos.GridColor = Color.AntiqueWhite;
-            dataGridViewCursos.Location = new Point(149, 191);
+            dataGridViewCursos.Location = new Point(93, 194);
             dataGridViewCursos.MultiSelect = false;
             dataGridViewCursos.Name = "dataGridViewCursos";
             dataGridViewCursos.ReadOnly = true;
@@ -78,13 +78,13 @@
             dataGridViewCellStyle3.SelectionBackColor = Color.Tomato;
             dataGridViewCursos.RowsDefaultCellStyle = dataGridViewCellStyle3;
             dataGridViewCursos.RowTemplate.Height = 33;
-            dataGridViewCursos.Size = new Size(769, 420);
+            dataGridViewCursos.Size = new Size(861, 420);
             dataGridViewCursos.TabIndex = 1;
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.BackColor = Color.AntiqueWhite;
+            label1.BackColor = Color.Transparent;
             label1.Font = new Font("Verdana", 9F, FontStyle.Italic, GraphicsUnit.Point);
             label1.Location = new Point(149, 154);
             label1.Name = "label1";
@@ -96,20 +96,20 @@
             // labelTitulo
             // 
             labelTitulo.AutoSize = true;
-            labelTitulo.BackColor = Color.AntiqueWhite;
+            labelTitulo.BackColor = Color.Transparent;
             labelTitulo.Font = new Font("Verdana", 12F, FontStyle.Italic, GraphicsUnit.Point);
-            labelTitulo.Location = new Point(408, 42);
+            labelTitulo.Location = new Point(288, 43);
             labelTitulo.Name = "labelTitulo";
-            labelTitulo.Size = new Size(223, 29);
+            labelTitulo.Size = new Size(449, 29);
             labelTitulo.TabIndex = 6;
-            labelTitulo.Text = "Listado de cursos";
+            labelTitulo.Text = "Listado de cursos con sus requisitos";
             // 
             // pictureBox1
             // 
             pictureBox1.BackColor = Color.Transparent;
             pictureBox1.BackgroundImageLayout = ImageLayout.Stretch;
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(874, 12);
+            pictureBox1.Location = new Point(849, 12);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(181, 89);
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -139,6 +139,7 @@
             Controls.Add(label1);
             Controls.Add(dataGridViewCursos);
             Name = "GestionarRequisitosAcademicos";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "GestionarRequisitosAcademicos";
             ((System.ComponentModel.ISupportInitialize)dataGridViewCursos).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();

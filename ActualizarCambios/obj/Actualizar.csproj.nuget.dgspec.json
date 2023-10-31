@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\kflop\\Source\\Repos\\SYSACAD\\ActualizarCambios\\Actualizar.csproj": {}
+    "C:\\Users\\kflop\\OneDrive\\Escritorio\\Sysacad\\ActualizarCambios\\Actualizar.csproj": {}
   },
   "projects": {
-    "C:\\Users\\kflop\\Source\\Repos\\SYSACAD\\ActualizarCambios\\Actualizar.csproj": {
+    "C:\\Users\\kflop\\OneDrive\\Escritorio\\Sysacad\\ActualizarCambios\\Actualizar.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\kflop\\Source\\Repos\\SYSACAD\\ActualizarCambios\\Actualizar.csproj",
+        "projectUniqueName": "C:\\Users\\kflop\\OneDrive\\Escritorio\\Sysacad\\ActualizarCambios\\Actualizar.csproj",
         "projectName": "Actualizar",
-        "projectPath": "C:\\Users\\kflop\\Source\\Repos\\SYSACAD\\ActualizarCambios\\Actualizar.csproj",
+        "projectPath": "C:\\Users\\kflop\\OneDrive\\Escritorio\\Sysacad\\ActualizarCambios\\Actualizar.csproj",
         "packagesPath": "C:\\Users\\kflop\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\kflop\\Source\\Repos\\SYSACAD\\ActualizarCambios\\obj\\",
+        "outputPath": "C:\\Users\\kflop\\OneDrive\\Escritorio\\Sysacad\\ActualizarCambios\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\kflop\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -28,14 +28,14 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\kflop\\Source\\Repos\\SYSACAD\\Entidades\\Entidades.csproj": {
-                "projectPath": "C:\\Users\\kflop\\Source\\Repos\\SYSACAD\\Entidades\\Entidades.csproj"
+              "C:\\Users\\kflop\\OneDrive\\Escritorio\\Sysacad\\Entidades\\Entidades.csproj": {
+                "projectPath": "C:\\Users\\kflop\\OneDrive\\Escritorio\\Sysacad\\Entidades\\Entidades.csproj"
               },
-              "C:\\Users\\kflop\\Source\\Repos\\SYSACAD\\LecturaEscritura\\LecturaEscritura.csproj": {
-                "projectPath": "C:\\Users\\kflop\\Source\\Repos\\SYSACAD\\LecturaEscritura\\LecturaEscritura.csproj"
+              "C:\\Users\\kflop\\OneDrive\\Escritorio\\Sysacad\\LecturaEscritura\\LecturaEscritura.csproj": {
+                "projectPath": "C:\\Users\\kflop\\OneDrive\\Escritorio\\Sysacad\\LecturaEscritura\\LecturaEscritura.csproj"
               },
-              "C:\\Users\\kflop\\Source\\Repos\\SYSACAD\\Validaciones\\Validaciones.csproj": {
-                "projectPath": "C:\\Users\\kflop\\Source\\Repos\\SYSACAD\\Validaciones\\Validaciones.csproj"
+              "C:\\Users\\kflop\\OneDrive\\Escritorio\\Sysacad\\Validaciones\\Validaciones.csproj": {
+                "projectPath": "C:\\Users\\kflop\\OneDrive\\Escritorio\\Sysacad\\Validaciones\\Validaciones.csproj"
               }
             }
           }
@@ -69,14 +69,14 @@
         }
       }
     },
-    "C:\\Users\\kflop\\Source\\Repos\\SYSACAD\\Entidades\\Entidades.csproj": {
+    "C:\\Users\\kflop\\OneDrive\\Escritorio\\Sysacad\\Entidades\\Entidades.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\kflop\\Source\\Repos\\SYSACAD\\Entidades\\Entidades.csproj",
+        "projectUniqueName": "C:\\Users\\kflop\\OneDrive\\Escritorio\\Sysacad\\Entidades\\Entidades.csproj",
         "projectName": "Entidades",
-        "projectPath": "C:\\Users\\kflop\\Source\\Repos\\SYSACAD\\Entidades\\Entidades.csproj",
+        "projectPath": "C:\\Users\\kflop\\OneDrive\\Escritorio\\Sysacad\\Entidades\\Entidades.csproj",
         "packagesPath": "C:\\Users\\kflop\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\kflop\\Source\\Repos\\SYSACAD\\Entidades\\obj\\",
+        "outputPath": "C:\\Users\\kflop\\OneDrive\\Escritorio\\Sysacad\\Entidades\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\kflop\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -93,8 +93,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\kflop\\Source\\Repos\\SYSACAD\\Pagos\\Pagos.csproj": {
-                "projectPath": "C:\\Users\\kflop\\Source\\Repos\\SYSACAD\\Pagos\\Pagos.csproj"
+              "C:\\Users\\kflop\\OneDrive\\Escritorio\\Sysacad\\Pagos\\Pagos.csproj": {
+                "projectPath": "C:\\Users\\kflop\\OneDrive\\Escritorio\\Sysacad\\Pagos\\Pagos.csproj"
               }
             }
           }
@@ -134,14 +134,14 @@
         }
       }
     },
-    "C:\\Users\\kflop\\Source\\Repos\\SYSACAD\\LecturaEscritura\\LecturaEscritura.csproj": {
+    "C:\\Users\\kflop\\OneDrive\\Escritorio\\Sysacad\\LecturaEscritura\\LecturaEscritura.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\kflop\\Source\\Repos\\SYSACAD\\LecturaEscritura\\LecturaEscritura.csproj",
+        "projectUniqueName": "C:\\Users\\kflop\\OneDrive\\Escritorio\\Sysacad\\LecturaEscritura\\LecturaEscritura.csproj",
         "projectName": "LecturaEscritura",
-        "projectPath": "C:\\Users\\kflop\\Source\\Repos\\SYSACAD\\LecturaEscritura\\LecturaEscritura.csproj",
+        "projectPath": "C:\\Users\\kflop\\OneDrive\\Escritorio\\Sysacad\\LecturaEscritura\\LecturaEscritura.csproj",
         "packagesPath": "C:\\Users\\kflop\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\kflop\\Source\\Repos\\SYSACAD\\LecturaEscritura\\obj\\",
+        "outputPath": "C:\\Users\\kflop\\OneDrive\\Escritorio\\Sysacad\\LecturaEscritura\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\kflop\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -158,8 +158,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\kflop\\Source\\Repos\\SYSACAD\\Entidades\\Entidades.csproj": {
-                "projectPath": "C:\\Users\\kflop\\Source\\Repos\\SYSACAD\\Entidades\\Entidades.csproj"
+              "C:\\Users\\kflop\\OneDrive\\Escritorio\\Sysacad\\Entidades\\Entidades.csproj": {
+                "projectPath": "C:\\Users\\kflop\\OneDrive\\Escritorio\\Sysacad\\Entidades\\Entidades.csproj"
               }
             }
           }
@@ -199,14 +199,14 @@
         }
       }
     },
-    "C:\\Users\\kflop\\Source\\Repos\\SYSACAD\\Pagos\\Pagos.csproj": {
+    "C:\\Users\\kflop\\OneDrive\\Escritorio\\Sysacad\\Pagos\\Pagos.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\kflop\\Source\\Repos\\SYSACAD\\Pagos\\Pagos.csproj",
+        "projectUniqueName": "C:\\Users\\kflop\\OneDrive\\Escritorio\\Sysacad\\Pagos\\Pagos.csproj",
         "projectName": "Pagos",
-        "projectPath": "C:\\Users\\kflop\\Source\\Repos\\SYSACAD\\Pagos\\Pagos.csproj",
+        "projectPath": "C:\\Users\\kflop\\OneDrive\\Escritorio\\Sysacad\\Pagos\\Pagos.csproj",
         "packagesPath": "C:\\Users\\kflop\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\kflop\\Source\\Repos\\SYSACAD\\Pagos\\obj\\",
+        "outputPath": "C:\\Users\\kflop\\OneDrive\\Escritorio\\Sysacad\\Pagos\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\kflop\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -260,14 +260,14 @@
         }
       }
     },
-    "C:\\Users\\kflop\\Source\\Repos\\SYSACAD\\Validaciones\\Validaciones.csproj": {
+    "C:\\Users\\kflop\\OneDrive\\Escritorio\\Sysacad\\Validaciones\\Validaciones.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\kflop\\Source\\Repos\\SYSACAD\\Validaciones\\Validaciones.csproj",
+        "projectUniqueName": "C:\\Users\\kflop\\OneDrive\\Escritorio\\Sysacad\\Validaciones\\Validaciones.csproj",
         "projectName": "Validaciones",
-        "projectPath": "C:\\Users\\kflop\\Source\\Repos\\SYSACAD\\Validaciones\\Validaciones.csproj",
+        "projectPath": "C:\\Users\\kflop\\OneDrive\\Escritorio\\Sysacad\\Validaciones\\Validaciones.csproj",
         "packagesPath": "C:\\Users\\kflop\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\kflop\\Source\\Repos\\SYSACAD\\Validaciones\\obj\\",
+        "outputPath": "C:\\Users\\kflop\\OneDrive\\Escritorio\\Sysacad\\Validaciones\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\kflop\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -284,11 +284,11 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\kflop\\Source\\Repos\\SYSACAD\\Entidades\\Entidades.csproj": {
-                "projectPath": "C:\\Users\\kflop\\Source\\Repos\\SYSACAD\\Entidades\\Entidades.csproj"
+              "C:\\Users\\kflop\\OneDrive\\Escritorio\\Sysacad\\Entidades\\Entidades.csproj": {
+                "projectPath": "C:\\Users\\kflop\\OneDrive\\Escritorio\\Sysacad\\Entidades\\Entidades.csproj"
               },
-              "C:\\Users\\kflop\\Source\\Repos\\SYSACAD\\LecturaEscritura\\LecturaEscritura.csproj": {
-                "projectPath": "C:\\Users\\kflop\\Source\\Repos\\SYSACAD\\LecturaEscritura\\LecturaEscritura.csproj"
+              "C:\\Users\\kflop\\OneDrive\\Escritorio\\Sysacad\\LecturaEscritura\\LecturaEscritura.csproj": {
+                "projectPath": "C:\\Users\\kflop\\OneDrive\\Escritorio\\Sysacad\\LecturaEscritura\\LecturaEscritura.csproj"
               }
             }
           }

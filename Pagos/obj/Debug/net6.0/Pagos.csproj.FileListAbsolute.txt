@@ -55,3 +55,15 @@ C:\Users\kflop\Source\Repos\SYSACAD\Pagos\obj\Debug\net6.0\Pagos.dll
 C:\Users\kflop\Source\Repos\SYSACAD\Pagos\obj\Debug\net6.0\refint\Pagos.dll
 C:\Users\kflop\Source\Repos\SYSACAD\Pagos\obj\Debug\net6.0\Pagos.pdb
 C:\Users\kflop\Source\Repos\SYSACAD\Pagos\obj\Debug\net6.0\ref\Pagos.dll
+C:\Users\kflop\OneDrive\Escritorio\Sysacad\Pagos\bin\Debug\net6.0\Pagos.deps.json
+C:\Users\kflop\OneDrive\Escritorio\Sysacad\Pagos\bin\Debug\net6.0\Pagos.dll
+C:\Users\kflop\OneDrive\Escritorio\Sysacad\Pagos\bin\Debug\net6.0\Pagos.pdb
+C:\Users\kflop\OneDrive\Escritorio\Sysacad\Pagos\obj\Debug\net6.0\Pagos.csproj.AssemblyReference.cache
+C:\Users\kflop\OneDrive\Escritorio\Sysacad\Pagos\obj\Debug\net6.0\Pagos.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\kflop\OneDrive\Escritorio\Sysacad\Pagos\obj\Debug\net6.0\Pagos.AssemblyInfoInputs.cache
+C:\Users\kflop\OneDrive\Escritorio\Sysacad\Pagos\obj\Debug\net6.0\Pagos.AssemblyInfo.cs
+C:\Users\kflop\OneDrive\Escritorio\Sysacad\Pagos\obj\Debug\net6.0\Pagos.csproj.CoreCompileInputs.cache
+C:\Users\kflop\OneDrive\Escritorio\Sysacad\Pagos\obj\Debug\net6.0\Pagos.dll
+C:\Users\kflop\OneDrive\Escritorio\Sysacad\Pagos\obj\Debug\net6.0\refint\Pagos.dll
+C:\Users\kflop\OneDrive\Escritorio\Sysacad\Pagos\obj\Debug\net6.0\Pagos.pdb
+C:\Users\kflop\OneDrive\Escritorio\Sysacad\Pagos\obj\Debug\net6.0\ref\Pagos.dll

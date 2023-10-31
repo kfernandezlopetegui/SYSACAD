@@ -16,8 +16,8 @@ namespace New_SYSACAD
     {
         List<Curso> listaCursos = ActualizarCurso.ListaCursosActuales("cursosRegistrados.json");
         List<RequisitosAcademicos> listaRequisitos = ActualizarRequisitos.ListaRequisitosActuales("requisitosRegistrados.json");
-        
-       
+
+
         public GestionarRequisitosAcademicos()
         {
             InitializeComponent();
@@ -44,7 +44,7 @@ namespace New_SYSACAD
                                           CodigoCurso = curso.Codigo,
                                           CantidadMinimaCreditos = requisito.CantidadMinimaCreditos,
                                           PromedioMinimo = requisito.PromedioMinimo,
-                                          NombreCursosCorrelativos= ActualizarCurso.ObtenerNombreCursoPorCodigo(requisito.IdCursosAprobados,"cursosRegistrados.json")// Suponiendo que la descripción es el atributo que quieres mostrar
+                                          NombreCursosCorrelativos = ActualizarCurso.ObtenerNombreCursoPorCodigo(requisito.IdCursosAprobados, "cursosRegistrados.json")
                                       };
 
             return cursosConRequisitos.ToList();

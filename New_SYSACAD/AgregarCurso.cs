@@ -27,7 +27,7 @@ namespace New_SYSACAD
         private bool controlTocoFocoCarrera = false;
         private bool controlTocoFocoHorario = false;
         private bool controlTocoFocoCursada = false;
-
+        private List<Curso> listaCursos = ActualizarCurso.ListaCursosActuales("cursosRegistrados.json");
         ToolTip toolTip = new ToolTip();
         List<string> opcionesDias = new List<string> { "Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado" };
         List<string> opcionesTurno = new List<string> { "08:30-12:30", "08:30-10:30", "10:30-12:30", "14:00-18:00",
@@ -42,6 +42,8 @@ namespace New_SYSACAD
             buttonVolver.CausesValidation = false;
             checkedListBoxDiasCursada.DataSource = opcionesDias;
             checkedListBoxHorario.DataSource = opcionesTurno;
+            checkedListBoxPreCursos.DataSource = listaCursos;
+            checkedListBoxPreCursos.DisplayMember = "NombreConCodigo";
             comboBoxCarrera.DataSource = opcionesCarrera;
         }
 
@@ -140,9 +142,18 @@ namespace New_SYSACAD
                 string descripcion = ObtenerDescripcion();
                 int cupo = int.Parse(textCupo.Text);
                 string carrera = comboBoxCarrera.SelectedItem.ToString();
-                RequisitosAcademicos requisitosAcademicos = new RequisitosAcademicos();
-                Curso nuevoCurso = new Curso(nombre, codigo, descripcion, cupo, carrera,requisitosAcademicos.Id);
+
+                List<string> listaIdCursos = obtenerCursosSeleccionados();
+                int creditos = int.Parse(textBoxCreditosObtenidos.Text);
+                double promedio = double.Parse(textBoxPromedio.Text);
+
+                RequisitosAcademicos requisitosAcademicos = new RequisitosAcademicos(listaIdCursos,creditos,promedio);
+
+                Curso nuevoCurso = new Curso(nombre, codigo, descripcion, cupo, carrera, requisitosAcademicos.Id);
+
                 ActualizarCurso.AgregarCurso("cursosRegistrados.json", nuevoCurso);
+                ActualizarRequisitos.AgregarRequisitos("requisitosRegistrados.json", requisitosAcademicos);
+
                 DialogResult resultado = MessageBox.Show("¡Registro exitoso! El curso se ha registrado correctamente.",
                                              "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 if (resultado == DialogResult.OK)
@@ -223,6 +234,17 @@ namespace New_SYSACAD
             {
                 MessageBox.Show("El campo carrera no puede estar vacío", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private List<string> obtenerCursosSeleccionados()
+        {
+            List<string> idsCursosSeleccionados = new List<string>();
+
+            foreach (Curso curso in checkedListBoxPreCursos.CheckedItems)
+            {
+                idsCursosSeleccionados.Add(curso.Codigo);
+            }
+            return idsCursosSeleccionados;
         }
     }
 }

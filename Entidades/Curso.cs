@@ -14,11 +14,11 @@ namespace Entidades
         private int cupoMaximo;
         private int cupoActual;
         private string carrera;
-        private int idRequisitos;
+        private long idRequisitos;
 
         public Curso() { }
 
-        public Curso(string nombre, string codigo, string descripcion, int cupoMaximo, string carrera, int idRequisitos)
+        public Curso(string nombre, string codigo, string descripcion, int cupoMaximo, string carrera, long idRequisitos)
         {
             this.nombre = nombre;
             this.codigo = codigo;
@@ -44,7 +44,12 @@ namespace Entidades
         public int CupoActual { get {  return cupoActual; } set { cupoActual= value; } }
 
         public string Carrera { get {  return carrera; } set {  carrera = value; } }
-        public int IdRequisitos { get { return idRequisitos; }set { idRequisitos = value; } }
+        public long IdRequisitos { get { return idRequisitos; }set { idRequisitos = value; } }
+
+        public string NombreConCodigo
+        {
+            get { return $"{Nombre}-({Codigo})"; }
+        }
         public void SumarInscripto()
         {
             cupoActual ++;

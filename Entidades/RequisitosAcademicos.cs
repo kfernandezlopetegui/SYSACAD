@@ -14,7 +14,7 @@ namespace Entidades
         public List<string> IdCursosAprobados { get; set; }
         public int CantidadMinimaCreditos { get; set; }
         public double PromedioMinimo { get; set; }
-        public int Id {  get; set; }
+        public long Id {  get; set; }
 
        
         public RequisitosAcademicos(List<string> idCursosAprobados, int cantidadMinimaCreditos, double promedioMinimo)
@@ -52,14 +52,10 @@ namespace Entidades
             return true;
         }
 
-        public int GenerarIdUnico()
+        public long GenerarIdUnico()
         {
-           
             DateTime now = DateTime.Now;
-
-           
-            int idUnico = int.Parse($"{now:yyyyMMddHHmmssfff}{GenerarNumerosAleatorios(3)}");
-
+            long idUnico = long.Parse($"{now:yyyyMMddHHmmss}");
             return idUnico;
         }
 
