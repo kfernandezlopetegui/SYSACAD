@@ -1,6 +1,7 @@
 ﻿using Entidades;
 using LecturaEscritura;
 using Pagos;
+using System.Collections.Generic;
 
 namespace Actualizar
 {
@@ -40,9 +41,10 @@ namespace Actualizar
            
             if (alumnoEncontrado != null)
             {
-                
-                
-                alumnoEncontrado.ConceptoPagos.Add(conceptoPagos);
+
+                List<ConceptoPagos> listaConceptoPagos = CRUD.ConvertirJsonALista<ConceptoPagos>(alumnoEncontrado.ConceptoPagos);
+                listaConceptoPagos.Add(conceptoPagos);
+                alumnoEncontrado.ConceptoPagos = CRUD.ConvertirListaAJson<ConceptoPagos>(listaConceptoPagos);
                 CRUD.WriteStreamJSON("alumnosRegistrados.json", alumnosRegistrados);
             }
             
@@ -59,12 +61,14 @@ namespace Actualizar
              */
             List<Alumno> alumnosRegistrados = ListaAlumnosActuales();
             Alumno? alumnoEncontrado = alumnosRegistrados.FirstOrDefault(u => u.Dni == dniAlumno);
-
+            List<string> listaCursosAprobados = CRUD.ConvertirJsonALista(alumnoEncontrado.CursosAprobados);
             if (alumnoEncontrado != null)
             {
 
 
-                alumnoEncontrado.CursosAprobados.Add(codigoCurso);
+                listaCursosAprobados.Add(codigoCurso);
+                alumnoEncontrado.CursosAprobados = CRUD.ConvertirListaAJson(listaCursosAprobados);
+
                 CRUD.WriteStreamJSON("alumnosRegistrados.json", alumnosRegistrados);
             }
 

@@ -1,4 +1,5 @@
-﻿using Entidades;
+﻿using DB;
+using Entidades;
 using LecturaEscritura;
 using System;
 namespace Validaciones
@@ -79,20 +80,20 @@ namespace Validaciones
         public void CrearUsuariosPorDefecto()
         {
 
-            if (!CRUD.VerificarSiExisteArchivo(usuarioAdminRuta))
+            if (!CRUD.VerificarSiExisteArchivo(usuarioAdminRuta) /*&& DataBase.VerificarTablaVacia("Usuario")*/)
             {
                 listaUsuariosAux.Add(new Usuario("Karen", "Fernandez", "Femenino", "admin", Hash.GetHash("admin"), false,
-                false,"administrador", "1999,08,28","Mango",LegajoManager.GenerarNuevoLegajo()));
+                false,"administrador", "1999,08,28","Mango",0000));
                 CRUD.WriteStreamJSON("usuarios.json", listaUsuariosAux);
 
 
             }
 
-            if (!CRUD.VerificarSiExisteArchivo(alumnosRuta))
+            if (!CRUD.VerificarSiExisteArchivo(alumnosRuta) /*&& DataBase.VerificarTablaVacia("Alumno")*/)
             {
 
                 listaAlumnos.Add(new Alumno("karen", "fernandez", "Femenino", "karen", Hash.GetHash("1234"), true,
-                 false, "estudiante", "1999,08,28", "Mango", LegajoManager.GenerarNuevoLegajo(), 94298161, "nandubay 123","1173610818"));
+                 false, "estudiante", "1999,08,28", "Mango", 1111, 94298161, "nandubay 123","1173610818"));
                 CRUD.WriteStreamJSON("alumnosRegistrados.json", listaAlumnos);
             }
         }

@@ -20,9 +20,9 @@ namespace Entidades
 
         private string telefono;
 
-        private List<ConceptoPagos> conceptosDePagos;
+        private string conceptosDePagos;
 
-        public List<string> CursosAprobados { get; set; }
+        public string CursosAprobados { get; set; }
         public int Creditos { get; set; }
         public double Promedio { get; set; }
 
@@ -35,13 +35,14 @@ namespace Entidades
 
             this.telefono = telefono;
 
-            this.conceptosDePagos = new List<ConceptoPagos>();
-            this.CursosAprobados = new List<string>();
+            this.conceptosDePagos =  "";
+            this.CursosAprobados = "";
             this.Promedio = 4;
             this.Creditos = 400;
 
         }
-       
+
+        [PrimaryKeyAtributo]
         public int Dni
         {
             get { return dni; }
@@ -61,7 +62,7 @@ namespace Entidades
             get { return telefono; }   
             set { telefono = value; }
         }
-        public List<ConceptoPagos> ConceptoPagos
+        public string ConceptoPagos
         {
             get { return conceptosDePagos; }
             set { conceptosDePagos = value; }

@@ -51,7 +51,7 @@ namespace Actualizar
             RequisitosAcademicos? requisitoEncontrado = listaCursos.FirstOrDefault(u => u.Id == id);
             if(requisitoEncontrado != null)
             {
-                requisitoEncontrado.IdCursosAprobados= requisito.IdCursosAprobados;
+                requisitoEncontrado.IdCursosAprobadosJson = requisito.IdCursosAprobadosJson;
                 requisitoEncontrado.PromedioMinimo = requisito.PromedioMinimo;
                 requisitoEncontrado.CantidadMinimaCreditos = requisito.CantidadMinimaCreditos;
                 CRUD.WriteStreamJSON(file, listaCursos);

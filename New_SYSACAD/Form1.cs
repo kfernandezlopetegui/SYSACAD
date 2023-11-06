@@ -80,5 +80,11 @@ namespace New_SYSACAD
             textBox2.UseSystemPasswordChar = true;
 
         }
+
+        private void buttonPruebas_Click(object sender, EventArgs e)
+        {
+            PruebaSQL prueba = new PruebaSQL();
+            Menu.MostrarMenu(prueba, this);
+        }
     }
 }

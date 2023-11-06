@@ -26,9 +26,10 @@ namespace Actualizar
             List<Alumno> alumnosRegistrados = ActualizarUsuarios.ListaAlumnosActuales();
             Alumno? alumnoEncontrado = alumnosRegistrados.FirstOrDefault(u => u.Dni == dniAlumno);
             List<ConceptoPagos> pagosPendientesRegistrados = new List<ConceptoPagos>();
+            List<ConceptoPagos> listaConceptoPagos = CRUD.ConvertirJsonALista<ConceptoPagos>(alumnoEncontrado.ConceptoPagos);
             if (alumnoEncontrado != null)
             {
-                pagosPendientesRegistrados = alumnoEncontrado.ConceptoPagos;
+                pagosPendientesRegistrados = listaConceptoPagos;
             }
             
 
@@ -44,6 +45,7 @@ namespace Actualizar
         {
             List<Alumno> alumnosRegistrados = ActualizarUsuarios.ListaAlumnosActuales();
             Alumno alumnoEncontrado = alumnosRegistrados.FirstOrDefault(u => u.Dni == dniAlumno);
+            List<ConceptoPagos> listaConceptoPagos = CRUD.ConvertirJsonALista<ConceptoPagos>(alumnoEncontrado.ConceptoPagos);
 
             if (alumnoEncontrado != null)
             {
@@ -51,7 +53,7 @@ namespace Actualizar
                 foreach (var concepto in listaConceptos)
                 {
                     
-                    ConceptoPagos conceptoPendiente = alumnoEncontrado.ConceptoPagos.FirstOrDefault(c => c.Concepto == concepto.Concepto);
+                    ConceptoPagos conceptoPendiente = listaConceptoPagos.FirstOrDefault(c => c.Concepto == concepto.Concepto);
 
                     
                     if (conceptoPendiente != null)
@@ -81,6 +83,8 @@ namespace Actualizar
                 
                 return false;
             }
+
+
         }
     }
 }

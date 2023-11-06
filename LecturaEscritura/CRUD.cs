@@ -124,5 +124,28 @@ namespace LecturaEscritura
             }
             return false;
         }
+
+        public static string ConvertirListaAJson(List<string> lista)
+        {
+            
+            return JsonSerializer.Serialize(lista);
+        }
+
+        public static string ConvertirListaAJson<T>(List<T> lista)
+        {
+
+            return JsonSerializer.Serialize(lista);
+        }
+        public static List<string> ConvertirJsonALista(string json)
+        {
+            List<string>?  lista = JsonSerializer.Deserialize<List<string>>(json);
+            return lista;
+        }
+
+        public static List<T> ConvertirJsonALista<T>(string json)
+        {
+            List<T>? lista = JsonSerializer.Deserialize<List<T>>(json);
+            return lista;
+        }
     }
 }

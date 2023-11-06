@@ -1,5 +1,6 @@
 ﻿using Actualizar;
 using Entidades;
+using LecturaEscritura;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -44,7 +45,7 @@ namespace New_SYSACAD
                                           CodigoCurso = curso.Codigo,
                                           CantidadMinimaCreditos = requisito.CantidadMinimaCreditos,
                                           PromedioMinimo = requisito.PromedioMinimo,
-                                          NombreCursosCorrelativos = ActualizarCurso.ObtenerNombreCursoPorCodigo(requisito.IdCursosAprobados, "cursosRegistrados.json")
+                                          NombreCursosCorrelativos = ActualizarCurso.ObtenerNombreCursoPorCodigo(CRUD.ConvertirJsonALista(requisito.IdCursosAprobadosJson), "cursosRegistrados.json")
                                       };
 
             return cursosConRequisitos.ToList();

@@ -144,10 +144,12 @@ namespace New_SYSACAD
                 string carrera = comboBoxCarrera.SelectedItem.ToString();
 
                 List<string> listaIdCursos = obtenerCursosSeleccionados();
+
+                string idCursosJson = CRUD.ConvertirListaAJson(listaIdCursos);
                 int creditos = int.Parse(textBoxCreditosObtenidos.Text);
                 double promedio = double.Parse(textBoxPromedio.Text);
 
-                RequisitosAcademicos requisitosAcademicos = new RequisitosAcademicos(listaIdCursos,creditos,promedio);
+                RequisitosAcademicos requisitosAcademicos = new RequisitosAcademicos(idCursosJson, creditos,promedio);
 
                 Curso nuevoCurso = new Curso(nombre, codigo, descripcion, cupo, carrera, requisitosAcademicos.Id);
 

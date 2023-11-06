@@ -11,51 +11,30 @@ namespace Entidades
         public RequisitosAcademicos() { }
 
         
-        public List<string> IdCursosAprobados { get; set; }
+        
+        public string IdCursosAprobadosJson { get; set; }
         public int CantidadMinimaCreditos { get; set; }
         public double PromedioMinimo { get; set; }
-        public long Id {  get; set; }
+
+        [PrimaryKeyAtributo]
+        public int Id {  get; set; }
 
        
-        public RequisitosAcademicos(List<string> idCursosAprobados, int cantidadMinimaCreditos, double promedioMinimo)
+        public RequisitosAcademicos(string idCursosAprobados, int cantidadMinimaCreditos, double promedioMinimo)
         {
-            IdCursosAprobados = idCursosAprobados;
+            IdCursosAprobadosJson = idCursosAprobados;
             CantidadMinimaCreditos = cantidadMinimaCreditos;
             PromedioMinimo = promedioMinimo;
             Id = GenerarIdUnico();
         }
 
        
-        public bool CumpleRequisitos(Alumno estudiante)
-        {
-          
-            foreach (string idCurso in IdCursosAprobados)
-            {
-                if (!estudiante.CursosAprobados.Contains(idCurso))
-                {
-                    return false;
-                }
-            }
-           
-            if (estudiante.Creditos < CantidadMinimaCreditos)
-            {
-                return false;
-            }
+       
 
-           
-            if (estudiante.Promedio < PromedioMinimo)
-            {
-                return false;
-            }
-
-            
-            return true;
-        }
-
-        public long GenerarIdUnico()
+        public int GenerarIdUnico()
         {
             DateTime now = DateTime.Now;
-            long idUnico = long.Parse($"{now:yyyyMMddHHmmss}");
+            int idUnico = int.Parse($"{now:yyMMddHHmmss}");
             return idUnico;
         }
 

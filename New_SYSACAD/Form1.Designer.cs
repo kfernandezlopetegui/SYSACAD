@@ -39,6 +39,7 @@
             process1 = new System.Diagnostics.Process();
             buttonHarcodearAlumno = new Button();
             buttonHarcodearAdmin = new Button();
+            buttonPruebas = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             groupBox1.SuspendLayout();
             SuspendLayout();
@@ -167,6 +168,18 @@
             buttonHarcodearAdmin.UseVisualStyleBackColor = false;
             buttonHarcodearAdmin.Click += buttonHarcodearAdmin_Click;
             // 
+            // buttonPruebas
+            // 
+            buttonPruebas.BackColor = Color.AntiqueWhite;
+            buttonPruebas.Font = new Font("Verdana", 8F, FontStyle.Italic, GraphicsUnit.Point);
+            buttonPruebas.Location = new Point(896, 522);
+            buttonPruebas.Name = "buttonPruebas";
+            buttonPruebas.Size = new Size(125, 59);
+            buttonPruebas.TabIndex = 8;
+            buttonPruebas.Text = "Pruebas SQL";
+            buttonPruebas.UseVisualStyleBackColor = false;
+            buttonPruebas.Click += buttonPruebas_Click;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(9F, 22F);
@@ -175,6 +188,7 @@
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(1063, 799);
+            Controls.Add(buttonPruebas);
             Controls.Add(buttonHarcodearAdmin);
             Controls.Add(buttonHarcodearAlumno);
             Controls.Add(groupBox1);
@@ -205,5 +219,6 @@
         private System.Diagnostics.Process process1;
         private Button buttonHarcodearAdmin;
         private Button buttonHarcodearAlumno;
+        private Button buttonPruebas;
     }
 }

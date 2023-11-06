@@ -15,7 +15,12 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Actualizar", "..\Actualizar
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Login", "..\Login\Login.csproj", "{085FAF83-F8B1-4A40-A2C9-37592F6AA6D6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pagos", "..\Pagos\Pagos.csproj", "{18ABC2CA-489E-42D8-8BE9-639131A4A1F9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pagos", "..\Pagos\Pagos.csproj", "{18ABC2CA-489E-42D8-8BE9-639131A4A1F9}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DB", "..\DB\DB.csproj", "{2156DF17-5DFB-4960-9BE4-37CBA4DCF421}"
+	ProjectSection(ProjectDependencies) = postProject
+		{57BA3923-02A6-4579-B3B0-5D5979FCEE82} = {57BA3923-02A6-4579-B3B0-5D5979FCEE82}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -51,6 +56,10 @@ Global
 		{18ABC2CA-489E-42D8-8BE9-639131A4A1F9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{18ABC2CA-489E-42D8-8BE9-639131A4A1F9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{18ABC2CA-489E-42D8-8BE9-639131A4A1F9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2156DF17-5DFB-4960-9BE4-37CBA4DCF421}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2156DF17-5DFB-4960-9BE4-37CBA4DCF421}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2156DF17-5DFB-4960-9BE4-37CBA4DCF421}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2156DF17-5DFB-4960-9BE4-37CBA4DCF421}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
