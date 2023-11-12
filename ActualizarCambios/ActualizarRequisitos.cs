@@ -1,4 +1,5 @@
-﻿using Entidades;
+﻿using DB;
+using Entidades;
 using LecturaEscritura;
 using System;
 using System.Collections.Generic;
@@ -10,55 +11,41 @@ namespace Actualizar
 {
     public class ActualizarRequisitos
     {
-        public static List<RequisitosAcademicos> ListaRequisitosActuales(string file)
+        public static List<RequisitosAcademicos> ListaRequisitosActuales()
         {
-            List<RequisitosAcademicos> requisitosRegistrados = CRUD.ReadStreamJSON<RequisitosAcademicos>(file);
+            List<RequisitosAcademicos> requisitosRegistrados = CRUDB.ObtenerTodos<RequisitosAcademicos>("RequisitosAcademicos");
             return requisitosRegistrados;
         }
-        public static RequisitosAcademicos ObtenerRequisitos(string file, int id)
+        public static RequisitosAcademicos ObtenerRequisitos(int id)
         {
-            List<RequisitosAcademicos> listaRequisitos = ListaRequisitosActuales(file);
-            RequisitosAcademicos? requisitoEncontrado = listaRequisitos.FirstOrDefault(u => u.Id == id);
+           
+            RequisitosAcademicos requisitoEncontrado = CRUDB.ObtenerPorIdentificador<RequisitosAcademicos>("RequisitosAcademicos", "Id = @Id", new { Id = id }); ;
             return requisitoEncontrado;
         }
 
-        public static void AgregarRequisitos(string file, RequisitosAcademicos nuevoRequisito)
+        public static void AgregarRequisitos(RequisitosAcademicos nuevoRequisito)
         {
-            
-            List<RequisitosAcademicos> listaRequisitos = ListaRequisitosActuales(file);
-           
-            listaRequisitos.Add(nuevoRequisito);
 
-            CRUD.WriteStreamJSON(file, listaRequisitos);
+            DataBase.InsertarRegistro<RequisitosAcademicos>(nuevoRequisito);
         }
 
-        public static void BorrarRequisitoPorId(int id, string file)
+        public static void BorrarRequisitoPorId(int id)
         {
-            List<RequisitosAcademicos> listaRequisitos = ListaRequisitosActuales(file);
-            RequisitosAcademicos? requisitoEncontrado = listaRequisitos.FirstOrDefault(u => u.Id == id);
-            listaRequisitos.Remove(requisitoEncontrado);
-            CRUD.WriteStreamJSON(file, listaRequisitos);
+            CRUDB.EliminarPorCondicion<Curso>("RequisitosAcademicos", "Id", id);
 
         }
 
-        public static void EditarRequisito(RequisitosAcademicos requisito, string file, int id)
+        public static void EditarRequisito(RequisitosAcademicos requisito, int id)
         {
             /* Edita el curso
              * recibe el curso a guardar, el codigo original del curso que se esta editando
              * y el lugar donde se guarda el archivo para persistir los datos  
              */
-            List<RequisitosAcademicos> listaCursos = ListaRequisitosActuales(file);
-            RequisitosAcademicos? requisitoEncontrado = listaCursos.FirstOrDefault(u => u.Id == id);
-            if(requisitoEncontrado != null)
-            {
-                requisitoEncontrado.IdCursosAprobadosJson = requisito.IdCursosAprobadosJson;
-                requisitoEncontrado.PromedioMinimo = requisito.PromedioMinimo;
-                requisitoEncontrado.CantidadMinimaCreditos = requisito.CantidadMinimaCreditos;
-                CRUD.WriteStreamJSON(file, listaCursos);
-            }
-            
+            CRUDB.ActualizarPorIdentificador("RequisitosAcademicos", "Id", id, requisito);
 
-            
+
+
         }
+
     }
 }

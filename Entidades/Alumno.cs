@@ -42,7 +42,7 @@ namespace Entidades
 
         }
 
-        [PrimaryKeyAtributo]
+       
         public int Dni
         {
             get { return dni; }
@@ -67,5 +67,6 @@ namespace Entidades
             get { return conceptosDePagos; }
             set { conceptosDePagos = value; }
         }
+       
     }
 }

@@ -27,7 +27,7 @@ namespace New_SYSACAD
         private bool controlTocoFocoCarrera = false;
         private bool controlTocoFocoHorario = false;
         private bool controlTocoFocoCursada = false;
-        private List<Curso> listaCursos = ActualizarCurso.ListaCursosActuales("cursosRegistrados.json");
+        private List<Curso> listaCursos = ActualizarCurso.ListaCursosActualesBD();
         ToolTip toolTip = new ToolTip();
         List<string> opcionesDias = new List<string> { "Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado" };
         List<string> opcionesTurno = new List<string> { "08:30-12:30", "08:30-10:30", "10:30-12:30", "14:00-18:00",
@@ -42,8 +42,7 @@ namespace New_SYSACAD
             buttonVolver.CausesValidation = false;
             checkedListBoxDiasCursada.DataSource = opcionesDias;
             checkedListBoxHorario.DataSource = opcionesTurno;
-            checkedListBoxPreCursos.DataSource = listaCursos;
-            checkedListBoxPreCursos.DisplayMember = "NombreConCodigo";
+            CargarPreCursos();
             comboBoxCarrera.DataSource = opcionesCarrera;
         }
 
@@ -152,9 +151,10 @@ namespace New_SYSACAD
                 RequisitosAcademicos requisitosAcademicos = new RequisitosAcademicos(idCursosJson, creditos,promedio);
 
                 Curso nuevoCurso = new Curso(nombre, codigo, descripcion, cupo, carrera, requisitosAcademicos.Id);
-
-                ActualizarCurso.AgregarCurso("cursosRegistrados.json", nuevoCurso);
-                ActualizarRequisitos.AgregarRequisitos("requisitosRegistrados.json", requisitosAcademicos);
+                
+                ActualizarRequisitos.AgregarRequisitos(requisitosAcademicos);
+                ActualizarCurso.AgregarCursoBD(nuevoCurso);
+                
 
                 DialogResult resultado = MessageBox.Show("¡Registro exitoso! El curso se ha registrado correctamente.",
                                              "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -242,11 +242,30 @@ namespace New_SYSACAD
         {
             List<string> idsCursosSeleccionados = new List<string>();
 
-            foreach (Curso curso in checkedListBoxPreCursos.CheckedItems)
+            foreach (CursoViewModel cursoViewModel in checkedListBoxPreCursos.CheckedItems)
             {
-                idsCursosSeleccionados.Add(curso.Codigo);
+                idsCursosSeleccionados.Add(cursoViewModel.Id.ToString());
             }
             return idsCursosSeleccionados;
         }
+        public void CargarPreCursos()
+        {
+            
+
+            // Convierte la lista de cursos a una lista de CursoViewModel
+            List<CursoViewModel> listaCursosViewModel = listaCursos
+                .Select(curso => new CursoViewModel(curso.NombreConCodigo(), curso.Id)
+                {
+                    
+                   
+                })
+                .ToList();
+
+            // Configura el checkedListBoxPreCursos
+            checkedListBoxPreCursos.DataSource = listaCursosViewModel;
+            checkedListBoxPreCursos.DisplayMember = "NombreConCodigo";
+            checkedListBoxPreCursos.ValueMember = "Id";
+        }
+
     }
 }

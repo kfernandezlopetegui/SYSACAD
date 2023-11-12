@@ -33,10 +33,13 @@
             DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GestionarRequisitosAcademicos));
             dataGridViewCursos = new DataGridView();
-            label1 = new Label();
             labelTitulo = new Label();
             pictureBox1 = new PictureBox();
             button1 = new Button();
+            buttonEditar = new Button();
+            label2 = new Label();
+            buttonEliminar = new Button();
+            label4 = new Label();
             ((System.ComponentModel.ISupportInitialize)dataGridViewCursos).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
@@ -81,24 +84,12 @@
             dataGridViewCursos.Size = new Size(861, 420);
             dataGridViewCursos.TabIndex = 1;
             // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.BackColor = Color.Transparent;
-            label1.Font = new Font("Verdana", 9F, FontStyle.Italic, GraphicsUnit.Point);
-            label1.Location = new Point(149, 154);
-            label1.Name = "label1";
-            label1.Size = new Size(338, 22);
-            label1.TabIndex = 5;
-            label1.Text = "Seleccione el curso que desea editar";
-            label1.TextAlign = ContentAlignment.TopCenter;
-            // 
             // labelTitulo
             // 
             labelTitulo.AutoSize = true;
             labelTitulo.BackColor = Color.Transparent;
             labelTitulo.Font = new Font("Verdana", 12F, FontStyle.Italic, GraphicsUnit.Point);
-            labelTitulo.Location = new Point(288, 43);
+            labelTitulo.Location = new Point(291, 51);
             labelTitulo.Name = "labelTitulo";
             labelTitulo.Size = new Size(449, 29);
             labelTitulo.TabIndex = 6;
@@ -127,16 +118,65 @@
             button1.UseVisualStyleBackColor = true;
             button1.Click += button1_Click;
             // 
+            // buttonEditar
+            // 
+            buttonEditar.BackColor = Color.AntiqueWhite;
+            buttonEditar.BackgroundImage = (Image)resources.GetObject("buttonEditar.BackgroundImage");
+            buttonEditar.BackgroundImageLayout = ImageLayout.Stretch;
+            buttonEditar.Font = new Font("Verdana", 9F, FontStyle.Italic, GraphicsUnit.Point);
+            buttonEditar.Location = new Point(978, 306);
+            buttonEditar.Name = "buttonEditar";
+            buttonEditar.Size = new Size(71, 51);
+            buttonEditar.TabIndex = 14;
+            buttonEditar.UseVisualStyleBackColor = false;
+            buttonEditar.Click += buttonEditar_Click;
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Font = new Font("Verdana", 8F, FontStyle.Italic, GraphicsUnit.Point);
+            label2.Location = new Point(978, 285);
+            label2.Name = "label2";
+            label2.Size = new Size(56, 18);
+            label2.TabIndex = 15;
+            label2.Text = "Editar";
+            // 
+            // buttonEliminar
+            // 
+            buttonEliminar.BackColor = Color.AntiqueWhite;
+            buttonEliminar.BackgroundImage = (Image)resources.GetObject("buttonEliminar.BackgroundImage");
+            buttonEliminar.BackgroundImageLayout = ImageLayout.Stretch;
+            buttonEliminar.Font = new Font("Verdana", 9F, FontStyle.Italic, GraphicsUnit.Point);
+            buttonEliminar.Location = new Point(978, 484);
+            buttonEliminar.Name = "buttonEliminar";
+            buttonEliminar.Size = new Size(69, 57);
+            buttonEliminar.TabIndex = 16;
+            buttonEliminar.UseVisualStyleBackColor = false;
+            buttonEliminar.Click += buttonEliminar_Click;
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Font = new Font("Verdana", 8F, FontStyle.Italic, GraphicsUnit.Point);
+            label4.Location = new Point(975, 463);
+            label4.Name = "label4";
+            label4.Size = new Size(74, 18);
+            label4.TabIndex = 17;
+            label4.Text = "Eliminar";
+            // 
             // GestionarRequisitosAcademicos
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             ClientSize = new Size(1067, 803);
+            Controls.Add(label4);
+            Controls.Add(buttonEliminar);
+            Controls.Add(label2);
+            Controls.Add(buttonEditar);
             Controls.Add(button1);
             Controls.Add(pictureBox1);
             Controls.Add(labelTitulo);
-            Controls.Add(label1);
             Controls.Add(dataGridViewCursos);
             Name = "GestionarRequisitosAcademicos";
             StartPosition = FormStartPosition.CenterScreen;
@@ -150,9 +190,12 @@
         #endregion
 
         private DataGridView dataGridViewCursos;
-        private Label label1;
         private Label labelTitulo;
         private PictureBox pictureBox1;
         private Button button1;
+        private Button buttonEditar;
+        private Label label2;
+        private Button buttonEliminar;
+        private Label label4;
     }
 }

@@ -39,7 +39,7 @@ namespace New_SYSACAD
             curso.Descripcion = textDescripcion.Text;
             curso.CupoMaximo = int.Parse(textCupo.Text);
             curso.Codigo = textCodigo.Text;
-            ActualizarCurso.EditarCurso(curso, "cursosRegistrados.json", codigoOriginal);
+            ActualizarCurso.EditarCursoBD(curso, codigoOriginal);
 
             DialogResult resultado = MessageBox.Show("¡Actualizacion exitosa! El curso se ha actualizado correctamente.",
                                             "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);

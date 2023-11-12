@@ -1,4 +1,5 @@
-﻿using PdfSharp.Drawing;
+﻿using Entidades;
+using PdfSharp.Drawing;
 using PdfSharp.Pdf;
 using System;
 using System.Collections.Generic;
@@ -73,5 +74,7 @@ namespace New_SYSACAD
             pdf.Save(nombreArchivoPDF);
             Console.WriteLine("Informe generado y guardado como PDF.");
         }
+
+        
     }
 }

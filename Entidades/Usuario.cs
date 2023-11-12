@@ -39,9 +39,11 @@ namespace Entidades
             
         }
 
+        [PrimaryKeyAtributo]
         public int Legajo
         {
             get { return legajo; }
+            set { legajo = value; }
         }
         public string Nombre 
 

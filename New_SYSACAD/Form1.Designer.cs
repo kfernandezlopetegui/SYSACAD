@@ -40,6 +40,7 @@
             buttonHarcodearAlumno = new Button();
             buttonHarcodearAdmin = new Button();
             buttonPruebas = new Button();
+            buttonAgregarAprobado = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             groupBox1.SuspendLayout();
             SuspendLayout();
@@ -180,6 +181,18 @@
             buttonPruebas.UseVisualStyleBackColor = false;
             buttonPruebas.Click += buttonPruebas_Click;
             // 
+            // buttonAgregarAprobado
+            // 
+            buttonAgregarAprobado.BackColor = Color.AntiqueWhite;
+            buttonAgregarAprobado.Font = new Font("Verdana", 8F, FontStyle.Italic, GraphicsUnit.Point);
+            buttonAgregarAprobado.Location = new Point(896, 184);
+            buttonAgregarAprobado.Name = "buttonAgregarAprobado";
+            buttonAgregarAprobado.Size = new Size(125, 59);
+            buttonAgregarAprobado.TabIndex = 9;
+            buttonAgregarAprobado.Text = "Agregar Aprobado";
+            buttonAgregarAprobado.UseVisualStyleBackColor = false;
+            buttonAgregarAprobado.Click += buttonAgregarAprobado_Click;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(9F, 22F);
@@ -188,6 +201,7 @@
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(1063, 799);
+            Controls.Add(buttonAgregarAprobado);
             Controls.Add(buttonPruebas);
             Controls.Add(buttonHarcodearAdmin);
             Controls.Add(buttonHarcodearAlumno);
@@ -220,5 +234,6 @@
         private Button buttonHarcodearAdmin;
         private Button buttonHarcodearAlumno;
         private Button buttonPruebas;
+        private Button buttonAgregarAprobado;
     }
 }

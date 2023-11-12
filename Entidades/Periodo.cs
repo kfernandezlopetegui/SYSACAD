@@ -8,6 +8,8 @@ namespace Entidades
 {
     public class Periodo
     {
+        
+        public int Id { get; set; }
         public DateTime Inicio { get; set; }
         public DateTime Fin { get; set; }
         public Periodo() { }
@@ -16,6 +18,7 @@ namespace Entidades
         {
             Inicio = inicio;
             Fin = fin;
+            this.Id = Ids.GenerarIdUnico();
         }
 
         /// <summary>

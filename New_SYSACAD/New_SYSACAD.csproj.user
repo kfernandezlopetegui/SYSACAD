@@ -16,10 +16,19 @@
     <Compile Update="EdicionDeCurso.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="EdicionRequisito.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="EditarCurso.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="EditarRequisitos.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="EliminarCurso.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="EliminarRequisito.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Form1.cs">

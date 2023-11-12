@@ -1,33 +1,31 @@
-﻿using Entidades;
+﻿using DB;
+using Entidades;
 using LecturaEscritura;
 using Pagos;
 using System.Collections.Generic;
+using System.Net;
 
 namespace Actualizar
 {
     public class ActualizarUsuarios
     {
-        public static List<Usuario> ListaUsuariosActuales()
-        {
-            List<Usuario> usuariosRegistrados = CRUD.ReadStreamJSON<Usuario>("usuarios.json");
-            return usuariosRegistrados;
-        }
+       
 
         public static List<Alumno> ListaAlumnosActuales()
         {
-            List<Alumno> usuariosRegistrados = CRUD.ReadStreamJSON<Alumno>("alumnosRegistrados.json");
+            List<Alumno> usuariosRegistrados = ListaAlumnosActualesBD();
             return usuariosRegistrados;
         }
-        public static void AgregarAlumno(string file, Alumno nuevoUsuario)
+
+        public static List<Alumno> ListaAlumnosActualesBD()
         {
-            // Leer la lista existente desde el archivo JSON
-            List<Alumno> listaUsuarios = CRUD.ReadStreamJSON<Alumno>(file);
+            List<Alumno> usuariosRegistrados = CRUDB.ObtenerTodos<Alumno>("Alumno");
+            return usuariosRegistrados;
+        }
 
-            // Agregar el nuevo usuario a la lista
-            listaUsuarios.Add(nuevoUsuario);
-
-            // Escribir la lista actualizada en el archivo JSON
-            CRUD.WriteStreamJSON(file, listaUsuarios);
+        public static void AgregarAlumnoBD(string file, Alumno nuevoUsuario)
+        {
+            DataBase.InsertarRegistro<Alumno>(nuevoUsuario);
         }
 
         public static void AgregarPagosPendientes(ConceptoPagos conceptoPagos, int dniAlumno)
@@ -36,22 +34,32 @@ namespace Actualizar
              * recibe el concepto de pago a agregar, el dni del alumno que se esta editando
              *  
              */
-            List<Alumno> alumnosRegistrados = ListaAlumnosActuales();
-            Alumno ?alumnoEncontrado = alumnosRegistrados.FirstOrDefault(u => u.Dni == dniAlumno);
-           
+            
+            Alumno alumnoEncontrado = CRUDB.ObtenerPorIdentificador<Alumno>("Alumno", "Dni = @Dni", new { Dni = dniAlumno });
+
             if (alumnoEncontrado != null)
             {
+                List<ConceptoPagos> listaConceptoPagos = string.IsNullOrEmpty(alumnoEncontrado.ConceptoPagos)
+                    ? new List<ConceptoPagos>()
+                    : CRUD.ConvertirJsonALista<ConceptoPagos>(alumnoEncontrado.ConceptoPagos);
 
-                List<ConceptoPagos> listaConceptoPagos = CRUD.ConvertirJsonALista<ConceptoPagos>(alumnoEncontrado.ConceptoPagos);
+                // Aquí puedes agregar la lógica para crear un nuevo ConceptoPagos si la lista está vacía
+
                 listaConceptoPagos.Add(conceptoPagos);
-                alumnoEncontrado.ConceptoPagos = CRUD.ConvertirListaAJson<ConceptoPagos>(listaConceptoPagos);
-                CRUD.WriteStreamJSON("alumnosRegistrados.json", alumnosRegistrados);
-            }
-            
-            
 
-            
+                alumnoEncontrado.ConceptoPagos = CRUD.ConvertirListaAJson<ConceptoPagos>(listaConceptoPagos);
+                string dni = alumnoEncontrado.Dni.ToString();
+                CRUDB.ActualizarPorIdentificador("Alumno", "Dni", dni, alumnoEncontrado);
+            }
+
+
+
+
+
+
         }
+
+
 
         public static void AgregarCursosAprobados(string codigoCurso, int dniAlumno)
         {
@@ -59,23 +67,27 @@ namespace Actualizar
              * recibe el concepto de pago a agregar, el dni del alumno que se esta editando
              *  
              */
-            List<Alumno> alumnosRegistrados = ListaAlumnosActuales();
-            Alumno? alumnoEncontrado = alumnosRegistrados.FirstOrDefault(u => u.Dni == dniAlumno);
-            List<string> listaCursosAprobados = CRUD.ConvertirJsonALista(alumnoEncontrado.CursosAprobados);
+            Alumno alumnoEncontrado = CRUDB.ObtenerPorIdentificador<Alumno>("Alumno", "Dni = @Dni", new { Dni = dniAlumno });
+            
             if (alumnoEncontrado != null)
             {
-
+                List<string> listaCursosAprobados = string.IsNullOrWhiteSpace(alumnoEncontrado.CursosAprobados)
+                    ? new List<string>()
+                    : CRUD.ConvertirJsonALista<string>(alumnoEncontrado.CursosAprobados);
 
                 listaCursosAprobados.Add(codigoCurso);
                 alumnoEncontrado.CursosAprobados = CRUD.ConvertirListaAJson(listaCursosAprobados);
 
-                CRUD.WriteStreamJSON("alumnosRegistrados.json", alumnosRegistrados);
+                string dni = alumnoEncontrado.Dni.ToString();
+                CRUDB.ActualizarPorIdentificador("Alumno", "Dni", dni, alumnoEncontrado);
             }
 
 
         }
 
         
+
+
 
 
     }

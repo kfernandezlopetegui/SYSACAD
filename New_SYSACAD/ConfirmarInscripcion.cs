@@ -66,13 +66,15 @@ namespace New_SYSACAD
         {
             foreach (var curso in listaDeCursos)
             {
-                bool disponibilidad = ActualizarCurso.VerificarCupoOnline(curso, nombreArchivoCursos);
+                RequisitosAcademicos requisitosCurso = ActualizarRequisitos.ObtenerRequisitos(curso.IdRequisitos);
+                bool cumpleRequisitos = ValidarCurso.VerificarRequisitos(requisitosCurso, SesionAlumno.AlumnoActual.Dni);
+                bool disponibilidad = ActualizarCurso.VerificarCupoOnline(curso);
 
-                if (disponibilidad)
+                if (disponibilidad && cumpleRequisitos)
                 {
                     ConceptoPagos conceptoPagos = new ConceptoPagos(10000,curso.Nombre);
                     Inscripcion inscripcion = new Inscripcion(SesionAlumno.AlumnoActual.Dni, curso.Codigo);
-                    ActualizarInscripciones.AgregarInscripcion(nombreArchivoInscripciones, inscripcion);
+                    ActualizarInscripciones.AgregarInscripcion(inscripcion);
                     ActualizarUsuarios.AgregarPagosPendientes(conceptoPagos, SesionAlumno.AlumnoActual.Dni);
 
                     ActualizarCurso.ActualizarCupo("cursosRegistrados.json", curso.Codigo);
@@ -84,9 +86,17 @@ namespace New_SYSACAD
                 }
                 else
                 {
-
-                    MessageBox.Show($"No hay cupo disponible para el curso {curso.Nombre}. No se pudo inscribir",
+                    if (cumpleRequisitos ==false)
+                    {
+                        MessageBox.Show($"No se cumplen todos los requisitos para poder inscribirse a {curso.Nombre}.",
                                     "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                    if(disponibilidad == false)
+                    {
+                        MessageBox.Show($"No hay cupo disponible para el curso {curso.Nombre}. No se pudo inscribir",
+                                    "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                    
                 }
             }
             InscripcionCursos inscripcionCursos = new InscripcionCursos();
@@ -100,5 +110,7 @@ namespace New_SYSACAD
             MenuEstudiante menuEstudiante = new MenuEstudiante();
             Menu.MostrarMenu(menuEstudiante, this, 1);
         }
+
+        
     }
 }

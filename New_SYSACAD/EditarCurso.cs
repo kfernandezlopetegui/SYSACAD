@@ -14,17 +14,20 @@ namespace New_SYSACAD
 {
     public partial class EditarCurso : Form
     {
-        List<Curso> listaCursos = ActualizarCurso.ListaCursosActuales("cursosRegistrados.json");
+        List<Curso> listaCursos = ActualizarCurso.ListaCursosActualesBD();
         public EditarCurso()
         {
             InitializeComponent();
             dataGridViewCursos.DataSource = listaCursos;
+            dataGridViewCursos.Columns["CupoActual"].Visible = false;
+            dataGridViewCursos.Columns["Id"].Visible = false;
+            dataGridViewCursos.Columns["IdRequisitos"].Visible = false;
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
             ListaDeCursos listaCursos = new ListaDeCursos();
-            Menu.MostrarMenu(listaCursos, this,1);
+            Menu.MostrarMenu(listaCursos, this, 1);
         }
 
         private void dataGridViewCursos_CellContentClick(object sender, DataGridViewCellEventArgs e)

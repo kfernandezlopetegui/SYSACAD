@@ -1,8 +1,10 @@
-﻿using Entidades;
+﻿using DB;
+using Entidades;
 using LecturaEscritura;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using Validaciones;
@@ -11,53 +13,41 @@ namespace Actualizar
 {
     public class ActualizarCurso
     {
-        public static List<Curso> ListaCursosActuales(string file)
-        {
-            List<Curso> usuariosRegistrados = CRUD.ReadStreamJSON<Curso>(file);
-            return usuariosRegistrados;
-        }
-        public static Curso GetCurso(string file, string codigo)
-        {
-            List<Curso> listaCursos = ListaCursosActuales(file);
-            Curso ?cursoEncontrado = listaCursos.FirstOrDefault(u => u.Codigo == codigo);
-            return cursoEncontrado;
-        }
        
-        public static void AgregarCurso(string file, Curso nuevoCurso)
+        public static List<Curso> ListaCursosActualesBD()
         {
-            // Leer la lista existente desde el archivo JSON
-            List<Curso> listaCursos = ListaCursosActuales(file);
-
-            // Agregar el nuevo usuario a la lista
-            listaCursos.Add(nuevoCurso);
-
-            // Escribir la lista actualizada en el archivo JSON
-            CRUD.WriteStreamJSON(file, listaCursos);
+            List<Curso> cursosRegistrados = CRUDB.ObtenerTodos<Curso>("Curso");
+            return cursosRegistrados;
+        }
+        
+       
+        public static void AgregarCursoBD(Curso nuevoCurso)
+        { 
+           DataBase.InsertarRegistro<Curso>(nuevoCurso);
         }
 
-        public static void BorrarCursoPorCodigo(string codigo, string file)
+        public static void BorrarCursoPorCodigoBD(string codigo)
         {
-            List<Curso> listaCursos = ListaCursosActuales(file);
-            Curso cursoEncontrado = listaCursos.FirstOrDefault(u => u.Codigo == codigo);
-            listaCursos.Remove(cursoEncontrado);
-            CRUD.WriteStreamJSON(file, listaCursos);
             
+            CRUDB.EliminarPorCondicion<Curso>("Curso", "Codigo", codigo);
+
         }
 
-        public static void EditarCurso(Curso curso, string file, string codigoOriginal)
+        public static void EditarCursoBD(Curso curso, string codigoOriginal)
         {
             /* Edita el curso
              * recibe el curso a guardar, el codigo original del curso que se esta editando
-             * y el lugar donde se guarda el archivo para persistir los datos  
+             * 
              */
-            List<Curso> listaCursos = ListaCursosActuales(file);
-            Curso cursoEncontrado = listaCursos.FirstOrDefault(u => u.Codigo == codigoOriginal);
-            cursoEncontrado.Codigo = curso.Codigo;
-            cursoEncontrado.CupoMaximo = curso.CupoMaximo;
-            cursoEncontrado.Nombre = curso.Nombre;
-            cursoEncontrado.Descripcion = curso.Descripcion;
-
-            CRUD.WriteStreamJSON(file, listaCursos);
+            CRUDB.ActualizarPorIdentificador("Curso", "Codigo", codigoOriginal, curso);
+        }
+        public static void EditarCursoBD(Curso curso)
+        {
+            /* Edita el curso
+             * recibe el curso a guardar
+             * 
+             */
+            CRUDB.ActualizarPorIdentificador("Curso", "Codigo", curso.Codigo, curso);
         }
         public static bool VerificarCupo(Curso curso)
         {
@@ -73,19 +63,22 @@ namespace Actualizar
         {
             /* Edita el curso
              * recibe el curso a guardar, el codigo original del curso que se esta editando
-             * y el lugar donde se guarda el archivo para persistir los datos  
+             *  
              */
            
-            List<Curso> listaCursos = ListaCursosActuales(file);
-            Curso cursoEncontrado = listaCursos.FirstOrDefault(u => u.Codigo == codigoCurso);
+            
+            Curso cursoEncontrado = CRUDB.ObtenerPorIdentificador<Curso>("Curso", "Codigo = @Codigo", new { Codigo = codigoCurso });
 
             cursoEncontrado.SumarInscripto();
-            CRUD.WriteStreamJSON(file, listaCursos);
+            EditarCursoBD(cursoEncontrado);
+
+
         }
 
-        public static bool VerificarCupoOnline(Curso curso, string file)
+        public static bool VerificarCupoOnline(Curso curso)
         {
-            Curso cursoObtenido = GetCurso(file, curso.Codigo);
+
+            Curso cursoObtenido = CRUDB.ObtenerPorIdentificador<Curso>("Curso", "Codigo = @Codigo", new {Codigo = curso.Codigo }); 
 
             return VerificarCupo(cursoObtenido);
         }
@@ -93,8 +86,8 @@ namespace Actualizar
         public static List<Curso> ObtenerCursosAlumno(string fileCursos, string fileInscripciones,  int idAlumnoLogueado)
 
         {
-            List<Curso> listaCursos = ListaCursosActuales(fileCursos);
-            List<Inscripcion> listaInscripciones = ActualizarInscripciones.ListaInscripcionesActuales(fileInscripciones);
+            List<Curso> listaCursos = ListaCursosActualesBD();
+            List<Inscripcion> listaInscripciones = ActualizarInscripciones.ListaInscripcionesActuales();
             var cursosDelAlumno = from inscripcion in listaInscripciones
                                   where inscripcion.AlumnoId == idAlumnoLogueado
                                   join curso in listaCursos on inscripcion.CursoId equals curso.Codigo
@@ -102,9 +95,9 @@ namespace Actualizar
             return cursosDelAlumno.ToList();
         }
 
-        public static string ObtenerNombreCursoPorCodigo(List<string> listaCodigosCurso, string file)
+        public static string ObtenerNombreCursoPorCodigo(List<string> listaCodigosCurso)
         {
-            List<Curso> listaCursos = ListaCursosActuales(file);
+            List<Curso> listaCursos = ListaCursosActualesBD();
             List<string> nombresCursosEncontrados = new List<string>();
 
             foreach (var codigoCurso in listaCodigosCurso)

@@ -15,14 +15,17 @@ namespace New_SYSACAD
 {
     public partial class InscripcionCursos : Form
     {
-        private List<Curso> listaCursos = ActualizarCurso.ListaCursosActuales("cursosRegistrados.json");
+        private List<Curso> listaCursos = ActualizarCurso.ListaCursosActualesBD();
 
         private HashSet<Curso> cursosSeleccionados = new HashSet<Curso>();
         public InscripcionCursos()
         {
             InitializeComponent();
             dataGridViewCursos.DataSource = listaCursos;
-            dataGridViewCursos.Columns["cupoActual"].Visible = false;
+            dataGridViewCursos.Columns["CupoActual"].Visible = false;
+            dataGridViewCursos.Columns["CupoMaximo"].Visible = false;
+            dataGridViewCursos.Columns["Id"].Visible = false;
+            dataGridViewCursos.Columns["IdRequisitos"].Visible = false;
             dataGridViewCursos.MultiSelect = true;
             dataGridViewCursos.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             labelIndicaciones.Text = "Por favor selecciona los cursos a los que deseas inscribirte , " + SesionAlumno.AlumnoActual.Nombre;

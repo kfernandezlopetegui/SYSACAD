@@ -12,6 +12,9 @@ namespace Entidades
         public string CursoId { get; set; }
         public DateTime FechaInscripcion { get; set; }
 
+        [PrimaryKeyAtributo]
+        public int Id { get; set; } 
+
         public Inscripcion()
         {
         }
@@ -21,6 +24,7 @@ namespace Entidades
             AlumnoId = alumnoId;
             CursoId = cursoId;
             FechaInscripcion = DateTime.Now;
+            Id = Ids.GenerarIdUnico();
         }
     }
 }

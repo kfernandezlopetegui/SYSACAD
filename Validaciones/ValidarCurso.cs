@@ -1,4 +1,5 @@
-﻿using Entidades;
+﻿using DB;
+using Entidades;
 using LecturaEscritura;
 using System;
 using System.Collections.Generic;
@@ -16,16 +17,31 @@ namespace Validaciones
 
         public static Curso VerificarSiExisteCurso(string codigo)
         {
-            // Utiliza LINQ para buscar un usuario por su correo electrónico
+            
 
-            var cursosRegistrados = CRUD.ReadStreamJSON<Curso>("cursosRegistrados.json");
-
-            Curso? cursoEncontrado = cursosRegistrados.FirstOrDefault(u => u.Codigo == codigo);
+            Curso cursoEncontrado = CRUDB.ObtenerPorIdentificador<Curso>("Curso", "Codigo = @Codigo", new { Codigo = codigo }); 
 
 
             return cursoEncontrado;
 
 
+        }
+
+        public static bool VerificarRequisitos(RequisitosAcademicos requisito, int idAlumno)
+        {
+            Alumno alumnoEncontrado = CRUDB.ObtenerPorIdentificador<Alumno>("Alumno", "Dni = @Dni", new { Dni = idAlumno });
+            RequisitosAcademicos requisitosCurso = requisito;
+            List<string> listaCursosCorrelativos = CRUD.ConvertirJsonALista(requisitosCurso.IdCursosAprobadosJson);
+            List<string> cursosAprobadosAlumno = CRUD.ConvertirJsonALista(alumnoEncontrado.CursosAprobados);
+            bool tieneLasMateriasCorrelativas = listaCursosCorrelativos.All(curso => cursosAprobadosAlumno.Contains(curso));
+            bool cumpleCreditosMinimos = alumnoEncontrado.Creditos >= requisitosCurso.CantidadMinimaCreditos;
+            bool cumplePromedioMinimo = alumnoEncontrado.Promedio >= requisitosCurso.PromedioMinimo;
+            if (cumpleCreditosMinimos && cumplePromedioMinimo && tieneLasMateriasCorrelativas)
+            {
+                return true;
+            }
+
+            return false;
         }
     }
 }

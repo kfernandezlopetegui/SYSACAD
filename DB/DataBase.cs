@@ -11,7 +11,7 @@ namespace DB
     public class DataBase
     {
         private static SqlConnection? conexion;
-        private static string cadenaConexion = @"Server=.;Database=Prueba;Trusted_Connection=True;Encrypt=False;TrustServerCertificate=True;";
+        private static string cadenaConexion = @"Server=.;Database=SysacadPrueba;Trusted_Connection=True;Encrypt=False;TrustServerCertificate=True;";
 
         public DataBase()
         {
@@ -20,20 +20,36 @@ namespace DB
 
         public static string CreateTable<T>()
         {
-            
-            
-            string createTableQuery = BuildCreateTableQuery<T>();
-            conexion = new SqlConnection(cadenaConexion);
-            conexion.Open();
+            string tableName = typeof(T).Name;
 
-            using (SqlCommand command = new SqlCommand(createTableQuery, conexion))
+            // Verifica si la tabla ya existe
+            if (TablaExiste(tableName))
             {
-                command.ExecuteNonQuery();
+                return $"La tabla '{tableName}' ya existe en la base de datos.";
             }
 
-            return createTableQuery;
+            string createTableQuery = BuildCreateTableQuery<T>();
 
-           
+            try
+            {
+                conexion = new SqlConnection(cadenaConexion);
+                conexion.Open();
+
+                using (SqlCommand command = new SqlCommand(createTableQuery, conexion))
+                {
+                    command.ExecuteNonQuery();
+                }
+
+                return $"Tabla '{tableName}' creada exitosamente.";
+            }
+            catch (Exception ex)
+            {
+                return $"Error al crear la tabla '{tableName}': {ex.Message}";
+            }
+            finally
+            {
+                conexion.Close();
+            }
         }
 
         private static string ObtenerSqlDbType(Type type)
@@ -155,5 +171,136 @@ namespace DB
 
             return tablaVacia;
         }
+
+        public static bool VerificarBaseDeDatosVacia()
+        {
+            bool baseDeDatosVacia = true;
+
+            using (SqlConnection connection = new SqlConnection(cadenaConexion))
+            {
+                connection.Open();
+
+                // Consulta para contar la cantidad de tablas en la base de datos
+                string query = "SELECT COUNT(*) FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE'";
+
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    int cantidadTablas = Convert.ToInt32(command.ExecuteScalar());
+                    if (cantidadTablas > 0)
+                    {
+                        baseDeDatosVacia = false;
+                    }
+                }
+            }
+
+            return baseDeDatosVacia;
+        }
+
+        public static string ConstruirQueryInsert<T>(T objeto)
+        {
+            Type tipo = typeof(T);
+            PropertyInfo[] propiedades = tipo.GetProperties();
+
+            StringBuilder query = new StringBuilder($"INSERT INTO {tipo.Name} (");
+            StringBuilder values = new StringBuilder("VALUES (");
+
+            foreach (var propiedad in propiedades)
+            {
+                string nombreColumna = propiedad.Name;
+                object valor = propiedad.GetValue(objeto);
+
+                if (valor != null)  // Ignorar propiedades nulas
+                {
+                    query.Append($"{nombreColumna}, ");
+                    values.Append($"@{nombreColumna}, ");
+                }
+            }
+
+            // Eliminar la última coma y el espacio de los strings de consulta
+            query.Length -= 2;
+            values.Length -= 2;
+
+            query.Append(") ");
+            values.Append(")");
+
+            query.Append(values.ToString());
+
+            return query.ToString();
+        }
+
+        public static string InsertarRegistro<T>(T objeto)
+        {
+            string consulta = ConstruirQueryInsert(objeto);
+            conexion = new SqlConnection(cadenaConexion);
+            conexion.Open();
+            
+
+            using (SqlCommand command = new SqlCommand(consulta, conexion))
+            {
+                PropertyInfo[] propiedades = typeof(T).GetProperties();
+
+                foreach (var propiedad in propiedades)
+                {
+                    string nombreColumna = propiedad.Name;
+                    object valor = propiedad.GetValue(objeto);
+
+                    if (valor != null)  // Ignorar propiedades nulas
+                    {
+                        command.Parameters.AddWithValue($"@{nombreColumna}", valor);
+                    }
+                    else
+                    {
+                        // Si la propiedad es nula y no permite valores nulos en la base de datos,
+                        // puedes asignar un valor predeterminado o manejar la situación según tus necesidades.
+                        // Por ejemplo, si la propiedad es un tipo de datos no nullable, puedes asignar un valor predeterminado.
+                        // command.Parameters.AddWithValue($"@{nombreColumna}", valorPredeterminado);
+                    }
+                }
+
+                try
+                {
+                    int filasAfectadas = command.ExecuteNonQuery();
+
+                    if (filasAfectadas > 0)
+                    {
+                       return $"{typeof(T).Name} agregado correctamente a la tabla.";
+                    }
+                    else
+                    {
+                        return $"No se pudo agregar el {typeof(T).Name} a la tabla.";
+                    }
+                }
+                catch (SqlException ex)
+                {
+                    return $"Error al insertar el {typeof(T).Name}: {ex.Message}";
+                   
+                }
+                finally { conexion.Close(); }
+            }
+        }
+
+        private static bool TablaExiste(string tableName)
+        {
+            try
+            {
+                using (SqlConnection connection = new SqlConnection(cadenaConexion))
+                {
+                    connection.Open();
+
+                    string query = $"SELECT 1 FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME = '{tableName}'";
+
+                    using (SqlCommand command = new SqlCommand(query, connection))
+                    {
+                        return command.ExecuteScalar() != null;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error al verificar la existencia de la tabla: {ex.Message}");
+                return false; // En caso de error, asumimos que la tabla no existe
+            }
+        }
+
     }
 }

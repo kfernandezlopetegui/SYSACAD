@@ -1,4 +1,5 @@
-﻿using Entidades;
+﻿using DB;
+using Entidades;
 using LecturaEscritura;
 using System;
 using System.Collections.Generic;
@@ -10,28 +11,21 @@ namespace Actualizar
 {
     public class ActualizarInscripciones
     {
-        public static List<Inscripcion> ListaInscripcionesActuales(string file)
+        public static List<Inscripcion> ListaInscripcionesActuales()
         {
-            List<Inscripcion> inscripcionesRegistrados = CRUD.ReadStreamJSON<Inscripcion>(file);
+            List<Inscripcion> inscripcionesRegistrados = CRUDB.ObtenerTodos<Inscripcion>("Inscripcion");
             return inscripcionesRegistrados;
         }
-        public static Inscripcion GetInscripcion(string file,Inscripcion inscripcionIngresada)
+       
+
+        public static void AgregarInscripcion(Inscripcion nuevaInscripcion)
         {
-            List<Inscripcion> listaInscripciones = ListaInscripcionesActuales(file);
-            Inscripcion? inscripcionEncontrado = listaInscripciones.FirstOrDefault(u => u.FechaInscripcion == inscripcionIngresada.FechaInscripcion);
-            return inscripcionEncontrado;
+            DataBase.InsertarRegistro<Inscripcion>(nuevaInscripcion);
         }
 
-        public static void AgregarInscripcion(string file, Inscripcion nuevaInscripcion)
+        public static void EliminarInscripcion(Inscripcion nuevaInscripcion)
         {
-            
-            List<Inscripcion> listaInscripciones = ListaInscripcionesActuales(file);
-
-            
-            listaInscripciones.Add(nuevaInscripcion);
-
-            
-            CRUD.WriteStreamJSON(file, listaInscripciones);
+            CRUDB.EliminarPorCondicion<Inscripcion>("Inscripcion", "Codigo", nuevaInscripcion.Id);
         }
     }
 }

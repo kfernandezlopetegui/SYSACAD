@@ -14,6 +14,7 @@ namespace Entidades
         public double PromedioMinimo { get; set; }
         
         public string NombreCursosCorrelativos { get; set; }
+        public string IdCursosCorrelativos { get; set; }
 
     }
     

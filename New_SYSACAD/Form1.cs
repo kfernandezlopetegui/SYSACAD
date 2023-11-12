@@ -1,3 +1,4 @@
+using Actualizar;
 using Entidades;
 using Validaciones;
 
@@ -28,7 +29,7 @@ namespace New_SYSACAD
                     Menu.MostrarMenu(menuAdministrador, this);
                     break;
                 case 0:
-                    Alumno alumno = validarUsuario.VerificarSiExisteAlumno(usuario);
+                    Alumno alumno = validarUsuario.VerificarSiExisteAlumnoBD(usuario);
                     MenuEstudiante menuEstudiante = new MenuEstudiante(alumno);
                     Menu.MostrarMenu(menuEstudiante, this);
                     break;
@@ -85,6 +86,11 @@ namespace New_SYSACAD
         {
             PruebaSQL prueba = new PruebaSQL();
             Menu.MostrarMenu(prueba, this);
+        }
+
+        private void buttonAgregarAprobado_Click(object sender, EventArgs e)
+        {
+            ActualizarUsuarios.AgregarCursosAprobados("232323", 94298161);
         }
     }
 }

@@ -1,10 +1,12 @@
-﻿using Entidades;
+﻿using DB;
+using Entidades;
 using LecturaEscritura;
 using Pagos;
 using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -23,8 +25,8 @@ namespace Actualizar
         /// <returns>Una lista de ConceptoPagos que representa los pagos pendientes del alumno.</returns>
         public static List<ConceptoPagos> ListaPagosPendientes(int dniAlumno)
         {
-            List<Alumno> alumnosRegistrados = ActualizarUsuarios.ListaAlumnosActuales();
-            Alumno? alumnoEncontrado = alumnosRegistrados.FirstOrDefault(u => u.Dni == dniAlumno);
+           
+            Alumno? alumnoEncontrado = CRUDB.ObtenerPorIdentificador<Alumno>("Alumno", "Dni = @Dni", new { Dni = dniAlumno });
             List<ConceptoPagos> pagosPendientesRegistrados = new List<ConceptoPagos>();
             List<ConceptoPagos> listaConceptoPagos = CRUD.ConvertirJsonALista<ConceptoPagos>(alumnoEncontrado.ConceptoPagos);
             if (alumnoEncontrado != null)
@@ -43,8 +45,8 @@ namespace Actualizar
         /// <returns>True si la operación es exitosa; False si hay errores.</returns>
         public static bool RestarImportesPagosPendientes(int dniAlumno, List<ConceptoPagos> listaConceptos)
         {
-            List<Alumno> alumnosRegistrados = ActualizarUsuarios.ListaAlumnosActuales();
-            Alumno alumnoEncontrado = alumnosRegistrados.FirstOrDefault(u => u.Dni == dniAlumno);
+           
+            Alumno alumnoEncontrado = CRUDB.ObtenerPorIdentificador<Alumno>("Alumno", "Dni = @Dni", new { Dni = dniAlumno });
             List<ConceptoPagos> listaConceptoPagos = CRUD.ConvertirJsonALista<ConceptoPagos>(alumnoEncontrado.ConceptoPagos);
 
             if (alumnoEncontrado != null)
@@ -65,7 +67,9 @@ namespace Actualizar
                         if (conceptoPendiente.MontoPendiente <= 0)
                         {
                             conceptoPendiente.MontoPendiente = 0;
-                            
+
+                            listaConceptoPagos.RemoveAll(c => c.MontoPendiente == 0);
+
                         }
                     }
                     else
@@ -74,8 +78,8 @@ namespace Actualizar
                         return false;
                     }
                 }
-
-                CRUD.WriteStreamJSON("alumnosRegistrados.json", alumnosRegistrados);
+                alumnoEncontrado.ConceptoPagos = CRUD.ConvertirListaAJson<ConceptoPagos>(listaConceptoPagos) ;
+                CRUDB.ActualizarPorIdentificador("Alumno", "Dni", dniAlumno, alumnoEncontrado);
                 return true; 
             }
             else

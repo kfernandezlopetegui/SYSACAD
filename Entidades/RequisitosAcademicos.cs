@@ -25,24 +25,13 @@ namespace Entidades
             IdCursosAprobadosJson = idCursosAprobados;
             CantidadMinimaCreditos = cantidadMinimaCreditos;
             PromedioMinimo = promedioMinimo;
-            Id = GenerarIdUnico();
+            Id = Ids.GenerarIdUnico();
         }
 
        
        
 
-        public int GenerarIdUnico()
-        {
-            DateTime now = DateTime.Now;
-            int idUnico = int.Parse($"{now:yyMMddHHmmss}");
-            return idUnico;
-        }
+       
 
-        public int GenerarNumerosAleatorios(int digitos)
-        {
-            Random random = new Random();
-            int numeroAleatorio = random.Next((int)Math.Pow(10, digitos - 1), (int)Math.Pow(10, digitos));
-            return numeroAleatorio;
-        }
     }
 }

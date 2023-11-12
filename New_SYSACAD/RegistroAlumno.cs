@@ -1,4 +1,5 @@
 ﻿using Actualizar;
+using DB;
 using Entidades;
 using LecturaEscritura;
 using Microsoft.Win32;
@@ -68,13 +69,14 @@ namespace New_SYSACAD
                 bool temporal = checkBox1.Checked;
                 contraseñaP = Hash.GetHash(contraseñaP);
 
-
-
+                int legajo = DataBase.ObtenerUltimoLegajo();
+                legajo++;
 
                 Alumno alumno = new Alumno(nombre, apellido, "indefinido", mail, contraseñaP,
-                    temporal, false, "estudiante", fechaNacimiento, palabraClave, LegajoManager.GenerarNuevoLegajo(),
+                    temporal, false, "estudiante", fechaNacimiento, palabraClave, legajo,
                     dni, direccion, telefono);
-                ActualizarUsuarios.AgregarAlumno("alumnosRegistrados.json", alumno);
+
+                ActualizarUsuarios.AgregarAlumnoBD("alumnosRegistrados.json", alumno);
 
                 DialogResult resultado = MessageBox.Show("¡Registro exitoso! El alumno se ha registrado correctamente.",
                                              "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -148,7 +150,7 @@ namespace New_SYSACAD
             Regex regex = new Regex(patronCorreo);
             ValidarUsuario validarUsuario = new ValidarUsuario();
 
-            if (regex.IsMatch(correoElectronico) && validarUsuario.VerificarSiExisteAlumno(correoElectronico) == null)
+            if (regex.IsMatch(correoElectronico) && validarUsuario.VerificarSiExisteAlumnoBD(correoElectronico) == null)
             {
 
             }
@@ -181,7 +183,7 @@ namespace New_SYSACAD
                 return;
             }
 
-            if (validarUsuario.VerificarSiExisteAlumno(int.Parse(dni)) != null)
+            if (validarUsuario.VerificarSiExisteAlumnoBD(int.Parse(dni)) != null)
             {
                 MessageBox.Show("El DNI ingresado ya se encuentra ingresado en el sistema.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 textDni.Focus();
@@ -260,46 +262,16 @@ namespace New_SYSACAD
 
         }
 
-        private void LimpiarCampos()
-        {
-            textDni.Text = "Ingrese DNI";
-            FechaDeNacimiento.Value = DateTime.Now;
-            checkBox1.Checked = false;
-            textMail.Text = "Ingrese correo electronico";
-            textNombre.Text = textoPorDefectoNombre;
-            textApellido.Text = textoPorDefectoApellido;
-            textTelefono.Text = textoPorDefectoTelefono;
-            textDireccion.Text = textoPorDefectoDireccion;
-            textContraseñaP.Text = textoPorDefectoContraseñaP;
-            textPalabraClave.Text = textoPorDefectoPalabraClave;
-
-        }
+        
 
         private void RestablecerFormulario()
         {
-            controlTocoFocoDni = false;
-            controlTocoFocoNombre = false;
-            controlTocoFocoApellido = false;
-            controlTocoFocoTelefono = false;
-            controlTocoFocoMail = false;
-            controlTocoFocoDireccion = false;
-            controlTocoFocoContraseñaP = false;
-            controlTocoFocoPalabraClave = false;
-            LimpiarCampos();
-            LimpiarMensaje();
+            RegistroAlumno menuRegistro = new RegistroAlumno();
+
+            Menu.MostrarMenu(menuRegistro, this, 1);
         }
 
-        private void LimpiarMensaje()
-        {
-            labelConfirmacion.Text = string.Empty;
-        }
-
-        private void timerExito_Tick(object sender, EventArgs e)
-
-        {
-            RestablecerFormulario();
-            timerExito.Enabled = false;
-        }
+       
 
 
     }

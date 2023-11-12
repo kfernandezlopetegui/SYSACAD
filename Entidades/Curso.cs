@@ -9,8 +9,7 @@ namespace Entidades
 {
     public class Curso
     {
-        public  string primaryKey = "Codigo";
-        public  string foreingKeys = "IdRequisitos";
+       
         private string nombre;
         private string codigo;
         private string descripcion;
@@ -60,9 +59,10 @@ namespace Entidades
         [ForeignKeyAtributo(typeof(RequisitosAcademicos))]
         public int IdRequisitos { get { return idRequisitos; }set { idRequisitos = value; } }
 
-        public string NombreConCodigo
+        public string NombreConCodigo()
         {
-            get { return $"{Nombre}-({Codigo})"; }
+            return $"{Nombre}-({Codigo})"; 
+            
         }
         public void SumarInscripto()
         {

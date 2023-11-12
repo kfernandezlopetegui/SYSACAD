@@ -354,3 +354,6 @@ C:\Users\kflop\OneDrive\Escritorio\Sysacad\New_SYSACAD\bin\Debug\net6.0-windows\
 C:\Users\kflop\OneDrive\Escritorio\Sysacad\New_SYSACAD\bin\Debug\net6.0-windows\DB.dll
 C:\Users\kflop\OneDrive\Escritorio\Sysacad\New_SYSACAD\bin\Debug\net6.0-windows\DB.pdb
 C:\Users\kflop\OneDrive\Escritorio\Sysacad\New_SYSACAD\obj\Debug\net6.0-windows\New_SYSACAD.PruebaSQL.resources
+C:\Users\kflop\OneDrive\Escritorio\Sysacad\New_SYSACAD\obj\Debug\net6.0-windows\New_SYSACAD.EdicionRequisito.resources
+C:\Users\kflop\OneDrive\Escritorio\Sysacad\New_SYSACAD\obj\Debug\net6.0-windows\New_SYSACAD.EditarRequisitos.resources
+C:\Users\kflop\OneDrive\Escritorio\Sysacad\New_SYSACAD\obj\Debug\net6.0-windows\New_SYSACAD.EliminarRequisito.resources

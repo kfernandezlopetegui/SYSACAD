@@ -15,16 +15,18 @@ namespace New_SYSACAD
 {
     public partial class GestionarRequisitosAcademicos : Form
     {
-        List<Curso> listaCursos = ActualizarCurso.ListaCursosActuales("cursosRegistrados.json");
-        List<RequisitosAcademicos> listaRequisitos = ActualizarRequisitos.ListaRequisitosActuales("requisitosRegistrados.json");
+        List<Curso> listaCursos = ActualizarCurso.ListaCursosActualesBD();
+        List<RequisitosAcademicos> listaRequisitos = ActualizarRequisitos.ListaRequisitosActuales();
+        List<CursoConRequisitos> cursosConRequisitos;
 
 
         public GestionarRequisitosAcademicos()
         {
             InitializeComponent();
             dataGridViewCursos.DataSource = listaCursos;
-            List<CursoConRequisitos> cursosConRequisitos = ObtenerCursosConRequisitos(listaCursos, listaRequisitos);
+            cursosConRequisitos = ObtenerCursosConRequisitos(listaCursos, listaRequisitos);
             dataGridViewCursos.DataSource = cursosConRequisitos;
+            dataGridViewCursos.Columns["IdCursosCorrelativos"].Visible = false;
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -33,7 +35,7 @@ namespace New_SYSACAD
             Menu.MostrarMenu(menuAdministrador, this, 1);
         }
 
-        private static List<CursoConRequisitos> ObtenerCursosConRequisitos(List<Curso> listaCursos, List<RequisitosAcademicos> listaRequisitos)
+        public static List<CursoConRequisitos> ObtenerCursosConRequisitos(List<Curso> listaCursos, List<RequisitosAcademicos> listaRequisitos)
         {
             // Realiza la operación de combinación entre las listas de cursos y requisitos académicos
             var cursosConRequisitos = from curso in listaCursos
@@ -45,10 +47,23 @@ namespace New_SYSACAD
                                           CodigoCurso = curso.Codigo,
                                           CantidadMinimaCreditos = requisito.CantidadMinimaCreditos,
                                           PromedioMinimo = requisito.PromedioMinimo,
-                                          NombreCursosCorrelativos = ActualizarCurso.ObtenerNombreCursoPorCodigo(CRUD.ConvertirJsonALista(requisito.IdCursosAprobadosJson), "cursosRegistrados.json")
+                                          NombreCursosCorrelativos = ActualizarCurso.ObtenerNombreCursoPorCodigo(CRUD.ConvertirJsonALista(requisito.IdCursosAprobadosJson)),
+                                          IdCursosCorrelativos = requisito.IdCursosAprobadosJson
                                       };
 
             return cursosConRequisitos.ToList();
+        }
+
+        private void buttonEditar_Click(object sender, EventArgs e)
+        {
+            EditarRequisitos editarRequisitos = new EditarRequisitos(cursosConRequisitos);
+            Menu.MostrarMenu(editarRequisitos, this, 1);
+        }
+
+        private void buttonEliminar_Click(object sender, EventArgs e)
+        {
+            EliminarRequisito eliminarRequisito = new EliminarRequisito();
+            Menu.MostrarMenu(eliminarRequisito, this, 1);
         }
     }
 }
