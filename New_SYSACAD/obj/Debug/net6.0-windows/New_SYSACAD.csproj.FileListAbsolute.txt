@@ -357,3 +357,4 @@ C:\Users\kflop\OneDrive\Escritorio\Sysacad\New_SYSACAD\obj\Debug\net6.0-windows\
 C:\Users\kflop\OneDrive\Escritorio\Sysacad\New_SYSACAD\obj\Debug\net6.0-windows\New_SYSACAD.EdicionRequisito.resources
 C:\Users\kflop\OneDrive\Escritorio\Sysacad\New_SYSACAD\obj\Debug\net6.0-windows\New_SYSACAD.EditarRequisitos.resources
 C:\Users\kflop\OneDrive\Escritorio\Sysacad\New_SYSACAD\obj\Debug\net6.0-windows\New_SYSACAD.EliminarRequisito.resources
+C:\Users\kflop\OneDrive\Escritorio\Sysacad\New_SYSACAD\obj\Debug\net6.0-windows\New_SYSACAD.sourcelink.json

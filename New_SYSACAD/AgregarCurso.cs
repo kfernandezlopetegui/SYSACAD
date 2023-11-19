@@ -78,14 +78,14 @@ namespace New_SYSACAD
             controlTocoFocoCupo = true;
         }
 
-        private void textCodigo_Validated(object sender, EventArgs e)
+        private async void textCodigo_Validated(object sender, EventArgs e)
         {
             string textoCampo = "Codigo de curso";
 
             ControlForm.ValidarCampoNoVacio(textCodigo, textoCampo);
 
 
-            if (ValidarCurso.VerificarSiExisteCurso(textCodigo.Text) != null)
+            if (await ValidarCurso.VerificarSiExisteCurso(textCodigo.Text) != null)
             {
                 MessageBox.Show("El codigo  ya se encuentra ingresado en el sistema.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 textCodigo.Focus();

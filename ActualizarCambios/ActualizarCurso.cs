@@ -21,33 +21,34 @@ namespace Actualizar
         }
         
        
-        public static void AgregarCursoBD(Curso nuevoCurso)
+        public async static void AgregarCursoBD(Curso nuevoCurso)
         { 
-           DataBase.InsertarRegistro<Curso>(nuevoCurso);
+          
+            await CRUDB.InsertarRegistroAsync<Curso>(nuevoCurso);
         }
 
-        public static void BorrarCursoPorCodigoBD(string codigo)
+        public async static void BorrarCursoPorCodigoBD(string codigo)
         {
             
-            CRUDB.EliminarPorCondicion<Curso>("Curso", "Codigo", codigo);
+           await CRUDB.EliminarPorCondicionAsync<Curso>("Curso", "Codigo", codigo);
 
         }
 
-        public static void EditarCursoBD(Curso curso, string codigoOriginal)
+        public async static void EditarCursoBD(Curso curso, string codigoOriginal)
         {
             /* Edita el curso
              * recibe el curso a guardar, el codigo original del curso que se esta editando
              * 
              */
-            CRUDB.ActualizarPorIdentificador("Curso", "Codigo", codigoOriginal, curso);
+            await CRUDB.ActualizarPorIdentificadorAsync("Curso", "Codigo", codigoOriginal, curso);
         }
-        public static void EditarCursoBD(Curso curso)
+        public async static void EditarCursoBD(Curso curso)
         {
             /* Edita el curso
              * recibe el curso a guardar
              * 
              */
-            CRUDB.ActualizarPorIdentificador("Curso", "Codigo", curso.Codigo, curso);
+            await CRUDB.ActualizarPorIdentificadorAsync("Curso", "Codigo", curso.Codigo, curso);
         }
         public static bool VerificarCupo(Curso curso)
         {
@@ -59,7 +60,7 @@ namespace Actualizar
         }
 
 
-        public static void ActualizarCupo( string file, string codigoCurso)
+        public async static void ActualizarCupo( string file, string codigoCurso)
         {
             /* Edita el curso
              * recibe el curso a guardar, el codigo original del curso que se esta editando
@@ -67,7 +68,7 @@ namespace Actualizar
              */
            
             
-            Curso cursoEncontrado = CRUDB.ObtenerPorIdentificador<Curso>("Curso", "Codigo = @Codigo", new { Codigo = codigoCurso });
+            Curso cursoEncontrado = await CRUDB.ObtenerPorIdentificadorAsync<Curso>("Curso", "Codigo = @Codigo", new { Codigo = codigoCurso });
 
             cursoEncontrado.SumarInscripto();
             EditarCursoBD(cursoEncontrado);
@@ -75,10 +76,10 @@ namespace Actualizar
 
         }
 
-        public static bool VerificarCupoOnline(Curso curso)
+        public async static Task<bool> VerificarCupoOnline(Curso curso)
         {
 
-            Curso cursoObtenido = CRUDB.ObtenerPorIdentificador<Curso>("Curso", "Codigo = @Codigo", new {Codigo = curso.Codigo }); 
+            Curso cursoObtenido = await CRUDB.ObtenerPorIdentificadorAsync<Curso>("Curso", "Codigo = @Codigo", new {Codigo = curso.Codigo }); 
 
             return VerificarCupo(cursoObtenido);
         }

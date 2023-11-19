@@ -114,3 +114,4 @@ C:\Users\kflop\OneDrive\Escritorio\Sysacad\Validaciones\obj\Debug\net6.0\Validac
 C:\Users\kflop\OneDrive\Escritorio\Sysacad\Validaciones\obj\Debug\net6.0\ref\Validaciones.dll
 C:\Users\kflop\OneDrive\Escritorio\Sysacad\Validaciones\bin\Debug\net6.0\DB.dll
 C:\Users\kflop\OneDrive\Escritorio\Sysacad\Validaciones\bin\Debug\net6.0\DB.pdb
+C:\Users\kflop\OneDrive\Escritorio\Sysacad\Validaciones\obj\Debug\net6.0\Validaciones.sourcelink.json

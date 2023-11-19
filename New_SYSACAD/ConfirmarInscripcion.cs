@@ -62,13 +62,13 @@ namespace New_SYSACAD
 
         }
 
-        private void buttonInscripcion_Click(object sender, EventArgs e)
+        private async void buttonInscripcion_Click(object sender, EventArgs e)
         {
             foreach (var curso in listaDeCursos)
             {
-                RequisitosAcademicos requisitosCurso = ActualizarRequisitos.ObtenerRequisitos(curso.IdRequisitos);
-                bool cumpleRequisitos = ValidarCurso.VerificarRequisitos(requisitosCurso, SesionAlumno.AlumnoActual.Dni);
-                bool disponibilidad = ActualizarCurso.VerificarCupoOnline(curso);
+                RequisitosAcademicos requisitosCurso = await ActualizarRequisitos.ObtenerRequisitos(curso.IdRequisitos);
+                bool cumpleRequisitos = await ValidarCurso.VerificarRequisitos(requisitosCurso, SesionAlumno.AlumnoActual.Dni);
+                bool disponibilidad = await ActualizarCurso.VerificarCupoOnline(curso);
 
                 if (disponibilidad && cumpleRequisitos)
                 {

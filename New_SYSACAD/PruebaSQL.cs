@@ -10,6 +10,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -38,7 +39,7 @@ namespace New_SYSACAD
 
         }
 
-        private void buttonCrear_Click(object sender, EventArgs e)
+        private async void buttonCrear_Click(object sender, EventArgs e)
         {
             // DataBase.CreateTable<Alumno>();
             /*Alumno alumno1 = new Alumno("karen", "fernandez", "Femenino", "karen", Hash.GetHash("1234"), true,
@@ -60,26 +61,35 @@ namespace New_SYSACAD
             {
                 resultado = "Alumno no encontrado.";
             }*/
-            Curso nuevoCurso = new Curso("PRUEBA", "12344", "DESCRIPCION", 2, "TUP", 20);
-            string respuesta = DataBase.InsertarRegistro<Curso>(nuevoCurso);
-            MessageBox.Show(respuesta);
-        }
+            /*Curso nuevoCurso = new Curso("PRUEBA", "12344", "DESCRIPCION", 2, "TUP", 20);
+            string respuesta = DataBase.InsertarRegistro<Curso>(nuevoCurso);*/
 
-        private void buttonBorrar_Click(object sender, EventArgs e)
-        {
-            string dni = textBoxDni.Text;
-            string resultado = CRUDB.EliminarPorCondicion<Alumno>("Alumno", "Dni", dni);
+            int legajo = DataBase.ObtenerUltimoLegajo();
+            legajo++;
+            Alumno alumno = new Alumno("Prueba", "Asincronico", "indefinido", "asincronico@gmail.com", "hola1234",
+                    false, false, "estudiante", "23/11/2000", "asincronico", legajo,
+                    93298161, "calle falsa", "123324353");
+
+            string resultado = await CRUDB.InsertarRegistroAsync<Alumno>(alumno);
+            
             MessageBox.Show(resultado);
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private async void buttonBorrar_Click(object sender, EventArgs e)
+        {
+            string dni = textBoxDni.Text;
+            string resultado = await CRUDB.EliminarPorCondicionAsync<Alumno>("Alumno", "Dni", dni);
+            MessageBox.Show(resultado);
+        }
+
+        private async void button2_Click(object sender, EventArgs e)
         {
             string nombre = textBoxNombreActualizar.Text;
             string apellido = textBoxApellidoActualizar.Text;
 
             Alumno alumno2 = new Alumno(nombre, apellido, "Femenino", "karen", Hash.GetHash("1234"), true,
                 false, "estudiante", "1999,08,28", "Mango", 1112, 94298163, "nandubay 123", "1173610818");
-            string resultado = CRUDB.ActualizarPorIdentificador("Alumno", "Dni", "94298161", alumno2);
+            string resultado = await CRUDB.ActualizarPorIdentificadorAsync("Alumno", "Dni", "94298161", alumno2);
             MessageBox.Show(resultado);
         }
 

@@ -28,7 +28,7 @@ namespace New_SYSACAD
             dataGridViewCursos.Columns["IdCursosCorrelativos"].Visible = false;
         }
 
-        private void dataGridViewCursos_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private async void dataGridViewCursos_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             CursoConRequisitos cursoSeleccionado = (CursoConRequisitos)dataGridViewCursos.Rows[e.RowIndex].DataBoundItem;
 
@@ -40,10 +40,10 @@ namespace New_SYSACAD
                 RequisitosAcademicos requisitosAcademicos = new RequisitosAcademicos(stringJson, 0, 0);
                 ActualizarRequisitos.AgregarRequisitos(requisitosAcademicos);
 
-                Curso cursoDelRequisito = CRUDB.ObtenerPorIdentificador<Curso>("Curso", "Codigo = @Codigo", new { Codigo = cursoSeleccionado.CodigoCurso });
+                Curso cursoDelRequisito = await CRUDB.ObtenerPorIdentificadorAsync<Curso>("Curso", "Codigo = @Codigo", new { Codigo = cursoSeleccionado.CodigoCurso });
                 int idEliminar = cursoDelRequisito.IdRequisitos;
                 cursoDelRequisito.IdRequisitos = requisitosAcademicos.Id;
-                CRUDB.ActualizarPorIdentificador("Curso", "Codigo", cursoSeleccionado.CodigoCurso, cursoDelRequisito);
+                await CRUDB.ActualizarPorIdentificadorAsync("Curso", "Codigo", cursoSeleccionado.CodigoCurso, cursoDelRequisito);
 
                 ActualizarRequisitos.BorrarRequisitoPorId(idEliminar);
 

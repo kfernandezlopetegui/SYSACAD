@@ -105,10 +105,10 @@ namespace New_SYSACAD
             }
         }
 
-        private void buttonGuardar_Click(object sender, EventArgs e)
+        private async void buttonGuardar_Click(object sender, EventArgs e)
         {
             List<string> listaIdCursos = obtenerCursosSeleccionados();
-            Curso cursoDelRequisito = CRUDB.ObtenerPorIdentificador<Curso>("Curso", "Codigo = @Codigo", new { Codigo = cursoConRequisitos.CodigoCurso });
+            Curso cursoDelRequisito = await CRUDB.ObtenerPorIdentificadorAsync<Curso>("Curso", "Codigo = @Codigo", new { Codigo = cursoConRequisitos.CodigoCurso });
 
             string idCursosJson = CRUD.ConvertirListaAJson(listaIdCursos);
             int creditos = int.Parse(textBoxCreditosObtenidos.Text);
@@ -119,7 +119,7 @@ namespace New_SYSACAD
             cursoDelRequisito.IdRequisitos = idRequisito;
 
             ActualizarRequisitos.AgregarRequisitos(requisitosAcademicos);
-            CRUDB.ActualizarPorIdentificador("Curso", "Codigo", cursoConRequisitos.CodigoCurso, cursoDelRequisito);
+            await CRUDB.ActualizarPorIdentificadorAsync("Curso", "Codigo", cursoConRequisitos.CodigoCurso, cursoDelRequisito);
             ActualizarRequisitos.BorrarRequisitoPorId(idEliminar);
             DialogResult resultado = MessageBox.Show($"¡Actualizacion exitosa! El requisito academico de {cursoConRequisitos.NombreCurso} se ha actualizado correctamente.",
                                              "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);

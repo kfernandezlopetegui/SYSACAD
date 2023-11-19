@@ -24,8 +24,8 @@ namespace New_SYSACAD
         public FormPagosPendientes()
         {
             InitializeComponent();
-            listaConceptos = ActualizarPagosPendientes.ListaPagosPendientes(SesionAlumno.AlumnoActual.Dni);
-            dataGridView1.DataSource = listaConceptos;
+
+            CargarConceptos();
             DataGridViewTextBoxColumn columnaImporteAPagar = new DataGridViewTextBoxColumn();
             columnaImporteAPagar.HeaderText = "Importe a Pagar";
             columnaImporteAPagar.Name = "ImporteAPagar";
@@ -88,5 +88,12 @@ namespace New_SYSACAD
                 }
             }
         }
+    
+        public async void CargarConceptos()
+        {
+            listaConceptos = await ActualizarPagosPendientes.ListaPagosPendientes(SesionAlumno.AlumnoActual.Dni);
+            dataGridView1.DataSource = listaConceptos;
+        }
+    
     }
 }

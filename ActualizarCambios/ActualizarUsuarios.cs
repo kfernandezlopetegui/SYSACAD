@@ -23,19 +23,20 @@ namespace Actualizar
             return usuariosRegistrados;
         }
 
-        public static void AgregarAlumnoBD(string file, Alumno nuevoUsuario)
+        public async static void AgregarAlumnoBD(string file, Alumno nuevoUsuario)
         {
-            DataBase.InsertarRegistro<Alumno>(nuevoUsuario);
+           
+            await CRUDB.InsertarRegistroAsync<Alumno>(nuevoUsuario);
         }
 
-        public static void AgregarPagosPendientes(ConceptoPagos conceptoPagos, int dniAlumno)
+        public async static void AgregarPagosPendientes(ConceptoPagos conceptoPagos, int dniAlumno)
         {
             /* Agrega los pagos pendientes al alumno
              * recibe el concepto de pago a agregar, el dni del alumno que se esta editando
              *  
              */
             
-            Alumno alumnoEncontrado = CRUDB.ObtenerPorIdentificador<Alumno>("Alumno", "Dni = @Dni", new { Dni = dniAlumno });
+            Alumno alumnoEncontrado = await CRUDB.ObtenerPorIdentificadorAsync<Alumno>("Alumno", "Dni = @Dni", new { Dni = dniAlumno });
 
             if (alumnoEncontrado != null)
             {
@@ -49,7 +50,7 @@ namespace Actualizar
 
                 alumnoEncontrado.ConceptoPagos = CRUD.ConvertirListaAJson<ConceptoPagos>(listaConceptoPagos);
                 string dni = alumnoEncontrado.Dni.ToString();
-                CRUDB.ActualizarPorIdentificador("Alumno", "Dni", dni, alumnoEncontrado);
+                await CRUDB.ActualizarPorIdentificadorAsync("Alumno", "Dni", dni, alumnoEncontrado);
             }
 
 
@@ -61,13 +62,13 @@ namespace Actualizar
 
 
 
-        public static void AgregarCursosAprobados(string codigoCurso, int dniAlumno)
+        public async static void AgregarCursosAprobados(string codigoCurso, int dniAlumno)
         {
             /* Agrega los pagos pendientes al alumno
              * recibe el concepto de pago a agregar, el dni del alumno que se esta editando
              *  
              */
-            Alumno alumnoEncontrado = CRUDB.ObtenerPorIdentificador<Alumno>("Alumno", "Dni = @Dni", new { Dni = dniAlumno });
+            Alumno alumnoEncontrado = await CRUDB.ObtenerPorIdentificadorAsync<Alumno>("Alumno", "Dni = @Dni", new { Dni = dniAlumno });
             
             if (alumnoEncontrado != null)
             {
@@ -79,7 +80,7 @@ namespace Actualizar
                 alumnoEncontrado.CursosAprobados = CRUD.ConvertirListaAJson(listaCursosAprobados);
 
                 string dni = alumnoEncontrado.Dni.ToString();
-                CRUDB.ActualizarPorIdentificador("Alumno", "Dni", dni, alumnoEncontrado);
+                await CRUDB.ActualizarPorIdentificadorAsync("Alumno", "Dni", dni, alumnoEncontrado);
             }
 
 

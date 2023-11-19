@@ -18,14 +18,16 @@ namespace Actualizar
         }
        
 
-        public static void AgregarInscripcion(Inscripcion nuevaInscripcion)
+        public async static void AgregarInscripcion(Inscripcion nuevaInscripcion)
         {
-            DataBase.InsertarRegistro<Inscripcion>(nuevaInscripcion);
+           
+            await CRUDB.InsertarRegistroAsync<Inscripcion>(nuevaInscripcion);
+
         }
 
-        public static void EliminarInscripcion(Inscripcion nuevaInscripcion)
+        public async static void EliminarInscripcion(Inscripcion nuevaInscripcion)
         {
-            CRUDB.EliminarPorCondicion<Inscripcion>("Inscripcion", "Codigo", nuevaInscripcion.Id);
+            await CRUDB.EliminarPorCondicionAsync<Inscripcion>("Inscripcion", "Codigo", nuevaInscripcion.Id);
         }
     }
 }

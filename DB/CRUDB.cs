@@ -15,98 +15,38 @@ namespace DB
     {
         
         private static string cadenaConexion = @"Server=.;Database=SysacadPrueba;Trusted_Connection=True;Encrypt=False;TrustServerCertificate=True;";
-        
-        public static T ObtenerPorIdentificador<T>(string nombreTabla, string condicion, object parametros = null)
+
+        public static async Task<string> CreateTableAsync<T>()
         {
-            using (SqlConnection conexion = new SqlConnection(cadenaConexion))
+            string tableName = typeof(T).Name;
+
+            // Verifica si la tabla ya existe
+            if (DataBase.TablaExiste(tableName))
             {
-                string consultaSql = $"SELECT TOP 1 * FROM {nombreTabla} WHERE {condicion}";
-                using (SqlCommand comando = new SqlCommand(consultaSql, conexion))
-                {
-                    conexion.Open();
-                    if (parametros != null)
-                    {
-                        foreach (var propiedad in parametros.GetType().GetProperties())
-                        {
-                            comando.Parameters.AddWithValue($"@{propiedad.Name}", propiedad.GetValue(parametros));
-                        }
-                    }
-
-                    using (SqlDataReader reader = comando.ExecuteReader())
-                    {
-                        if (reader.Read())
-                        {
-                            T obj = Activator.CreateInstance<T>();
-
-                            foreach (var propiedad in typeof(T).GetProperties())
-                            {
-                                var valor = reader[propiedad.Name];
-                                if (valor != DBNull.Value)
-                                {
-                                    propiedad.SetValue(obj, valor);
-                                }
-                            }
-
-                            return obj;
-                        }
-                    }
-                }
+                return $"La tabla '{tableName}' ya existe en la base de datos.";
             }
 
-            return default(T);
-        }
+            string createTableQuery = DataBase.BuildCreateTableQuery<T>();
 
-
-        public static string EliminarPorCondicion<T>(string nombreTabla, string columna, object valor)
-        {
-            using (SqlConnection conexion = new SqlConnection(cadenaConexion))
-            {
-                string consultaSql = $"DELETE FROM {nombreTabla} WHERE {columna} = @Valor";
-
-                using (SqlCommand comando = new SqlCommand(consultaSql, conexion))
-                {
-                    comando.Parameters.AddWithValue("@Valor", valor);
-
-                    try
-                    {
-                        conexion.Open();
-                        int filasAfectadas = comando.ExecuteNonQuery();
-
-                        if (filasAfectadas > 0)
-                        {
-                            return $"Eliminación exitosa. Filas afectadas: {filasAfectadas}";
-                        }
-                        else
-                        {
-                            return "No se encontraron filas para eliminar.";
-                        }
-                    }
-                    catch (Exception ex)
-                    {
-                        return $"Error al eliminar filas: {ex.Message}";
-                    }
-                }
-            }
-        }
-
-
-        public static string ActualizarPorIdentificador<T>(string nombreTabla, string columnaId, object valorId, T objetoActualizado)
-        {
             try
             {
-                EliminarPorCondicion<T>(nombreTabla, columnaId, valorId);
-                DataBase.InsertarRegistro<T>(objetoActualizado);
+                using (SqlConnection connection = new SqlConnection(cadenaConexion))
+                {
+                    await connection.OpenAsync();
 
-                return "Actualización exitosa.";
-                    
-                
+                    using (SqlCommand command = new SqlCommand(createTableQuery, connection))
+                    {
+                        await command.ExecuteNonQueryAsync();
+                    }
+                }
+
+                return $"Tabla '{tableName}' creada exitosamente.";
             }
             catch (Exception ex)
             {
-                return $"Error al actualizar: {ex.Message}";
+                return $"Error al crear la tabla '{tableName}': {ex.Message}";
             }
         }
-
 
         public static List<T> ObtenerTodos<T>(string nombreTabla)
         {
@@ -169,7 +109,6 @@ namespace DB
             return listaObjetos;
         }
 
-
         public static bool EsIdentificadorUnico<T>(string nombreTabla, string columnaId, object valorId)
         {
             try
@@ -200,6 +139,142 @@ namespace DB
                 return false;
             }
         }
+
+        public static async Task<string> InsertarRegistroAsync<T>(T objeto)
+        {
+            string consulta = DataBase.ConstruirQueryInsert(objeto);
+
+            using (SqlConnection connection = new SqlConnection(cadenaConexion))
+            {
+                await connection.OpenAsync();
+
+                using (SqlCommand command = new SqlCommand(consulta, connection))
+                {
+                    PropertyInfo[] propiedades = typeof(T).GetProperties();
+
+                    foreach (var propiedad in propiedades)
+                    {
+                        string nombreColumna = propiedad.Name;
+                        object valor = propiedad.GetValue(objeto);
+
+                        if (valor != null)  // Ignorar propiedades nulas
+                        {
+                            command.Parameters.AddWithValue($"@{nombreColumna}", valor);
+                        }
+                        
+                    }
+
+                    try
+                    {
+                        int filasAfectadas = await command.ExecuteNonQueryAsync();
+
+                        if (filasAfectadas > 0)
+                        {
+                            return $"{typeof(T).Name} agregado correctamente a la tabla.";
+                        }
+                        else
+                        {
+                            return $"No se pudo agregar el {typeof(T).Name} a la tabla.";
+                        }
+                    }
+                    catch (SqlException ex)
+                    {
+                        return $"Error al insertar el {typeof(T).Name}: {ex.Message}";
+                    }
+                }
+            }
+        }
+
+        public static async Task<string> EliminarPorCondicionAsync<T>(string nombreTabla, string columna, object valor)
+        {
+            using (SqlConnection conexion = new SqlConnection(cadenaConexion))
+            {
+                string consultaSql = $"DELETE FROM {nombreTabla} WHERE {columna} = @Valor";
+
+                using (SqlCommand comando = new SqlCommand(consultaSql, conexion))
+                {
+                    comando.Parameters.AddWithValue("@Valor", valor);
+
+                    try
+                    {
+                        await conexion.OpenAsync();
+                        int filasAfectadas = await comando.ExecuteNonQueryAsync();
+
+                        if (filasAfectadas > 0)
+                        {
+                            return $"Eliminación exitosa. Filas afectadas: {filasAfectadas}";
+                        }
+                        else
+                        {
+                            return "No se encontraron filas para eliminar.";
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        return $"Error al eliminar filas: {ex.Message}";
+                    }
+                }
+            }
+        }
+
+        public static async Task<string> ActualizarPorIdentificadorAsync<T>(string nombreTabla, string columnaId, object valorId, T objetoActualizado)
+        {
+            try
+            {
+                await EliminarPorCondicionAsync<T>(nombreTabla, columnaId, valorId);
+                await CRUDB.InsertarRegistroAsync<T>(objetoActualizado);
+
+                return "Actualización exitosa.";
+            }
+            catch (Exception ex)
+            {
+                return $"Error al actualizar: {ex.Message}";
+            }
+        }
+
+        public static async Task<T> ObtenerPorIdentificadorAsync<T>(string nombreTabla, string condicion, object parametros = null)
+        {
+            return await Task.Run(() =>
+            {
+                using (SqlConnection conexion = new SqlConnection(cadenaConexion))
+                {
+                    string consultaSql = $"SELECT TOP 1 * FROM {nombreTabla} WHERE {condicion}";
+                    using (SqlCommand comando = new SqlCommand(consultaSql, conexion))
+                    {
+                        conexion.Open();
+                        if (parametros != null)
+                        {
+                            foreach (var propiedad in parametros.GetType().GetProperties())
+                            {
+                                comando.Parameters.AddWithValue($"@{propiedad.Name}", propiedad.GetValue(parametros));
+                            }
+                        }
+
+                        using (SqlDataReader reader = comando.ExecuteReader())
+                        {
+                            if (reader.Read())
+                            {
+                                T obj = Activator.CreateInstance<T>();
+
+                                foreach (var propiedad in typeof(T).GetProperties())
+                                {
+                                    var valor = reader[propiedad.Name];
+                                    if (valor != DBNull.Value)
+                                    {
+                                        propiedad.SetValue(obj, valor);
+                                    }
+                                }
+
+                                return obj;
+                            }
+                        }
+                    }
+
+                    return default(T);
+                }
+            });
+        }
+
 
     }
 

@@ -141,7 +141,7 @@ namespace New_SYSACAD
             textPalabraClave.Text = string.Empty;
         }
 
-        private void textMail_Validated(object sender, EventArgs e)
+        private async void textMail_Validated(object sender, EventArgs e)
         {
             string correoElectronico = textMail.Text;
 
@@ -150,7 +150,7 @@ namespace New_SYSACAD
             Regex regex = new Regex(patronCorreo);
             ValidarUsuario validarUsuario = new ValidarUsuario();
 
-            if (regex.IsMatch(correoElectronico) && validarUsuario.VerificarSiExisteAlumnoBD(correoElectronico) == null)
+            if (regex.IsMatch(correoElectronico) && await validarUsuario.VerificarSiExisteAlumnoBD(correoElectronico) == null)
             {
 
             }
@@ -162,7 +162,7 @@ namespace New_SYSACAD
             }
         }
 
-        private void textDni_Validated(object sender, EventArgs e)
+        private async void textDni_Validated(object sender, EventArgs e)
         {
             string dni = textDni.Text;
             ValidarUsuario validarUsuario = new ValidarUsuario();
@@ -183,7 +183,7 @@ namespace New_SYSACAD
                 return;
             }
 
-            if (validarUsuario.VerificarSiExisteAlumnoBD(int.Parse(dni)) != null)
+            if (await validarUsuario.VerificarSiExisteAlumnoBD(int.Parse(dni)) != null)
             {
                 MessageBox.Show("El DNI ingresado ya se encuentra ingresado en el sistema.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 textDni.Focus();

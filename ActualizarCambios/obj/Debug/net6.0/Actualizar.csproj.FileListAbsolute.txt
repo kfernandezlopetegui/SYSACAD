@@ -126,3 +126,4 @@ C:\Users\kflop\OneDrive\Escritorio\Sysacad\ActualizarCambios\obj\Debug\net6.0\Ac
 C:\Users\kflop\OneDrive\Escritorio\Sysacad\ActualizarCambios\obj\Debug\net6.0\ref\Actualizar.dll
 C:\Users\kflop\OneDrive\Escritorio\Sysacad\ActualizarCambios\bin\Debug\net6.0\DB.dll
 C:\Users\kflop\OneDrive\Escritorio\Sysacad\ActualizarCambios\bin\Debug\net6.0\DB.pdb
+C:\Users\kflop\OneDrive\Escritorio\Sysacad\ActualizarCambios\obj\Debug\net6.0\Actualizar.sourcelink.json

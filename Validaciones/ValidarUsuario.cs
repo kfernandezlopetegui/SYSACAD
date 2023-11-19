@@ -6,12 +6,7 @@ namespace Validaciones
 {
     public class ValidarUsuario
     {
-        private List<Usuario> listaUsuariosAux = new List<Usuario>();
-
-        private List<Alumno> listaAlumnos = new List<Alumno>();
-        private List<Curso> listaCursos = new List<Curso>();
-        private string usuarioAdminRuta = "usuarios.json";
-        private string alumnosRuta = "alumnosRegistrados.json";
+        
 
         public ValidarUsuario()
         {
@@ -24,31 +19,31 @@ namespace Validaciones
         }
        
 
-        public Administrador VerificarSiExisteAdministradorBD(string usuarioIngresado)
+        public async Task<Administrador> VerificarSiExisteAdministradorBD(string usuarioIngresado)
         {
 
 
-            Administrador alumnoEncontrado = CRUDB.ObtenerPorIdentificador<Administrador>("Administrador", "Email = @Email", new { Email = usuarioIngresado });
+            Administrador administradorEncontrado = await CRUDB.ObtenerPorIdentificadorAsync<Administrador>("Administrador", "Email = @Email", new { Email = usuarioIngresado });
 
 
-            return alumnoEncontrado;
+            return administradorEncontrado;
 
         }
-        public Alumno VerificarSiExisteAlumnoBD(string usuarioIngresado)
+        public async Task<Alumno> VerificarSiExisteAlumnoBD(string usuarioIngresado)
         {
             
 
-            Alumno alumnoEncontrado = CRUDB.ObtenerPorIdentificador<Alumno>("Alumno", "Email = @Email", new { Email = usuarioIngresado });
+            Alumno alumnoEncontrado = await CRUDB.ObtenerPorIdentificadorAsync<Alumno>("Alumno", "Email = @Email", new { Email = usuarioIngresado });
 
 
             return alumnoEncontrado;
 
         }
-        public Alumno VerificarSiExisteAlumnoBD(int dni)
+        public async Task<Alumno> VerificarSiExisteAlumnoBD(int dni)
         {
           
 
-           Alumno alumnoEncontrado = CRUDB.ObtenerPorIdentificador<Alumno>("Alumno", "Dni = @Dni", new { Dni = dni });
+           Alumno alumnoEncontrado = await CRUDB.ObtenerPorIdentificadorAsync<Alumno>("Alumno", "Dni = @Dni", new { Dni = dni });
 
 
             return alumnoEncontrado;
@@ -56,11 +51,11 @@ namespace Validaciones
 
         }
 
-        public  int VerificarUsuario(string usuarioIngresado, string claveIngresada)
+        public async Task<int> VerificarUsuario(string usuarioIngresado, string claveIngresada)
         {
             // Utiliza LINQ para buscar un usuario por su correo electrónico
-            Administrador usuarioEncontrado = VerificarSiExisteAdministradorBD(usuarioIngresado);
-            Alumno alumnoEncontrado = VerificarSiExisteAlumnoBD(usuarioIngresado);
+            Administrador usuarioEncontrado = await VerificarSiExisteAdministradorBD(usuarioIngresado);
+            Alumno alumnoEncontrado = await VerificarSiExisteAlumnoBD(usuarioIngresado);
 
             if (usuarioEncontrado != null && Hash.ValidatePassword(claveIngresada, usuarioEncontrado.Clave) && usuarioEncontrado.Rol=="administrador")
             {
@@ -74,14 +69,15 @@ namespace Validaciones
                 return -1; // Usuario o contraseña incorrectos
         }
 
-        public void CrearUsuariosPorDefecto()
+        public async void CrearUsuariosPorDefecto()
         {
 
             if (DataBase.VerificarTablaVacia("Administrador"))
             {
                 Administrador administrador = new Administrador("Karen", "Fernandez", "Femenino", "admin", Hash.GetHash("admin"), false,
                 false, "administrador", "1999,08,28", "Mango", 0000);
-                DataBase.InsertarRegistro<Administrador>(administrador);
+                
+                await CRUDB.InsertarRegistroAsync<Administrador>(administrador);
 
             }
 
@@ -89,18 +85,19 @@ namespace Validaciones
             {
                 Alumno alumno = new Alumno("karen", "fernandez", "Femenino", "karen", Hash.GetHash("1234"), true,
                  false, "estudiante", "1999,08,28", "Mango", 1111, 94298161, "nandubay 123", "1173610818");
-                DataBase.InsertarRegistro<Alumno>(alumno);
+                
+                await CRUDB.InsertarRegistroAsync<Alumno>(alumno);
             }
         }
-        public void CrearTablas()
+        public async void CrearTablas()
         {
             if (DataBase.VerificarBaseDeDatosVacia())
             {
-                DataBase.CreateTable<Administrador>();
-                DataBase.CreateTable<Alumno>();
-                DataBase.CreateTable<Inscripcion>();
-                DataBase.CreateTable<RequisitosAcademicos>();
-                DataBase.CreateTable<Curso>();
+                await CRUDB.CreateTableAsync<Administrador>();
+                await CRUDB.CreateTableAsync<Alumno>();
+                await CRUDB.CreateTableAsync<Inscripcion>();
+                await CRUDB.CreateTableAsync<RequisitosAcademicos>();
+                await CRUDB.CreateTableAsync<Curso>();
             }
             
         }

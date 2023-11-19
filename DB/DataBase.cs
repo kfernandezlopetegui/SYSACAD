@@ -18,6 +18,7 @@ namespace DB
             
         }
 
+        
         public static string CreateTable<T>()
         {
             string tableName = typeof(T).Name;
@@ -228,58 +229,8 @@ namespace DB
             return query.ToString();
         }
 
-        public static string InsertarRegistro<T>(T objeto)
-        {
-            string consulta = ConstruirQueryInsert(objeto);
-            conexion = new SqlConnection(cadenaConexion);
-            conexion.Open();
-            
-
-            using (SqlCommand command = new SqlCommand(consulta, conexion))
-            {
-                PropertyInfo[] propiedades = typeof(T).GetProperties();
-
-                foreach (var propiedad in propiedades)
-                {
-                    string nombreColumna = propiedad.Name;
-                    object valor = propiedad.GetValue(objeto);
-
-                    if (valor != null)  // Ignorar propiedades nulas
-                    {
-                        command.Parameters.AddWithValue($"@{nombreColumna}", valor);
-                    }
-                    else
-                    {
-                        // Si la propiedad es nula y no permite valores nulos en la base de datos,
-                        // puedes asignar un valor predeterminado o manejar la situación según tus necesidades.
-                        // Por ejemplo, si la propiedad es un tipo de datos no nullable, puedes asignar un valor predeterminado.
-                        // command.Parameters.AddWithValue($"@{nombreColumna}", valorPredeterminado);
-                    }
-                }
-
-                try
-                {
-                    int filasAfectadas = command.ExecuteNonQuery();
-
-                    if (filasAfectadas > 0)
-                    {
-                       return $"{typeof(T).Name} agregado correctamente a la tabla.";
-                    }
-                    else
-                    {
-                        return $"No se pudo agregar el {typeof(T).Name} a la tabla.";
-                    }
-                }
-                catch (SqlException ex)
-                {
-                    return $"Error al insertar el {typeof(T).Name}: {ex.Message}";
-                   
-                }
-                finally { conexion.Close(); }
-            }
-        }
-
-        private static bool TablaExiste(string tableName)
+        
+        public static bool TablaExiste(string tableName)
         {
             try
             {

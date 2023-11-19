@@ -15,11 +15,11 @@ namespace Validaciones
 
         public ValidarCurso() { }   
 
-        public static Curso VerificarSiExisteCurso(string codigo)
+        public async static Task<Curso> VerificarSiExisteCurso(string codigo)
         {
             
 
-            Curso cursoEncontrado = CRUDB.ObtenerPorIdentificador<Curso>("Curso", "Codigo = @Codigo", new { Codigo = codigo }); 
+            Curso cursoEncontrado = await CRUDB.ObtenerPorIdentificadorAsync<Curso>("Curso", "Codigo = @Codigo", new { Codigo = codigo }); 
 
 
             return cursoEncontrado;
@@ -27,9 +27,9 @@ namespace Validaciones
 
         }
 
-        public static bool VerificarRequisitos(RequisitosAcademicos requisito, int idAlumno)
+        public async static Task<bool> VerificarRequisitos(RequisitosAcademicos requisito, int idAlumno)
         {
-            Alumno alumnoEncontrado = CRUDB.ObtenerPorIdentificador<Alumno>("Alumno", "Dni = @Dni", new { Dni = idAlumno });
+            Alumno alumnoEncontrado = await CRUDB.ObtenerPorIdentificadorAsync<Alumno>("Alumno", "Dni = @Dni", new { Dni = idAlumno });
             RequisitosAcademicos requisitosCurso = requisito;
             List<string> listaCursosCorrelativos = CRUD.ConvertirJsonALista(requisitosCurso.IdCursosAprobadosJson);
             List<string> cursosAprobadosAlumno = CRUD.ConvertirJsonALista(alumnoEncontrado.CursosAprobados);

@@ -16,11 +16,11 @@ namespace New_SYSACAD
 
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private async void button1_Click(object sender, EventArgs e)
         {
             string usuario = this.textBox1.Text;
             string password = this.textBox2.Text;
-            int resultadoAutenticacion = validarUsuario.VerificarUsuario(usuario, password);
+            int resultadoAutenticacion = await validarUsuario.VerificarUsuario(usuario, password);
 
             switch (resultadoAutenticacion)
             {
@@ -29,7 +29,7 @@ namespace New_SYSACAD
                     Menu.MostrarMenu(menuAdministrador, this);
                     break;
                 case 0:
-                    Alumno alumno = validarUsuario.VerificarSiExisteAlumnoBD(usuario);
+                    Alumno alumno = await validarUsuario.VerificarSiExisteAlumnoBD(usuario);
                     MenuEstudiante menuEstudiante = new MenuEstudiante(alumno);
                     Menu.MostrarMenu(menuEstudiante, this);
                     break;
