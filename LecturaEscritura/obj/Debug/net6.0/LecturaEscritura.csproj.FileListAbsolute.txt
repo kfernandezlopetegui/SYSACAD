@@ -98,9 +98,9 @@ C:\Users\kflop\OneDrive\Escritorio\Sysacad\LecturaEscritura\obj\Debug\net6.0\Lec
 C:\Users\kflop\OneDrive\Escritorio\Sysacad\LecturaEscritura\obj\Debug\net6.0\LecturaEscritura.AssemblyInfoInputs.cache
 C:\Users\kflop\OneDrive\Escritorio\Sysacad\LecturaEscritura\obj\Debug\net6.0\LecturaEscritura.AssemblyInfo.cs
 C:\Users\kflop\OneDrive\Escritorio\Sysacad\LecturaEscritura\obj\Debug\net6.0\LecturaEscritura.csproj.CoreCompileInputs.cache
+C:\Users\kflop\OneDrive\Escritorio\Sysacad\LecturaEscritura\obj\Debug\net6.0\LecturaEscritura.sourcelink.json
 C:\Users\kflop\OneDrive\Escritorio\Sysacad\LecturaEscritura\obj\Debug\net6.0\LecturaEscritura.csproj.CopyComplete
 C:\Users\kflop\OneDrive\Escritorio\Sysacad\LecturaEscritura\obj\Debug\net6.0\LecturaEscritura.dll
 C:\Users\kflop\OneDrive\Escritorio\Sysacad\LecturaEscritura\obj\Debug\net6.0\refint\LecturaEscritura.dll
 C:\Users\kflop\OneDrive\Escritorio\Sysacad\LecturaEscritura\obj\Debug\net6.0\LecturaEscritura.pdb
 C:\Users\kflop\OneDrive\Escritorio\Sysacad\LecturaEscritura\obj\Debug\net6.0\ref\LecturaEscritura.dll
-C:\Users\kflop\OneDrive\Escritorio\Sysacad\LecturaEscritura\obj\Debug\net6.0\LecturaEscritura.sourcelink.json

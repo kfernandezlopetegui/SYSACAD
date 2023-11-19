@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("New_SYSACAD")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+4aea68f9d38a0c71f8c3ba0b6b2954ca7fca3d83")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+9d1bc5957944c03a106f245559e69295dc8e1aeb")]
 [assembly: System.Reflection.AssemblyProductAttribute("New_SYSACAD")]
 [assembly: System.Reflection.AssemblyTitleAttribute("New_SYSACAD")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

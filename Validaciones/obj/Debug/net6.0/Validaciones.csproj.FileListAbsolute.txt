@@ -96,9 +96,11 @@ C:\Users\kflop\Source\Repos\SYSACAD\Validaciones\obj\Debug\net6.0\ref\Validacion
 C:\Users\kflop\OneDrive\Escritorio\Sysacad\Validaciones\bin\Debug\net6.0\Validaciones.deps.json
 C:\Users\kflop\OneDrive\Escritorio\Sysacad\Validaciones\bin\Debug\net6.0\Validaciones.dll
 C:\Users\kflop\OneDrive\Escritorio\Sysacad\Validaciones\bin\Debug\net6.0\Validaciones.pdb
+C:\Users\kflop\OneDrive\Escritorio\Sysacad\Validaciones\bin\Debug\net6.0\DB.dll
 C:\Users\kflop\OneDrive\Escritorio\Sysacad\Validaciones\bin\Debug\net6.0\Entidades.dll
 C:\Users\kflop\OneDrive\Escritorio\Sysacad\Validaciones\bin\Debug\net6.0\LecturaEscritura.dll
 C:\Users\kflop\OneDrive\Escritorio\Sysacad\Validaciones\bin\Debug\net6.0\Pagos.dll
+C:\Users\kflop\OneDrive\Escritorio\Sysacad\Validaciones\bin\Debug\net6.0\DB.pdb
 C:\Users\kflop\OneDrive\Escritorio\Sysacad\Validaciones\bin\Debug\net6.0\Entidades.pdb
 C:\Users\kflop\OneDrive\Escritorio\Sysacad\Validaciones\bin\Debug\net6.0\LecturaEscritura.pdb
 C:\Users\kflop\OneDrive\Escritorio\Sysacad\Validaciones\bin\Debug\net6.0\Pagos.pdb
@@ -107,11 +109,9 @@ C:\Users\kflop\OneDrive\Escritorio\Sysacad\Validaciones\obj\Debug\net6.0\Validac
 C:\Users\kflop\OneDrive\Escritorio\Sysacad\Validaciones\obj\Debug\net6.0\Validaciones.AssemblyInfoInputs.cache
 C:\Users\kflop\OneDrive\Escritorio\Sysacad\Validaciones\obj\Debug\net6.0\Validaciones.AssemblyInfo.cs
 C:\Users\kflop\OneDrive\Escritorio\Sysacad\Validaciones\obj\Debug\net6.0\Validaciones.csproj.CoreCompileInputs.cache
+C:\Users\kflop\OneDrive\Escritorio\Sysacad\Validaciones\obj\Debug\net6.0\Validaciones.sourcelink.json
 C:\Users\kflop\OneDrive\Escritorio\Sysacad\Validaciones\obj\Debug\net6.0\Validaciones.csproj.CopyComplete
 C:\Users\kflop\OneDrive\Escritorio\Sysacad\Validaciones\obj\Debug\net6.0\Validaciones.dll
 C:\Users\kflop\OneDrive\Escritorio\Sysacad\Validaciones\obj\Debug\net6.0\refint\Validaciones.dll
 C:\Users\kflop\OneDrive\Escritorio\Sysacad\Validaciones\obj\Debug\net6.0\Validaciones.pdb
 C:\Users\kflop\OneDrive\Escritorio\Sysacad\Validaciones\obj\Debug\net6.0\ref\Validaciones.dll
-C:\Users\kflop\OneDrive\Escritorio\Sysacad\Validaciones\bin\Debug\net6.0\DB.dll
-C:\Users\kflop\OneDrive\Escritorio\Sysacad\Validaciones\bin\Debug\net6.0\DB.pdb
-C:\Users\kflop\OneDrive\Escritorio\Sysacad\Validaciones\obj\Debug\net6.0\Validaciones.sourcelink.json

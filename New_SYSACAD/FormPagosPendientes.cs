@@ -26,12 +26,7 @@ namespace New_SYSACAD
             InitializeComponent();
 
             CargarConceptos();
-            DataGridViewTextBoxColumn columnaImporteAPagar = new DataGridViewTextBoxColumn();
-            columnaImporteAPagar.HeaderText = "Importe a Pagar";
-            columnaImporteAPagar.Name = "ImporteAPagar";
-            columnaImporteAPagar.DataPropertyName = "ImporteAPagar"; // Asocia esta columna con la propiedad en tu objeto de datos
-            columnaImporteAPagar.ReadOnly = false; // Permite la edición
-            dataGridView1.Columns.Add(columnaImporteAPagar);
+            
         }
         /// <summary>
         /// Maneja el evento Click del botón "Volver". Regresa al menú principal del estudiante.
@@ -93,6 +88,13 @@ namespace New_SYSACAD
         {
             listaConceptos = await ActualizarPagosPendientes.ListaPagosPendientes(SesionAlumno.AlumnoActual.Dni);
             dataGridView1.DataSource = listaConceptos;
+
+            DataGridViewTextBoxColumn columnaImporteAPagar = new DataGridViewTextBoxColumn();
+            columnaImporteAPagar.HeaderText = "Importe a Pagar";
+            columnaImporteAPagar.Name = "ImporteAPagar";
+            columnaImporteAPagar.DataPropertyName = "ImporteAPagar"; // Asocia esta columna con la propiedad en tu objeto de datos
+            columnaImporteAPagar.ReadOnly = false; // Permite la edición
+            dataGridView1.Columns.Add(columnaImporteAPagar);
         }
     
     }

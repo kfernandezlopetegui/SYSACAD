@@ -95,9 +95,9 @@ C:\Users\kflop\OneDrive\Escritorio\Sysacad\Login\obj\Debug\net6.0\Login.Generate
 C:\Users\kflop\OneDrive\Escritorio\Sysacad\Login\obj\Debug\net6.0\Login.AssemblyInfoInputs.cache
 C:\Users\kflop\OneDrive\Escritorio\Sysacad\Login\obj\Debug\net6.0\Login.AssemblyInfo.cs
 C:\Users\kflop\OneDrive\Escritorio\Sysacad\Login\obj\Debug\net6.0\Login.csproj.CoreCompileInputs.cache
+C:\Users\kflop\OneDrive\Escritorio\Sysacad\Login\obj\Debug\net6.0\Login.sourcelink.json
 C:\Users\kflop\OneDrive\Escritorio\Sysacad\Login\obj\Debug\net6.0\Login.csproj.CopyComplete
 C:\Users\kflop\OneDrive\Escritorio\Sysacad\Login\obj\Debug\net6.0\Login.dll
 C:\Users\kflop\OneDrive\Escritorio\Sysacad\Login\obj\Debug\net6.0\refint\Login.dll
 C:\Users\kflop\OneDrive\Escritorio\Sysacad\Login\obj\Debug\net6.0\Login.pdb
 C:\Users\kflop\OneDrive\Escritorio\Sysacad\Login\obj\Debug\net6.0\ref\Login.dll
-C:\Users\kflop\OneDrive\Escritorio\Sysacad\Login\obj\Debug\net6.0\Login.sourcelink.json

@@ -63,8 +63,8 @@ C:\Users\kflop\OneDrive\Escritorio\Sysacad\Pagos\obj\Debug\net6.0\Pagos.Generate
 C:\Users\kflop\OneDrive\Escritorio\Sysacad\Pagos\obj\Debug\net6.0\Pagos.AssemblyInfoInputs.cache
 C:\Users\kflop\OneDrive\Escritorio\Sysacad\Pagos\obj\Debug\net6.0\Pagos.AssemblyInfo.cs
 C:\Users\kflop\OneDrive\Escritorio\Sysacad\Pagos\obj\Debug\net6.0\Pagos.csproj.CoreCompileInputs.cache
+C:\Users\kflop\OneDrive\Escritorio\Sysacad\Pagos\obj\Debug\net6.0\Pagos.sourcelink.json
 C:\Users\kflop\OneDrive\Escritorio\Sysacad\Pagos\obj\Debug\net6.0\Pagos.dll
 C:\Users\kflop\OneDrive\Escritorio\Sysacad\Pagos\obj\Debug\net6.0\refint\Pagos.dll
 C:\Users\kflop\OneDrive\Escritorio\Sysacad\Pagos\obj\Debug\net6.0\Pagos.pdb
 C:\Users\kflop\OneDrive\Escritorio\Sysacad\Pagos\obj\Debug\net6.0\ref\Pagos.dll
-C:\Users\kflop\OneDrive\Escritorio\Sysacad\Pagos\obj\Debug\net6.0\Pagos.sourcelink.json
