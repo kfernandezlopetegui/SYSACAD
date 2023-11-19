@@ -1,7 +1,9 @@
 ﻿using Actualizar;
 using DB;
 using Entidades;
+using Interfaces;
 using LecturaEscritura;
+using LogicaSysacad;
 using Pagos;
 using System;
 using System.Collections.Generic;
@@ -16,10 +18,12 @@ using Validaciones;
 
 namespace New_SYSACAD
 {
-    public partial class EdicionRequisito : Form
+    public partial class EdicionRequisito : Form, IActualizarRequisito
     {
         private List<Curso> listaCursos = ActualizarCurso.ListaCursosActualesBD();
         CursoConRequisitos cursoConRequisitos;
+
+        public event Action ActualizarRequisito;
 
         public EdicionRequisito(CursoConRequisitos cursoConRequisitos)
         {
@@ -108,19 +112,18 @@ namespace New_SYSACAD
         private async void buttonGuardar_Click(object sender, EventArgs e)
         {
             List<string> listaIdCursos = obtenerCursosSeleccionados();
+
             Curso cursoDelRequisito = await CRUDB.ObtenerPorIdentificadorAsync<Curso>("Curso", "Codigo = @Codigo", new { Codigo = cursoConRequisitos.CodigoCurso });
 
-            string idCursosJson = CRUD.ConvertirListaAJson(listaIdCursos);
             int creditos = int.Parse(textBoxCreditosObtenidos.Text);
             double promedio = double.Parse(textBoxPromedio.Text);
-            RequisitosAcademicos requisitosAcademicos = new RequisitosAcademicos(idCursosJson, creditos, promedio);
-            int idEliminar = cursoDelRequisito.IdRequisitos;
-            int idRequisito = requisitosAcademicos.Id;
-            cursoDelRequisito.IdRequisitos = idRequisito;
 
-            ActualizarRequisitos.AgregarRequisitos(requisitosAcademicos);
-            await CRUDB.ActualizarPorIdentificadorAsync("Curso", "Codigo", cursoConRequisitos.CodigoCurso, cursoDelRequisito);
-            ActualizarRequisitos.BorrarRequisitoPorId(idEliminar);
+            var actualizar = new ActualizarRequisitoLogica(this, listaIdCursos,
+            cursoDelRequisito, creditos,  promedio, cursoConRequisitos);
+
+            ActualizarRequisito.Invoke();
+
+
             DialogResult resultado = MessageBox.Show($"¡Actualizacion exitosa! El requisito academico de {cursoConRequisitos.NombreCurso} se ha actualizado correctamente.",
                                              "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
             if (resultado == DialogResult.OK)
