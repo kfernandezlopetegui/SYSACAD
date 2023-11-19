@@ -1,5 +1,7 @@
 ﻿using Actualizar;
 using Entidades;
+using Interfaces;
+using LogicaSysacad;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -12,16 +14,19 @@ using System.Windows.Forms;
 
 namespace New_SYSACAD
 {
-    public partial class ListaDeCursos : Form
+    public partial class ListaDeCursos : Form, ITraerLista
     {
-        private List<Curso> listaCursos = ActualizarCurso.ListaCursosActualesBD();
+        
+
+        public event Action OnListaPedida;
+
         public ListaDeCursos()
         {
             InitializeComponent();
-            dataGridViewCursos.DataSource = listaCursos;
-            dataGridViewCursos.Columns["cupoActual"].Visible = false;
-            dataGridViewCursos.Columns["Id"].Visible = false;
-            dataGridViewCursos.Columns["IdRequisitos"].Visible = false;
+            var logica = new TraerListaCursoLogica(this);
+
+            OnListaPedida?.Invoke();
+
         }
 
         private void buttonEliminar_Click(object sender, EventArgs e)
@@ -46,6 +51,14 @@ namespace New_SYSACAD
         {
             AgregarCurso agregarCurso = new AgregarCurso();
             Menu.MostrarMenu(agregarCurso, this, 1);
+        }
+
+        public void AsignarLista<T>(List<T> lista)
+        {
+            dataGridViewCursos.DataSource = lista;
+            dataGridViewCursos.Columns["cupoActual"].Visible = false;
+            dataGridViewCursos.Columns["Id"].Visible = false;
+            dataGridViewCursos.Columns["IdRequisitos"].Visible = false;
         }
     }
 }

@@ -12,6 +12,8 @@
           "BCrypt.Net-Next": "4.0.3",
           "DB": "1.0.0",
           "Entidades": "1.0.0",
+          "Interfaces": "1.0.0",
+          "LogicaSysacad": "1.0.0",
           "Login": "1.0.0",
           "Microsoft.Data.SqlClient": "5.1.2",
           "MySql.Data": "8.2.0",
@@ -653,6 +655,14 @@
           "Entidades.dll": {}
         }
       },
+      "Interfaces/1.0.0": {
+        "dependencies": {
+          "Entidades": "1.0.0"
+        },
+        "runtime": {
+          "Interfaces.dll": {}
+        }
+      },
       "LecturaEscritura/1.0.0": {
         "dependencies": {
           "Entidades": "1.0.0",
@@ -662,6 +672,19 @@
         },
         "runtime": {
           "LecturaEscritura.dll": {}
+        }
+      },
+      "LogicaSysacad/1.0.0": {
+        "dependencies": {
+          "Actualizar": "1.0.0",
+          "DB": "1.0.0",
+          "Entidades": "1.0.0",
+          "Interfaces": "1.0.0",
+          "LecturaEscritura": "1.0.0",
+          "Validaciones": "1.0.0"
+        },
+        "runtime": {
+          "LogicaSysacad.dll": {}
         }
       },
       "Login/1.0.0": {
@@ -1153,7 +1176,17 @@
       "serviceable": false,
       "sha512": ""
     },
+    "Interfaces/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
     "LecturaEscritura/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "LogicaSysacad/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

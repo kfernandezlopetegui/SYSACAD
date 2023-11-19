@@ -19,6 +19,8 @@
     <ProjectReference Include="..\ActualizarCambios\Actualizar.csproj" />
     <ProjectReference Include="..\DB\DB.csproj" />
     <ProjectReference Include="..\Entidades\Entidades.csproj" />
+    <ProjectReference Include="..\Interfaces\Interfaces.csproj" />
+    <ProjectReference Include="..\LogicaSysacad\LogicaSysacad.csproj" />
     <ProjectReference Include="..\Login\Login.csproj" />
     <ProjectReference Include="..\Pagos\Pagos.csproj" />
     <ProjectReference Include="..\Validaciones\Validaciones.csproj" />

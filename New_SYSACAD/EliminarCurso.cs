@@ -1,5 +1,7 @@
 ﻿using Actualizar;
 using Entidades;
+using Interfaces;
+using LogicaSysacad;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -10,33 +12,36 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
 namespace New_SYSACAD
 {
-    public partial class EliminarCurso : Form
+    public partial class EliminarCurso : Form, ITraerLista, IEliminarCurso
     {
-        private List<Curso> listaCursos = ActualizarCurso.ListaCursosActualesBD();
+       
+
+        public event Action OnListaPedida;
+        public event Action BorrarCurso;
+        public Curso cursoSeleccionado;
         public EliminarCurso()
         {
             InitializeComponent();
-            dataGridViewCursos.DataSource = listaCursos;
-            dataGridViewCursos.Columns["CupoActual"].Visible = false;
-            dataGridViewCursos.Columns["Id"].Visible = false;
-            dataGridViewCursos.Columns["IdRequisitos"].Visible = false;
+            var logica = new TraerListaCursoLogica(this);
+            
+            OnListaPedida?.Invoke();
         }
 
         private void dataGridViewCursos_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
-            Curso cursoSeleccionado = (Curso)dataGridViewCursos.Rows[e.RowIndex].DataBoundItem;
+            cursoSeleccionado = (Curso)dataGridViewCursos.Rows[e.RowIndex].DataBoundItem;
 
 
+            var logicaBorrar = new EliminarCursoLogica(this, cursoSeleccionado);
 
             DialogResult resultado = MessageBox.Show("¿Estás seguro de que quieres eliminar este curso?", "Confirmar eliminación", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question);
             if (resultado == DialogResult.Yes)
             {
-                int idRequisitoEliminar = cursoSeleccionado.IdRequisitos;
-                ActualizarCurso.BorrarCursoPorCodigoBD(cursoSeleccionado.Codigo);
-                ActualizarRequisitos.BorrarRequisitoPorId(idRequisitoEliminar);
+                BorrarCurso.Invoke();
 
                 DialogResult resultadoBorrado = MessageBox.Show("¡Eliminacion exitosa! El curso se ha borrado correctamente.",
                                            "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -52,6 +57,14 @@ namespace New_SYSACAD
         {
             ListaDeCursos listaCurso = new ListaDeCursos();
             Menu.MostrarMenu(listaCurso, this, 1);
+        }
+
+        public void AsignarLista<T>(List<T> lista)
+        {
+            dataGridViewCursos.DataSource = lista;
+            dataGridViewCursos.Columns["CupoActual"].Visible = false;
+            dataGridViewCursos.Columns["Id"].Visible = false;
+            dataGridViewCursos.Columns["IdRequisitos"].Visible = false;
         }
     }
 }

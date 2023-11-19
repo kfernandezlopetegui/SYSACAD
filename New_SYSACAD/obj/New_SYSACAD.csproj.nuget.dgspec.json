@@ -221,6 +221,65 @@
         }
       }
     },
+    "C:\\Users\\kflop\\OneDrive\\Escritorio\\Sysacad\\Interfaces\\Interfaces.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\kflop\\OneDrive\\Escritorio\\Sysacad\\Interfaces\\Interfaces.csproj",
+        "projectName": "Interfaces",
+        "projectPath": "C:\\Users\\kflop\\OneDrive\\Escritorio\\Sysacad\\Interfaces\\Interfaces.csproj",
+        "packagesPath": "C:\\Users\\kflop\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\kflop\\OneDrive\\Escritorio\\Sysacad\\Interfaces\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\kflop\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "C:\\Users\\kflop\\OneDrive\\Escritorio\\Sysacad\\Entidades\\Entidades.csproj": {
+                "projectPath": "C:\\Users\\kflop\\OneDrive\\Escritorio\\Sysacad\\Entidades\\Entidades.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
     "C:\\Users\\kflop\\OneDrive\\Escritorio\\Sysacad\\LecturaEscritura\\LecturaEscritura.csproj": {
       "version": "1.0.0",
       "restore": {
@@ -274,6 +333,80 @@
               "version": "[4.8.5, )"
             }
           },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\kflop\\OneDrive\\Escritorio\\Sysacad\\LogicaSysacad\\LogicaSysacad.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\kflop\\OneDrive\\Escritorio\\Sysacad\\LogicaSysacad\\LogicaSysacad.csproj",
+        "projectName": "LogicaSysacad",
+        "projectPath": "C:\\Users\\kflop\\OneDrive\\Escritorio\\Sysacad\\LogicaSysacad\\LogicaSysacad.csproj",
+        "packagesPath": "C:\\Users\\kflop\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\kflop\\OneDrive\\Escritorio\\Sysacad\\LogicaSysacad\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\kflop\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "C:\\Users\\kflop\\OneDrive\\Escritorio\\Sysacad\\ActualizarCambios\\Actualizar.csproj": {
+                "projectPath": "C:\\Users\\kflop\\OneDrive\\Escritorio\\Sysacad\\ActualizarCambios\\Actualizar.csproj"
+              },
+              "C:\\Users\\kflop\\OneDrive\\Escritorio\\Sysacad\\DB\\DB.csproj": {
+                "projectPath": "C:\\Users\\kflop\\OneDrive\\Escritorio\\Sysacad\\DB\\DB.csproj"
+              },
+              "C:\\Users\\kflop\\OneDrive\\Escritorio\\Sysacad\\Entidades\\Entidades.csproj": {
+                "projectPath": "C:\\Users\\kflop\\OneDrive\\Escritorio\\Sysacad\\Entidades\\Entidades.csproj"
+              },
+              "C:\\Users\\kflop\\OneDrive\\Escritorio\\Sysacad\\Interfaces\\Interfaces.csproj": {
+                "projectPath": "C:\\Users\\kflop\\OneDrive\\Escritorio\\Sysacad\\Interfaces\\Interfaces.csproj"
+              },
+              "C:\\Users\\kflop\\OneDrive\\Escritorio\\Sysacad\\LecturaEscritura\\LecturaEscritura.csproj": {
+                "projectPath": "C:\\Users\\kflop\\OneDrive\\Escritorio\\Sysacad\\LecturaEscritura\\LecturaEscritura.csproj"
+              },
+              "C:\\Users\\kflop\\OneDrive\\Escritorio\\Sysacad\\Validaciones\\Validaciones.csproj": {
+                "projectPath": "C:\\Users\\kflop\\OneDrive\\Escritorio\\Sysacad\\Validaciones\\Validaciones.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
           "imports": [
             "net461",
             "net462",
@@ -395,6 +528,12 @@
               },
               "C:\\Users\\kflop\\OneDrive\\Escritorio\\Sysacad\\Entidades\\Entidades.csproj": {
                 "projectPath": "C:\\Users\\kflop\\OneDrive\\Escritorio\\Sysacad\\Entidades\\Entidades.csproj"
+              },
+              "C:\\Users\\kflop\\OneDrive\\Escritorio\\Sysacad\\Interfaces\\Interfaces.csproj": {
+                "projectPath": "C:\\Users\\kflop\\OneDrive\\Escritorio\\Sysacad\\Interfaces\\Interfaces.csproj"
+              },
+              "C:\\Users\\kflop\\OneDrive\\Escritorio\\Sysacad\\LogicaSysacad\\LogicaSysacad.csproj": {
+                "projectPath": "C:\\Users\\kflop\\OneDrive\\Escritorio\\Sysacad\\LogicaSysacad\\LogicaSysacad.csproj"
               },
               "C:\\Users\\kflop\\OneDrive\\Escritorio\\Sysacad\\Login\\Login.csproj": {
                 "projectPath": "C:\\Users\\kflop\\OneDrive\\Escritorio\\Sysacad\\Login\\Login.csproj"

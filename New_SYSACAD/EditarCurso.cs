@@ -1,5 +1,7 @@
 ﻿using Actualizar;
 using Entidades;
+using Interfaces;
+using LogicaSysacad;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -12,13 +14,22 @@ using System.Windows.Forms;
 
 namespace New_SYSACAD
 {
-    public partial class EditarCurso : Form
+    public partial class EditarCurso : Form, ITraerLista
     {
-        List<Curso> listaCursos = ActualizarCurso.ListaCursosActualesBD();
+        
         public EditarCurso()
         {
             InitializeComponent();
-            dataGridViewCursos.DataSource = listaCursos;
+            var logica = new TraerListaCursoLogica(this);
+
+            OnListaPedida?.Invoke();
+        }
+
+        public event Action OnListaPedida;
+
+        public void AsignarLista<T>(List<T> lista)
+        {
+            dataGridViewCursos.DataSource = lista;
             dataGridViewCursos.Columns["CupoActual"].Visible = false;
             dataGridViewCursos.Columns["Id"].Visible = false;
             dataGridViewCursos.Columns["IdRequisitos"].Visible = false;

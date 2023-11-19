@@ -1123,6 +1123,19 @@
           "bin/placeholder/Entidades.dll": {}
         }
       },
+      "Interfaces/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "Entidades": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Interfaces.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Interfaces.dll": {}
+        }
+      },
       "LecturaEscritura/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
@@ -1137,6 +1150,24 @@
         },
         "runtime": {
           "bin/placeholder/LecturaEscritura.dll": {}
+        }
+      },
+      "LogicaSysacad/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "Actualizar": "1.0.0",
+          "DB": "1.0.0",
+          "Entidades": "1.0.0",
+          "Interfaces": "1.0.0",
+          "LecturaEscritura": "1.0.0",
+          "Validaciones": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/LogicaSysacad.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/LogicaSysacad.dll": {}
         }
       },
       "Login/1.0.0": {
@@ -3314,10 +3345,20 @@
       "path": "../Entidades/Entidades.csproj",
       "msbuildProject": "../Entidades/Entidades.csproj"
     },
+    "Interfaces/1.0.0": {
+      "type": "project",
+      "path": "../Interfaces/Interfaces.csproj",
+      "msbuildProject": "../Interfaces/Interfaces.csproj"
+    },
     "LecturaEscritura/1.0.0": {
       "type": "project",
       "path": "../LecturaEscritura/LecturaEscritura.csproj",
       "msbuildProject": "../LecturaEscritura/LecturaEscritura.csproj"
+    },
+    "LogicaSysacad/1.0.0": {
+      "type": "project",
+      "path": "../LogicaSysacad/LogicaSysacad.csproj",
+      "msbuildProject": "../LogicaSysacad/LogicaSysacad.csproj"
     },
     "Login/1.0.0": {
       "type": "project",
@@ -3341,6 +3382,8 @@
       "BCrypt.Net-Next >= 4.0.3",
       "DB >= 1.0.0",
       "Entidades >= 1.0.0",
+      "Interfaces >= 1.0.0",
+      "LogicaSysacad >= 1.0.0",
       "Login >= 1.0.0",
       "Microsoft.Data.SqlClient >= 5.1.2",
       "MySql.Data >= 8.2.0",
@@ -3384,6 +3427,12 @@
             },
             "C:\\Users\\kflop\\OneDrive\\Escritorio\\Sysacad\\Entidades\\Entidades.csproj": {
               "projectPath": "C:\\Users\\kflop\\OneDrive\\Escritorio\\Sysacad\\Entidades\\Entidades.csproj"
+            },
+            "C:\\Users\\kflop\\OneDrive\\Escritorio\\Sysacad\\Interfaces\\Interfaces.csproj": {
+              "projectPath": "C:\\Users\\kflop\\OneDrive\\Escritorio\\Sysacad\\Interfaces\\Interfaces.csproj"
+            },
+            "C:\\Users\\kflop\\OneDrive\\Escritorio\\Sysacad\\LogicaSysacad\\LogicaSysacad.csproj": {
+              "projectPath": "C:\\Users\\kflop\\OneDrive\\Escritorio\\Sysacad\\LogicaSysacad\\LogicaSysacad.csproj"
             },
             "C:\\Users\\kflop\\OneDrive\\Escritorio\\Sysacad\\Login\\Login.csproj": {
               "projectPath": "C:\\Users\\kflop\\OneDrive\\Escritorio\\Sysacad\\Login\\Login.csproj"

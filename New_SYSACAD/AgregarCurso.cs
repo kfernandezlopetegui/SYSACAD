@@ -1,6 +1,8 @@
 ﻿using Actualizar;
 using Entidades;
+using Interfaces;
 using LecturaEscritura;
+using LogicaSysacad;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -12,13 +14,14 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Validaciones;
+using static New_SYSACAD.Enumerados;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.Button;
 using ToolTip = System.Windows.Forms.ToolTip;
 
 namespace New_SYSACAD
 {
-    public partial class AgregarCurso : Form
+    public partial class AgregarCurso : Form, IAgregarCurso
     {
         private bool controlTocoFocoNombre = false;
         private bool controlTocoFocoCodigo = false;
@@ -29,12 +32,12 @@ namespace New_SYSACAD
         private bool controlTocoFocoCursada = false;
         private List<Curso> listaCursos = ActualizarCurso.ListaCursosActualesBD();
         ToolTip toolTip = new ToolTip();
-        List<string> opcionesDias = new List<string> { "Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado" };
+        List<DiaSemana> opcionesDias = new List<DiaSemana> { DiaSemana.Lunes, DiaSemana.Martes, DiaSemana.Miércoles, DiaSemana.Jueves, DiaSemana.Viernes, DiaSemana.Sábado };
         List<string> opcionesTurno = new List<string> { "08:30-12:30", "08:30-10:30", "10:30-12:30", "14:00-18:00",
             "14:00-16:00", "16:00-18:00", "18:30-22:30", "18:30-20:30", "20:30-22:30" };
         List<string> opcionesCarrera = new List<string> { "Sin seleccionar", "TUP", "TUSI" };
 
-
+        public event Action CursoAgregar;
 
         public AgregarCurso()
         {
@@ -51,8 +54,6 @@ namespace New_SYSACAD
 
             controlTocoFocoNombre = true;
         }
-
-
 
         private void textCodigo_Enter(object sender, EventArgs e)
         {
@@ -118,12 +119,11 @@ namespace New_SYSACAD
 
         private void textDescripcion_Validated(object sender, EventArgs e)
         {
-            string textoCampo = "Descripcion de curso";
+            string textoCampo = "Numero aula";
 
             ControlForm.ValidarCampoNoVacio(textDescripcion, textoCampo);
 
         }
-
 
         private void RestablecerFormulario()
         {
@@ -141,20 +141,14 @@ namespace New_SYSACAD
                 string descripcion = ObtenerDescripcion();
                 int cupo = int.Parse(textCupo.Text);
                 string carrera = comboBoxCarrera.SelectedItem.ToString();
-
                 List<string> listaIdCursos = obtenerCursosSeleccionados();
-
-                string idCursosJson = CRUD.ConvertirListaAJson(listaIdCursos);
                 int creditos = int.Parse(textBoxCreditosObtenidos.Text);
                 double promedio = double.Parse(textBoxPromedio.Text);
 
-                RequisitosAcademicos requisitosAcademicos = new RequisitosAcademicos(idCursosJson, creditos,promedio);
+                var agregarCursoL = new AgregarCursoLogica(this,nombre, codigo, descripcion,
+                                        cupo, carrera, listaIdCursos, creditos,promedio);
 
-                Curso nuevoCurso = new Curso(nombre, codigo, descripcion, cupo, carrera, requisitosAcademicos.Id);
-                
-                ActualizarRequisitos.AgregarRequisitos(requisitosAcademicos);
-                ActualizarCurso.AgregarCursoBD(nuevoCurso);
-                
+                CursoAgregar.Invoke();
 
                 DialogResult resultado = MessageBox.Show("¡Registro exitoso! El curso se ha registrado correctamente.",
                                              "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -209,8 +203,6 @@ namespace New_SYSACAD
 
             return descripcionObtenida;
         }
-
-
 
         private void comboBoxCarrera_Enter(object sender, EventArgs e)
         {
@@ -267,5 +259,6 @@ namespace New_SYSACAD
             checkedListBoxPreCursos.ValueMember = "Id";
         }
 
+        
     }
 }

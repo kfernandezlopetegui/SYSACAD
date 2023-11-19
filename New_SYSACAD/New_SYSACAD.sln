@@ -22,6 +22,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DB", "..\DB\DB.csproj", "{2
 		{57BA3923-02A6-4579-B3B0-5D5979FCEE82} = {57BA3923-02A6-4579-B3B0-5D5979FCEE82}
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Interfaces", "..\Interfaces\Interfaces.csproj", "{A1FE5B48-38A2-4EEE-B4EF-DE20D93038E5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LogicaSysacad", "..\LogicaSysacad\LogicaSysacad.csproj", "{F10FD277-F4CE-48CC-A53F-0E9C1CE03EFB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -60,6 +64,14 @@ Global
 		{2156DF17-5DFB-4960-9BE4-37CBA4DCF421}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2156DF17-5DFB-4960-9BE4-37CBA4DCF421}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2156DF17-5DFB-4960-9BE4-37CBA4DCF421}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A1FE5B48-38A2-4EEE-B4EF-DE20D93038E5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A1FE5B48-38A2-4EEE-B4EF-DE20D93038E5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A1FE5B48-38A2-4EEE-B4EF-DE20D93038E5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A1FE5B48-38A2-4EEE-B4EF-DE20D93038E5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F10FD277-F4CE-48CC-A53F-0E9C1CE03EFB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F10FD277-F4CE-48CC-A53F-0E9C1CE03EFB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F10FD277-F4CE-48CC-A53F-0E9C1CE03EFB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F10FD277-F4CE-48CC-A53F-0E9C1CE03EFB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

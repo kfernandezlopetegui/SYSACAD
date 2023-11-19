@@ -52,7 +52,7 @@
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
             pictureBox1.Location = new Point(358, 12);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(329, 144);
+            pictureBox1.Size = new Size(366, 174);
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox1.TabIndex = 0;
             pictureBox1.TabStop = false;
@@ -63,7 +63,7 @@
             label1.BackColor = Color.SeaShell;
             label1.Font = new Font("Verdana", 8F, FontStyle.Italic, GraphicsUnit.Point);
             label1.ForeColor = SystemColors.ControlDarkDark;
-            label1.Location = new Point(424, 172);
+            label1.Location = new Point(439, 204);
             label1.Name = "label1";
             label1.Size = new Size(204, 18);
             label1.TabIndex = 1;
@@ -75,7 +75,7 @@
             label2.BackColor = Color.Transparent;
             label2.Font = new Font("Verdana", 9F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
             label2.ForeColor = SystemColors.ControlText;
-            label2.Location = new Point(76, 38);
+            label2.Location = new Point(101, 37);
             label2.Name = "label2";
             label2.Size = new Size(150, 22);
             label2.TabIndex = 2;
@@ -87,7 +87,7 @@
             textBox1.BackColor = Color.SeaShell;
             textBox1.Font = new Font("Verdana", 9F, FontStyle.Italic, GraphicsUnit.Point);
             textBox1.ForeColor = SystemColors.InactiveCaption;
-            textBox1.Location = new Point(83, 110);
+            textBox1.Location = new Point(101, 119);
             textBox1.Name = "textBox1";
             textBox1.Size = new Size(143, 29);
             textBox1.TabIndex = 3;
@@ -101,7 +101,7 @@
             textBox2.BackColor = Color.SeaShell;
             textBox2.Font = new Font("Verdana", 9F, FontStyle.Italic, GraphicsUnit.Point);
             textBox2.ForeColor = SystemColors.InactiveCaption;
-            textBox2.Location = new Point(83, 170);
+            textBox2.Location = new Point(101, 178);
             textBox2.Name = "textBox2";
             textBox2.Size = new Size(143, 29);
             textBox2.TabIndex = 4;
@@ -116,17 +116,17 @@
             groupBox1.Controls.Add(label2);
             groupBox1.Controls.Add(textBox2);
             groupBox1.Controls.Add(textBox1);
-            groupBox1.Location = new Point(370, 267);
+            groupBox1.Location = new Point(358, 288);
             groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(317, 331);
+            groupBox1.Size = new Size(337, 351);
             groupBox1.TabIndex = 5;
             groupBox1.TabStop = false;
             // 
             // button1
             // 
-            button1.BackColor = SystemColors.InactiveCaption;
+            button1.BackColor = Color.Transparent;
             button1.Font = new Font("Verdana", 8F, FontStyle.Italic, GraphicsUnit.Point);
-            button1.Location = new Point(99, 241);
+            button1.Location = new Point(118, 260);
             button1.Name = "button1";
             button1.Size = new Size(108, 33);
             button1.TabIndex = 0;
