@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EditarCurso));
             dataGridViewCursos = new DataGridView();
             pictureBox1 = new PictureBox();
@@ -46,14 +46,14 @@
             dataGridViewCursos.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
             dataGridViewCursos.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
             dataGridViewCursos.BackgroundColor = Color.AntiqueWhite;
-            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.TopCenter;
-            dataGridViewCellStyle1.BackColor = Color.Bisque;
-            dataGridViewCellStyle1.Font = new Font("Verdana", 9F, FontStyle.Italic, GraphicsUnit.Point);
-            dataGridViewCellStyle1.ForeColor = Color.FromArgb(64, 64, 64);
-            dataGridViewCellStyle1.SelectionBackColor = Color.Tomato;
-            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
-            dataGridViewCursos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.TopCenter;
+            dataGridViewCellStyle4.BackColor = Color.Bisque;
+            dataGridViewCellStyle4.Font = new Font("Verdana", 9F, FontStyle.Italic, GraphicsUnit.Point);
+            dataGridViewCellStyle4.ForeColor = Color.FromArgb(64, 64, 64);
+            dataGridViewCellStyle4.SelectionBackColor = Color.Tomato;
+            dataGridViewCellStyle4.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = DataGridViewTriState.True;
+            dataGridViewCursos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             dataGridViewCursos.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewCursos.EnableHeadersVisualStyles = false;
             dataGridViewCursos.GridColor = Color.AntiqueWhite;
@@ -61,22 +61,22 @@
             dataGridViewCursos.MultiSelect = false;
             dataGridViewCursos.Name = "dataGridViewCursos";
             dataGridViewCursos.ReadOnly = true;
-            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.TopCenter;
-            dataGridViewCellStyle2.BackColor = Color.AntiqueWhite;
-            dataGridViewCellStyle2.Font = new Font("Verdana", 9F, FontStyle.Italic, GraphicsUnit.Point);
-            dataGridViewCellStyle2.ForeColor = Color.FromArgb(64, 64, 64);
-            dataGridViewCellStyle2.SelectionBackColor = Color.Tomato;
-            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
-            dataGridViewCursos.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.TopCenter;
+            dataGridViewCellStyle5.BackColor = Color.AntiqueWhite;
+            dataGridViewCellStyle5.Font = new Font("Verdana", 9F, FontStyle.Italic, GraphicsUnit.Point);
+            dataGridViewCellStyle5.ForeColor = Color.FromArgb(64, 64, 64);
+            dataGridViewCellStyle5.SelectionBackColor = Color.Tomato;
+            dataGridViewCellStyle5.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = DataGridViewTriState.True;
+            dataGridViewCursos.RowHeadersDefaultCellStyle = dataGridViewCellStyle5;
             dataGridViewCursos.RowHeadersVisible = false;
             dataGridViewCursos.RowHeadersWidth = 62;
-            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.TopCenter;
-            dataGridViewCellStyle3.BackColor = Color.AntiqueWhite;
-            dataGridViewCellStyle3.Font = new Font("Verdana", 9F, FontStyle.Italic, GraphicsUnit.Point);
-            dataGridViewCellStyle3.ForeColor = Color.FromArgb(64, 64, 64);
-            dataGridViewCellStyle3.SelectionBackColor = Color.Tomato;
-            dataGridViewCursos.RowsDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle6.Alignment = DataGridViewContentAlignment.TopCenter;
+            dataGridViewCellStyle6.BackColor = Color.AntiqueWhite;
+            dataGridViewCellStyle6.Font = new Font("Verdana", 9F, FontStyle.Italic, GraphicsUnit.Point);
+            dataGridViewCellStyle6.ForeColor = Color.FromArgb(64, 64, 64);
+            dataGridViewCellStyle6.SelectionBackColor = Color.Tomato;
+            dataGridViewCursos.RowsDefaultCellStyle = dataGridViewCellStyle6;
             dataGridViewCursos.RowTemplate.Height = 33;
             dataGridViewCursos.Size = new Size(769, 420);
             dataGridViewCursos.TabIndex = 0;
@@ -87,9 +87,9 @@
             pictureBox1.BackColor = Color.Transparent;
             pictureBox1.BackgroundImageLayout = ImageLayout.Stretch;
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(861, 21);
+            pictureBox1.Location = new Point(866, 12);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(173, 91);
+            pictureBox1.Size = new Size(189, 113);
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox1.TabIndex = 1;
             pictureBox1.TabStop = false;
@@ -97,11 +97,12 @@
             // labelTitulo
             // 
             labelTitulo.AutoSize = true;
-            labelTitulo.BackColor = Color.AntiqueWhite;
-            labelTitulo.Font = new Font("Verdana", 12F, FontStyle.Italic, GraphicsUnit.Point);
-            labelTitulo.Location = new Point(385, 35);
+            labelTitulo.BackColor = Color.Transparent;
+            labelTitulo.Font = new Font("Verdana", 14F, FontStyle.Italic, GraphicsUnit.Point);
+            labelTitulo.ForeColor = Color.DarkSlateGray;
+            labelTitulo.Location = new Point(380, 47);
             labelTitulo.Name = "labelTitulo";
-            labelTitulo.Size = new Size(223, 29);
+            labelTitulo.Size = new Size(262, 34);
             labelTitulo.TabIndex = 2;
             labelTitulo.Text = "Listado de cursos";
             // 
@@ -119,11 +120,12 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.BackColor = Color.AntiqueWhite;
-            label1.Font = new Font("Verdana", 9F, FontStyle.Italic, GraphicsUnit.Point);
+            label1.BackColor = Color.Transparent;
+            label1.Font = new Font("Verdana", 10F, FontStyle.Italic, GraphicsUnit.Point);
+            label1.ForeColor = Color.Teal;
             label1.Location = new Point(156, 173);
             label1.Name = "label1";
-            label1.Size = new Size(338, 22);
+            label1.Size = new Size(376, 25);
             label1.TabIndex = 4;
             label1.Text = "Seleccione el curso que desea editar";
             label1.TextAlign = ContentAlignment.TopCenter;

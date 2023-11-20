@@ -55,5 +55,11 @@ namespace New_SYSACAD
             GestionarRequisitosAcademicos gestionarRequisitos = new GestionarRequisitosAcademicos();
             Menu.MostrarMenu(gestionarRequisitos, this);
         }
+
+        private void buttonManejarListaEspera_Click(object sender, EventArgs e)
+        {
+            CursosConListaEspera cursosConListaEspera = new CursosConListaEspera();
+            Menu.MostrarMenu(cursosConListaEspera, this);
+        }
     }
 }

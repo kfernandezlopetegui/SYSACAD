@@ -75,7 +75,7 @@
             label2.BackColor = Color.Transparent;
             label2.Font = new Font("Verdana", 9F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
             label2.ForeColor = SystemColors.ControlText;
-            label2.Location = new Point(101, 37);
+            label2.Location = new Point(112, 37);
             label2.Name = "label2";
             label2.Size = new Size(150, 22);
             label2.TabIndex = 2;
@@ -86,13 +86,13 @@
             textBox1.AutoCompleteSource = AutoCompleteSource.AllUrl;
             textBox1.BackColor = Color.SeaShell;
             textBox1.Font = new Font("Verdana", 9F, FontStyle.Italic, GraphicsUnit.Point);
-            textBox1.ForeColor = SystemColors.InactiveCaption;
-            textBox1.Location = new Point(101, 119);
+            textBox1.ForeColor = SystemColors.Desktop;
+            textBox1.Location = new Point(56, 119);
             textBox1.Name = "textBox1";
-            textBox1.Size = new Size(143, 29);
+            textBox1.PlaceholderText = "Usuario";
+            textBox1.Size = new Size(281, 29);
             textBox1.TabIndex = 3;
             textBox1.Tag = "";
-            textBox1.Text = "Usuario";
             textBox1.TextAlign = HorizontalAlignment.Center;
             textBox1.Enter += textBox1_Enter;
             // 
@@ -100,12 +100,12 @@
             // 
             textBox2.BackColor = Color.SeaShell;
             textBox2.Font = new Font("Verdana", 9F, FontStyle.Italic, GraphicsUnit.Point);
-            textBox2.ForeColor = SystemColors.InactiveCaption;
-            textBox2.Location = new Point(101, 178);
+            textBox2.ForeColor = SystemColors.Desktop;
+            textBox2.Location = new Point(56, 214);
             textBox2.Name = "textBox2";
-            textBox2.Size = new Size(143, 29);
+            textBox2.PlaceholderText = "Contraseña";
+            textBox2.Size = new Size(281, 29);
             textBox2.TabIndex = 4;
-            textBox2.Text = "Contraseña";
             textBox2.TextAlign = HorizontalAlignment.Center;
             textBox2.Enter += textBox2_Enter;
             // 
@@ -118,7 +118,7 @@
             groupBox1.Controls.Add(textBox1);
             groupBox1.Location = new Point(358, 288);
             groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(337, 351);
+            groupBox1.Size = new Size(378, 398);
             groupBox1.TabIndex = 5;
             groupBox1.TabStop = false;
             // 
@@ -126,9 +126,9 @@
             // 
             button1.BackColor = Color.Transparent;
             button1.Font = new Font("Verdana", 8F, FontStyle.Italic, GraphicsUnit.Point);
-            button1.Location = new Point(118, 260);
+            button1.Location = new Point(112, 306);
             button1.Name = "button1";
-            button1.Size = new Size(108, 33);
+            button1.Size = new Size(139, 33);
             button1.TabIndex = 0;
             button1.Text = "Iniciar";
             button1.UseVisualStyleBackColor = false;

@@ -13,14 +13,12 @@ namespace Actualizar
 {
     public class ActualizarCurso
     {
-       
         public static List<Curso> ListaCursosActualesBD()
         {
             List<Curso> cursosRegistrados = CRUDB.ObtenerTodos<Curso>("Curso");
             return cursosRegistrados;
         }
         
-       
         public async static void AgregarCursoBD(Curso nuevoCurso)
         { 
           
@@ -58,7 +56,6 @@ namespace Actualizar
             }
             return false;
         }
-
 
         public async static void ActualizarCupo(string codigoCurso)
         {
@@ -118,5 +115,8 @@ namespace Actualizar
         {
             await CRUDB.InsertarRegistroAsync<ListaEspera>(listaEspera);
         }
+    
+        
+
     }
 }

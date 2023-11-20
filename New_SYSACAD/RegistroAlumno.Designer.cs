@@ -53,7 +53,7 @@
             // 
             // groupBox1
             // 
-            groupBox1.BackColor = Color.AntiqueWhite;
+            groupBox1.BackColor = Color.Transparent;
             groupBox1.BackgroundImageLayout = ImageLayout.Stretch;
             groupBox1.Controls.Add(labelConfirmacion);
             groupBox1.Controls.Add(button2);
@@ -71,9 +71,9 @@
             groupBox1.Controls.Add(textNombre);
             groupBox1.Font = new Font("Verdana", 9F, FontStyle.Italic, GraphicsUnit.Point);
             groupBox1.ForeColor = SystemColors.ButtonShadow;
-            groupBox1.Location = new Point(236, 30);
+            groupBox1.Location = new Point(306, 43);
             groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(478, 744);
+            groupBox1.Size = new Size(480, 710);
             groupBox1.TabIndex = 1;
             groupBox1.TabStop = false;
             groupBox1.Text = "Registrar estudiante";
@@ -92,7 +92,7 @@
             button2.BackColor = Color.LightBlue;
             button2.Font = new Font("Verdana", 9F, FontStyle.Regular, GraphicsUnit.Point);
             button2.ForeColor = SystemColors.MenuText;
-            button2.Location = new Point(42, 684);
+            button2.Location = new Point(42, 642);
             button2.Name = "button2";
             button2.Size = new Size(112, 34);
             button2.TabIndex = 0;
@@ -105,7 +105,7 @@
             button1.BackColor = Color.LightBlue;
             button1.Font = new Font("Verdana", 9F, FontStyle.Regular, GraphicsUnit.Point);
             button1.ForeColor = SystemColors.InfoText;
-            button1.Location = new Point(282, 684);
+            button1.Location = new Point(324, 642);
             button1.Name = "button1";
             button1.Size = new Size(112, 34);
             button1.TabIndex = 11;
@@ -115,9 +115,9 @@
             // 
             // textPalabraClave
             // 
-            textPalabraClave.BackColor = Color.SeaShell;
+            textPalabraClave.BackColor = Color.White;
             textPalabraClave.ForeColor = Color.Black;
-            textPalabraClave.Location = new Point(52, 460);
+            textPalabraClave.Location = new Point(71, 461);
             textPalabraClave.Name = "textPalabraClave";
             textPalabraClave.PlaceholderText = "Ingrese palabra clave";
             textPalabraClave.Size = new Size(342, 29);
@@ -128,9 +128,9 @@
             // 
             // textContraseñaP
             // 
-            textContraseñaP.BackColor = Color.SeaShell;
+            textContraseñaP.BackColor = Color.White;
             textContraseñaP.ForeColor = Color.Black;
-            textContraseñaP.Location = new Point(52, 406);
+            textContraseñaP.Location = new Point(71, 409);
             textContraseñaP.Name = "textContraseñaP";
             textContraseñaP.PlaceholderText = "Ingrese contraseña provisional";
             textContraseñaP.Size = new Size(342, 29);
@@ -142,8 +142,8 @@
             // checkBox1
             // 
             checkBox1.AutoSize = true;
-            checkBox1.BackColor = Color.AntiqueWhite;
-            checkBox1.Location = new Point(52, 571);
+            checkBox1.BackColor = Color.Transparent;
+            checkBox1.Location = new Point(42, 548);
             checkBox1.Name = "checkBox1";
             checkBox1.Size = new Size(417, 26);
             checkBox1.TabIndex = 8;
@@ -153,9 +153,9 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.BackColor = Color.AntiqueWhite;
+            label1.BackColor = Color.SeaShell;
             label1.ForeColor = SystemColors.ControlDarkDark;
-            label1.Location = new Point(52, 519);
+            label1.Location = new Point(69, 518);
             label1.Name = "label1";
             label1.Size = new Size(203, 22);
             label1.TabIndex = 7;
@@ -175,10 +175,10 @@
             // 
             // textDni
             // 
-            textDni.BackColor = Color.SeaShell;
+            textDni.BackColor = Color.White;
             textDni.Font = new Font("Verdana", 9F, FontStyle.Italic, GraphicsUnit.Point);
             textDni.ForeColor = Color.Black;
-            textDni.Location = new Point(52, 85);
+            textDni.Location = new Point(69, 58);
             textDni.Name = "textDni";
             textDni.PlaceholderText = "Ingrese DNI";
             textDni.Size = new Size(342, 29);
@@ -189,9 +189,9 @@
             // 
             // textTelefono
             // 
-            textTelefono.BackColor = Color.SeaShell;
+            textTelefono.BackColor = Color.White;
             textTelefono.ForeColor = Color.Black;
-            textTelefono.Location = new Point(52, 241);
+            textTelefono.Location = new Point(71, 228);
             textTelefono.Name = "textTelefono";
             textTelefono.PlaceholderText = "Ingrese telefono";
             textTelefono.Size = new Size(342, 29);
@@ -202,9 +202,9 @@
             // 
             // textDireccion
             // 
-            textDireccion.BackColor = Color.SeaShell;
+            textDireccion.BackColor = Color.White;
             textDireccion.ForeColor = Color.Black;
-            textDireccion.Location = new Point(52, 353);
+            textDireccion.Location = new Point(71, 356);
             textDireccion.Name = "textDireccion";
             textDireccion.PlaceholderText = "Ingrese direccion";
             textDireccion.Size = new Size(342, 29);
@@ -215,9 +215,9 @@
             // 
             // textMail
             // 
-            textMail.BackColor = Color.SeaShell;
+            textMail.BackColor = Color.White;
             textMail.ForeColor = Color.Black;
-            textMail.Location = new Point(52, 294);
+            textMail.Location = new Point(71, 290);
             textMail.Name = "textMail";
             textMail.PlaceholderText = "Ingrese correo electronico";
             textMail.Size = new Size(342, 29);
@@ -228,9 +228,9 @@
             // 
             // textApellido
             // 
-            textApellido.BackColor = Color.SeaShell;
+            textApellido.BackColor = Color.White;
             textApellido.ForeColor = Color.Black;
-            textApellido.Location = new Point(52, 183);
+            textApellido.Location = new Point(71, 172);
             textApellido.Name = "textApellido";
             textApellido.PlaceholderText = "Ingrese apellido";
             textApellido.Size = new Size(342, 29);
@@ -241,10 +241,10 @@
             // 
             // textNombre
             // 
-            textNombre.BackColor = Color.SeaShell;
+            textNombre.BackColor = Color.White;
             textNombre.Font = new Font("Verdana", 9F, FontStyle.Italic, GraphicsUnit.Point);
             textNombre.ForeColor = Color.Black;
-            textNombre.Location = new Point(52, 133);
+            textNombre.Location = new Point(71, 113);
             textNombre.Name = "textNombre";
             textNombre.PlaceholderText = "Ingrese nombre";
             textNombre.Size = new Size(342, 29);
@@ -256,16 +256,15 @@
             // timerExito
             // 
             timerExito.Interval = 3000;
-            
             // 
             // pictureBox1
             // 
             pictureBox1.BackColor = Color.Transparent;
             pictureBox1.BackgroundImageLayout = ImageLayout.Stretch;
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(890, 12);
+            pictureBox1.Location = new Point(837, 12);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(150, 75);
+            pictureBox1.Size = new Size(203, 100);
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox1.TabIndex = 2;
             pictureBox1.TabStop = false;

@@ -275,6 +275,168 @@ namespace DB
             });
         }
 
+        public static List<SolicitudListaEsperaDetallada> ObtenerTodosSolicitudesListaEsperaDetalladas()
+        {
+            List<SolicitudListaEsperaDetallada> listaSolicitudes = new List<SolicitudListaEsperaDetallada>();
+
+            using (SqlConnection conexion = new SqlConnection(cadenaConexion))
+            {
+                string consultaSql = @"
+                 SELECT LE.Id AS IdSolicitud, LE.FechaSolicitud,
+                 A.Dni AS IdAlumno, A.Nombre AS NombreAlumno, A.Apellido, A.Legajo,
+                 C.Codigo AS IdCurso, C.Nombre AS NombreCurso
+                 FROM ListaEspera LE
+                JOIN Alumno A ON LE.IdAlumno = A.Dni
+                 JOIN Curso C ON LE.IdCurso = C.Codigo
+                    ";
+
+                using (SqlCommand comando = new SqlCommand(consultaSql, conexion))
+                {
+                    try
+                    {
+                        conexion.Open();
+
+                        using (SqlDataReader reader = comando.ExecuteReader())
+                        {
+                            while (reader.Read())
+                            {
+                                SolicitudListaEsperaDetallada solicitud = new SolicitudListaEsperaDetallada
+                                {
+                                    IdSolicitud = reader.GetInt32(reader.GetOrdinal("IdSolicitud")),
+                                    FechaSolicitud = reader.GetDateTime(reader.GetOrdinal("FechaSolicitud")),
+                                    IdAlumno = reader.GetInt32(reader.GetOrdinal("IdAlumno")),
+                                    NombreAlumno = reader.GetString(reader.GetOrdinal("NombreAlumno")),
+                                    ApellidoAlumno = reader.GetString(reader.GetOrdinal("Apellido")),
+                                    LegajoAlumno = reader.GetInt32(reader.GetOrdinal("Legajo")),
+                                    IdCurso = reader.GetString(reader.GetOrdinal("IdCurso")),
+                                    NombreCurso = reader.GetString(reader.GetOrdinal("NombreCurso")),
+
+
+                                };
+
+                                listaSolicitudes.Add(solicitud);
+                            }
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        // Manejar la excepción según tus necesidades
+                        Console.WriteLine($"Error al obtener solicitudes: {ex.Message}");
+                    }
+                }
+            }
+
+            return listaSolicitudes;
+        }
+
+        public static List<SolicitudListaEsperaDetallada> ObtenerSolicitudesPorIdCurso(string idCurso)
+        {
+            List<SolicitudListaEsperaDetallada> listaSolicitudes = new List<SolicitudListaEsperaDetallada>();
+
+            using (SqlConnection conexion = new SqlConnection(cadenaConexion))
+            {
+                string consultaSql = @"
+            SELECT 
+                LE.Id AS IdSolicitud, 
+                LE.FechaSolicitud,
+                C.Codigo AS IdCurso,
+                C.Nombre AS NombreCurso,
+                A.Dni AS IdAlumno,
+                A.Nombre AS NombreAlumno,
+                A.Apellido,
+                A.Legajo
+            FROM ListaEspera LE
+            JOIN Alumno A ON LE.IdAlumno = A.Dni
+            JOIN Curso C ON LE.IdCurso = C.Codigo
+            WHERE C.Codigo = @IdCurso
+            ORDER BY LE.FechaSolicitud";
+
+                using (SqlCommand comando = new SqlCommand(consultaSql, conexion))
+                {
+                    try
+                    {
+                        conexion.Open();
+                        comando.Parameters.AddWithValue("@IdCurso", idCurso);
+
+                        using (SqlDataReader reader = comando.ExecuteReader())
+                        {
+                            while (reader.Read())
+                            {
+                                SolicitudListaEsperaDetallada solicitud = new SolicitudListaEsperaDetallada
+                                {
+                                    IdSolicitud = reader.GetInt32(reader.GetOrdinal("IdSolicitud")),
+                                    FechaSolicitud = reader.GetDateTime(reader.GetOrdinal("FechaSolicitud")),
+                                    IdCurso = reader.GetString(reader.GetOrdinal("IdCurso")),
+                                    NombreCurso = reader.GetString(reader.GetOrdinal("NombreCurso")),
+                                    IdAlumno = reader.GetInt32(reader.GetOrdinal("IdAlumno")),
+                                    NombreAlumno = reader.GetString(reader.GetOrdinal("NombreAlumno")),
+                                    ApellidoAlumno = reader.GetString(reader.GetOrdinal("Apellido")),
+                                    LegajoAlumno = reader.GetInt32(reader.GetOrdinal("Legajo"))
+                                };
+
+                                listaSolicitudes.Add(solicitud);
+                            }
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        // Manejar la excepción según tus necesidades
+                        Console.WriteLine($"Error al obtener solicitudes por ID de curso: {ex.Message}");
+                    }
+                }
+            }
+
+            return listaSolicitudes;
+        }
+
+        public static List<Curso> ObtenerCursosConListaEspera()
+        {
+            List<Curso> cursosConListaEspera = new List<Curso>();
+
+            using (SqlConnection conexion = new SqlConnection(cadenaConexion))
+            {
+                string consultaSql = @"
+            SELECT DISTINCT C.*
+            FROM Curso C
+            INNER JOIN ListaEspera LE ON C.Codigo = LE.IdCurso";
+
+                using (SqlCommand comando = new SqlCommand(consultaSql, conexion))
+                {
+                    try
+                    {
+                        conexion.Open();
+
+                        using (SqlDataReader reader = comando.ExecuteReader())
+                        {
+                            while (reader.Read())
+                            {
+                                Curso curso = new Curso
+                                {
+                                    Codigo = reader.GetString(reader.GetOrdinal("Codigo")),
+                                    Nombre = reader.GetString(reader.GetOrdinal("Nombre")),
+                                    Descripcion = reader.GetString(reader.GetOrdinal("Descripcion")),
+                                    CupoMaximo = reader.GetInt32(reader.GetOrdinal("CupoMaximo")),
+                                    CupoActual = reader.GetInt32(reader.GetOrdinal("CupoActual")),
+                                    Carrera = reader.GetString(reader.GetOrdinal("Carrera")),
+                                    IdRequisitos = reader.GetInt32(reader.GetOrdinal("IdRequisitos")),
+                                    // Agrega otras propiedades según tu modelo de datos
+                                };
+
+                                cursosConListaEspera.Add(curso);
+                            }
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        // Manejar la excepción según tus necesidades
+                        Console.WriteLine($"Error al obtener cursos con lista de espera: {ex.Message}");
+                    }
+                }
+            }
+
+            return cursosConListaEspera;
+        }
+
 
     }
 

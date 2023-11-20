@@ -83,8 +83,10 @@ namespace Validaciones
 
             if (DataBase.VerificarTablaVacia("Alumno"))
             {
+                string cursosAProbados = CRUD.ConvertirListaAJson(new List<string>());
+
                 Alumno alumno = new Alumno("karen", "fernandez", "Femenino", "karen", Hash.GetHash("1234"), true,
-                 false, "estudiante", "1999,08,28", "Mango", 1111, 94298161, "nandubay 123", "1173610818");
+                 false, "estudiante", "1999,08,28", "Mango", 1111, 94298161, "nandubay 123", "1173610818",cursosAProbados);
                 
                 await CRUDB.InsertarRegistroAsync<Alumno>(alumno);
             }

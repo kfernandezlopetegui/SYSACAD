@@ -33,7 +33,7 @@
             label1 = new Label();
             groupBox1 = new GroupBox();
             button6 = new Button();
-            button5 = new Button();
+            buttonManejarListaEspera = new Button();
             button4 = new Button();
             buttonReportes = new Button();
             button3 = new Button();
@@ -72,7 +72,7 @@
             // 
             groupBox1.BackColor = Color.Transparent;
             groupBox1.Controls.Add(button6);
-            groupBox1.Controls.Add(button5);
+            groupBox1.Controls.Add(buttonManejarListaEspera);
             groupBox1.Controls.Add(button4);
             groupBox1.Controls.Add(buttonReportes);
             groupBox1.Controls.Add(button3);
@@ -96,16 +96,17 @@
             button6.Text = "Gestionar Perfiles de Profesores";
             button6.UseVisualStyleBackColor = false;
             // 
-            // button5
+            // buttonManejarListaEspera
             // 
-            button5.BackColor = Color.Snow;
-            button5.Font = new Font("Verdana", 9F, FontStyle.Italic, GraphicsUnit.Point);
-            button5.Location = new Point(109, 391);
-            button5.Name = "button5";
-            button5.Size = new Size(259, 52);
-            button5.TabIndex = 6;
-            button5.Text = "Manejar Listas de Espera";
-            button5.UseVisualStyleBackColor = false;
+            buttonManejarListaEspera.BackColor = Color.Snow;
+            buttonManejarListaEspera.Font = new Font("Verdana", 9F, FontStyle.Italic, GraphicsUnit.Point);
+            buttonManejarListaEspera.Location = new Point(109, 391);
+            buttonManejarListaEspera.Name = "buttonManejarListaEspera";
+            buttonManejarListaEspera.Size = new Size(259, 52);
+            buttonManejarListaEspera.TabIndex = 6;
+            buttonManejarListaEspera.Text = "Manejar Listas de Espera";
+            buttonManejarListaEspera.UseVisualStyleBackColor = false;
+            buttonManejarListaEspera.Click += buttonManejarListaEspera_Click;
             // 
             // button4
             // 
@@ -211,7 +212,7 @@
         private Button button3;
         private Button button2;
         private Button buttonReportes;
-        private Button button5;
+        private Button buttonManejarListaEspera;
         private Button button4;
         private Button button6;
     }

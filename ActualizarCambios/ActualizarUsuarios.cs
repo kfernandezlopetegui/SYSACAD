@@ -23,7 +23,7 @@ namespace Actualizar
             return usuariosRegistrados;
         }
 
-        public async static void AgregarAlumnoBD(string file, Alumno nuevoUsuario)
+        public async static void AgregarAlumnoBD( Alumno nuevoUsuario)
         {
            
             await CRUDB.InsertarRegistroAsync<Alumno>(nuevoUsuario);

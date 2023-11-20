@@ -1,6 +1,7 @@
 ﻿using DB;
 using Entidades;
 using Google.Protobuf.WellKnownTypes;
+using LecturaEscritura;
 using Microsoft.Data.SqlClient;
 using MySqlX.XDevAPI.Relational;
 using Org.BouncyCastle.Utilities;
@@ -66,9 +67,10 @@ namespace New_SYSACAD
 
             int legajo = DataBase.ObtenerUltimoLegajo();
             legajo++;
+            string cursosAProbados = CRUD.ConvertirListaAJson(new List<string>());
             Alumno alumno = new Alumno("Prueba", "Asincronico", "indefinido", "asincronico@gmail.com", "hola1234",
                     false, false, "estudiante", "23/11/2000", "asincronico", legajo,
-                    93298161, "calle falsa", "123324353");
+                    93298161, "calle falsa", "123324353",cursosAProbados);
 
             string resultado = await CRUDB.CreateTableAsync<ListaEspera>();
             
@@ -86,9 +88,9 @@ namespace New_SYSACAD
         {
             string nombre = textBoxNombreActualizar.Text;
             string apellido = textBoxApellidoActualizar.Text;
-
+            string cursosAProbados = CRUD.ConvertirListaAJson(new List<string>());
             Alumno alumno2 = new Alumno(nombre, apellido, "Femenino", "karen", Hash.GetHash("1234"), true,
-                false, "estudiante", "1999,08,28", "Mango", 1112, 94298163, "nandubay 123", "1173610818");
+                false, "estudiante", "1999,08,28", "Mango", 1112, 94298163, "nandubay 123", "1173610818", cursosAProbados);
             string resultado = await CRUDB.ActualizarPorIdentificadorAsync("Alumno", "Dni", "94298161", alumno2);
             MessageBox.Show(resultado);
         }
@@ -102,8 +104,22 @@ namespace New_SYSACAD
             // Llena el DataTable con los datos de la base de datos
             adaptador.Fill(tablaDatos);
 
+            dataGridView1.Columns.Clear();
+           
+            // Configura las columnas manualmente
+            
+            dataGridView1.AutoGenerateColumns = true;
+            dataGridView1.DataSource = CRUDB.ObtenerCursosConListaEspera();
+
+            dataGridView1.Columns["Nombre"].HeaderText = "Nombre del Curso";
+            dataGridView1.Columns["Id"].Visible = false;
+            dataGridView1.Columns["IdRequisitos"].Visible = false;
+            dataGridView1.Columns["CupoActual"].Visible = false;
+            dataGridView1.Columns["CupoMaximo"].Visible = false;
+
             // Vincula el DataTable al DataGridView
-            dataGridView1.DataSource = CRUDB.ObtenerTodos<Curso>("Curso");
+            //dataGridView1.DataSource = CRUDB.ObtenerSolicitudesPorIdCurso("676767");
+
         }
 
         private void buttonActualizarTabla_Click(object sender, EventArgs e)

@@ -27,7 +27,7 @@ namespace Entidades
         public double Promedio { get; set; }
 
 
-        public Alumno(string nombre, string apellido, string sexo, string email, string clave, bool tipoDeClave, bool loginStatus, string nombreRol, string fechaDeNacimiento, string palabraClave,int legajo,  int dni, string direccion, string telefono) : base(nombre, apellido, sexo, email, clave, tipoDeClave, loginStatus, nombreRol, fechaDeNacimiento, palabraClave, legajo)
+        public Alumno(string nombre, string apellido, string sexo, string email, string clave, bool tipoDeClave, bool loginStatus, string nombreRol, string fechaDeNacimiento, string palabraClave,int legajo,  int dni, string direccion, string telefono, string cursosAProbados) : base(nombre, apellido, sexo, email, clave, tipoDeClave, loginStatus, nombreRol, fechaDeNacimiento, palabraClave, legajo)
         {
             this.dni = dni;
            
@@ -36,7 +36,7 @@ namespace Entidades
             this.telefono = telefono;
 
             this.conceptosDePagos =  "";
-            this.CursosAprobados = "";
+            this.CursosAprobados = cursosAProbados;
             this.Promedio = 4;
             this.Creditos = 400;
 

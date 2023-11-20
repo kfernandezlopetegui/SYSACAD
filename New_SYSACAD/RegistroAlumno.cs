@@ -69,14 +69,15 @@ namespace New_SYSACAD
                 bool temporal = checkBox1.Checked;
                 contraseñaP = Hash.GetHash(contraseñaP);
 
+                string cursosAProbados = CRUD.ConvertirListaAJson(new List<string>());
                 int legajo = DataBase.ObtenerUltimoLegajo();
                 legajo++;
 
                 Alumno alumno = new Alumno(nombre, apellido, "indefinido", mail, contraseñaP,
                     temporal, false, "estudiante", fechaNacimiento, palabraClave, legajo,
-                    dni, direccion, telefono);
+                    dni, direccion, telefono, cursosAProbados);
 
-                ActualizarUsuarios.AgregarAlumnoBD("alumnosRegistrados.json", alumno);
+                ActualizarUsuarios.AgregarAlumnoBD(alumno);
 
                 DialogResult resultado = MessageBox.Show("¡Registro exitoso! El alumno se ha registrado correctamente.",
                                              "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);

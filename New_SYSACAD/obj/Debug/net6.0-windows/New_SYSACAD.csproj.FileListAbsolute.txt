@@ -362,3 +362,7 @@ C:\Users\kflop\OneDrive\Escritorio\Sysacad\New_SYSACAD\bin\Debug\net6.0-windows\
 C:\Users\kflop\OneDrive\Escritorio\Sysacad\New_SYSACAD\bin\Debug\net6.0-windows\LogicaSysacad.dll
 C:\Users\kflop\OneDrive\Escritorio\Sysacad\New_SYSACAD\bin\Debug\net6.0-windows\Interfaces.pdb
 C:\Users\kflop\OneDrive\Escritorio\Sysacad\New_SYSACAD\bin\Debug\net6.0-windows\LogicaSysacad.pdb
+C:\Users\kflop\OneDrive\Escritorio\Sysacad\New_SYSACAD\obj\Debug\net6.0-windows\New_SYSACAD.CursosConListaEspera.resources
+C:\Users\kflop\OneDrive\Escritorio\Sysacad\New_SYSACAD\obj\Debug\net6.0-windows\New_SYSACAD.MostrarListaEsperaCurso.resources
+C:\Users\kflop\OneDrive\Escritorio\Sysacad\New_SYSACAD\obj\Debug\net6.0-windows\New_SYSACAD.EliminarDeListaEspera.resources
+C:\Users\kflop\OneDrive\Escritorio\Sysacad\New_SYSACAD\obj\Debug\net6.0-windows\New_SYSACAD.AgregarAListaDeEspera.resources
