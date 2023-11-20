@@ -70,7 +70,7 @@ namespace New_SYSACAD
                     false, false, "estudiante", "23/11/2000", "asincronico", legajo,
                     93298161, "calle falsa", "123324353");
 
-            string resultado = await CRUDB.InsertarRegistroAsync<Alumno>(alumno);
+            string resultado = await CRUDB.CreateTableAsync<ListaEspera>();
             
             MessageBox.Show(resultado);
         }

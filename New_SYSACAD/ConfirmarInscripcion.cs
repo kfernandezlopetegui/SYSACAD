@@ -19,8 +19,6 @@ namespace New_SYSACAD
     {
         HashSet<Curso> listaDeCursos;
 
-        private string nombreArchivoCursos = "cursosRegistrados.json";
-        private string nombreArchivoInscripciones = "inscripcionesRegistradas.json";
         
         
         public ConfirmarInscripcion(HashSet<Curso> listaCursos)
@@ -77,7 +75,7 @@ namespace New_SYSACAD
                     ActualizarInscripciones.AgregarInscripcion(inscripcion);
                     ActualizarUsuarios.AgregarPagosPendientes(conceptoPagos, SesionAlumno.AlumnoActual.Dni);
 
-                    ActualizarCurso.ActualizarCupo("cursosRegistrados.json", curso.Codigo);
+                    ActualizarCurso.ActualizarCupo(curso.Codigo);
 
                     // Mostrar mensaje de éxito
                     MessageBox.Show($"Te has inscripto correctamente a {curso.Nombre}.",
@@ -93,8 +91,28 @@ namespace New_SYSACAD
                     }
                     if(disponibilidad == false)
                     {
-                        MessageBox.Show($"No hay cupo disponible para el curso {curso.Nombre}. No se pudo inscribir",
+                        MessageBox.Show($"No hay cupo disponible para {curso.Nombre}. No se pudo inscribir",
                                     "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        if (cumpleRequisitos==true)
+                        {
+                            DialogResult resultado = MessageBox.Show($"¿Quieres anotarte a la lista de espera de {curso.Nombre} ", "Confirmar Inscripcion", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question);
+                            if (resultado == DialogResult.Yes)
+                            {
+                                ListaEspera listaEspera = new ListaEspera(curso.Codigo, SesionAlumno.AlumnoActual.Dni);
+
+                                ActualizarCurso.AgregarAListaEspera(listaEspera);
+
+                                DialogResult resultadoInscripcion = MessageBox.Show($"¡Inscripcion a la lista de espera de {curso.Nombre} exitosa!",
+                                                           "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                if (resultadoInscripcion == DialogResult.OK)
+                                {
+                                    InscripcionCursos inscripcionCurso = new InscripcionCursos();
+                                    Menu.MostrarMenu(inscripcionCurso, this, 1);
+                                }
+                            }
+
+                        }
+                        
                     }
                     
                 }

@@ -98,6 +98,7 @@ namespace Validaciones
                 await CRUDB.CreateTableAsync<Inscripcion>();
                 await CRUDB.CreateTableAsync<RequisitosAcademicos>();
                 await CRUDB.CreateTableAsync<Curso>();
+                await CRUDB.CreateTableAsync<ListaEspera>();
             }
             
         }

@@ -60,7 +60,7 @@ namespace Actualizar
         }
 
 
-        public async static void ActualizarCupo( string file, string codigoCurso)
+        public async static void ActualizarCupo(string codigoCurso)
         {
             /* Edita el curso
              * recibe el curso a guardar, el codigo original del curso que se esta editando
@@ -114,5 +114,9 @@ namespace Actualizar
             return nombresSeparadosPorComas;
         }
 
+        public async static void AgregarAListaEspera(ListaEspera listaEspera)
+        {
+            await CRUDB.InsertarRegistroAsync<ListaEspera>(listaEspera);
+        }
     }
 }
