@@ -10,6 +10,9 @@
     <Compile Update="AgregarProfesor.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="AsignarCursoAProfesor.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="ConfirmarInscripcion.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -23,6 +26,9 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="EdicionDeCurso.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="EdicionDeProfesor.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="EdicionRequisito.cs">

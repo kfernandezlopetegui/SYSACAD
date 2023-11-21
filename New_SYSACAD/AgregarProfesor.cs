@@ -1,4 +1,7 @@
-﻿using System;
+﻿using Entidades;
+using Interfaces;
+using LogicaSysacad;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -9,16 +12,25 @@ using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Validaciones;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.Button;
 
 namespace New_SYSACAD
 {
-    public partial class AgregarProfesor : Form
+    public partial class AgregarProfesor : Form, ITraerListaCurso, IAsignarCursos, IAgregarProfesor
     {
-        private int textBoxModificados = 0;
+        private bool controlFocoFecha = false;
+
+        public event Action OnListaPedida;
+        public event Action AsignarCursos;
+        public event Action AgregarProfe;
+
         public AgregarProfesor()
         {
             InitializeComponent();
-            AsociarEventoTextChanged(this);
+            var logica = new TraerListaCursoLogica(this);
+
+            OnListaPedida?.Invoke();
+
         }
 
         private async void textEmail_Validated(object sender, EventArgs e)
@@ -63,7 +75,7 @@ namespace New_SYSACAD
                 return;
             }
 
-            if (dni.Length >10)
+            if (dni.Length > 10)
             {
                 MessageBox.Show("El DNI debe tener menos de 10 dígitos.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 textDni.Focus();
@@ -121,71 +133,129 @@ namespace New_SYSACAD
             ControlForm.ValidarCampoNoVacio(textBoxAreasEspecializacion, textoCampo);
         }
 
-        private void FechaDeNacimiento_Validated(object sender, EventArgs e)
+        private void buttonAgregar_Click(object sender, EventArgs e)
         {
-            string fechaNacimiento = FechaDeNacimiento.Value.Date.ToString("dd-MM-yyyy");
-            DateTime fechaHoy = DateTime.Now.Date;
-            string fechaStringDefecto = fechaHoy.ToString("dd-MM-yyyy");
-            string textoCampo = "Fecha de nacimiento";
-            if (fechaNacimiento == fechaStringDefecto)
+
+
+            if (TodosLosTextBoxNoEstanVacios(this) && controlFocoFecha)
             {
-                MessageBox.Show($"{textoCampo} no puede estar vacío.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                int dni = int.Parse(textDni.Text);
+                string nombre = textNombre.Text;
+                string apellido = textApellido.Text;
+                string telefono = textBoxNumeroTel.Text;
+                string mail = textEmail.Text;
+                string direccion = textBoxDireccion.Text;
+                string contraseñaP = textBoxContraseña.Text;
+                string palabraClave = textBoxPalabraClave.Text;
+                string fechaNacimiento = FechaDeNacimiento.Value.Date.ToString("dd-MM-yyyy");
+                string areasEspecializacion = textBoxAreasEspecializacion.Text;
+                contraseñaP = Hash.GetHash(contraseñaP);
+
+                var agregarProfe = new AgregarProfesorLogica(this, dni, nombre, apellido,
+                    telefono, mail, direccion, contraseñaP, palabraClave, fechaNacimiento,
+                     areasEspecializacion);
+
+                AgregarProfe.Invoke();
+
+
+                List<string> listaCursosAsignados = obtenerCursosSeleccionados();
+
+                var logicaAsignarCursos = new AgregarCursosAsignadosLogica(this, dni, listaCursosAsignados);
+
+                AsignarCursos.Invoke();
+
+                DialogResult resultado = MessageBox.Show("¡Registro exitoso! El Profesor se ha registrado correctamente.",
+                                             "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                if (resultado == DialogResult.OK)
+                {
+                    AgregarProfesor agregar = new AgregarProfesor();
+                    Menu.MostrarMenu(agregar, this, 1);
+                }
+            }
+            else
+            {
+                MessageBox.Show($"Todos los campos deben estar completos.", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+        private bool TodosLosTextBoxNoEstanVacios(Control control)
+        {
+            foreach (Control c in control.Controls)
+            {
+                if (c is TextBox textBox)
+                {
+                    if (string.IsNullOrWhiteSpace(textBox.Text))
+                    {
+                        return false; // Devuelve false si al menos un TextBox está vacío o contiene solo espacios en blanco
+                    }
+                }
+                else if (c.HasChildren)
+                {
+                    // Llamada recursiva si el control actual tiene controles secundarios
+                    if (!TodosLosTextBoxNoEstanVacios(c))
+                    {
+                        return false;
+                    }
+                }
+            }
+
+            return true; // Devuelve true si todos los TextBox no están vacíos
+        }
+
+        private void buttonVolver_Click(object sender, EventArgs e)
+        {
+            ListaProfesores listaProfesores = new ListaProfesores();
+            Menu.MostrarMenu(listaProfesores, this, 1);
+        }
+
+        private void FechaDeNacimiento_ValueChanged(object sender, EventArgs e)
+        {
+            DateTime fechaNacimiento = FechaDeNacimiento.Value.Date;
+           
+            string textoCampo = "Fecha de nacimiento";
+            if (!ControlForm.EsMayorDeEdad( fechaNacimiento))
+            {
+                MessageBox.Show($"{textoCampo} invalida.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
 
                 return;
             }
-        }
-        private void AsociarEventoTextChanged(Control control)
-        {
-            foreach (Control c in control.Controls)
-            {
-                if (c is TextBox)
-                {
-                    ((TextBox)c).TextChanged += TextBox_TextChanged;
-                }
-                else if (c.HasChildren)
-                {
-                    AsociarEventoTextChanged(c);
-                }
-            }
+
+            controlFocoFecha = true;
         }
 
-        private void TextBox_TextChanged(object sender, EventArgs e)
+        public void CargarPreCursos(List<Curso> lista)
         {
-            // Incrementar el contador cada vez que un TextBox se modifica
-            textBoxModificados++;
+
+
+            // Convierte la lista de cursos a una lista de CursoViewModel
+            List<CursoViewModel> listaCursosViewModel = lista
+                .Select(curso => new CursoViewModel(curso.NombreConCodigo(), curso.Id)
+                {
+
+
+                })
+                .ToList();
+
+            // Configura el checkedListBoxPreCursos
+            checkedListBoxCursosAsignados.DataSource = listaCursosViewModel;
+            checkedListBoxCursosAsignados.DisplayMember = "NombreConCodigo";
+            checkedListBoxCursosAsignados.ValueMember = "Id";
         }
 
-        private int ContarTextBoxes(Control control)
+        public void AsignarLista(List<Curso> lista)
         {
-            int count = 0;
-            foreach (Control c in control.Controls)
-            {
-                if (c is TextBox)
-                {
-                    count++;
-                }
-                else if (c.HasChildren)
-                {
-                    count += ContarTextBoxes(c);
-                }
-            }
-            return count;
+            CargarPreCursos(lista);
         }
-
-        private void buttonAgregar_Click(object sender, EventArgs e)
+        private List<string> obtenerCursosSeleccionados()
         {
-            int totalTextBoxes = ContarTextBoxes(this);
+            List<string> idsCursosSeleccionados = new List<string>();
 
-            if (textBoxModificados == totalTextBoxes)
+            foreach (CursoViewModel cursoViewModel in checkedListBoxCursosAsignados.CheckedItems)
             {
-                // Todos los TextBox fueron modificados
-                // Realizar la lógica de guardar
+                idsCursosSeleccionados.Add(cursoViewModel.Id.ToString());
             }
-            else
-            {
-                MessageBox.Show($"No se realizaron cambios en todos los TextBox.{textBoxModificados}");
-            }
+            return idsCursosSeleccionados;
         }
     }
 }

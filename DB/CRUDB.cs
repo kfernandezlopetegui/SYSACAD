@@ -445,27 +445,31 @@ namespace DB
             {
                 string consultaSql = @"
                       SELECT 
-                      P.Dni,
-                      P.Nombre,
-                      P.Apellido,
-                      P.Direccion,
-                      P.NumeroTelefono,
-                      P.AreasEspecializacion,
-                      P.Legajo,
-                      P.Email,
-                      STRING_AGG(C.Nombre, ', ') AS CursosAsignados
-                      FROM Profesor P
-                      JOIN CursosAsignados CA ON P.Dni = CA.IdProfesor
-                      JOIN Curso C ON CA.IdCurso = C.Codigo
-                      GROUP BY 
-                      P.Dni,
-                      P.Nombre,
-                      P.Apellido,
-                      P.Direccion,
-                      P.NumeroTelefono,
-                      P.AreasEspecializacion,
-                      P.Legajo,
-                      P.Email;
+    P.Dni,
+    P.Nombre,
+    P.Apellido,
+    P.Direccion,
+    P.NumeroTelefono,
+    P.AreasEspecializacion,
+    P.Legajo,
+    P.Email,
+    COALESCE(STRING_AGG(C.Nombre, ', '), '') AS CursosAsignados
+FROM 
+    Profesor P
+LEFT JOIN 
+    CursosAsignados CA ON P.Dni = CA.IdProfesor
+LEFT JOIN 
+    Curso C ON CA.IdCurso = C.Codigo
+GROUP BY 
+    P.Dni,
+    P.Nombre,
+    P.Apellido,
+    P.Direccion,
+    P.NumeroTelefono,
+    P.AreasEspecializacion,
+    P.Legajo,
+    P.Email;
+
                             ";
 
                 using (SqlCommand comando = new SqlCommand(consultaSql, conexion))
@@ -505,6 +509,46 @@ namespace DB
             }
 
             return listaProfesores;
+        }
+
+        public static  List<string> ObtenerIdCursosPorIdProfesor(int idProfesor)
+        {
+            List<string> idCursosAsignados = new List<string>();
+
+            using (SqlConnection conexion = new SqlConnection(cadenaConexion))
+            {
+                string consultaSql = @"
+            SELECT C.Codigo
+            FROM Profesor P
+            LEFT JOIN CursosAsignados CA ON P.Dni = CA.IdProfesor
+            LEFT JOIN Curso C ON CA.IdCurso = C.Codigo
+            WHERE P.Dni = @IdProfesor";
+
+                using (SqlCommand comando = new SqlCommand(consultaSql, conexion))
+                {
+                    try
+                    {
+                        conexion.Open();
+                        comando.Parameters.AddWithValue("@IdProfesor", idProfesor);
+
+                        using (SqlDataReader reader = comando.ExecuteReader())
+                        {
+                            while (reader.Read())
+                            {
+                                string idCurso = reader.GetString(reader.GetOrdinal("Codigo"));
+                                idCursosAsignados.Add(idCurso);
+                            }
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        // Manejar la excepción según tus necesidades
+                        Console.WriteLine($"Error al obtener Id de cursos por Id de profesor: {ex.Message}");
+                    }
+                }
+            }
+
+            return idCursosAsignados;
         }
 
     }

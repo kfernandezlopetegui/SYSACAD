@@ -75,6 +75,30 @@ namespace New_SYSACAD
             Console.WriteLine("Informe generado y guardado como PDF.");
         }
 
-        
+
+        public static bool EsMayorDeEdad(DateTime fechaNacimiento)
+        {
+            // Calcular la edad
+            int edad = CalcularEdad(fechaNacimiento);
+
+            // Verificar si la edad es mayor o igual a 18
+            return edad >= 18;
+        }
+
+        static int CalcularEdad(DateTime fechaNacimiento)
+        {
+            // Calcular la edad restando el año de nacimiento al año actual
+            int edad = DateTime.Now.Year - fechaNacimiento.Year;
+
+            // Ajustar la edad si aún no ha llegado el cumpleaños de este año
+            if (DateTime.Now < fechaNacimiento.AddYears(edad))
+            {
+                edad--;
+            }
+
+            return edad;
+        }
+
+
     }
 }

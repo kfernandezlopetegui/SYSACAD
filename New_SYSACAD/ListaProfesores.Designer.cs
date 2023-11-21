@@ -43,6 +43,8 @@
             label2 = new Label();
             buttonEditar = new Button();
             label4 = new Label();
+            buttonAsignarCursos = new Button();
+            label5 = new Label();
             ((System.ComponentModel.ISupportInitialize)dataGridViewCursos).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
@@ -63,7 +65,7 @@
             dataGridViewCursos.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewCursos.EnableHeadersVisualStyles = false;
             dataGridViewCursos.GridColor = Color.AntiqueWhite;
-            dataGridViewCursos.Location = new Point(90, 221);
+            dataGridViewCursos.Location = new Point(59, 221);
             dataGridViewCursos.MultiSelect = false;
             dataGridViewCursos.Name = "dataGridViewCursos";
             dataGridViewCursos.ReadOnly = true;
@@ -103,7 +105,7 @@
             // buttonVolver
             // 
             buttonVolver.Font = new Font("Verdana", 9F, FontStyle.Italic, GraphicsUnit.Point);
-            buttonVolver.Location = new Point(90, 605);
+            buttonVolver.Location = new Point(59, 588);
             buttonVolver.Name = "buttonVolver";
             buttonVolver.Size = new Size(125, 42);
             buttonVolver.TabIndex = 13;
@@ -117,11 +119,11 @@
             label1.BackColor = Color.Transparent;
             label1.Font = new Font("Verdana", 10F, FontStyle.Italic, GraphicsUnit.Point);
             label1.ForeColor = Color.Teal;
-            label1.Location = new Point(182, 182);
+            label1.Location = new Point(71, 182);
             label1.Name = "label1";
-            label1.Size = new Size(601, 25);
+            label1.Size = new Size(744, 25);
             label1.TabIndex = 14;
-            label1.Text = "Seleccione el Profesor que quiere eliminar/editar de la lista";
+            label1.Text = "Seleccione el Profesor que quiere asignar curso/editar/eliminar de la lista";
             // 
             // labelTitulo
             // 
@@ -129,18 +131,18 @@
             labelTitulo.BackColor = Color.Transparent;
             labelTitulo.Font = new Font("Verdana", 12F, FontStyle.Italic, GraphicsUnit.Point);
             labelTitulo.ForeColor = Color.DarkSlateGray;
-            labelTitulo.Location = new Point(392, 78);
+            labelTitulo.Location = new Point(274, 82);
             labelTitulo.Name = "labelTitulo";
-            labelTitulo.Size = new Size(248, 29);
+            labelTitulo.Size = new Size(421, 29);
             labelTitulo.TabIndex = 15;
-            labelTitulo.Text = "Lista de Profesores ";
+            labelTitulo.Text = "Sistema de gestion de Profesores ";
             // 
             // buttonAgregar
             // 
-            buttonAgregar.BackColor = Color.Bisque;
+            buttonAgregar.BackColor = Color.Honeydew;
             buttonAgregar.BackgroundImage = (Image)resources.GetObject("buttonAgregar.BackgroundImage");
             buttonAgregar.BackgroundImageLayout = ImageLayout.Stretch;
-            buttonAgregar.Location = new Point(970, 233);
+            buttonAgregar.Location = new Point(956, 182);
             buttonAgregar.Name = "buttonAgregar";
             buttonAgregar.Size = new Size(64, 63);
             buttonAgregar.TabIndex = 16;
@@ -152,7 +154,7 @@
             label3.AutoSize = true;
             label3.BackColor = Color.Transparent;
             label3.Font = new Font("Verdana", 8F, FontStyle.Italic, GraphicsUnit.Point);
-            label3.Location = new Point(970, 212);
+            label3.Location = new Point(949, 161);
             label3.Name = "label3";
             label3.Size = new Size(71, 18);
             label3.TabIndex = 17;
@@ -160,11 +162,11 @@
             // 
             // buttonEliminar
             // 
-            buttonEliminar.BackColor = Color.Bisque;
+            buttonEliminar.BackColor = Color.Honeydew;
             buttonEliminar.BackgroundImage = (Image)resources.GetObject("buttonEliminar.BackgroundImage");
             buttonEliminar.BackgroundImageLayout = ImageLayout.Stretch;
             buttonEliminar.Font = new Font("Verdana", 9F, FontStyle.Italic, GraphicsUnit.Point);
-            buttonEliminar.Location = new Point(972, 493);
+            buttonEliminar.Location = new Point(951, 514);
             buttonEliminar.Name = "buttonEliminar";
             buttonEliminar.Size = new Size(69, 57);
             buttonEliminar.TabIndex = 18;
@@ -176,7 +178,7 @@
             label2.AutoSize = true;
             label2.BackColor = Color.Transparent;
             label2.Font = new Font("Verdana", 8F, FontStyle.Italic, GraphicsUnit.Point);
-            label2.Location = new Point(967, 472);
+            label2.Location = new Point(949, 493);
             label2.Name = "label2";
             label2.Size = new Size(74, 18);
             label2.TabIndex = 19;
@@ -184,11 +186,11 @@
             // 
             // buttonEditar
             // 
-            buttonEditar.BackColor = Color.AntiqueWhite;
+            buttonEditar.BackColor = Color.Honeydew;
             buttonEditar.BackgroundImage = (Image)resources.GetObject("buttonEditar.BackgroundImage");
             buttonEditar.BackgroundImageLayout = ImageLayout.Stretch;
             buttonEditar.Font = new Font("Verdana", 9F, FontStyle.Italic, GraphicsUnit.Point);
-            buttonEditar.Location = new Point(970, 348);
+            buttonEditar.Location = new Point(949, 409);
             buttonEditar.Name = "buttonEditar";
             buttonEditar.Size = new Size(71, 51);
             buttonEditar.TabIndex = 20;
@@ -200,11 +202,35 @@
             label4.AutoSize = true;
             label4.BackColor = Color.Transparent;
             label4.Font = new Font("Verdana", 8F, FontStyle.Italic, GraphicsUnit.Point);
-            label4.Location = new Point(978, 327);
+            label4.Location = new Point(956, 388);
             label4.Name = "label4";
             label4.Size = new Size(56, 18);
             label4.TabIndex = 21;
             label4.Text = "Editar";
+            // 
+            // buttonAsignarCursos
+            // 
+            buttonAsignarCursos.BackColor = Color.Honeydew;
+            buttonAsignarCursos.BackgroundImage = (Image)resources.GetObject("buttonAsignarCursos.BackgroundImage");
+            buttonAsignarCursos.BackgroundImageLayout = ImageLayout.Stretch;
+            buttonAsignarCursos.Font = new Font("Verdana", 9F, FontStyle.Italic, GraphicsUnit.Point);
+            buttonAsignarCursos.Location = new Point(949, 301);
+            buttonAsignarCursos.Name = "buttonAsignarCursos";
+            buttonAsignarCursos.Size = new Size(71, 53);
+            buttonAsignarCursos.TabIndex = 22;
+            buttonAsignarCursos.UseVisualStyleBackColor = false;
+            buttonAsignarCursos.Click += buttonAsignarCursos_Click;
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.BackColor = Color.Transparent;
+            label5.Font = new Font("Verdana", 8F, FontStyle.Italic, GraphicsUnit.Point);
+            label5.Location = new Point(925, 280);
+            label5.Name = "label5";
+            label5.Size = new Size(130, 18);
+            label5.TabIndex = 23;
+            label5.Text = "Asignar Cursos";
             // 
             // ListaProfesores
             // 
@@ -213,6 +239,8 @@
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(1067, 803);
+            Controls.Add(label5);
+            Controls.Add(buttonAsignarCursos);
             Controls.Add(label4);
             Controls.Add(buttonEditar);
             Controls.Add(label2);
@@ -246,5 +274,7 @@
         private Label label2;
         private Button buttonEditar;
         private Label label4;
+        private Button buttonAsignarCursos;
+        private Label label5;
     }
 }

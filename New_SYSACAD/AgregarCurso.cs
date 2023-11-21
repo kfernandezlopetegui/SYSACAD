@@ -140,7 +140,7 @@ namespace New_SYSACAD
                 string codigo = textCodigo.Text;
                 string descripcion = ObtenerDescripcion();
                 int cupo = int.Parse(textCupo.Text);
-                string carrera = comboBoxCarrera.SelectedItem.ToString();
+                string ?carrera = comboBoxCarrera.SelectedItem.ToString();
                 List<string> listaIdCursos = obtenerCursosSeleccionados();
                 int creditos = int.Parse(textBoxCreditosObtenidos.Text);
                 double promedio = double.Parse(textBoxPromedio.Text);

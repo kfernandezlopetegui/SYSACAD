@@ -16,6 +16,7 @@ namespace New_SYSACAD
     public partial class ListaProfesores : Form, ITraerLista, IEliminarEleccionLE
     {
         private ProfesorConCurso seleccion;
+        private bool seleccionHecha = false;
         public ListaProfesores()
         {
             InitializeComponent();
@@ -34,25 +35,45 @@ namespace New_SYSACAD
 
         private void buttonEliminar_Click(object sender, EventArgs e)
         {
-            var logicaBorrar = new EliminarProfesorLogica(this, seleccion);
-
-            DialogResult resultado = MessageBox.Show($"¿Estás seguro de proceder con la eliminacion de {seleccion.Nombre} {seleccion.Apellido} de la lista?", "Confirmar eliminación", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question);
-            if (resultado == DialogResult.Yes)
+            if(seleccionHecha)
             {
-                EliminarEleccion.Invoke();
+                var logicaBorrar = new EliminarProfesorLogica(this, seleccion);
 
-                DialogResult resultadoBorrado = MessageBox.Show("¡Eliminacion exitosa!",
-                                           "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                if (resultadoBorrado == DialogResult.OK)
+                DialogResult resultado = MessageBox.Show($"¿Estás seguro de proceder con la eliminacion de {seleccion.Nombre} {seleccion.Apellido} de la lista?", "Confirmar eliminación", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question);
+                if (resultado == DialogResult.Yes)
                 {
-                    ListaProfesores listaProfesores = new ListaProfesores();
-                    Menu.MostrarMenu(listaProfesores, this, 1);
+                    EliminarEleccion.Invoke();
+
+                    DialogResult resultadoBorrado = MessageBox.Show("¡Eliminacion exitosa!",
+                                               "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    if (resultadoBorrado == DialogResult.OK)
+                    {
+                        ListaProfesores listaProfesores = new ListaProfesores();
+                        Menu.MostrarMenu(listaProfesores, this, 1);
+                    }
                 }
+
             }
+            else
+            {
+                // Ningún elemento está seleccionado
+                MessageBox.Show("Debes seleccionar a un profesor para poder continuar.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+
         }
 
         private void buttonEditar_Click(object sender, EventArgs e)
         {
+            if (seleccionHecha)
+            {
+                EdicionDeProfesor edicionProfe = new EdicionDeProfesor(seleccion);
+                Menu.MostrarMenu(edicionProfe, this, 1);
+            }
+            else
+            {
+                // Ningún elemento está seleccionado
+                MessageBox.Show("Debes seleccionar a un profesor para poder continuar.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
 
         }
 
@@ -65,6 +86,22 @@ namespace New_SYSACAD
         private void dataGridViewCursos_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             seleccion = (ProfesorConCurso)dataGridViewCursos.Rows[e.RowIndex].DataBoundItem;
+            seleccionHecha = true;
+        }
+
+        private void buttonAsignarCursos_Click(object sender, EventArgs e)
+        {
+            if (seleccionHecha)
+            {
+                AsignarCursoAProfesor asignarCurso = new AsignarCursoAProfesor(seleccion);
+                Menu.MostrarMenu(asignarCurso, this, 1);
+            }
+            else
+            {
+                // Ningún elemento está seleccionado
+                MessageBox.Show("Debes seleccionar a un profesor para poder continuar.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+
         }
 
         public void AsignarLista<T>(List<T> lista)
@@ -72,7 +109,7 @@ namespace New_SYSACAD
             dataGridViewCursos.AutoGenerateColumns = true;
             dataGridViewCursos.DataSource = lista;
 
-            
+
             dataGridViewCursos.Columns["IdProfesor"].HeaderText = "Dni";
             dataGridViewCursos.Columns["AreasEspecializacion"].HeaderText = "Areas de especializacion";
             dataGridViewCursos.Columns["Email"].HeaderText = "Correo electronico";

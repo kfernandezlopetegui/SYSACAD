@@ -1,4 +1,5 @@
 ﻿using Actualizar;
+using DB;
 using Entidades;
 using Interfaces;
 using System;
@@ -20,12 +21,14 @@ namespace LogicaSysacad
             _eliminarCurso.BorrarCurso += BorrarCurso;
         }
 
-        public void BorrarCurso()
+        public async void BorrarCurso()
         {
             
             int idRequisitoEliminar = _cursoSeleccionado.IdRequisitos;
             ActualizarCurso.BorrarCursoPorCodigoBD(_cursoSeleccionado.Codigo);
             ActualizarRequisitos.BorrarRequisitoPorId(idRequisitoEliminar);
+            await CRUDB.EliminarPorCondicionAsync<Curso>("CursosAsignados", "IdCurso", _cursoSeleccionado.Codigo);
+
         }
     }
 }

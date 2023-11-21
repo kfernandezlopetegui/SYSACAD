@@ -151,7 +151,7 @@ namespace DB
         }
         public static int ObtenerUltimoLegajoProfesor()
         {
-            int ultimoLegajo = 0;
+            int ultimoLegajo = 1050;
 
             using (SqlConnection connection = new SqlConnection(cadenaConexion))
             {

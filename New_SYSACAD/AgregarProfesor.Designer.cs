@@ -73,6 +73,7 @@
             buttonVolver.TabIndex = 0;
             buttonVolver.Text = "Volver";
             buttonVolver.UseVisualStyleBackColor = false;
+            buttonVolver.Click += buttonVolver_Click;
             // 
             // buttonAgregar
             // 
@@ -143,6 +144,7 @@
             checkedListBoxCursosAsignados.Name = "checkedListBoxCursosAsignados";
             checkedListBoxCursosAsignados.Size = new Size(452, 56);
             checkedListBoxCursosAsignados.TabIndex = 17;
+            
             // 
             // textBoxContraseña
             // 
@@ -225,7 +227,8 @@
             FechaDeNacimiento.Size = new Size(28, 29);
             FechaDeNacimiento.TabIndex = 26;
             FechaDeNacimiento.Value = new DateTime(2023, 9, 24, 0, 0, 0, 0);
-            FechaDeNacimiento.Validated += FechaDeNacimiento_Validated;
+            FechaDeNacimiento.ValueChanged += FechaDeNacimiento_ValueChanged;
+            
             // 
             // label2
             // 

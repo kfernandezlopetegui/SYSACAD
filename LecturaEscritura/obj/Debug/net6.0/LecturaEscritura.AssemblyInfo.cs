@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("LecturaEscritura")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+4373a0c6b494d242967aeb92ffddb7b7de0c70b5")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
 [assembly: System.Reflection.AssemblyProductAttribute("LecturaEscritura")]
 [assembly: System.Reflection.AssemblyTitleAttribute("LecturaEscritura")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
