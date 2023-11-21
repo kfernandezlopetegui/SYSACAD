@@ -61,5 +61,11 @@ namespace New_SYSACAD
             CursosConListaEspera cursosConListaEspera = new CursosConListaEspera();
             Menu.MostrarMenu(cursosConListaEspera, this);
         }
+
+        private void buttonGestionarProfesores_Click(object sender, EventArgs e)
+        {
+            ListaProfesores listaProfesores = new ListaProfesores();
+            Menu.MostrarMenu(listaProfesores, this);
+        }
     }
 }

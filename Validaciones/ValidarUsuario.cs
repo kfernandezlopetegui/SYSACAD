@@ -39,6 +39,26 @@ namespace Validaciones
             return alumnoEncontrado;
 
         }
+        public async Task<Profesor> VerificarSiExisteProfesorBD(string usuarioIngresado)
+        {
+
+
+            Profesor profesorEncontrado = await CRUDB.ObtenerPorIdentificadorAsync<Profesor>("Profesor", "Email = @Email", new { Email = usuarioIngresado });
+
+
+            return profesorEncontrado;
+
+        }
+        public async Task<Profesor> VerificarSiExisteProfesorBD(int dni)
+        {
+
+
+            Profesor profesorEncontrado = await CRUDB.ObtenerPorIdentificadorAsync<Profesor>("Profesor", "Dni = @Dni", new { Dni = dni });
+
+
+            return profesorEncontrado;
+
+        }
         public async Task<Alumno> VerificarSiExisteAlumnoBD(int dni)
         {
           
@@ -101,6 +121,7 @@ namespace Validaciones
                 await CRUDB.CreateTableAsync<RequisitosAcademicos>();
                 await CRUDB.CreateTableAsync<Curso>();
                 await CRUDB.CreateTableAsync<ListaEspera>();
+                await CRUDB.CreateTableAsync<Profesor>();
             }
             
         }

@@ -32,7 +32,7 @@
             pictureBox1 = new PictureBox();
             label1 = new Label();
             groupBox1 = new GroupBox();
-            button6 = new Button();
+            buttonGestionarProfesores = new Button();
             buttonManejarListaEspera = new Button();
             button4 = new Button();
             buttonReportes = new Button();
@@ -71,7 +71,7 @@
             // groupBox1
             // 
             groupBox1.BackColor = Color.Transparent;
-            groupBox1.Controls.Add(button6);
+            groupBox1.Controls.Add(buttonGestionarProfesores);
             groupBox1.Controls.Add(buttonManejarListaEspera);
             groupBox1.Controls.Add(button4);
             groupBox1.Controls.Add(buttonReportes);
@@ -85,16 +85,17 @@
             groupBox1.TabIndex = 3;
             groupBox1.TabStop = false;
             // 
-            // button6
+            // buttonGestionarProfesores
             // 
-            button6.BackColor = Color.Snow;
-            button6.Font = new Font("Verdana", 9F, FontStyle.Italic, GraphicsUnit.Point);
-            button6.Location = new Point(109, 473);
-            button6.Name = "button6";
-            button6.Size = new Size(259, 53);
-            button6.TabIndex = 7;
-            button6.Text = "Gestionar Perfiles de Profesores";
-            button6.UseVisualStyleBackColor = false;
+            buttonGestionarProfesores.BackColor = Color.Snow;
+            buttonGestionarProfesores.Font = new Font("Verdana", 9F, FontStyle.Italic, GraphicsUnit.Point);
+            buttonGestionarProfesores.Location = new Point(109, 473);
+            buttonGestionarProfesores.Name = "buttonGestionarProfesores";
+            buttonGestionarProfesores.Size = new Size(259, 53);
+            buttonGestionarProfesores.TabIndex = 7;
+            buttonGestionarProfesores.Text = "Gestionar Perfiles de Profesores";
+            buttonGestionarProfesores.UseVisualStyleBackColor = false;
+            buttonGestionarProfesores.Click += buttonGestionarProfesores_Click;
             // 
             // buttonManejarListaEspera
             // 
@@ -214,6 +215,6 @@
         private Button buttonReportes;
         private Button buttonManejarListaEspera;
         private Button button4;
-        private Button button6;
+        private Button buttonGestionarProfesores;
     }
 }

@@ -242,8 +242,8 @@ namespace New_SYSACAD
         {
 
             string textoCampo = "Palabra clave";
-            ControlForm.ValidarCampoNoVacio(textContraseñaP, textoCampo);
-            ControlForm.ValidarCampoNoPorDefecto(textContraseñaP, textoCampo, textoPorDefectoPalabraClave);
+            ControlForm.ValidarCampoNoVacio(textPalabraClave, textoCampo);
+            ControlForm.ValidarCampoNoPorDefecto(textPalabraClave, textoCampo, textoPorDefectoPalabraClave);
         }
 
         private void FechaDeNacimiento_Validated(object sender, EventArgs e)

@@ -65,14 +65,20 @@ namespace New_SYSACAD
             /*Curso nuevoCurso = new Curso("PRUEBA", "12344", "DESCRIPCION", 2, "TUP", 20);
             string respuesta = DataBase.InsertarRegistro<Curso>(nuevoCurso);*/
 
-            int legajo = DataBase.ObtenerUltimoLegajo();
+            int legajo = DataBase.ObtenerUltimoLegajoProfesor();
             legajo++;
             string cursosAProbados = CRUD.ConvertirListaAJson(new List<string>());
             Alumno alumno = new Alumno("Prueba", "Asincronico", "indefinido", "asincronico@gmail.com", "hola1234",
                     false, false, "estudiante", "23/11/2000", "asincronico", legajo,
                     93298161, "calle falsa", "123324353",cursosAProbados);
+            Profesor profesor2 = new Profesor("Profesor","2","indefinido","profe@gmail.com","1234",false,false,
+                "Profesor","12/12/2000","Mango",legajo,96298162,"calle falsa 1233","11123249395","Matematicas");
+            await CRUDB.InsertarRegistroAsync<Profesor>(profesor2);
+            CursosAsignados cursoAsignado = new CursosAsignados("090909", profesor2.Dni);
 
-            string resultado = await CRUDB.CreateTableAsync<ListaEspera>();
+            
+
+            string resultado = await CRUDB.InsertarRegistroAsync(cursoAsignado); ;
             
             MessageBox.Show(resultado);
         }
@@ -109,13 +115,13 @@ namespace New_SYSACAD
             // Configura las columnas manualmente
             
             dataGridView1.AutoGenerateColumns = true;
-            dataGridView1.DataSource = CRUDB.ObtenerCursosConListaEspera();
+            dataGridView1.DataSource = CRUDB.ObtenerDatosProfesores();
 
-            dataGridView1.Columns["Nombre"].HeaderText = "Nombre del Curso";
+           /* dataGridView1.Columns["Nombre"].HeaderText = "Nombre del Curso";
             dataGridView1.Columns["Id"].Visible = false;
             dataGridView1.Columns["IdRequisitos"].Visible = false;
             dataGridView1.Columns["CupoActual"].Visible = false;
-            dataGridView1.Columns["CupoMaximo"].Visible = false;
+            dataGridView1.Columns["CupoMaximo"].Visible = false;*/
 
             // Vincula el DataTable al DataGridView
             //dataGridView1.DataSource = CRUDB.ObtenerSolicitudesPorIdCurso("676767");

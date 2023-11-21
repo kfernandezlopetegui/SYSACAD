@@ -437,6 +437,75 @@ namespace DB
             return cursosConListaEspera;
         }
 
+        public static List<ProfesorConCurso> ObtenerDatosProfesores()
+        {
+            List<ProfesorConCurso> listaProfesores = new List<ProfesorConCurso>();
+
+            using (SqlConnection conexion = new SqlConnection(cadenaConexion))
+            {
+                string consultaSql = @"
+                      SELECT 
+                      P.Dni,
+                      P.Nombre,
+                      P.Apellido,
+                      P.Direccion,
+                      P.NumeroTelefono,
+                      P.AreasEspecializacion,
+                      P.Legajo,
+                      P.Email,
+                      STRING_AGG(C.Nombre, ', ') AS CursosAsignados
+                      FROM Profesor P
+                      JOIN CursosAsignados CA ON P.Dni = CA.IdProfesor
+                      JOIN Curso C ON CA.IdCurso = C.Codigo
+                      GROUP BY 
+                      P.Dni,
+                      P.Nombre,
+                      P.Apellido,
+                      P.Direccion,
+                      P.NumeroTelefono,
+                      P.AreasEspecializacion,
+                      P.Legajo,
+                      P.Email;
+                            ";
+
+                using (SqlCommand comando = new SqlCommand(consultaSql, conexion))
+                {
+                    try
+                    {
+                        conexion.Open();
+
+                        using (SqlDataReader reader = comando.ExecuteReader())
+                        {
+                            while (reader.Read())
+                            {
+                                ProfesorConCurso profesor = new ProfesorConCurso
+                                {
+                                    IdProfesor = reader.GetInt32(reader.GetOrdinal("Dni")),
+                                    Nombre = reader.GetString(reader.GetOrdinal("Nombre")),
+                                    Apellido = reader.GetString(reader.GetOrdinal("Apellido")),
+                                    Direccion = reader.GetString(reader.GetOrdinal("Direccion")),
+                                    NumeroTelefono = reader.GetString(reader.GetOrdinal("NumeroTelefono")),
+                                    AreasEspecializacion = reader.GetString(reader.GetOrdinal("AreasEspecializacion")),
+                                    CursosAsignados = reader.GetString(reader.GetOrdinal("CursosAsignados")),
+                                    Email = reader.GetString(reader.GetOrdinal("Email")),
+                                    Legajo = reader.GetInt32(reader.GetOrdinal("Legajo")),
+                                };
+
+                                listaProfesores.Add(profesor);
+                            }
+
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        // Manejar la excepción según tus necesidades
+                        Console.WriteLine($"Error al obtener datos de profesores: {ex.Message}");
+                    }
+                }
+            }
+
+            return listaProfesores;
+        }
 
     }
 

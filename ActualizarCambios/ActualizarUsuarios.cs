@@ -16,6 +16,11 @@ namespace Actualizar
             List<Alumno> usuariosRegistrados = ListaAlumnosActualesBD();
             return usuariosRegistrados;
         }
+        public static List<Profesor> ListaProfesoresActuales()
+        {
+            List<Profesor> usuariosRegistrados = CRUDB.ObtenerTodos<Profesor>("Profesor");
+            return usuariosRegistrados;
+        }
 
         public static List<Alumno> ListaAlumnosActualesBD()
         {

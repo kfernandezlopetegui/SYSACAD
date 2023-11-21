@@ -366,3 +366,5 @@ C:\Users\kflop\OneDrive\Escritorio\Sysacad\New_SYSACAD\obj\Debug\net6.0-windows\
 C:\Users\kflop\OneDrive\Escritorio\Sysacad\New_SYSACAD\obj\Debug\net6.0-windows\New_SYSACAD.MostrarListaEsperaCurso.resources
 C:\Users\kflop\OneDrive\Escritorio\Sysacad\New_SYSACAD\obj\Debug\net6.0-windows\New_SYSACAD.EliminarDeListaEspera.resources
 C:\Users\kflop\OneDrive\Escritorio\Sysacad\New_SYSACAD\obj\Debug\net6.0-windows\New_SYSACAD.AgregarAListaDeEspera.resources
+C:\Users\kflop\OneDrive\Escritorio\Sysacad\New_SYSACAD\obj\Debug\net6.0-windows\New_SYSACAD.ListaProfesores.resources
+C:\Users\kflop\OneDrive\Escritorio\Sysacad\New_SYSACAD\obj\Debug\net6.0-windows\New_SYSACAD.AgregarProfesor.resources

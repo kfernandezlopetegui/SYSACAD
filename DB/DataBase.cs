@@ -149,6 +149,28 @@ namespace DB
 
             return ultimoLegajo;
         }
+        public static int ObtenerUltimoLegajoProfesor()
+        {
+            int ultimoLegajo = 0;
+
+            using (SqlConnection connection = new SqlConnection(cadenaConexion))
+            {
+                connection.Open();
+
+                string query = "SELECT TOP 1 Legajo FROM Profesor ORDER BY Legajo DESC";
+
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    var result = command.ExecuteScalar();
+                    if (result != null && result != DBNull.Value)
+                    {
+                        ultimoLegajo = Convert.ToInt32(result);
+                    }
+                }
+            }
+
+            return ultimoLegajo;
+        }
 
         public static bool VerificarTablaVacia(string nombreTabla)
         {

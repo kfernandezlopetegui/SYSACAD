@@ -82,7 +82,7 @@
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(10, 262);
+            label4.Location = new Point(10, 237);
             label4.Name = "label4";
             label4.Size = new Size(207, 22);
             label4.TabIndex = 21;
@@ -92,7 +92,7 @@
             // 
             comboBoxCarrera.BackColor = Color.Snow;
             comboBoxCarrera.FormattingEnabled = true;
-            comboBoxCarrera.Location = new Point(6, 288);
+            comboBoxCarrera.Location = new Point(10, 262);
             comboBoxCarrera.Name = "comboBoxCarrera";
             comboBoxCarrera.Size = new Size(370, 30);
             comboBoxCarrera.TabIndex = 2;
@@ -261,9 +261,9 @@
             pictureBox1.BackColor = Color.Transparent;
             pictureBox1.BackgroundImageLayout = ImageLayout.Stretch;
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(893, 12);
+            pictureBox1.Location = new Point(874, 12);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(150, 94);
+            pictureBox1.Size = new Size(181, 104);
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox1.TabIndex = 1;
             pictureBox1.TabStop = false;
@@ -273,6 +273,7 @@
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
+            BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(1067, 803);
             Controls.Add(pictureBox1);
             Controls.Add(groupBox1);

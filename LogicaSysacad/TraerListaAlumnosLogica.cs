@@ -15,10 +15,10 @@ namespace LogicaSysacad
         public TraerListaAlumnosLogica(ITraerLista solicitud)
         {
             _solicitud = solicitud;
-            solicitud.OnListaPedida += TraerListaCursos;
+            solicitud.OnListaPedida += TraerListaAlumnos;
         }
 
-        public void TraerListaCursos()
+        public void TraerListaAlumnos()
         {
             List<Alumno> listaCursos = ActualizarUsuarios.ListaAlumnosActuales();
             _solicitud.AsignarLista(listaCursos);
