@@ -70,7 +70,7 @@
             label1.BackColor = Color.Transparent;
             label1.Font = new Font("Verdana", 10F, FontStyle.Italic, GraphicsUnit.Point);
             label1.ForeColor = Color.Teal;
-            label1.Location = new Point(25, 39);
+            label1.Location = new Point(40, 67);
             label1.Name = "label1";
             label1.Size = new Size(211, 25);
             label1.TabIndex = 24;
@@ -83,14 +83,14 @@
             buttonInformePDf.Name = "buttonInformePDf";
             buttonInformePDf.Size = new Size(190, 34);
             buttonInformePDf.TabIndex = 25;
-            buttonInformePDf.Text = "Obtener Informe PDF";
+            buttonInformePDf.Text = "Generar Informe PDF";
             buttonInformePDf.UseVisualStyleBackColor = true;
             buttonInformePDf.Click += buttonInformePDf_Click;
             // 
             // buttonVolver
             // 
             buttonVolver.ForeColor = Color.DarkSlateGray;
-            buttonVolver.Location = new Point(287, 563);
+            buttonVolver.Location = new Point(265, 563);
             buttonVolver.Name = "buttonVolver";
             buttonVolver.Size = new Size(147, 34);
             buttonVolver.TabIndex = 26;
@@ -102,7 +102,7 @@
             // 
             comboBoxCurso.BackColor = Color.Snow;
             comboBoxCurso.FormattingEnabled = true;
-            comboBoxCurso.Location = new Point(52, 94);
+            comboBoxCurso.Location = new Point(73, 128);
             comboBoxCurso.Name = "comboBoxCurso";
             comboBoxCurso.Size = new Size(384, 30);
             comboBoxCurso.TabIndex = 27;
@@ -114,9 +114,9 @@
             groupBox1.Controls.Add(comboBoxCurso);
             groupBox1.Controls.Add(label1);
             groupBox1.Font = new Font("Verdana", 9F, FontStyle.Italic, GraphicsUnit.Point);
-            groupBox1.Location = new Point(287, 285);
+            groupBox1.Location = new Point(247, 289);
             groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(495, 185);
+            groupBox1.Size = new Size(527, 229);
             groupBox1.TabIndex = 28;
             groupBox1.TabStop = false;
             // 

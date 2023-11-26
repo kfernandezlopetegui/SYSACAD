@@ -8,17 +8,20 @@ namespace Entidades
 {
     public class Periodo
     {
-       
+        public string Nombre { get; set; }
         public DateTime Inicio { get; set; }
         public DateTime Fin { get; set; }
         public Periodo() { }
 
-        public Periodo(DateTime inicio, DateTime fin)
+        
+
+        public Periodo(string nombre, DateTime inicio, DateTime fin)
         {
+            Nombre = nombre;
             Inicio = inicio;
             Fin = fin;
-            
         }
+
 
         /// <summary>
         /// Verifica si hay coincidencia entre dos periodos

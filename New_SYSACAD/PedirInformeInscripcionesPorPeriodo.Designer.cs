@@ -66,7 +66,7 @@
             buttonInscripciones.Name = "buttonInscripciones";
             buttonInscripciones.Size = new Size(195, 34);
             buttonInscripciones.TabIndex = 16;
-            buttonInscripciones.Text = "Obtener Informe PDF";
+            buttonInscripciones.Text = "Generar Informe PDF";
             buttonInscripciones.UseVisualStyleBackColor = true;
             buttonInscripciones.Click += buttonInscripciones_Click;
             // 

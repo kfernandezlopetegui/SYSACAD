@@ -47,5 +47,10 @@ namespace New_SYSACAD
             comboBoxCurso.ValueMember = "Codigo";
             comboBoxCurso.DataSource = lista;
         }
+
+        public void MensajeError()
+        {
+            MessageBox.Show("No hay informe para mostrar en el curso seleccionado.", "Sin datos", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
     }
 }

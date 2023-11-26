@@ -24,7 +24,14 @@ namespace LogicaSysacad
         public void InformePDF()
         {
             List<AlumnoInforme> listaAlumnos = CRUDB.ObtenerAlumnosInscritos(cursoSeleccionado.Codigo);
-            PDFCursoConEstudiantes.CreatePdf(listaAlumnos, cursoSeleccionado);
+            if (listaAlumnos == null || listaAlumnos.Count == 0)
+            {
+                solicitud.MensajeError(); return;
+            }
+            else
+            {
+                PDFCursoConEstudiantes.CreatePdf(listaAlumnos, cursoSeleccionado);
+            }
         }
     }
 }

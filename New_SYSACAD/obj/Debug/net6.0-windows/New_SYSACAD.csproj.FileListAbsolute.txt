@@ -275,8 +275,6 @@ C:\Users\kflop\OneDrive\Escritorio\Sysacad\New_SYSACAD\bin\Debug\net6.0-windows\
 C:\Users\kflop\OneDrive\Escritorio\Sysacad\New_SYSACAD\bin\Debug\net6.0-windows\Microsoft.IdentityModel.Tokens.dll
 C:\Users\kflop\OneDrive\Escritorio\Sysacad\New_SYSACAD\bin\Debug\net6.0-windows\Microsoft.SqlServer.Server.dll
 C:\Users\kflop\OneDrive\Escritorio\Sysacad\New_SYSACAD\bin\Debug\net6.0-windows\MySql.Data.dll
-C:\Users\kflop\OneDrive\Escritorio\Sysacad\New_SYSACAD\bin\Debug\net6.0-windows\PdfSharp.Charting.dll
-C:\Users\kflop\OneDrive\Escritorio\Sysacad\New_SYSACAD\bin\Debug\net6.0-windows\PdfSharp.dll
 C:\Users\kflop\OneDrive\Escritorio\Sysacad\New_SYSACAD\bin\Debug\net6.0-windows\System.Configuration.ConfigurationManager.dll
 C:\Users\kflop\OneDrive\Escritorio\Sysacad\New_SYSACAD\bin\Debug\net6.0-windows\System.Data.SqlClient.dll
 C:\Users\kflop\OneDrive\Escritorio\Sysacad\New_SYSACAD\bin\Debug\net6.0-windows\System.Diagnostics.DiagnosticSource.dll
@@ -287,8 +285,6 @@ C:\Users\kflop\OneDrive\Escritorio\Sysacad\New_SYSACAD\bin\Debug\net6.0-windows\
 C:\Users\kflop\OneDrive\Escritorio\Sysacad\New_SYSACAD\bin\Debug\net6.0-windows\System.Text.Encodings.Web.dll
 C:\Users\kflop\OneDrive\Escritorio\Sysacad\New_SYSACAD\bin\Debug\net6.0-windows\System.Text.Json.dll
 C:\Users\kflop\OneDrive\Escritorio\Sysacad\New_SYSACAD\bin\Debug\net6.0-windows\ZstdSharp.dll
-C:\Users\kflop\OneDrive\Escritorio\Sysacad\New_SYSACAD\bin\Debug\net6.0-windows\de\PdfSharp.Charting.resources.dll
-C:\Users\kflop\OneDrive\Escritorio\Sysacad\New_SYSACAD\bin\Debug\net6.0-windows\de\PdfSharp.resources.dll
 C:\Users\kflop\OneDrive\Escritorio\Sysacad\New_SYSACAD\bin\Debug\net6.0-windows\runtimes\unix\lib\net6.0\Microsoft.Data.SqlClient.dll
 C:\Users\kflop\OneDrive\Escritorio\Sysacad\New_SYSACAD\bin\Debug\net6.0-windows\runtimes\win\lib\net6.0\Microsoft.Data.SqlClient.dll
 C:\Users\kflop\OneDrive\Escritorio\Sysacad\New_SYSACAD\bin\Debug\net6.0-windows\runtimes\win-arm\native\Microsoft.Data.SqlClient.SNI.dll
@@ -386,3 +382,9 @@ C:\Users\kflop\OneDrive\Escritorio\Sysacad\New_SYSACAD\bin\Debug\net6.0-windows\
 C:\Users\kflop\OneDrive\Escritorio\Sysacad\New_SYSACAD\bin\Debug\net6.0-windows\PDF.dll
 C:\Users\kflop\OneDrive\Escritorio\Sysacad\New_SYSACAD\bin\Debug\net6.0-windows\PDF.pdb
 C:\Users\kflop\OneDrive\Escritorio\Sysacad\New_SYSACAD\obj\Debug\net6.0-windows\New_SYSACAD.PedirInformeEstudiantesPorCurso.resources
+C:\Users\kflop\OneDrive\Escritorio\Sysacad\New_SYSACAD\bin\Debug\net6.0-windows\DocumentFormat.OpenXml.dll
+C:\Users\kflop\OneDrive\Escritorio\Sysacad\New_SYSACAD\bin\Debug\net6.0-windows\DocumentFormat.OpenXml.Framework.dll
+C:\Users\kflop\OneDrive\Escritorio\Sysacad\New_SYSACAD\bin\Debug\net6.0-windows\System.IO.Packaging.dll
+C:\Users\kflop\OneDrive\Escritorio\Sysacad\New_SYSACAD\bin\Debug\net6.0-windows\ScottPlot.dll
+C:\Users\kflop\OneDrive\Escritorio\Sysacad\New_SYSACAD\obj\Debug\net6.0-windows\New_SYSACAD.PedirInformeEstadisticaPorCarrera.resources
+C:\Users\kflop\OneDrive\Escritorio\Sysacad\New_SYSACAD\obj\Debug\net6.0-windows\New_SYSACAD.PedirInformeListaEspera.resources

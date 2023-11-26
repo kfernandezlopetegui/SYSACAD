@@ -1,6 +1,6 @@
-﻿using Entidades;
-using PdfSharp.Drawing;
-using PdfSharp.Pdf;
+﻿using DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle;
+using DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing;
+using Entidades;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -57,23 +57,7 @@ namespace New_SYSACAD
             return true;
         }
 
-        public static void GenerarPDFConImagen(string nombreArchivoPDF, string rutaImagen)
-        {
-            // Crear un documento PDF
-            PdfDocument pdf = new PdfDocument();
-            PdfPage page = pdf.AddPage();
-            XGraphics gfx = XGraphics.FromPdfPage(page);
-
-            // Cargar la imagen desde el archivo
-            XImage image = XImage.FromFile(rutaImagen);
-
-            // Dibujar la imagen en el documento PDF
-            gfx.DrawImage(image, 0, 0);
-
-            // Guardar el documento PDF en el archivo especificado
-            pdf.Save(nombreArchivoPDF);
-            Console.WriteLine("Informe generado y guardado como PDF.");
-        }
+       
 
 
         public static bool EsMayorDeEdad(DateTime fechaNacimiento)
@@ -97,6 +81,12 @@ namespace New_SYSACAD
             }
 
             return edad;
+        }
+
+
+        public static void GenerarGrafico(string rutaArchivo)
+        {
+            
         }
 
 

@@ -5,8 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Drawing;
 
-using PdfSharp.Drawing;
-using PdfSharp.Pdf;
+
 
 namespace LecturaEscritura
 {

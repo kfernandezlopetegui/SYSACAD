@@ -265,10 +265,6 @@
               "target": "Package",
               "version": "[5.1.2, )"
             },
-            "PdfSharp": {
-              "target": "Package",
-              "version": "[1.50.5147, )"
-            },
             "System.Data.SqlClient": {
               "target": "Package",
               "version": "[4.8.5, )"
@@ -333,10 +329,6 @@
             "Microsoft.Data.SqlClient": {
               "target": "Package",
               "version": "[5.1.2, )"
-            },
-            "PdfSharp": {
-              "target": "Package",
-              "version": "[1.50.5147, )"
             },
             "System.Data.SqlClient": {
               "target": "Package",

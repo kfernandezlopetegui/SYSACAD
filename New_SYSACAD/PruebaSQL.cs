@@ -150,7 +150,7 @@ namespace New_SYSACAD
 
         private void buttonInscripciones_Click(object sender, EventArgs e)
         {
-            Periodo periodo = new Periodo(dateTimePickerInicio.Value, dateTimePickerFin.Value);
+            Periodo periodo = new Periodo("Periodo",dateTimePickerInicio.Value, dateTimePickerFin.Value);
             dataGridViewInscripciones.DataSource = CRUDB.ObtenerInscripcionesEnPeriodo(periodo);
             PDFInscripcionesPorPeriodo.CreatePdf(CRUDB.ObtenerInscripcionesEnPeriodo(periodo),periodo);
 

@@ -42,11 +42,14 @@ namespace New_SYSACAD
 
         private void buttonInscripcionPorCarrera_Click(object sender, EventArgs e)
         {
-
+            PedirInformeEstadisticaPorCarrera pedirInformeEstadisctica = new PedirInformeEstadisticaPorCarrera();   
+            Menu.MostrarMenu(pedirInformeEstadisctica, this, 1);
         }
 
         private void buttonListaEsperaCursos_Click(object sender, EventArgs e)
         {
+            PedirInformeListaEspera pedirInformeListaEspera = new PedirInformeListaEspera();    
+            Menu.MostrarMenu(pedirInformeListaEspera, this, 1);
 
         }
     }

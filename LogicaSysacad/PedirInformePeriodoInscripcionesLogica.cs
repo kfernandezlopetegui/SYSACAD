@@ -23,7 +23,15 @@ namespace LogicaSysacad
         }
         public void TraerInformePdf()
         {
-            PDFInscripcionesPorPeriodo.CreatePdf(CRUDB.ObtenerInscripcionesEnPeriodo(periodo), periodo);
+            List<InscripcionInfo> inscripciones = CRUDB.ObtenerInscripcionesEnPeriodo(periodo);
+            if (inscripciones == null || inscripciones.Count == 0)
+            {
+                solicitud.MensajeError(); return;
+            }
+            else
+            {
+                PDFInscripcionesPorPeriodo.CreatePdf(inscripciones, periodo);
+            }
         }
     }
 }

@@ -9,5 +9,6 @@ namespace Interfaces
     public interface IPedirInforme
     {
         public event Action OnPedirInforme;
+        public void MensajeError();
     }
 }

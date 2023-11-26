@@ -76,6 +76,28 @@
           }
         }
       },
+      "DocumentFormat.OpenXml/3.0.0": {
+        "dependencies": {
+          "DocumentFormat.OpenXml.Framework": "3.0.0"
+        },
+        "runtime": {
+          "lib/netstandard2.0/DocumentFormat.OpenXml.dll": {
+            "assemblyVersion": "3.0.0.0",
+            "fileVersion": "3.0.0.0"
+          }
+        }
+      },
+      "DocumentFormat.OpenXml.Framework/3.0.0": {
+        "dependencies": {
+          "System.IO.Packaging": "8.0.0"
+        },
+        "runtime": {
+          "lib/net6.0/DocumentFormat.OpenXml.Framework.dll": {
+            "assemblyVersion": "3.0.0.0",
+            "fileVersion": "3.0.0.0"
+          }
+        }
+      },
       "Google.Protobuf/3.21.9": {
         "runtime": {
           "lib/net5.0/Google.Protobuf.dll": {
@@ -382,26 +404,6 @@
           }
         }
       },
-      "PDFsharp/1.50.5147": {
-        "runtime": {
-          "lib/net20/PdfSharp.Charting.dll": {
-            "assemblyVersion": "1.50.5147.0",
-            "fileVersion": "1.50.5147.0"
-          },
-          "lib/net20/PdfSharp.dll": {
-            "assemblyVersion": "1.50.5147.0",
-            "fileVersion": "1.50.5147.0"
-          }
-        },
-        "resources": {
-          "lib/net20/de/PdfSharp.Charting.resources.dll": {
-            "locale": "de"
-          },
-          "lib/net20/de/PdfSharp.resources.dll": {
-            "locale": "de"
-          }
-        }
-      },
       "QuestPDF/2023.10.0": {
         "dependencies": {
           "SkiaSharp": "2.88.6",
@@ -445,6 +447,18 @@
             "rid": "win-x86",
             "assetType": "native",
             "fileVersion": "4.6.25512.1"
+          }
+        }
+      },
+      "ScottPlot/4.1.67": {
+        "dependencies": {
+          "System.Drawing.Common": "6.0.0",
+          "System.Numerics.Vectors": "4.5.0"
+        },
+        "runtime": {
+          "lib/net6.0/ScottPlot.dll": {
+            "assemblyVersion": "4.1.67.0",
+            "fileVersion": "4.1.67.0"
           }
         }
       },
@@ -576,6 +590,14 @@
           "System.Runtime": "4.3.0",
           "System.Text.Encoding": "4.3.0",
           "System.Threading.Tasks": "4.3.0"
+        }
+      },
+      "System.IO.Packaging/8.0.0": {
+        "runtime": {
+          "lib/net6.0/System.IO.Packaging.dll": {
+            "assemblyVersion": "8.0.0.0",
+            "fileVersion": "8.0.23.53103"
+          }
         }
       },
       "System.IO.Pipelines/6.0.3": {
@@ -772,7 +794,6 @@
         "dependencies": {
           "Entidades": "1.0.0",
           "Microsoft.Data.SqlClient": "5.1.2",
-          "PDFsharp": "1.50.5147",
           "System.Data.SqlClient": "4.8.5"
         },
         "runtime": {
@@ -783,10 +804,12 @@
         "dependencies": {
           "Actualizar": "1.0.0",
           "DB": "1.0.0",
+          "DocumentFormat.OpenXml": "3.0.0",
           "Entidades": "1.0.0",
           "Interfaces": "1.0.0",
           "LecturaEscritura": "1.0.0",
           "PDF": "1.0.0",
+          "ScottPlot": "4.1.67",
           "Validaciones": "1.0.0"
         },
         "runtime": {
@@ -806,7 +829,6 @@
       "Pagos/1.0.0": {
         "dependencies": {
           "Microsoft.Data.SqlClient": "5.1.2",
-          "PDFsharp": "1.50.5147",
           "System.Data.SqlClient": "4.8.5"
         },
         "runtime": {
@@ -815,6 +837,7 @@
       },
       "PDF/1.0.0": {
         "dependencies": {
+          "DocumentFormat.OpenXml": "3.0.0",
           "Entidades": "1.0.0",
           "QuestPDF": "2023.10.0"
         },
@@ -869,6 +892,20 @@
       "sha512": "sha512-A6Zr52zVqJKt18ZBsTnX0qhG0kwIQftVAjLmszmkiR/trSp8H+xj1gUOzk7XHwaKgyREMSV1v9XaKrBUeIOdvQ==",
       "path": "bouncycastle.cryptography/2.2.1",
       "hashPath": "bouncycastle.cryptography.2.2.1.nupkg.sha512"
+    },
+    "DocumentFormat.OpenXml/3.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-o2xu17+4VOT4gKwpEcL5UBNYWrP1HQGkfe+K+LHvq5/07UjpzoGMBQzWMhGimzgL1Q2lEPYAp7JgBNZWTcfGKw==",
+      "path": "documentformat.openxml/3.0.0",
+      "hashPath": "documentformat.openxml.3.0.0.nupkg.sha512"
+    },
+    "DocumentFormat.OpenXml.Framework/3.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-kWjZuwFsdbbKA5U3o2X6tQn0yI9gr2Oy4CHWvbc5eHRUcbl5FUi1Si44I3SW3CxyK/3AcMiC4/99wjBVLOk54A==",
+      "path": "documentformat.openxml.framework/3.0.0",
+      "hashPath": "documentformat.openxml.framework.3.0.0.nupkg.sha512"
     },
     "Google.Protobuf/3.21.9": {
       "type": "package",
@@ -1045,13 +1082,6 @@
       "path": "mysql.data/8.2.0",
       "hashPath": "mysql.data.8.2.0.nupkg.sha512"
     },
-    "PDFsharp/1.50.5147": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-vr5KBIqcXu2hqZ43UTwPR+jqHgMrT5tsPtJvEF+mORKoBNMh3bRWgAwic0U1sT2IVb4PR5m0GyQxnmCz8jBHWg==",
-      "path": "pdfsharp/1.50.5147",
-      "hashPath": "pdfsharp.1.50.5147.nupkg.sha512"
-    },
     "QuestPDF/2023.10.0": {
       "type": "package",
       "serviceable": true,
@@ -1086,6 +1116,13 @@
       "sha512": "sha512-YhEdSQUsTx+C8m8Bw7ar5/VesXvCFMItyZF7G1AUY+OM0VPZUOeAVpJ4Wl6fydBGUYZxojTDR3I6Bj/+BPkJNA==",
       "path": "runtime.win-x86.runtime.native.system.data.sqlclient.sni/4.4.0",
       "hashPath": "runtime.win-x86.runtime.native.system.data.sqlclient.sni.4.4.0.nupkg.sha512"
+    },
+    "ScottPlot/4.1.67": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-Gdfr4NlbAPJ612JJ0FaF6uKJuO7aThtdgXo8wQ7BmSi65x10RxEux57CiijeMWAEwjx9p9tlFlqE/mjVBc+Luw==",
+      "path": "scottplot/4.1.67",
+      "hashPath": "scottplot.4.1.67.nupkg.sha512"
     },
     "SkiaSharp/2.88.6": {
       "type": "package",
@@ -1170,6 +1207,13 @@
       "sha512": "sha512-3qjaHvxQPDpSOYICjUoTsmoq5u6QJAFRUITgeT/4gqkF1bajbSmb1kwSxEA8AHlofqgcKJcM8udgieRNhaJ5Cg==",
       "path": "system.io/4.3.0",
       "hashPath": "system.io.4.3.0.nupkg.sha512"
+    },
+    "System.IO.Packaging/8.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-8g1V4YRpdGAxFcK8v9OjuMdIOJSpF30Zb1JGicwVZhly3I994WFyBdV6mQEo8d3T+URQe55/M0U0eIH0Hts1bg==",
+      "path": "system.io.packaging/8.0.0",
+      "hashPath": "system.io.packaging.8.0.0.nupkg.sha512"
     },
     "System.IO.Pipelines/6.0.3": {
       "type": "package",

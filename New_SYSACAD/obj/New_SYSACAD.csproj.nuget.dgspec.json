@@ -324,10 +324,6 @@
               "target": "Package",
               "version": "[5.1.2, )"
             },
-            "PdfSharp": {
-              "target": "Package",
-              "version": "[1.50.5147, )"
-            },
             "System.Data.SqlClient": {
               "target": "Package",
               "version": "[4.8.5, )"
@@ -410,6 +406,16 @@
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
+          "dependencies": {
+            "DocumentFormat.OpenXml": {
+              "target": "Package",
+              "version": "[3.0.0, )"
+            },
+            "ScottPlot": {
+              "target": "Package",
+              "version": "[4.1.67, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
@@ -643,10 +649,6 @@
               "target": "Package",
               "version": "[5.1.2, )"
             },
-            "PdfSharp": {
-              "target": "Package",
-              "version": "[1.50.5147, )"
-            },
             "System.Data.SqlClient": {
               "target": "Package",
               "version": "[4.8.5, )"
@@ -712,6 +714,10 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "dependencies": {
+            "DocumentFormat.OpenXml": {
+              "target": "Package",
+              "version": "[3.0.0, )"
+            },
             "QuestPDF": {
               "target": "Package",
               "version": "[2023.10.0, )"

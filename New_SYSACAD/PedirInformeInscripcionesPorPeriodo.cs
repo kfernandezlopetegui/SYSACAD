@@ -25,7 +25,7 @@ namespace New_SYSACAD
 
         private void buttonInscripciones_Click(object sender, EventArgs e)
         {
-            Periodo periodo = new Periodo(dateTimePickerInicio.Value, dateTimePickerFin.Value);
+            Periodo periodo = new Periodo("Periodo",dateTimePickerInicio.Value, dateTimePickerFin.Value);
             PedirInformePeriodoInscripcionesLogica pedirInforme = new PedirInformePeriodoInscripcionesLogica(this, periodo);
             OnPedirInforme.Invoke();
             PedirInformeInscripcionesPorPeriodo pedirInformeForm = new PedirInformeInscripcionesPorPeriodo();
@@ -73,6 +73,11 @@ namespace New_SYSACAD
                 // Establecer la fecha de fin en el día de hoy
                 dateTimePickerFin.Value = DateTime.Today;
             }
+        }
+
+        public void MensajeError()
+        {
+            MessageBox.Show("No hay informe para mostrar para el periodo seleccionado.", "Sin datos", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
     }
 }

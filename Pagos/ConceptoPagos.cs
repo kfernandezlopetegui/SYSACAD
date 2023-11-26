@@ -2,6 +2,7 @@
 {
     public class ConceptoPagos
     {
+        public int Id { get; set; }
         public decimal MontoPendiente { get; set; }
         public string Concepto { get; set; }
         public DateTime FechaConcepto { get; set; }
@@ -15,6 +16,7 @@
             MontoPendiente = montoPendiente;
             Concepto = concepto;
             FechaConcepto = DateTime.Now;
+            Id = 0;
         }
 
         public override string ToString()

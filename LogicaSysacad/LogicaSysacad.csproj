@@ -7,6 +7,11 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="DocumentFormat.OpenXml" Version="3.0.0" />
+    <PackageReference Include="ScottPlot" Version="4.1.67" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\ActualizarCambios\Actualizar.csproj" />
     <ProjectReference Include="..\DB\DB.csproj" />
     <ProjectReference Include="..\Entidades\Entidades.csproj" />
