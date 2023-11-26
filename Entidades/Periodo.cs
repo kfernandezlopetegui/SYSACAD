@@ -8,8 +8,7 @@ namespace Entidades
 {
     public class Periodo
     {
-        [PrimaryKeyAtributo]
-        public int Id { get; set; }
+       
         public DateTime Inicio { get; set; }
         public DateTime Fin { get; set; }
         public Periodo() { }
@@ -18,7 +17,7 @@ namespace Entidades
         {
             Inicio = inicio;
             Fin = fin;
-            this.Id = Ids.GenerarIdUnico();
+            
         }
 
         /// <summary>
@@ -28,15 +27,14 @@ namespace Entidades
         /// <returns></returns>
         public bool CoincideCon(Periodo otroPeriodo)
         {
-            // Si el inicio del periodo dado está dentro de este periodo O
-            // el fin del periodo dado está dentro de este periodo
+            
             if ((otroPeriodo.Inicio >= Inicio && otroPeriodo.Inicio <= Fin) ||
                 (otroPeriodo.Fin >= Inicio && otroPeriodo.Fin <= Fin))
             {
-                return true; // Hay una coincidencia
+                return true; 
             }
 
-            // Si no hay ninguna coincidencia
+            
             return false;
         }
 
@@ -60,7 +58,7 @@ namespace Entidades
             return !(periodo1 == periodo2);
         }
 
-        // Sobrecarga del método Equals para comparar dos objetos Periodo
+       
         public override bool Equals(object obj)
         {
             if (obj is Periodo)
@@ -70,7 +68,7 @@ namespace Entidades
             return false;
         }
 
-        // Sobrecarga del método GetHashCode para garantizar consistencia con Equals
+        
         public override int GetHashCode()
         {
             return Inicio.GetHashCode() ^ Fin.GetHashCode();

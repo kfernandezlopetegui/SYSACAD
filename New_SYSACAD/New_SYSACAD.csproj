@@ -23,6 +23,7 @@
     <ProjectReference Include="..\LogicaSysacad\LogicaSysacad.csproj" />
     <ProjectReference Include="..\Login\Login.csproj" />
     <ProjectReference Include="..\Pagos\Pagos.csproj" />
+    <ProjectReference Include="..\PDF\PDF.csproj" />
     <ProjectReference Include="..\Validaciones\Validaciones.csproj" />
   </ItemGroup>
 

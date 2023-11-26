@@ -12,6 +12,7 @@
     <ProjectReference Include="..\Entidades\Entidades.csproj" />
     <ProjectReference Include="..\Interfaces\Interfaces.csproj" />
     <ProjectReference Include="..\LecturaEscritura\LecturaEscritura.csproj" />
+    <ProjectReference Include="..\PDF\PDF.csproj" />
     <ProjectReference Include="..\Validaciones\Validaciones.csproj" />
   </ItemGroup>
 

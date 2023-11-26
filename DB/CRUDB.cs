@@ -551,6 +551,119 @@ GROUP BY
             return idCursosAsignados;
         }
 
+        public static List<InscripcionInfo> ObtenerInscripcionesEnPeriodo(Periodo periodo)
+        {
+            List<InscripcionInfo> inscripcionesEnPeriodo = new List<InscripcionInfo>();
+
+            using (SqlConnection conexion = new SqlConnection(cadenaConexion))
+            {
+                string consultaSql = @"
+            SELECT 
+                I.*,
+                
+                A.Nombre AS AlumnoNombre,
+                A.Apellido AS AlumnoApellido,
+                C.Carrera AS Carrera,
+                C.Nombre AS CursoNombre
+            FROM Inscripcion I
+            INNER JOIN Alumno A ON I.AlumnoId = A.Dni
+            INNER JOIN Curso C ON I.CursoId = C.Codigo
+            WHERE I.FechaInscripcion BETWEEN @Inicio AND @Fin
+            ORDER BY I.FechaInscripcion";
+
+                using (SqlCommand comando = new SqlCommand(consultaSql, conexion))
+                {
+                    comando.Parameters.AddWithValue("@Inicio", periodo.Inicio);
+                    comando.Parameters.AddWithValue("@Fin", periodo.Fin);
+
+                    try
+                    {
+                        conexion.Open();
+
+                        using (SqlDataReader reader = comando.ExecuteReader())
+                        {
+                            while (reader.Read())
+                            {
+                                InscripcionInfo inscripcionInfo = new InscripcionInfo
+                                {
+                                    AlumnoId = reader.GetInt32(reader.GetOrdinal("AlumnoId")),
+                                    CursoId = reader.GetString(reader.GetOrdinal("CursoId")),
+                                    FechaInscripcion = reader.GetDateTime(reader.GetOrdinal("FechaInscripcion")),
+                                    Id = reader.GetInt32(reader.GetOrdinal("Id")),
+                                   
+                                    
+                                    AlumnoNombre = reader.GetString(reader.GetOrdinal("AlumnoNombre")),
+                                    AlumnoApellido = reader.GetString(reader.GetOrdinal("AlumnoApellido")),
+                                    
+                                    
+                                    CursoNombre = reader.GetString(reader.GetOrdinal("CursoNombre")),
+                                    Carrera = reader.GetString(reader.GetOrdinal("Carrera"))
+                                };
+
+                                inscripcionesEnPeriodo.Add(inscripcionInfo);
+                            }
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        // Manejar la excepción según tus necesidades
+                        Console.WriteLine($"Error al obtener inscripciones en el período: {ex.Message}");
+                    }
+                }
+            }
+
+            return inscripcionesEnPeriodo;
+        }
+
+        public static List<AlumnoInforme> ObtenerAlumnosInscritos(string idCurso)
+        {
+            List<AlumnoInforme> alumnosInscritos = new List<AlumnoInforme>();
+
+            using (SqlConnection conexion = new SqlConnection(cadenaConexion))
+            {
+                string consultaSql = @"
+            SELECT A.*
+            FROM Alumno A
+            JOIN Inscripcion I ON A.Dni = I.AlumnoId
+            WHERE I.CursoId = @IdCurso
+             ORDER BY A.Nombre ASC";
+
+                using (SqlCommand comando = new SqlCommand(consultaSql, conexion))
+                {
+                    comando.Parameters.AddWithValue("@IdCurso", idCurso);
+
+                    try
+                    {
+                        conexion.Open();
+
+                        using (SqlDataReader reader = comando.ExecuteReader())
+                        {
+                            while (reader.Read())
+                            {
+                                AlumnoInforme alumno = new AlumnoInforme
+                                {
+                                    // Asigna las propiedades del alumno según las columnas en la tabla Alumno
+                                    Dni = reader.GetInt32(reader.GetOrdinal("Dni")),
+                                    Nombre = reader.GetString(reader.GetOrdinal("Nombre")),
+                                    Apellido = reader.GetString(reader.GetOrdinal("Apellido")),
+                                    Email = reader.GetString(reader.GetOrdinal("Email")),
+                                };
+
+                                alumnosInscritos.Add(alumno);
+                            }
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        // Manejar la excepción según tus necesidades
+                        Console.WriteLine($"Error al obtener alumnos inscritos: {ex.Message}");
+                    }
+                }
+            }
+
+            return alumnosInscritos;
+        }
+
     }
 
 }

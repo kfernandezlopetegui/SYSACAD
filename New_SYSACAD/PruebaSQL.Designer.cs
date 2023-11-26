@@ -38,7 +38,12 @@
             buttonActualizarTabla = new Button();
             button1 = new Button();
             textBoxValidar = new TextBox();
+            dataGridViewInscripciones = new DataGridView();
+            buttonInscripciones = new Button();
+            dateTimePickerInicio = new DateTimePicker();
+            dateTimePickerFin = new DateTimePicker();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridViewInscripciones).BeginInit();
             SuspendLayout();
             // 
             // buttonCrear
@@ -130,11 +135,53 @@
             textBoxValidar.Size = new Size(150, 31);
             textBoxValidar.TabIndex = 10;
             // 
+            // dataGridViewInscripciones
+            // 
+            dataGridViewInscripciones.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewInscripciones.Location = new Point(841, 12);
+            dataGridViewInscripciones.Name = "dataGridViewInscripciones";
+            dataGridViewInscripciones.RowHeadersWidth = 62;
+            dataGridViewInscripciones.RowTemplate.Height = 33;
+            dataGridViewInscripciones.Size = new Size(360, 225);
+            dataGridViewInscripciones.TabIndex = 11;
+            // 
+            // buttonInscripciones
+            // 
+            buttonInscripciones.Location = new Point(916, 406);
+            buttonInscripciones.Name = "buttonInscripciones";
+            buttonInscripciones.Size = new Size(237, 34);
+            buttonInscripciones.TabIndex = 12;
+            buttonInscripciones.Text = "Obtener Inscripciones";
+            buttonInscripciones.UseVisualStyleBackColor = true;
+            buttonInscripciones.Click += buttonInscripciones_Click;
+            // 
+            // dateTimePickerInicio
+            // 
+            dateTimePickerInicio.Location = new Point(851, 267);
+            dateTimePickerInicio.Name = "dateTimePickerInicio";
+            dateTimePickerInicio.Size = new Size(350, 31);
+            dateTimePickerInicio.TabIndex = 14;
+            dateTimePickerInicio.ValueChanged += dateTimePickerInicio_ValueChanged;
+            dateTimePickerInicio.Validating += dateTimePickerInicio_Validating;
+            // 
+            // dateTimePickerFin
+            // 
+            dateTimePickerFin.Location = new Point(851, 329);
+            dateTimePickerFin.Name = "dateTimePickerFin";
+            dateTimePickerFin.Size = new Size(350, 31);
+            dateTimePickerFin.TabIndex = 15;
+            dateTimePickerFin.ValueChanged += dateTimePickerFin_ValueChanged;
+            dateTimePickerFin.Validating += dateTimePickerFin_Validating;
+            // 
             // PruebaSQL
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(1370, 675);
+            Controls.Add(dateTimePickerFin);
+            Controls.Add(dateTimePickerInicio);
+            Controls.Add(buttonInscripciones);
+            Controls.Add(dataGridViewInscripciones);
             Controls.Add(textBoxValidar);
             Controls.Add(button1);
             Controls.Add(buttonActualizarTabla);
@@ -148,6 +195,7 @@
             Name = "PruebaSQL";
             Text = "PruebaSQL";
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridViewInscripciones).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -164,5 +212,9 @@
         private Button buttonActualizarTabla;
         private Button button1;
         private TextBox textBoxValidar;
+        private DataGridView dataGridViewInscripciones;
+        private Button buttonInscripciones;
+        private DateTimePicker dateTimePickerInicio;
+        private DateTimePicker dateTimePickerFin;
     }
 }

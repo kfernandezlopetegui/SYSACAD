@@ -30,13 +30,13 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(InformesDisponibles));
             groupBox1 = new GroupBox();
-            button5 = new Button();
-            button4 = new Button();
-            buttonReportes = new Button();
-            button3 = new Button();
-            button2 = new Button();
+            buttonInscripcionPorCarrera = new Button();
+            buttonListaEsperaCursos = new Button();
+            buttonIngresosConceptos = new Button();
+            buttonSalir = new Button();
+            buttonEstudiantesCurso = new Button();
             label2 = new Label();
-            button1 = new Button();
+            buttonInscripciones = new Button();
             pictureBox1 = new PictureBox();
             groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
@@ -45,73 +45,79 @@
             // groupBox1
             // 
             groupBox1.BackColor = Color.Transparent;
-            groupBox1.Controls.Add(button5);
-            groupBox1.Controls.Add(button4);
-            groupBox1.Controls.Add(buttonReportes);
-            groupBox1.Controls.Add(button3);
-            groupBox1.Controls.Add(button2);
+            groupBox1.BackgroundImageLayout = ImageLayout.Stretch;
+            groupBox1.Controls.Add(buttonInscripcionPorCarrera);
+            groupBox1.Controls.Add(buttonListaEsperaCursos);
+            groupBox1.Controls.Add(buttonIngresosConceptos);
+            groupBox1.Controls.Add(buttonSalir);
+            groupBox1.Controls.Add(buttonEstudiantesCurso);
             groupBox1.Controls.Add(label2);
-            groupBox1.Controls.Add(button1);
-            groupBox1.Location = new Point(358, 147);
+            groupBox1.Controls.Add(buttonInscripciones);
+            groupBox1.Location = new Point(320, 156);
             groupBox1.Name = "groupBox1";
             groupBox1.Size = new Size(423, 556);
             groupBox1.TabIndex = 4;
             groupBox1.TabStop = false;
             // 
-            // button5
+            // buttonInscripcionPorCarrera
             // 
-            button5.BackColor = Color.Snow;
-            button5.Font = new Font("Verdana", 9F, FontStyle.Italic, GraphicsUnit.Point);
-            button5.Location = new Point(84, 335);
-            button5.Name = "button5";
-            button5.Size = new Size(253, 56);
-            button5.TabIndex = 6;
-            button5.Text = "Estadisticas de inscripcion por carrera";
-            button5.UseVisualStyleBackColor = false;
+            buttonInscripcionPorCarrera.BackColor = Color.Snow;
+            buttonInscripcionPorCarrera.Font = new Font("Verdana", 9F, FontStyle.Italic, GraphicsUnit.Point);
+            buttonInscripcionPorCarrera.Location = new Point(84, 335);
+            buttonInscripcionPorCarrera.Name = "buttonInscripcionPorCarrera";
+            buttonInscripcionPorCarrera.Size = new Size(253, 56);
+            buttonInscripcionPorCarrera.TabIndex = 6;
+            buttonInscripcionPorCarrera.Text = "Estadisticas de inscripcion por carrera";
+            buttonInscripcionPorCarrera.UseVisualStyleBackColor = false;
+            buttonInscripcionPorCarrera.Click += buttonInscripcionPorCarrera_Click;
             // 
-            // button4
+            // buttonListaEsperaCursos
             // 
-            button4.BackColor = Color.Snow;
-            button4.Font = new Font("Verdana", 9F, FontStyle.Italic, GraphicsUnit.Point);
-            button4.Location = new Point(84, 417);
-            button4.Name = "button4";
-            button4.Size = new Size(253, 53);
-            button4.TabIndex = 5;
-            button4.Text = "Listas de espera de cursos";
-            button4.UseVisualStyleBackColor = false;
+            buttonListaEsperaCursos.BackColor = Color.Snow;
+            buttonListaEsperaCursos.Font = new Font("Verdana", 9F, FontStyle.Italic, GraphicsUnit.Point);
+            buttonListaEsperaCursos.Location = new Point(84, 417);
+            buttonListaEsperaCursos.Name = "buttonListaEsperaCursos";
+            buttonListaEsperaCursos.Size = new Size(253, 53);
+            buttonListaEsperaCursos.TabIndex = 5;
+            buttonListaEsperaCursos.Text = "Listas de espera de cursos";
+            buttonListaEsperaCursos.UseVisualStyleBackColor = false;
+            buttonListaEsperaCursos.Click += buttonListaEsperaCursos_Click;
             // 
-            // buttonReportes
+            // buttonIngresosConceptos
             // 
-            buttonReportes.BackColor = Color.Snow;
-            buttonReportes.Font = new Font("Verdana", 9F, FontStyle.Italic, GraphicsUnit.Point);
-            buttonReportes.Location = new Point(84, 243);
-            buttonReportes.Name = "buttonReportes";
-            buttonReportes.Size = new Size(253, 59);
-            buttonReportes.TabIndex = 4;
-            buttonReportes.Text = "Ingresos por conceptos de pago";
-            buttonReportes.UseVisualStyleBackColor = false;
+            buttonIngresosConceptos.BackColor = Color.Snow;
+            buttonIngresosConceptos.Font = new Font("Verdana", 9F, FontStyle.Italic, GraphicsUnit.Point);
+            buttonIngresosConceptos.Location = new Point(84, 243);
+            buttonIngresosConceptos.Name = "buttonIngresosConceptos";
+            buttonIngresosConceptos.Size = new Size(253, 59);
+            buttonIngresosConceptos.TabIndex = 4;
+            buttonIngresosConceptos.Text = "Ingresos por conceptos de pago";
+            buttonIngresosConceptos.UseVisualStyleBackColor = false;
+            buttonIngresosConceptos.Click += buttonIngresosConceptos_Click;
             // 
-            // button3
+            // buttonSalir
             // 
-            button3.BackColor = Color.CadetBlue;
-            button3.Font = new Font("Verdana", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            button3.Location = new Point(113, 499);
-            button3.Name = "button3";
-            button3.Size = new Size(204, 34);
-            button3.TabIndex = 3;
-            button3.Text = "Salir";
-            button3.UseVisualStyleBackColor = false;
+            buttonSalir.BackColor = Color.CadetBlue;
+            buttonSalir.Font = new Font("Verdana", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            buttonSalir.Location = new Point(113, 499);
+            buttonSalir.Name = "buttonSalir";
+            buttonSalir.Size = new Size(204, 34);
+            buttonSalir.TabIndex = 3;
+            buttonSalir.Text = "Salir";
+            buttonSalir.UseVisualStyleBackColor = false;
+            buttonSalir.Click += buttonSalir_Click;
             // 
-            // button2
+            // buttonEstudiantesCurso
             // 
-            button2.BackColor = Color.Snow;
-            button2.Font = new Font("Verdana", 9F, FontStyle.Italic, GraphicsUnit.Point);
-            button2.Location = new Point(84, 158);
-            button2.Name = "button2";
-            button2.Size = new Size(253, 58);
-            button2.TabIndex = 2;
-            button2.Text = "Estudiantes por curso";
-            button2.UseVisualStyleBackColor = false;
+            buttonEstudiantesCurso.BackColor = Color.Snow;
+            buttonEstudiantesCurso.Font = new Font("Verdana", 9F, FontStyle.Italic, GraphicsUnit.Point);
+            buttonEstudiantesCurso.Location = new Point(84, 158);
+            buttonEstudiantesCurso.Name = "buttonEstudiantesCurso";
+            buttonEstudiantesCurso.Size = new Size(253, 58);
+            buttonEstudiantesCurso.TabIndex = 2;
+            buttonEstudiantesCurso.Text = "Estudiantes por curso";
+            buttonEstudiantesCurso.UseVisualStyleBackColor = false;
+            buttonEstudiantesCurso.Click += buttonEstudiantesCurso_Click;
             // 
             // label2
             // 
@@ -124,16 +130,17 @@
             label2.TabIndex = 1;
             label2.Text = "INFORMES DISPONIBLES";
             // 
-            // button1
+            // buttonInscripciones
             // 
-            button1.BackColor = Color.Snow;
-            button1.Font = new Font("Verdana", 9F, FontStyle.Italic, GraphicsUnit.Point);
-            button1.Location = new Point(84, 82);
-            button1.Name = "button1";
-            button1.Size = new Size(253, 55);
-            button1.TabIndex = 0;
-            button1.Text = "Inscripciones por periodo";
-            button1.UseVisualStyleBackColor = false;
+            buttonInscripciones.BackColor = Color.Snow;
+            buttonInscripciones.Font = new Font("Verdana", 9F, FontStyle.Italic, GraphicsUnit.Point);
+            buttonInscripciones.Location = new Point(84, 82);
+            buttonInscripciones.Name = "buttonInscripciones";
+            buttonInscripciones.Size = new Size(253, 55);
+            buttonInscripciones.TabIndex = 0;
+            buttonInscripciones.Text = "Inscripciones por periodo";
+            buttonInscripciones.UseVisualStyleBackColor = false;
+            buttonInscripciones.Click += buttonInscripciones_Click;
             // 
             // pictureBox1
             // 
@@ -151,6 +158,7 @@
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
+            BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(1067, 803);
             Controls.Add(pictureBox1);
             Controls.Add(groupBox1);
@@ -166,13 +174,13 @@
         #endregion
 
         private GroupBox groupBox1;
-        private Button buttonReportes;
-        private Button button3;
-        private Button button2;
+        private Button buttonIngresosConceptos;
+        private Button buttonSalir;
+        private Button buttonEstudiantesCurso;
         private Label label2;
-        private Button button1;
-        private Button button5;
-        private Button button4;
+        private Button buttonInscripciones;
+        private Button buttonInscripcionPorCarrera;
+        private Button buttonListaEsperaCursos;
         private PictureBox pictureBox1;
     }
 }
