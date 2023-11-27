@@ -38,6 +38,9 @@
             label2 = new Label();
             buttonInscripcion = new Button();
             label1 = new Label();
+            buttonNotificacion = new Button();
+            label3 = new Label();
+            buttonNotificacion2 = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             groupBox1.SuspendLayout();
             SuspendLayout();
@@ -57,9 +60,9 @@
             // 
             pictureBox1.BackColor = Color.Transparent;
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(903, 12);
+            pictureBox1.Location = new Point(857, 12);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(152, 92);
+            pictureBox1.Size = new Size(198, 119);
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox1.TabIndex = 1;
             pictureBox1.TabStop = false;
@@ -142,13 +145,49 @@
             // 
             label1.AutoSize = true;
             label1.BackColor = Color.Transparent;
-            label1.Font = new Font("Verdana", 8F, FontStyle.Italic, GraphicsUnit.Point);
+            label1.Font = new Font("Verdana", 9F, FontStyle.Italic, GraphicsUnit.Point);
             label1.ForeColor = SystemColors.ControlDarkDark;
             label1.Location = new Point(368, 145);
             label1.Name = "label1";
-            label1.Size = new Size(305, 18);
+            label1.Size = new Size(332, 22);
             label1.TabIndex = 5;
             label1.Text = "Sistema de autogestion de alumnos";
+            // 
+            // buttonNotificacion
+            // 
+            buttonNotificacion.BackColor = Color.Bisque;
+            buttonNotificacion.BackgroundImage = (Image)resources.GetObject("buttonNotificacion.BackgroundImage");
+            buttonNotificacion.BackgroundImageLayout = ImageLayout.Stretch;
+            buttonNotificacion.Location = new Point(810, 193);
+            buttonNotificacion.Name = "buttonNotificacion";
+            buttonNotificacion.Size = new Size(66, 58);
+            buttonNotificacion.TabIndex = 6;
+            buttonNotificacion.UseVisualStyleBackColor = false;
+            buttonNotificacion.Click += buttonNotificacion_Click;
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.BackColor = Color.Transparent;
+            label3.Font = new Font("Verdana", 8F, FontStyle.Italic, GraphicsUnit.Point);
+            label3.ForeColor = SystemColors.ControlDarkDark;
+            label3.Location = new Point(780, 170);
+            label3.Name = "label3";
+            label3.Size = new Size(125, 18);
+            label3.TabIndex = 7;
+            label3.Text = "Notificaciones";
+            // 
+            // buttonNotificacion2
+            // 
+            buttonNotificacion2.BackColor = Color.Bisque;
+            buttonNotificacion2.BackgroundImage = (Image)resources.GetObject("buttonNotificacion2.BackgroundImage");
+            buttonNotificacion2.BackgroundImageLayout = ImageLayout.Stretch;
+            buttonNotificacion2.Location = new Point(810, 191);
+            buttonNotificacion2.Name = "buttonNotificacion2";
+            buttonNotificacion2.Size = new Size(66, 58);
+            buttonNotificacion2.TabIndex = 8;
+            buttonNotificacion2.UseVisualStyleBackColor = false;
+            buttonNotificacion2.Click += buttonNotificacion2_Click;
             // 
             // MenuEstudiante
             // 
@@ -157,6 +196,9 @@
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(1067, 803);
+            Controls.Add(buttonNotificacion2);
+            Controls.Add(label3);
+            Controls.Add(buttonNotificacion);
             Controls.Add(label1);
             Controls.Add(groupBox1);
             Controls.Add(pictureBox1);
@@ -164,6 +206,7 @@
             Name = "MenuEstudiante";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "MenuEstudiante";
+            MouseMove += MenuEstudiante_MouseMove;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
@@ -182,5 +225,8 @@
         private Button buttonInscripcion;
         private Button buttonRealizarPagos;
         private Label label1;
+        private Button buttonNotificacion;
+        private Label label3;
+        private Button buttonNotificacion2;
     }
 }

@@ -821,7 +821,6 @@
         "dependencies": {
           "BCrypt.Net-Next": "4.0.3",
           "Microsoft.Data.SqlClient": "5.1.2",
-          "Pagos": "1.0.0",
           "System.Data.SqlClient": "4.8.5"
         },
         "compile": {
@@ -829,20 +828,6 @@
         },
         "runtime": {
           "bin/placeholder/Entidades.dll": {}
-        }
-      },
-      "Pagos/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v6.0",
-        "dependencies": {
-          "Microsoft.Data.SqlClient": "5.1.2",
-          "System.Data.SqlClient": "4.8.5"
-        },
-        "compile": {
-          "bin/placeholder/Pagos.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/Pagos.dll": {}
         }
       }
     }
@@ -2360,11 +2345,6 @@
       "type": "project",
       "path": "../Entidades/Entidades.csproj",
       "msbuildProject": "../Entidades/Entidades.csproj"
-    },
-    "Pagos/1.0.0": {
-      "type": "project",
-      "path": "../Pagos/Pagos.csproj",
-      "msbuildProject": "../Pagos/Pagos.csproj"
     }
   },
   "projectFileDependencyGroups": {

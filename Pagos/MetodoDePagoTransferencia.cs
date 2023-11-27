@@ -32,7 +32,7 @@ namespace Pagos
             return true;
         }
 
-        public static bool RealizarTransaccion(decimal monto)
+        public static bool RealizarTransaccion(double monto)
         {
           return true;
         }

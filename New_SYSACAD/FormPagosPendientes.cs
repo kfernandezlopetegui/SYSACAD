@@ -1,4 +1,5 @@
 ﻿using Actualizar;
+using Entidades;
 using Login;
 using Pagos;
 using System;
@@ -20,7 +21,7 @@ namespace New_SYSACAD
     {
         private List<ConceptoPagos> listaConceptos;
         private List<ConceptoPagos> listaAPagar = new List<ConceptoPagos>();
-        private decimal importeFinal;
+        private double importeFinal;
         public FormPagosPendientes()
         {
             InitializeComponent();
@@ -68,13 +69,14 @@ namespace New_SYSACAD
 
                 object valor = dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].Value;
 
+                ConceptoPagos conceptoSeleccionado = (ConceptoPagos)dataGridView1.Rows[e.RowIndex].DataBoundItem;
 
-                if (valor != null && conceptoPago != null && decimal.TryParse(valor.ToString(), out decimal importe))
+                if (valor != null && conceptoPago != null && double.TryParse(valor.ToString(), out double importe))
                 {
 
 
                     importeFinal = importeFinal + importe;
-                    listaAPagar.Add(new ConceptoPagos(importe, conceptoPago));
+                    listaAPagar.Add(new ConceptoPagos(importe, conceptoPago, conceptoSeleccionado.Id, conceptoSeleccionado.IdAlumno,conceptoSeleccionado.FechaConcepto));
                 }
                 else
                 {
@@ -88,13 +90,24 @@ namespace New_SYSACAD
         {
             listaConceptos = await ActualizarPagosPendientes.ListaPagosPendientes(SesionAlumno.AlumnoActual.Dni);
             dataGridView1.DataSource = listaConceptos;
+            dataGridView1.Columns["Id"].Visible = false;
+            dataGridView1.Columns["IdAlumno"].Visible = false;
+            dataGridView1.Columns["FechaConcepto"].Visible = false;
+            dataGridView1.Columns["MontoPendiente"].HeaderText = "Monto Pendiente";
+            dataGridView1.Columns["Vencimiento"].HeaderText = "Fecha de vencimiento";
 
             DataGridViewTextBoxColumn columnaImporteAPagar = new DataGridViewTextBoxColumn();
             columnaImporteAPagar.HeaderText = "Importe a Pagar";
             columnaImporteAPagar.Name = "ImporteAPagar";
             columnaImporteAPagar.DataPropertyName = "ImporteAPagar"; // Asocia esta columna con la propiedad en tu objeto de datos
             columnaImporteAPagar.ReadOnly = false; // Permite la edición
+            
             dataGridView1.Columns.Add(columnaImporteAPagar);
+
+            foreach (DataGridViewColumn column in dataGridView1.Columns)
+            {
+                column.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            }
         }
     
     }

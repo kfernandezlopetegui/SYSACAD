@@ -1280,6 +1280,7 @@
         "dependencies": {
           "Entidades": "1.0.0",
           "MySql.Data": "8.2.0",
+          "Pagos": "1.0.0",
           "System.Data.SqlClient": "4.8.5"
         },
         "compile": {
@@ -1295,7 +1296,6 @@
         "dependencies": {
           "BCrypt.Net-Next": "4.0.3",
           "Microsoft.Data.SqlClient": "5.1.2",
-          "Pagos": "1.0.0",
           "System.Data.SqlClient": "4.8.5"
         },
         "compile": {
@@ -1309,7 +1309,8 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
         "dependencies": {
-          "Entidades": "1.0.0"
+          "Entidades": "1.0.0",
+          "Pagos": "1.0.0"
         },
         "compile": {
           "bin/placeholder/Interfaces.dll": {}
@@ -1373,6 +1374,7 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
         "dependencies": {
+          "Entidades": "1.0.0",
           "Microsoft.Data.SqlClient": "5.1.2",
           "System.Data.SqlClient": "4.8.5"
         },
@@ -1396,6 +1398,22 @@
         },
         "runtime": {
           "bin/placeholder/PDF.dll": {}
+        }
+      },
+      "UtilidadesNotificaciones/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "DB": "1.0.0",
+          "Interfaces": "1.0.0",
+          "LogicaSysacad": "1.0.0",
+          "Login": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/UtilidadesNotificaciones.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/UtilidadesNotificaciones.dll": {}
         }
       },
       "Validaciones/1.0.0": {
@@ -3935,6 +3953,11 @@
       "path": "../PDF/PDF.csproj",
       "msbuildProject": "../PDF/PDF.csproj"
     },
+    "UtilidadesNotificaciones/1.0.0": {
+      "type": "project",
+      "path": "../UtilidadesNotificaciones/UtilidadesNotificaciones.csproj",
+      "msbuildProject": "../UtilidadesNotificaciones/UtilidadesNotificaciones.csproj"
+    },
     "Validaciones/1.0.0": {
       "type": "project",
       "path": "../Validaciones/Validaciones.csproj",
@@ -3955,6 +3978,7 @@
       "PDF >= 1.0.0",
       "Pagos >= 1.0.0",
       "System.Data.SqlClient >= 4.8.5",
+      "UtilidadesNotificaciones >= 1.0.0",
       "Validaciones >= 1.0.0"
     ]
   },
@@ -4008,6 +4032,9 @@
             },
             "C:\\Users\\kflop\\OneDrive\\Escritorio\\Sysacad\\PDF\\PDF.csproj": {
               "projectPath": "C:\\Users\\kflop\\OneDrive\\Escritorio\\Sysacad\\PDF\\PDF.csproj"
+            },
+            "C:\\Users\\kflop\\OneDrive\\Escritorio\\Sysacad\\UtilidadesNotificaciones\\UtilidadesNotificaciones.csproj": {
+              "projectPath": "C:\\Users\\kflop\\OneDrive\\Escritorio\\Sysacad\\UtilidadesNotificaciones\\UtilidadesNotificaciones.csproj"
             },
             "C:\\Users\\kflop\\OneDrive\\Escritorio\\Sysacad\\Validaciones\\Validaciones.csproj": {
               "projectPath": "C:\\Users\\kflop\\OneDrive\\Escritorio\\Sysacad\\Validaciones\\Validaciones.csproj"

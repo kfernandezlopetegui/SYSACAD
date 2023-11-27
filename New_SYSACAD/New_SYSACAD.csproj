@@ -24,6 +24,7 @@
     <ProjectReference Include="..\Login\Login.csproj" />
     <ProjectReference Include="..\Pagos\Pagos.csproj" />
     <ProjectReference Include="..\PDF\PDF.csproj" />
+    <ProjectReference Include="..\UtilidadesNotificaciones\UtilidadesNotificaciones.csproj" />
     <ProjectReference Include="..\Validaciones\Validaciones.csproj" />
   </ItemGroup>
 

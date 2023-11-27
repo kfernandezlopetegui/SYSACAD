@@ -485,20 +485,10 @@
         "dependencies": {
           "BCrypt.Net-Next": "4.0.3",
           "Microsoft.Data.SqlClient": "5.1.2",
-          "Pagos": "1.0.0",
           "System.Data.SqlClient": "4.8.5"
         },
         "runtime": {
           "Entidades.dll": {}
-        }
-      },
-      "Pagos/1.0.0": {
-        "dependencies": {
-          "Microsoft.Data.SqlClient": "5.1.2",
-          "System.Data.SqlClient": "4.8.5"
-        },
-        "runtime": {
-          "Pagos.dll": {}
         }
       }
     }
@@ -839,11 +829,6 @@
       "hashPath": "system.windows.extensions.6.0.0.nupkg.sha512"
     },
     "Entidades/1.0.0": {
-      "type": "project",
-      "serviceable": false,
-      "sha512": ""
-    },
-    "Pagos/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

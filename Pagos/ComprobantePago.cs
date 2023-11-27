@@ -10,12 +10,12 @@ namespace Pagos
     {
         public string NumeroComprobante { get; private set; }
         public DateTime FechaPago { get; private set; }
-        public decimal MontoPagado { get; private set; }
+        public double MontoPagado { get; private set; }
         public List<string> ConceptosPago { get; private set; }
         public string MetodoPago { get; private set; }
         public string DetallesTransaccion { get; private set; }
 
-        public ComprobantePago(string numeroComprobante, DateTime fechaPago, decimal montoPagado,
+        public ComprobantePago(string numeroComprobante, DateTime fechaPago, double montoPagado,
             List<string> conceptosPago, string metodoPago, string detallesTransaccion)
         {
             NumeroComprobante = numeroComprobante;

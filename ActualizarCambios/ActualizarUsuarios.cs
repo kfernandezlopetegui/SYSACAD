@@ -31,37 +31,17 @@ namespace Actualizar
         public async static void AgregarAlumnoBD( Alumno nuevoUsuario)
         {
            
-            await CRUDB.InsertarRegistroAsync<Alumno>(nuevoUsuario);
+            await CRUDB.InsertarRegistroAsync(nuevoUsuario);
         }
 
-        public async static void AgregarPagosPendientes(ConceptoPagos conceptoPagos, int dniAlumno)
+        public async static void AgregarPagosPendientes(ConceptoPagos conceptoPagos)
         {
             /* Agrega los pagos pendientes al alumno
              * recibe el concepto de pago a agregar, el dni del alumno que se esta editando
              *  
              */
+            await CRUDB.InsertarRegistroAsync(conceptoPagos);
             
-            Alumno alumnoEncontrado = await CRUDB.ObtenerPorIdentificadorAsync<Alumno>("Alumno", "Dni = @Dni", new { Dni = dniAlumno });
-
-            if (alumnoEncontrado != null)
-            {
-                List<ConceptoPagos> listaConceptoPagos = string.IsNullOrEmpty(alumnoEncontrado.ConceptoPagos)
-                    ? new List<ConceptoPagos>()
-                    : CRUD.ConvertirJsonALista<ConceptoPagos>(alumnoEncontrado.ConceptoPagos);
-
-                // Aquí puedes agregar la lógica para crear un nuevo ConceptoPagos si la lista está vacía
-
-                listaConceptoPagos.Add(conceptoPagos);
-
-                alumnoEncontrado.ConceptoPagos = CRUD.ConvertirListaAJson<ConceptoPagos>(listaConceptoPagos);
-                string dni = alumnoEncontrado.Dni.ToString();
-                await CRUDB.ActualizarPorIdentificadorAsync("Alumno", "Dni", dni, alumnoEncontrado);
-            }
-
-
-
-
-
 
         }
 

@@ -275,5 +275,52 @@ namespace DB
             }
         }
 
+
+        public static int ObtenerUltimoIdConcepto()
+        {
+            int ultimoLegajo = 99990;
+
+            using (SqlConnection connection = new SqlConnection(cadenaConexion))
+            {
+                connection.Open();
+
+                string query = "SELECT TOP 1 Id FROM ConceptoPagos ORDER BY Id DESC";
+
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    var result = command.ExecuteScalar();
+                    if (result != null && result != DBNull.Value)
+                    {
+                        ultimoLegajo = Convert.ToInt32(result);
+                    }
+                }
+            }
+
+            return ultimoLegajo;
+        }
+
+        public static int ObtenerUltimoIdNotificaciones()
+        {
+            int ultimoLegajo = 20000;
+
+            using (SqlConnection connection = new SqlConnection(cadenaConexion))
+            {
+                connection.Open();
+
+                string query = "SELECT TOP 1 Id FROM Notificacion ORDER BY Id DESC";
+
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    var result = command.ExecuteScalar();
+                    if (result != null && result != DBNull.Value)
+                    {
+                        ultimoLegajo = Convert.ToInt32(result);
+                    }
+                }
+            }
+
+            return ultimoLegajo;
+        }
+
     }
 }

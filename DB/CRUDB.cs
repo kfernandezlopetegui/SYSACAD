@@ -1,4 +1,5 @@
 ﻿using Entidades;
+using Pagos;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -664,6 +665,91 @@ GROUP BY
             return alumnosInscritos;
         }
 
+        public static async Task<List<ConceptoPagos>> ObtenerConceptosPorIdAlumnoAsync(int idAlumno)
+        {
+            List<ConceptoPagos> conceptos = new List<ConceptoPagos>();
+
+            using (SqlConnection conexion = new SqlConnection(cadenaConexion))
+            {
+                string consultaSql = "SELECT * FROM ConceptoPagos WHERE IdAlumno = @IdAlumno";
+
+                using (SqlCommand comando = new SqlCommand(consultaSql, conexion))
+                {
+                    comando.Parameters.AddWithValue("@IdAlumno", idAlumno);
+
+                    try
+                    {
+                        await conexion.OpenAsync();
+
+                        using (SqlDataReader reader = await comando.ExecuteReaderAsync())
+                        {
+                            while (await reader.ReadAsync())
+                            {
+                                ConceptoPagos concepto = new ConceptoPagos(
+                                    montoPendiente: reader.GetDouble(reader.GetOrdinal("MontoPendiente")),
+                                    concepto: reader.GetString(reader.GetOrdinal("Concepto")),
+                                    id: reader.GetInt32(reader.GetOrdinal("Id")),
+                                    idAlumno: idAlumno,
+                                    fechaConcepto : reader.GetDateTime(reader.GetOrdinal("FechaConcepto"))
+                                );
+
+                                conceptos.Add(concepto);
+                            }
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        
+                        Console.WriteLine($"Error al obtener conceptos de pago: {ex.Message}");
+                    }
+                }
+            }
+
+            return conceptos;
+        }
+
+        public static async Task<List<Notificacion>> ObtenerNotificacionesPorIdUsuarioAsync(int idUsuario)
+        {
+            List<Notificacion> notificaciones = new List<Notificacion>();
+
+            try
+            {
+                using (SqlConnection connection = new SqlConnection(cadenaConexion))
+                {
+                    await connection.OpenAsync();
+
+                    string consultaSql = "SELECT * FROM Notificacion WHERE IdUsuarioDestino = @IdUsuario";
+
+                    using (SqlCommand comando = new SqlCommand(consultaSql, connection))
+                    {
+                        comando.Parameters.AddWithValue("@IdUsuario", idUsuario);
+
+                        using (SqlDataReader reader = await comando.ExecuteReaderAsync())
+                        {
+                            while (await reader.ReadAsync())
+                            {
+                                Notificacion notificacion = new Notificacion
+                                {
+                                    Id = reader.GetInt32(reader.GetOrdinal("Id")),
+                                    IdUsuarioDestino = reader.GetInt32(reader.GetOrdinal("IdUsuarioDestino")),
+                                    Mensaje = reader.GetString(reader.GetOrdinal("Mensaje")),
+                                    Leido = reader.GetBoolean(reader.GetOrdinal("Leido"))
+                                };
+
+                                notificaciones.Add(notificacion);
+                            }
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error al obtener notificaciones: {ex.Message}");
+                // Manejar la excepción según tus necesidades
+            }
+
+            return notificaciones;
+        }
     }
 
 }

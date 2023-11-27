@@ -1,5 +1,7 @@
 ﻿using Actualizar;
 using Entidades;
+using Interfaces;
+using LogicaSysacad;
 using Login;
 using Pagos;
 using System;
@@ -15,26 +17,26 @@ using Validaciones;
 
 namespace New_SYSACAD
 {
-    public partial class MenuEstudiante : Form
+
+    public partial class MenuEstudiante : Form, IVerificarSiHayNotificacionesNuevas
     {
+        public delegate void NotificacionEventHandler(object sender, NotificacionEventArgs e);
+
 
         private Alumno alumno;
-        private string nombreArchivoCursos = "cursosRegistrados.json";
-        private string nombreArchivoInscripciones = "inscripcionesRegistradas.json";
-        private List<ConceptoPagos> pagos = new List<ConceptoPagos>();
-        private decimal montoPago = 100050;
+        public event NotificacionEventHandler NotificacionRecibida;
+        public event Action VerificarSiHayNotificaciones;
+
         public MenuEstudiante(Alumno alumnoIngresado)
         {
             InitializeComponent();
             this.alumno = alumnoIngresado;
             SesionAlumno.IniciarSesion(alumno);
+            var logicaVerificar = new VerificarSiHayNotificacionesNuevasLogica(this, SesionAlumno.AlumnoActual.Dni);
+
 
             labelBienvenida.Text = "Bienvenido, " + SesionAlumno.AlumnoActual.Nombre + "!";
 
-            ConceptoPagos pagoUno = new ConceptoPagos(1000, "Libros");
-            ConceptoPagos pagoDos = new ConceptoPagos(99000, "Matricula");
-            ConceptoPagos pagoTres = new ConceptoPagos(50, "Materia");
-            pagos.Add(pagoUno); pagos.Add(pagoDos); pagos.Add(pagoTres);
         }
         public MenuEstudiante()
         {
@@ -58,7 +60,7 @@ namespace New_SYSACAD
 
         private void buttonHorarios_Click(object sender, EventArgs e)
         {
-            List<Curso> listaDeCursos = ActualizarCurso.ObtenerCursosAlumno(nombreArchivoCursos, nombreArchivoInscripciones, SesionAlumno.AlumnoActual.Dni);
+            List<Curso> listaDeCursos = ActualizarCurso.ObtenerCursosAlumno(SesionAlumno.AlumnoActual.Dni);
             if (listaDeCursos.Count > 0)
             {
                 ConsultarHorario consultarHorario = new ConsultarHorario();
@@ -78,6 +80,53 @@ namespace New_SYSACAD
             //Menu.MostrarMenu(metodosDePago, this, 1);
             FormPagosPendientes pagosPendientes = new FormPagosPendientes();
             Menu.MostrarMenu(pagosPendientes, this, 1);
+        }
+
+        public void MostrarNotificacion(string mensaje)
+        {
+            // Puedes usar un MessageBox u otra lógica para mostrar la notificación
+            MessageBox.Show(mensaje, "Notificación para el Alumno", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        private void buttonNotificacion_Click(object sender, EventArgs e)
+        {
+            NotificacionesForm notificacionesForm = new NotificacionesForm();
+            notificacionesForm.ShowDialog();
+        }
+
+        private void MenuEstudiante_MouseMove(object sender, MouseEventArgs e)
+        {
+            VerificarSiHayNotificaciones?.Invoke();
+        }
+
+        public void ValidarSiHayNotificaciones(bool resultado)
+        {
+            buttonNotificacion.BackgroundImageLayout = ImageLayout.Stretch;
+            if (resultado)
+            {
+                // Cambia la imagen del botón si hay notificaciones sin leer
+                buttonNotificacion2.Hide();
+                buttonNotificacion2.Enabled = false;
+                buttonNotificacion.Visible = true;
+                buttonNotificacion.Enabled = true;
+            }
+            else
+            {
+                // Cambia la imagen del botón si todas las notificaciones están leídas
+                buttonNotificacion.Hide();
+                buttonNotificacion.Enabled = false;
+                buttonNotificacion2.Visible = true;
+                buttonNotificacion2.Enabled = true;
+            }
+
+
+        }
+
+        private void buttonNotificacion2_Click(object sender, EventArgs e)
+        {
+            NotificacionesForm notificacionesForm = new NotificacionesForm();
+            notificacionesForm.ShowDialog();
+
         }
     }
 }

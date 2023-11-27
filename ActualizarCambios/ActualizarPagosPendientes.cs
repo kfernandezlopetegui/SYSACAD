@@ -26,16 +26,12 @@ namespace Actualizar
         public async static Task<List<ConceptoPagos>> ListaPagosPendientes(int dniAlumno)
         {
            
-            Alumno? alumnoEncontrado = await CRUDB.ObtenerPorIdentificadorAsync<Alumno>("Alumno", "Dni = @Dni", new { Dni = dniAlumno });
-            List<ConceptoPagos> pagosPendientesRegistrados = new List<ConceptoPagos>();
-            List<ConceptoPagos> listaConceptoPagos = CRUD.ConvertirJsonALista<ConceptoPagos>(alumnoEncontrado.ConceptoPagos);
-            if (alumnoEncontrado != null)
-            {
-                pagosPendientesRegistrados = listaConceptoPagos;
-            }
+            
+            List<ConceptoPagos> listaConceptoPagos = await CRUDB.ObtenerConceptosPorIdAlumnoAsync(dniAlumno);
+           
             
 
-            return pagosPendientesRegistrados;
+            return listaConceptoPagos;
         }
         /// <summary>
         /// Resta los importes de los conceptos de pagos pendientes del alumno basándose en una lista de ConceptoPagos.
@@ -46,11 +42,12 @@ namespace Actualizar
         public async static Task<bool> RestarImportesPagosPendientes(int dniAlumno, List<ConceptoPagos> listaConceptos)
         {
            
-            Alumno alumnoEncontrado = await CRUDB.ObtenerPorIdentificadorAsync<Alumno>("Alumno", "Dni = @Dni", new { Dni = dniAlumno });
-            List<ConceptoPagos> listaConceptoPagos = CRUD.ConvertirJsonALista<ConceptoPagos>(alumnoEncontrado.ConceptoPagos);
+           
+            //List<ConceptoPagos> listaConceptoPagos = CRUD.ConvertirJsonALista<ConceptoPagos>(alumnoEncontrado.ConceptoPagos);
 
-            if (alumnoEncontrado != null)
-            {
+            List<ConceptoPagos> listaConceptoPagos = await CRUDB.ObtenerConceptosPorIdAlumnoAsync(dniAlumno);
+
+           
                 
                 foreach (var concepto in listaConceptos)
                 {
@@ -71,6 +68,8 @@ namespace Actualizar
                             listaConceptoPagos.RemoveAll(c => c.MontoPendiente == 0);
 
                         }
+
+                        await CRUDB.ActualizarPorIdentificadorAsync("ConceptoPagos", "Id", conceptoPendiente.Id, conceptoPendiente);
                     }
                     else
                     {
@@ -78,16 +77,12 @@ namespace Actualizar
                         return false;
                     }
                 }
-                alumnoEncontrado.ConceptoPagos = CRUD.ConvertirListaAJson<ConceptoPagos>(listaConceptoPagos) ;
-                await CRUDB.ActualizarPorIdentificadorAsync("Alumno", "Dni", dniAlumno, alumnoEncontrado);
-                return true; 
-            }
-            else
-            {
                 
-                return false;
-            }
-
+                return true; 
+            
+                
+                
+           
 
         }
     }

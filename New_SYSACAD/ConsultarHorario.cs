@@ -24,7 +24,7 @@ namespace New_SYSACAD
         public ConsultarHorario()
         {
             InitializeComponent();
-            listaDeCursos = ActualizarCurso.ObtenerCursosAlumno(nombreArchivoCursos, nombreArchivoInscripciones, SesionAlumno.AlumnoActual.Dni);
+            listaDeCursos = ActualizarCurso.ObtenerCursosAlumno( SesionAlumno.AlumnoActual.Dni);
 
             labelIndicaciones.Text = $"Horarios de {SesionAlumno.AlumnoActual.Apellido} {SesionAlumno.AlumnoActual.Nombre}";
             ConfigurarDataGridView();

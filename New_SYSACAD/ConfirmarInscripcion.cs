@@ -1,5 +1,7 @@
 ﻿using Actualizar;
 using Entidades;
+using Interfaces;
+using LogicaSysacad;
 using Login;
 using Pagos;
 using System;
@@ -15,12 +17,12 @@ using Validaciones;
 
 namespace New_SYSACAD
 {
-    public partial class ConfirmarInscripcion : Form
+    public partial class ConfirmarInscripcion : Form, IInscripcionCurso
     {
         HashSet<Curso> listaDeCursos;
 
-        
-        
+        public event Action InscripcionCurso;
+
         public ConfirmarInscripcion(HashSet<Curso> listaCursos)
         {
             InitializeComponent();
@@ -70,13 +72,9 @@ namespace New_SYSACAD
 
                 if (disponibilidad && cumpleRequisitos)
                 {
-                    ConceptoPagos conceptoPagos = new ConceptoPagos(10000,curso.Nombre);
-                    Inscripcion inscripcion = new Inscripcion(SesionAlumno.AlumnoActual.Dni, curso.Codigo);
-                    ActualizarInscripciones.AgregarInscripcion(inscripcion);
-                    ActualizarUsuarios.AgregarPagosPendientes(conceptoPagos, SesionAlumno.AlumnoActual.Dni);
+                    var logicaInscripcion = new InscripcionACursoLogica(this,curso,SesionAlumno.AlumnoActual.Dni);
 
-                    ActualizarCurso.ActualizarCupo(curso.Codigo);
-
+                    InscripcionCurso.Invoke();
                     // Mostrar mensaje de éxito
                     MessageBox.Show($"Te has inscripto correctamente a {curso.Nombre}.",
                                               "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);

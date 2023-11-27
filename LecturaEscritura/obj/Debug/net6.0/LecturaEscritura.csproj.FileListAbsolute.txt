@@ -89,9 +89,7 @@ C:\Users\kflop\OneDrive\Escritorio\Sysacad\LecturaEscritura\bin\Debug\net6.0\Lec
 C:\Users\kflop\OneDrive\Escritorio\Sysacad\LecturaEscritura\bin\Debug\net6.0\LecturaEscritura.dll
 C:\Users\kflop\OneDrive\Escritorio\Sysacad\LecturaEscritura\bin\Debug\net6.0\LecturaEscritura.pdb
 C:\Users\kflop\OneDrive\Escritorio\Sysacad\LecturaEscritura\bin\Debug\net6.0\Entidades.dll
-C:\Users\kflop\OneDrive\Escritorio\Sysacad\LecturaEscritura\bin\Debug\net6.0\Pagos.dll
 C:\Users\kflop\OneDrive\Escritorio\Sysacad\LecturaEscritura\bin\Debug\net6.0\Entidades.pdb
-C:\Users\kflop\OneDrive\Escritorio\Sysacad\LecturaEscritura\bin\Debug\net6.0\Pagos.pdb
 C:\Users\kflop\OneDrive\Escritorio\Sysacad\LecturaEscritura\obj\Debug\net6.0\LecturaEscritura.csproj.AssemblyReference.cache
 C:\Users\kflop\OneDrive\Escritorio\Sysacad\LecturaEscritura\obj\Debug\net6.0\LecturaEscritura.csproj.ResolveComReference.cache
 C:\Users\kflop\OneDrive\Escritorio\Sysacad\LecturaEscritura\obj\Debug\net6.0\LecturaEscritura.GeneratedMSBuildEditorConfig.editorconfig

@@ -88,6 +88,9 @@
     <Compile Update="MostrarListaEsperaCurso.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="NotificacionesForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="PedirInformeEstadisticaPorCarrera.cs">
       <SubType>Form</SubType>
     </Compile>

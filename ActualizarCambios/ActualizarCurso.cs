@@ -81,7 +81,7 @@ namespace Actualizar
             return VerificarCupo(cursoObtenido);
         }
 
-        public static List<Curso> ObtenerCursosAlumno(string fileCursos, string fileInscripciones,  int idAlumnoLogueado)
+        public static List<Curso> ObtenerCursosAlumno(int idAlumnoLogueado)
 
         {
             List<Curso> listaCursos = ListaCursosActualesBD();

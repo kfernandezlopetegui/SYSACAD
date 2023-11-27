@@ -31,7 +31,7 @@ namespace Pagos
         /// </summary>
         /// <param name="monto">Monto del pago a procesar.</param>
         /// <returns>True si el pago se procesa correctamente, false en caso contrario.</returns>
-        public static bool ProcesarPago(decimal monto)
+        public static bool ProcesarPago(double monto)
         {
             //  lógica para procesar el pago con la tarjeta de crédito.
            

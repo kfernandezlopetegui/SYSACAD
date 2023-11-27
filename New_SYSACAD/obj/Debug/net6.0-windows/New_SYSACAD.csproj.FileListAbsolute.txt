@@ -388,3 +388,6 @@ C:\Users\kflop\OneDrive\Escritorio\Sysacad\New_SYSACAD\bin\Debug\net6.0-windows\
 C:\Users\kflop\OneDrive\Escritorio\Sysacad\New_SYSACAD\bin\Debug\net6.0-windows\ScottPlot.dll
 C:\Users\kflop\OneDrive\Escritorio\Sysacad\New_SYSACAD\obj\Debug\net6.0-windows\New_SYSACAD.PedirInformeEstadisticaPorCarrera.resources
 C:\Users\kflop\OneDrive\Escritorio\Sysacad\New_SYSACAD\obj\Debug\net6.0-windows\New_SYSACAD.PedirInformeListaEspera.resources
+C:\Users\kflop\OneDrive\Escritorio\Sysacad\New_SYSACAD\bin\Debug\net6.0-windows\UtilidadesNotificaciones.dll
+C:\Users\kflop\OneDrive\Escritorio\Sysacad\New_SYSACAD\bin\Debug\net6.0-windows\UtilidadesNotificaciones.pdb
+C:\Users\kflop\OneDrive\Escritorio\Sysacad\New_SYSACAD\obj\Debug\net6.0-windows\New_SYSACAD.NotificacionesForm.resources

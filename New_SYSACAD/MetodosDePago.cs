@@ -27,11 +27,11 @@ namespace New_SYSACAD
         private string? numeroDeCuenta;
         private string? nombreDeBanco;
         private string? nombreTitularBanco;
-        private decimal montoDePago;
+        private double montoDePago;
         private List<string> conceptoPagos;
         private List<ConceptoPagos> conceptoPagosSeleccionados;
         private DateTime fechaPago = DateTime.Now;
-        public MetodosDePago(decimal montoDePago, List<ConceptoPagos> conceptoPagos)
+        public MetodosDePago(double montoDePago, List<ConceptoPagos> conceptoPagos)
         {
             InitializeComponent();
             this.montoDePago = montoDePago;

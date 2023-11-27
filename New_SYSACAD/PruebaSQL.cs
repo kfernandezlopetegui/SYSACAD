@@ -5,6 +5,7 @@ using LecturaEscritura;
 using Microsoft.Data.SqlClient;
 using MySqlX.XDevAPI.Relational;
 using Org.BouncyCastle.Utilities;
+using Pagos;
 using PDF;
 using System;
 using System.Collections.Generic;
@@ -74,12 +75,14 @@ namespace New_SYSACAD
                     93298161, "calle falsa", "123324353", cursosAProbados);
             Profesor profesor2 = new Profesor("Profesor", "2", "indefinido", "profe@gmail.com", "1234", false, false,
                 "Profesor", "12/12/2000", "Mango", 1050, 96298162, "calle falsa 1233", "11123249395", "Matematicas");
-            await CRUDB.InsertarRegistroAsync<Profesor>(profesor2);
+            //await CRUDB.InsertarRegistroAsync<Profesor>(profesor2);
             CursosAsignados cursoAsignado = new CursosAsignados("090909", profesor2.Dni);
 
 
 
-            string resultado = await CRUDB.InsertarRegistroAsync(cursoAsignado); ;
+            //string resultado = await CRUDB.InsertarRegistroAsync(cursoAsignado); ;
+
+            string resultado = await CRUDB.CreateTableAsync<Notificacion>();
 
             MessageBox.Show(resultado);
         }

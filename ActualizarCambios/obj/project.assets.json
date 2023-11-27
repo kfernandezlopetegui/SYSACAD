@@ -1054,6 +1054,7 @@
         "dependencies": {
           "Entidades": "1.0.0",
           "MySql.Data": "8.2.0",
+          "Pagos": "1.0.0",
           "System.Data.SqlClient": "4.8.5"
         },
         "compile": {
@@ -1069,7 +1070,6 @@
         "dependencies": {
           "BCrypt.Net-Next": "4.0.3",
           "Microsoft.Data.SqlClient": "5.1.2",
-          "Pagos": "1.0.0",
           "System.Data.SqlClient": "4.8.5"
         },
         "compile": {
@@ -1098,6 +1098,7 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
         "dependencies": {
+          "Entidades": "1.0.0",
           "Microsoft.Data.SqlClient": "5.1.2",
           "System.Data.SqlClient": "4.8.5"
         },

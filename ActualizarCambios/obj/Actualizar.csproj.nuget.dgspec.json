@@ -105,6 +105,9 @@
             "projectReferences": {
               "C:\\Users\\kflop\\OneDrive\\Escritorio\\Sysacad\\Entidades\\Entidades.csproj": {
                 "projectPath": "C:\\Users\\kflop\\OneDrive\\Escritorio\\Sysacad\\Entidades\\Entidades.csproj"
+              },
+              "C:\\Users\\kflop\\OneDrive\\Escritorio\\Sysacad\\Pagos\\Pagos.csproj": {
+                "projectPath": "C:\\Users\\kflop\\OneDrive\\Escritorio\\Sysacad\\Pagos\\Pagos.csproj"
               }
             }
           }
@@ -171,11 +174,7 @@
         "frameworks": {
           "net6.0": {
             "targetAlias": "net6.0",
-            "projectReferences": {
-              "C:\\Users\\kflop\\OneDrive\\Escritorio\\Sysacad\\Pagos\\Pagos.csproj": {
-                "projectPath": "C:\\Users\\kflop\\OneDrive\\Escritorio\\Sysacad\\Pagos\\Pagos.csproj"
-              }
-            }
+            "projectReferences": {}
           }
         },
         "warningProperties": {
@@ -313,7 +312,11 @@
         "frameworks": {
           "net6.0": {
             "targetAlias": "net6.0",
-            "projectReferences": {}
+            "projectReferences": {
+              "C:\\Users\\kflop\\OneDrive\\Escritorio\\Sysacad\\Entidades\\Entidades.csproj": {
+                "projectPath": "C:\\Users\\kflop\\OneDrive\\Escritorio\\Sysacad\\Entidades\\Entidades.csproj"
+              }
+            }
           }
         },
         "warningProperties": {

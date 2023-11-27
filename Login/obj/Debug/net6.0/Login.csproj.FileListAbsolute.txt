@@ -87,9 +87,7 @@ C:\Users\kflop\OneDrive\Escritorio\Sysacad\Login\bin\Debug\net6.0\Login.deps.jso
 C:\Users\kflop\OneDrive\Escritorio\Sysacad\Login\bin\Debug\net6.0\Login.dll
 C:\Users\kflop\OneDrive\Escritorio\Sysacad\Login\bin\Debug\net6.0\Login.pdb
 C:\Users\kflop\OneDrive\Escritorio\Sysacad\Login\bin\Debug\net6.0\Entidades.dll
-C:\Users\kflop\OneDrive\Escritorio\Sysacad\Login\bin\Debug\net6.0\Pagos.dll
 C:\Users\kflop\OneDrive\Escritorio\Sysacad\Login\bin\Debug\net6.0\Entidades.pdb
-C:\Users\kflop\OneDrive\Escritorio\Sysacad\Login\bin\Debug\net6.0\Pagos.pdb
 C:\Users\kflop\OneDrive\Escritorio\Sysacad\Login\obj\Debug\net6.0\Login.csproj.AssemblyReference.cache
 C:\Users\kflop\OneDrive\Escritorio\Sysacad\Login\obj\Debug\net6.0\Login.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\kflop\OneDrive\Escritorio\Sysacad\Login\obj\Debug\net6.0\Login.AssemblyInfoInputs.cache
